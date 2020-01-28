@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 
 
-<title>Lecture-02</title>
+<title>Lecture-03</title>
 
 <style type="text/css">
     /*!
@@ -13108,317 +13108,31 @@ div#notebook {
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="EE319---Probability-&amp;-Random-Processes">EE319 - Probability &amp; Random Processes<a class="anchor-link" href="#EE319---Probability-&amp;-Random-Processes">&#182;</a></h1><h2 id="Dr.-Ing.-Mukhtar-Ullah,-FAST-NUCES,-Fall-2020"><em>Dr. Ing. Mukhtar Ullah</em>, FAST NUCES, Fall 2020<a class="anchor-link" href="#Dr.-Ing.-Mukhtar-Ullah,-FAST-NUCES,-Fall-2020">&#182;</a></h2><h2 id="Lecture-02-(2020-01-24)"><strong>Lecture 02</strong> (2020-01-24)<a class="anchor-link" href="#Lecture-02-(2020-01-24)">&#182;</a></h2><h2 id="How-to-Mathematize-Uncertainty">How to Mathematize Uncertainty<a class="anchor-link" href="#How-to-Mathematize-Uncertainty">&#182;</a></h2><p>Recall your previous exposure to theories</p>
-<h2 id="Examples-of-Deterministic-Theories">Examples of Deterministic Theories<a class="anchor-link" href="#Examples-of-Deterministic-Theories">&#182;</a></h2><ul>
-<li>Circuit Theory<ul>
-<li>Circuit elements (lumped models with idealized V-I characteristics)</li>
-<li>Kirchhoff laws (interactions between circuit elements)<br>
-<strong>Name the relevant courses you took</strong></li>
-</ul>
-</li>
-<li>Network Theory<ul>
-<li>Network elements (1-port and 2-port)</li>
-<li>Network laws (Kirchhoff, Faraday, Bode)</li>
-</ul>
-</li>
-<li>Electromagnetic Theory<ul>
-<li>EM elements (models with idealized E-H characteristics)</li>
-<li>EM laws (Coulomb, Gauss, Maxwell)</li>
-</ul>
-</li>
-<li>Newtonian Mechanics<ul>
-<li>Lumped elements (mass, spring, friction)</li>
-<li>Mech. laws (Newton, Hooks)</li>
-</ul>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Theories-of-Uncertainty">Theories of Uncertainty<a class="anchor-link" href="#Theories-of-Uncertainty">&#182;</a></h2><ul>
-<li>Probability theory<ul>
-<li>What are the elements of probability theory?<ul>
-<li>Random experiment (an idealized chance mechanism)</li>
-<li>The goal is to <em>predict</em> results of a random experiment</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Statistical theory<ul>
-<li>What are the elements of statistical theory?<ul>
-<li>Dataset (a set of observations)</li>
-<li>The goal is to <em>propose</em> a model (random experiment) that could have given rise to the dataset</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="Random-Experiment">Random Experiment<a class="anchor-link" href="#Random-Experiment">&#182;</a></h2><p>As a conceptual model of a simple chance mechanism, a random experiment consists of</p>
-<ol>
-<li>Purpose<ul>
-<li>What is the context? (configuration, environment, setup)<ul>
-<li>resistance of this resistor (in my hand) vs. </li>
-<li>resistance of a resister of this batch</li>
-</ul>
-</li>
-<li>What are you looking for? (list of possible outcomes to watch)<ul>
-<li>resistance only (dc analysis) </li>
-<li>resistance and reactance (high frequencies)</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Procedure<ul>
-<li>an unambiguous sequence of actions (clearly specified)</li>
-<li>not open for individual interpretation (deterministic)</li>
-</ul>
-</li>
-<li>Execution<ul>
-<li>Someone (or robot) carries out the prescribed procedure in the prescribed setup</li>
-<li>this is where you may face some uncontrollable and unpredictable influences<ul>
-<li>in the absence of this you have a deterministic experiment<ul>
-<li>how many departments in NUCES?</li>
-<li>how many departments in an unspecified university</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>a single execution (also called a trial) is implied in the definition<ul>
-<li>if multiple trials are needed, change the (specified) procedure (and hence the definition)     </li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Noting<ul>
-<li>The possible outcomes of interest are noted (assumed deterministic)</li>
-<li>What is noted here is an <em>actual outcome</em></li>
-<li>Any constraints (natural or deliberate) in the specified setup will limit what can be noted</li>
-<li>outcomes (specified in the statement of purpose) may be too detailed for some problems<ul>
-<li>results of interest (called events) hide the finer details for convenience</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<p>An example is needed to illustrate the definition above.</p>
-<h2 id="Die-Throwing-Experiment">Die-Throwing Experiment<a class="anchor-link" href="#Die-Throwing-Experiment">&#182;</a></h2><ol>
-<li>Purpose<ul>
-<li>explain the setup</li>
-<li>list the possible outcomes of your interest</li>
-<li>what if this is missing?</li>
-</ul>
-</li>
-<li>Procedure<ul>
-<li>explain the sequence of actions</li>
-<li>give a bad example</li>
-<li>what if this is missing?</li>
-</ul>
-</li>
-<li>Execution<ul>
-<li>give bad examples</li>
-<li>what if this is missing?</li>
-</ul>
-</li>
-<li>Noting<ul>
-<li>give a bad example</li>
-<li>outcomes/events</li>
-<li>what if this is missing?</li>
-</ul>
-</li>
-</ol>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="From-Concepts-to-Math">From Concepts to Math<a class="anchor-link" href="#From-Concepts-to-Math">&#182;</a></h2><p><img src="images/concepts_to_math_pe.png" width="70%" /></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Examples-(Make-appropriate-assumptions-in-each-case)">Examples (Make appropriate assumptions in each case)<a class="anchor-link" href="#Examples-(Make-appropriate-assumptions-in-each-case)">&#182;</a></h3><ol>
-<li>Toss a coin and note the outcome. What are the possible outcomes?<blockquote><p>$S = \left\{\text{T},\text{H}\right\}$</p>
-</blockquote>
-</li>
-<li>Toss a coin twice and note the outcome.<ul>
-<li>What are the possible outcomes?<blockquote><p>$S = \left\{\text{TT},\text{TH},\text{HT},\text{HH}\right\}$</p>
-</blockquote>
-</li>
-<li>What could be events of your interest?<ul>
-<li>Say, you are interested in the number of heads, then typical events are<blockquote><p>"no head" $\leftrightarrow A_0 = \left\{\text{TT}\right\}$<br>
-"one head" $\leftrightarrow A_1 = \left\{\text{TH},\text{HT}\right\}$<br>
-"two heads" $\leftrightarrow A_2 = \left\{\text{HH}\right\}$</p>
-</blockquote>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Toss a coin three times and note the outcome.<ul>
-<li>What are the possible outcomes?<blockquote><p>$S = \left\{\text{TTT},\text{TTH},\text{THT},\text{THH},\text{HTT},\text{HTH},\text{HHT},\text{HHH}\right\}$</p>
-</blockquote>
-</li>
-<li>What could be events of your interest?</li>
-<li>Say, you are interested in the number of tails, then typical events are<blockquote><p>"no tail" $\leftrightarrow B_0 = \left\{\text{HHH}\right\}$<br>
-"one tail" $\leftrightarrow B_1 = \left\{\text{THH},\text{HTH},\text{HHT}\right\}$<br>
-"two tails" $\leftrightarrow B_2 = \left\{\text{TTH},\text{THT},\text{HTT}\right\}$<br>
-"three tails" $\leftrightarrow B_3 = \left\{\text{TTT}\right\}$</p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li>Toss a coin until the first head occurs.<ul>
-<li>What are the possible outcomes?<blockquote><p>$S = \left\{\text{H},\text{TH},\text{TTH},\text{TTTH},\cdots\right\}$</p>
-</blockquote>
-</li>
-<li>What could be events of your interest?</li>
-<li>Say, you are interested in the number of trials needed for the first head, then typical events are<blockquote><p>"no trial" $\leftrightarrow C_0 = \emptyset$<br>
-"one trial" $\leftrightarrow C_1 = \left\{\text{H}\right\}$<br>
-"two trials" $\leftrightarrow C_2 = \left\{\text{TH}\right\}$<br>
-"three trials" $\leftrightarrow C_3 = \left\{\text{TTH}\right\}$</p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li>Toss a coin until the first head occurs and count the number of tosses.<blockquote><p>$S = \mathbb{N} = \left\{1,2,3,\cdots\right\}$ as the statement contains "count"</p>
-</blockquote>
-</li>
-<li>A hacker is repeatedly and persistently trying to break into a company’s computer server. Count the number of attempts needed for a successful break-in.<blockquote><p>$S = \mathbb{N}$</p>
-</blockquote>
-</li>
-<li>Count the number of clicks on a Facebook post in an hour.<blockquote><p>$S = \left\{0\right\}\cup\mathbb{N}$<br> 
-This is a simpler set than the one with the largest element that cannot be determined.</p>
-</blockquote>
-</li>
-<li>Measure the lifetime of a light bulb in a typical home environment. <blockquote><p>$S = \left\{x\in\mathbb{R}:x\ge 0\right\}$<br>
-This is a simpler set than the one with the largest element that cannot be determined.</p>
-</blockquote>
-</li>
-</ol>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="The-Meaning-of-&quot;Random&quot;">The Meaning of "Random"<a class="anchor-link" href="#The-Meaning-of-&quot;Random&quot;">&#182;</a></h2><ul>
-<li>The uncontrollable and unpredictable influences make it impossible to predict the outcome of a single trial<ul>
-<li>A <em>random mechanism</em> is assumed to underlie the influences</li>
-</ul>
-</li>
-<li>The experiment can be repeated under identical conditions<ul>
-<li>The random mechanism does not change from trial to trial</li>
-<li>this is an assumption and cannot be guarranteed to hold  in practice<ul>
-<li>give a few obvious examples</li>
-</ul>
-</li>
-<li>discernible regularities exist in the frequency of occurrence associated with different outcomes<ul>
-<li>this needs to be made precise mathematically, but you are not ready for that</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Properties-of-Relative-Frequency-of-an-Event">Properties of Relative Frequency of an Event<a class="anchor-link" href="#Properties-of-Relative-Frequency-of-an-Event">&#182;</a></h2><p>A random experiment is repeated $n$ times. The occurrence pattern of an event $A$ can be described with the help of quantities defined in the following.</p>
+<h1 id="EE319---Probability-&amp;-Random-Processes">EE319 - Probability &amp; Random Processes<a class="anchor-link" href="#EE319---Probability-&amp;-Random-Processes">&#182;</a></h1><h2 id="Dr.-Ing.-Mukhtar-Ullah,-FAST-NUCES,-Fall-2020"><em>Dr. Ing. Mukhtar Ullah</em>, FAST NUCES, Fall 2020<a class="anchor-link" href="#Dr.-Ing.-Mukhtar-Ullah,-FAST-NUCES,-Fall-2020">&#182;</a></h2><h2 id="Lecture-03-(2020-01-28)"><strong>Lecture 03</strong> (2020-01-28)<a class="anchor-link" href="#Lecture-03-(2020-01-28)">&#182;</a></h2><h2 id="Axiomatic-Probability">Axiomatic Probability<a class="anchor-link" href="#Axiomatic-Probability">&#182;</a></h2><p>The frequentist probability suffers from the following problems.</p>
 <ul>
-<li>Absolute frequency $a_n(A)$ is the number of occurrences of $A$ in the $n$ trials.</li>
-<li><p>Properties of absolute frequency</p>
-<ol>
-<li><blockquote><p>$0 \le a_n(A) \le n$</p>
-</blockquote>
+<li>It cannot be applied to (events of) non-repeatable experiments</li>
+<li>convergence of the long-run relative frequency can be proved in restricted application domains</li>
+</ul>
+<h2 id="Other-intepretations-of-probability">Other intepretations of probability<a class="anchor-link" href="#Other-intepretations-of-probability">&#182;</a></h2><ul>
+<li>Subjective probability (degree of belief)<ul>
+<li>Put your money where your mouth is</li>
+</ul>
 </li>
-<li><blockquote><p>$a_n(S) = n$</p>
-</blockquote>
-</li>
-<li><blockquote><p>$a_n(\emptyset) = 0$</p>
-</blockquote>
-</li>
-<li>For disjoint events $A$ and $B$,<blockquote><p>$a_n(A\cup B) = a_n(A) + a_n(B)$</p>
-</blockquote>
-</li>
-<li>For pairwise disjoint events $A_1, A_2, \ldots, A_m$ <blockquote><p>$\displaystyle a_{n}\left(\bigcup_{i=1}^{m}A_{i}\right)=\sum_{i=1}^{m}a_{n}\left(A_{i}\right)$</p>
-</blockquote>
-</li>
-</ol>
-</li>
-<li><p>Relative frequency</p>
-<blockquote><p>$r_n(A) = \dfrac{a_n(A)}{n}$</p>
-</blockquote>
-</li>
-<li><p>Properties of relative frequency</p>
-<ol>
-<li><blockquote><p>$0 \le r_n(A) \le 1$</p>
-</blockquote>
-</li>
-<li><blockquote><p>$r_n(S) = 1$</p>
-</blockquote>
-</li>
-<li><blockquote><p>$r_n(\emptyset) = 0$</p>
-</blockquote>
-</li>
-<li>For disjoint events $A$ and $B$,<blockquote><p>$r_n(A\cup B) = r_n(A) + r_n(B)$</p>
-</blockquote>
-</li>
-<li>For pairwise disjoint events $A_1, A_2, \ldots, A_m$ <blockquote><p>$\displaystyle r_{n}\left(\bigcup_{i=1}^{m}A_{i}\right)=\sum_{i=1}^{m}r_{n}\left(A_{i}\right)$</p>
-</blockquote>
-</li>
-</ol>
-</li>
-<li><p>Interpretation of relative frequency</p>
-<ul>
-<li>The binary occurence of $A$ in trial $i$ can be defined by<blockquote><p>$b_{i}\left(A\right)=\begin{cases}
-1 &amp; A\text{ occurs in trial }i\\
-0 &amp; A\text{ does not occur in trial }i
-\end{cases}$</p>
-</blockquote>
-</li>
-<li>then the absolute frequency can be expressed as the sum<blockquote><p>$\displaystyle a_{n}\left(A\right)=\sum_{i=1}^{n}b_{i}\left(A\right)$</p>
-</blockquote>
-</li>
-<li>and the relative frequency as the arithmetic mean<blockquote><p>$\displaystyle r_{n}\left(A\right)=\frac{a_{n}\left(A\right)}{n}=\frac{1}{n}\sum_{i=1}^{n}b_{i}\left(A\right)=\bar{b}_n$</p>
-</blockquote>
-</li>
-<li>the relative frequency of an event is, in fact, its average occurrence per trial  </li>
+<li>Logical probability (plausibilty, strength of evidence)<ul>
+<li>Rational individuals with same evidence should assign the same probability to an event</li>
 </ul>
 </li>
 </ul>
+<p><strong>Andrey Kolmogorov (1933) settled the debate by an axiomatic approach to probability that cares only about properties of probability and leaves the intepretation to the modeler.</strong></p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Long-run-Relative-Frequency">Long-run Relative Frequency<a class="anchor-link" href="#Long-run-Relative-Frequency">&#182;</a></h2><div class="container">
-    <div style="float:left;width:45%">
-        <img src="images/stat_regularity_1.png">        
-    </div>
-    <div style="float:right;width:54%">
-        <img src="images/stat_regularity_2.png">
-    </div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<div class="alert alert-block alert-info">
-<b>Statistical Regularity</b>
-The event $A$ is said to exhibit statistical regularity if the long-run relative frequency converges to what is called the <i>frequentist</i> probability of $A$ :
+<h2 id="Resource-allocation-in-voice-packet-transmission">Resource allocation in voice packet transmission<a class="anchor-link" href="#Resource-allocation-in-voice-packet-transmission">&#182;</a></h2><p><img src="images/voice_packet_transmission.png" width="70%" /></p>
+<h2 id="How-many-active-speakers-in-a-short-time-slot">How many active speakers in a short time slot<a class="anchor-link" href="#How-many-active-speakers-in-a-short-time-slot">&#182;</a></h2><p><img src="images/active_speakers_distribution.png" width="70%" /></p>
 
-$$\displaystyle \mathbb{P}\left(A\right)=\lim_{n\rightarrow\infty}r_{n}\left(A\right)$$
-</div>
 </div>
 </div>
 </div>

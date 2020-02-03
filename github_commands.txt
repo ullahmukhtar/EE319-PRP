@@ -13,8 +13,8 @@ cd EE319-PRP
 jupyter notebook
 
 
-#nbinteract Lecture-02.ipynb   (#HIDDEN as the first line of cells to be hidden)
-jupyter nbconvert Lecture-02.ipynb --no-input
+nbinteract Lecture-02.ipynb   (#HIDDEN as the first line of cells to be hidden)
+#jupyter nbconvert Lecture-02.ipynb --no-input
 
 git add -A
 git commit -m "Publish nb"

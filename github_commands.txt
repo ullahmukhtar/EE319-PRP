@@ -19,3 +19,6 @@ nbinteract Lecture-02.ipynb   (#HIDDEN as the first line of cells to be hidden)
 git add -A
 git commit -m "Publish nb"
 git push origin master
+
+
+There are three main things to notice. First, since my overview slide was labeled as a sub-slide, I hit the down arrow to get to it. Next, my Notes cell did not appear. Lastly, in order to see all my slides at the end I pressed the esc key.

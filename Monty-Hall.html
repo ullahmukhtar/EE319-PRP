@@ -13129,83 +13129,28 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Less-Technical-Approach">Less Technical Approach<a class="anchor-link" href="#Less-Technical-Approach">&#182;</a></h2><p>Let us define the following events.
+<h2 id="Technical-Approach">Technical Approach<a class="anchor-link" href="#Technical-Approach">&#182;</a></h2><p>In addition to the obvious static labels 1,2,3 for the three doors, it is useful to define the following dynamic labels.
+\begin{align}
+\mathrm{i} &amp; \leftrightarrow\text{"Door initially picked by the contestant"}\\
+\mathrm{m} &amp; \leftrightarrow\text{"Door opened by Monty Hall to reveal a goat"}\\
+\mathrm{r} &amp; \leftrightarrow\text{"The remaining unopened door"}
+\end{align}
+Let us define the following events.
 \begin{align}
 C_{\mathrm{i}} &amp; \leftrightarrow\text{"Car behind the door initially picked"}\\
-C_{\mathrm{f}} &amp; \leftrightarrow\text{"Car behind the door finally picked"}\\
-C_{\mathrm{i}}^{\prime} &amp; \leftrightarrow\text{"Goat behind the door initially picked"}\\
- &amp; \leftrightarrow\text{"Car behind the doors other than the one initially picked"}
+C_{\mathrm{m}} &amp; \leftrightarrow\text{"Car behind the door revealed by Monty Hall"}\\
+C_{\mathrm{r}} &amp; \leftrightarrow\text{"Car behind the remaining unopened door"} 
 \end{align}
-It is reasonable to assume the following probabilities for the events associated with the initial pick.
+Since the car must be behind one of the doors, the outcome space $\Omega$ of the experiment can be expressed as
+$$\Omega = C_{\mathrm{1}}\cup C_{\mathrm{2}}\cup C_{\mathrm{3}} = C_{\mathrm{i}}\cup C_{\mathrm{m}}\cup C_{\mathrm{r}}$$
+Since Monty Hall will never reveal a car before giving the option, $C_{\mathrm{m}}=\emptyset$, and the above equation simplifies to
+$$\Omega = C_{\mathrm{i}}\cup C_{\mathrm{r}}$$
+Do not get deceived by the simplicity of this equation. This is a consequence of our dynamic labeling that incorporates the actions of Monty Hall. Essentially. It is reasonable to assume the following probabilities for the events associated with the initial pick.
 \begin{align*}
-P\left(C_{\mathrm{i}}\right) &amp; =\frac{1}{3} &amp; P\left(C_{\mathrm{i}}^{\prime}\right) &amp; =\frac{2}{3}
+P\left(C_{\mathrm{i}}\right) &amp; = P\left(C_{\mathrm{1}}\right) = P\left(C_{\mathrm{2}}\right)= P\left(C_{\mathrm{3}}\right) = \frac{1}{3}\\
+P\left(C_{\mathrm{r}}\right) &amp; =P\left(C_{\mathrm{i}}^{\prime}\right) = \frac{2}{3}
 \end{align*}
-Probability assignment to events associated with the final pick depends on whether the contestent switches or not. It is important to notice that the contestent is part of the experiment and his/her decision to switch or not is essentially a choice between two different experiments. We will consider the two strategies separately.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Strategy-1:-stay-with-the-initial-pick">Strategy 1: stay with the initial pick<a class="anchor-link" href="#Strategy-1:-stay-with-the-initial-pick">&#182;</a></h3><p>In this case it is reasonable to assign the following conditional probabilities.
-\begin{align*}
-P\left(C_{\mathrm{f}}\mid C_{\mathrm{i}}\right) &amp; =1 &amp; P\left(C_{\mathrm{f}}\mid C_{\mathrm{i}}^{\prime}\right) &amp; =0
-\end{align*}
-The probability of winning the car then follows from the law of total probability
-\begin{align*}
-P\left(C_{\mathrm{f}}\right) &amp; =P\left(C_{\mathrm{i}}\right)P\left(C_{\mathrm{f}}\mid C_{\mathrm{i}}\right)+P\left(C_{\mathrm{i}}^{\prime}\right)P\left(C_{\mathrm{f}}\mid C_{\mathrm{i}}^{\prime}\right)\\
- &amp; =\frac{1}{3}\times1+\frac{2}{3}\times0\\
- &amp; =\frac{1}{3}
-\end{align*}</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Strategy-2:-switch-the-door">Strategy 2: switch the door<a class="anchor-link" href="#Strategy-2:-switch-the-door">&#182;</a></h3><p>In this case it is reasonable to assign the following conditional probabilities.
-\begin{align*}
-P\left(C_{\mathrm{f}}\mid C_{\mathrm{i}}\right) &amp; =0 &amp; P\left(C_{\mathrm{f}}\mid C_{\mathrm{i}}^{\prime}\right) &amp; =1
-\end{align*}
-The probability of winning the car then follows from the law of total probability
-\begin{align*}
-P\left(C_{\mathrm{f}}\right) &amp; =P\left(C_{\mathrm{i}}\right)P\left(C_{\mathrm{f}}\mid C_{\mathrm{i}}\right)+P\left(C_{\mathrm{i}}^{\prime}\right)P\left(C_{\mathrm{f}}\mid C_{\mathrm{i}}^{\prime}\right)\\
- &amp; =\frac{1}{3}\times0+\frac{2}{3}\times1\\
- &amp; =\frac{2}{3}
-\end{align*}
-It is clear that switching the door is a better strategy.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="More-Technical-Approach">More Technical Approach<a class="anchor-link" href="#More-Technical-Approach">&#182;</a></h2><p>Though the (less technical) approach above takes into account the role of Monty Hall but does not make it explicit. Let us make the role of Monty Hall explicit by defining a further event, in addition to those defined earlier.
-\begin{align}
-G_{\mathrm{m}} &amp; \leftrightarrow\text{"A goat is revealed by Monty Hall"}\\
-C_{\mathrm{r}} &amp; \leftrightarrow\text{"Car behind the remaining unopened door"}
-\end{align}
-Since Monty Hall will always reveal a goat, it is reasonable to assign the following conditional probabilities:
-\begin{align}
-P\left(G_{\mathrm{m}}\mid C_{\mathrm{i}}\right) &amp; =1 &amp; P\left(G_{\mathrm{m}}\mid C_{\mathrm{i}}^{\prime}\right) &amp; =1\\
-P\left(C_{\mathrm{r}}\mid G_{\mathrm{m}}\cap C_{\mathrm{i}}\right) &amp; =0 &amp; P\left(C_{\mathrm{r}}\mid G_{\mathrm{m}}\cap C_{\mathrm{i}}^{\prime}\right) &amp; =1
-\end{align}
-Now Baye's Theorem allows us to determine the posterior probability of finding the car behind the initially picked door:
-\begin{align*}
-P\left(C_{\mathrm{i}}\mid G_{\mathrm{m}}\right) &amp; =\frac{P\left(C_{\mathrm{i}}\right)P\left(G_{\mathrm{m}}\mid C_{\mathrm{i}}\right)}{P\left(C_{\mathrm{i}}\right)P\left(G_{\mathrm{m}}\mid C_{\mathrm{i}}\right)+P\left(C_{\mathrm{i}}^{\prime}\right)P\left(G_{\mathrm{m}}\mid C_{\mathrm{i}}^{\prime}\right)}\\
- &amp; =\frac{P\left(C_{\mathrm{i}}\right)}{P\left(C_{\mathrm{i}}\right)+P\left(C_{\mathrm{i}}^{\prime}\right)}\\
- &amp; =P\left(C_{\mathrm{i}}\right)\\
- &amp; =\frac{1}{3}
-\end{align*}
-The posterior probability of finding the car behind doors other than the one initially picked is then
-$$P\left(C_{\mathrm{i}}^{\prime}\mid G_{\mathrm{m}}\right)=P\left(C_{\mathrm{i}}^{\prime}\right)=\frac{2}{3}$$
-The probability of finding the car behind the remaining unopened door, after Monty has revealed a goat, follows from the law of total probability
-\begin{align*}
-P\left(C_{\mathrm{r}}\mid G_{\mathrm{m}}\right) &amp; =P\left(C_{\mathrm{i}}\right)P\left(C_{\mathrm{r}}\mid G_{\mathrm{m}}\cap C_{\mathrm{i}}\right)+P\left(C_{\mathrm{i}}^{\prime}\right)P\left(C_{\mathrm{r}}\mid G_{\mathrm{m}}\cap C_{\mathrm{i}}^{\prime}\right)\\
- &amp; =\frac{1}{3}\times0+\frac{2}{3}\times1\\
- &amp; =\frac{2}{3}
-\end{align*}
-Again, switching the door is a better strategy.</p>
+It is important to note how the total probability is distributed. Before Monty Hall opens the door, all the doors get equal share $1/3$. After Monty Hall reveals a goat, the probability of two doors is now assigned to the remaining unopened door whereas the probability of the initial pick does not change. It is clear that switching the door is a better strategy.</p>
 
 </div>
 </div>

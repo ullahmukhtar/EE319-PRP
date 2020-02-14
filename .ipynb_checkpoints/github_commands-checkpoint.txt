@@ -1,7 +1,13 @@
 https://github.com/ullahmukhtar/EE319-PRP
 https://ullahmukhtar.github.com/EE319-PRP/Lecture-01.html
 https://ullahmukhtar.github.com/EE319-PRP/Lecture-02.html
+https://ullahmukhtar.github.com/EE319-PRP/Lecture-03.html
+https://ullahmukhtar.github.com/EE319-PRP/Monty-Hall.html
+https://ullahmukhtar.github.com/EE319-PRP/Lecture-07.html
+https://ullahmukhtar.github.com/EE319-PRP/Lecture-08.html
 
+clear workspace
+http://localhost:8888/lab/workspaces/lab?reset
 
 # Clone the repo
 git clone https://github.com/ullahmukhtar/EE319-PRP
@@ -13,9 +19,12 @@ cd EE319-PRP
 jupyter notebook
 
 
-#nbinteract Lecture-02.ipynb   (#HIDDEN as the first line of cells to be hidden)
-jupyter nbconvert Lecture-02.ipynb --no-input
+nbinteract Lecture-02.ipynb   (#HIDDEN as the first line of cells to be hidden)
+#jupyter nbconvert Lecture-02.ipynb --no-input
 
 git add -A
 git commit -m "Publish nb"
 git push origin master
+
+
+There are three main things to notice. First, since my overview slide was labeled as a sub-slide, I hit the down arrow to get to it. Next, my Notes cell did not appear. Lastly, in order to see all my slides at the end I pressed the esc key.

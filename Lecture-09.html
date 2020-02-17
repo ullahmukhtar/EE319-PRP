@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 
 
-<title>Lecture-08</title>
+<title>Lecture-09</title>
 
 <style type="text/css">
     /*!
@@ -13108,310 +13108,226 @@ div#notebook {
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="EE319---Probability-&amp;-Random-Processes">EE319 - Probability &amp; Random Processes<a class="anchor-link" href="#EE319---Probability-&amp;-Random-Processes">&#182;</a></h1><h2 id="Dr.-Ing.-Mukhtar-Ullah,-FAST-NUCES,-Fall-2020"><em>Dr. Ing. Mukhtar Ullah</em>, FAST NUCES, Fall 2020<a class="anchor-link" href="#Dr.-Ing.-Mukhtar-Ullah,-FAST-NUCES,-Fall-2020">&#182;</a></h2><hr/>
+<h1 id="EE319---Probability-&amp;-Random-Processes">EE319 - Probability &amp; Random Processes<a class="anchor-link" href="#EE319---Probability-&amp;-Random-Processes">&#182;</a></h1><h2 id="Dr.-Ing.-Mukhtar-Ullah,-FAST-NUCES,-Fall-2020"><em>Dr. Ing. Mukhtar Ullah</em>, FAST NUCES, Fall 2020<a class="anchor-link" href="#Dr.-Ing.-Mukhtar-Ullah,-FAST-NUCES,-Fall-2020">&#182;</a></h2><hr>
 
-<h2 id="Lecture-08-(2020-02-14)"><strong>Lecture 08</strong> (2020-02-14)<a class="anchor-link" href="#Lecture-08-(2020-02-14)">&#182;</a></h2>
+<h2 id="Lecture-09-(2020-02-18)"><strong>Lecture 09</strong> (2020-02-18)<a class="anchor-link" href="#Lecture-09-(2020-02-18)">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Sequential-Experiments-and-Counting">Sequential Experiments and Counting<a class="anchor-link" href="#Sequential-Experiments-and-Counting">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&quot;Select-2-objects-from-a-set-of-4-objects&quot;-$\leftrightarrow$-&quot;Place-2-objects-in-4-different-cells&quot;">"Select 2 objects from a set of 4 objects" $\leftrightarrow$ "Place 2 objects in 4 different cells"<a class="anchor-link" href="#&quot;Select-2-objects-from-a-set-of-4-objects&quot;-$\leftrightarrow$-&quot;Place-2-objects-in-4-different-cells&quot;">&#182;</a></h3><table>
-<thead><tr>
-<th style="text-align:right">Ordered<br>Selection<br>with<br>Replacement</th>
-<th>$\leftrightarrow$</th>
-<th style="text-align:left">Distinguishables<br>Placement<br>without<br>Exclusion</th>
-<th><img width=10/></th>
-<th style="text-align:right">Ordered<br>Selection<br>without<br>Replacement</th>
-<th>$\leftrightarrow$</th>
-<th style="text-align:left">Distinguishables<br>Placement<br>with<br>Exclusion</th>
-<th><img width=10/></th>
-<th style="text-align:right">Unordered<br>Selection<br>without<br>Replacement</th>
-<th>$\leftrightarrow$</th>
-<th style="text-align:left">Indistinguishables<br>Placement<br>with<br>Exclusion</th>
-<th><img width=10/></th>
-<th style="text-align:right">Unordered<br>Selection<br>with<br>Replacement</th>
-<th>$\leftrightarrow$</th>
-<th style="text-align:left">Indistinguishables<br>Placement<br>without<br>Exclusion</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:right">$aa$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$s_{1}s_{2}\mid-\mid-\mid-$$</td>
-<td></td>
-<td style="text-align:right"></td>
-<td></td>
-<td style="text-align:left"></td>
-<td></td>
-<td style="text-align:right"></td>
-<td></td>
-<td style="text-align:left"></td>
-<td></td>
-<td style="text-align:right">$\left\{a:2\right\}$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$ss\mid -\mid-\mid-$$</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:right">$bb$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$-\mid s_{1}s_{2}\mid-\mid-$$</td>
-<td></td>
-<td style="text-align:right"></td>
-<td></td>
-<td style="text-align:left"></td>
-<td></td>
-<td style="text-align:right"></td>
-<td></td>
-<td style="text-align:left"></td>
-<td></td>
-<td style="text-align:right">$\left\{b:2\right\}$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$-\mid ss\mid-\mid-$$</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:right">$cc$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$-\mid-\mid s_{1}s_{2}\mid-$$</td>
-<td></td>
-<td style="text-align:right"></td>
-<td></td>
-<td style="text-align:left"></td>
-<td></td>
-<td style="text-align:right"></td>
-<td></td>
-<td style="text-align:left"></td>
-<td></td>
-<td style="text-align:right">$\left\{c:2\right\}$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$-\mid -\mid ss\mid-$$</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:right">$dd$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$-\mid-\mid-\mid s_{1}s_{2}$$</td>
-<td></td>
-<td style="text-align:right"></td>
-<td></td>
-<td style="text-align:left"></td>
-<td></td>
-<td style="text-align:right"></td>
-<td></td>
-<td style="text-align:left"></td>
-<td></td>
-<td style="text-align:right">$\left\{d:2\right\}$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$-\mid -\mid-\mid ss$$</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:right">$ab$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$s_{1}\mid s_{2}\mid-\mid-$$</td>
-<td></td>
-<td style="text-align:right">$ab$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$s_{1}\mid s_{2}\mid-\mid-$$</td>
-<td></td>
-<td style="text-align:right">$\left\{a,b\right\}$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$s\mid s\mid-\mid-$$</td>
-<td></td>
-<td style="text-align:right">$\left\{a,b\right\}$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$s\mid s\mid-\mid-$$</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:right">$ba$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$s_{2}\mid s_{1}\mid-\mid-$$</td>
-<td></td>
-<td style="text-align:right">$ba$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$s_{2}\mid s_{1}\mid-\mid-$$</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:right">$ac$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$s_{1}\mid-\mid s_{2}\mid-$$</td>
-<td></td>
-<td style="text-align:right">$ac$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$s_{1}\mid-\mid s_{2}\mid-$$</td>
-<td></td>
-<td style="text-align:right">$\left\{a,c\right\}$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$s\mid-\mid s\mid-$$</td>
-<td></td>
-<td style="text-align:right">$\left\{a,c\right\}$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$s\mid-\mid s\mid-$$</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:right">$ca$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$s_{2}\mid-\mid s_{1}\mid-$$</td>
-<td></td>
-<td style="text-align:right">$ca$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$s_{2}\mid-\mid s_{1}\mid-$$</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:right">$ad$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$s_{1}\mid-\mid-\mid s_{2}$$</td>
-<td></td>
-<td style="text-align:right">$ad$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$s_{1}\mid-\mid-\mid s_{2}$$</td>
-<td></td>
-<td style="text-align:right">$\left\{a,d\right\}$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$s\mid-\mid-\mid s$$</td>
-<td></td>
-<td style="text-align:right">$\left\{a,d\right\}$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$s\mid-\mid-\mid s$$</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:right">$da$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$s_{2}\mid-\mid-\mid s_{1}$$</td>
-<td></td>
-<td style="text-align:right">$da$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$s_{2}\mid-\mid-\mid s_{1}$$</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:right">$bc$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$-\mid s_{1}\mid s_{2}\mid-$$</td>
-<td></td>
-<td style="text-align:right">$bc$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$-\mid s_{1}\mid s_{2}\mid-$$</td>
-<td></td>
-<td style="text-align:right">$\left\{b,c\right\}$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$-\mid s\mid s\mid-$$</td>
-<td></td>
-<td style="text-align:right">$\left\{b,c\right\}$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$-\mid s\mid s\mid-$$</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:right">$cb$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$-\mid s_{2}\mid s_{1}\mid-$$</td>
-<td></td>
-<td style="text-align:right">$cb$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$-\mid s_{2}\mid s_{1}\mid-$$</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:right">$bd$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$-\mid s_{1}\mid-\mid s_{2}$$</td>
-<td></td>
-<td style="text-align:right">$bd$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$-\mid s_{1}\mid-\mid s_{2}$$</td>
-<td></td>
-<td style="text-align:right">$\left\{b,d\right\}$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$-\mid s\mid-\mid s$$</td>
-<td></td>
-<td style="text-align:right">$\left\{b,d\right\}$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$-\mid s\mid-\mid s$$</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:right">$db$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$-\mid s_{2}\mid-\mid s_{1}$$</td>
-<td></td>
-<td style="text-align:right">$db$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$-\mid s_{2}\mid-\mid s_{1}$$</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:right">$cd$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$-\mid-\mid s_{1}\mid s_{2}$$</td>
-<td></td>
-<td style="text-align:right">$cd$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$-\mid-\mid s_{1}\mid s_{2}$$</td>
-<td></td>
-<td style="text-align:right">$\left\{c,d\right\}$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$-\mid-\mid s\mid s$$</td>
-<td></td>
-<td style="text-align:right">$\left\{c,d\right\}$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$-\mid-\mid s\mid s$$</td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:right">$dc$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$-\mid-\mid s_{2}\mid s_{1}$$</td>
-<td></td>
-<td style="text-align:right">$dc$</td>
-<td>$\leftrightarrow$</td>
-<td style="text-align:left">$$-\mid-\mid s_{2}\mid s_{1}$$</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<h3 id="Dependencies-among-Component-Experiments">Dependencies among Component Experiments<a class="anchor-link" href="#Dependencies-among-Component-Experiments">&#182;</a></h3><ul>
+<li>In how many ways can a generous person give five differently-colored M&amp;M's to five kids?</li>
+</ul>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
+<ul>
+<li>How many four-letter "words" are there with vowels in the middle two places and consonants in the other two, and with no letter repeated?</li>
+</ul>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
+<ul>
+<li>How many five-digit numbers ending with 1,2, or 4 are there with no digit repeated?</li>
+</ul>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
+<ul>
+<li>In how many ways can $n$ people be seated in a row of $n$ chairs?</li>
+</ul>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
+<ul>
+<li>In how many ways can a row of $k$ seats be filled from a set of n people?</li>
+</ul>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
+<ul>
+<li>In how many ways can $n$ people be seated in a circle of $n$ chairs?</li>
+</ul>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
+<ul>
+<li>In how many ways can 6 different keys be arranged on a keychain?</li>
+</ul>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
+<ul>
+<li>In how many ways can a generous person give one M&amp;M each to two children if she has 3 different red, 4 different brown, and different 5 tan ones and the two children insist upon having M&amp;M's o f different colors?</li>
+</ul>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Counting-Examples-in-Sequential-Experiments">Counting Examples in Sequential Experiments<a class="anchor-link" href="#Counting-Examples-in-Sequential-Experiments">&#182;</a></h2><h2 id="Independent-Choices-in-Each-Component-Experiment">Independent Choices in Each Component Experiment<a class="anchor-link" href="#Independent-Choices-in-Each-Component-Experiment">&#182;</a></h2><ul>
-<li><p>How many four-letter "words" are there (ignoring spelling, etc.)?</p>
-<blockquote><p>There $26$ independent choices for each letter.<br/>
-Therefore $26^4$ different words are there.<br/></p>
-</blockquote>
+<h3 id="Distinguishability-Matters">Distinguishability Matters<a class="anchor-link" href="#Distinguishability-Matters">&#182;</a></h3><ul>
+<li>In how many ways can four objects be put into two boxes?<ul>
+<li>Distinguishable boxes<ul>
+<li>distinguishable objects
+<br/>
+<br/>
+<br/>
+<br/></li>
+<li>indistinguishable
+<br/>
+<br/>
+<br/>
+<br/></li>
+</ul>
 </li>
-<li><p>How many four-letter "words" are there with vowels (not 'y') in the middle two places and a consonant at the end?</p>
-<blockquote><p>There are $26$ choices for the letter at the start, $5$ independent choices for each of the middle two places and $21$ independent choices the letter at the end.<br/>
-Therefore $26\times 5^2 \times 21$ different words are there.<br/></p>
-</blockquote>
-</li>
-<li><p>In how many ways can a generous person give M&amp;M's to three kids? (M&amp;M's come in red,yellow, green, brown, and tan.)</p>
-<blockquote><p>There are $5$ choices for each kid.<br/>
-Therefore $5^3$ different allocations are possible.<br/></p>
-</blockquote>
+<li>Indistinguishable boxes<ul>
+<li>distinguishable objects
+<br/>
+<br/>
+<br/>
+<br/></li>
+<li>indistinguishable
+<br/>
+<br/>
+<br/>
+<br/></li>
+</ul>
 </li>
 </ul>
-<p>Find the number of divisors of 72.</p>
-<blockquote><p>The prime factorization $72=2^3 \times 3^2$ requires that each divisor is of the form $2^a \times 3^b$ where $a\in\left\{0,1,2,3\right\}$ and $b\in\left\{0,1,2\right\}$.<br/>
-There are, independently, $4$ choices for $a$ and $3$ choices for $b$.
-Therefore $4\times 3=12$ different divisors of 72.<br/></p>
-</blockquote>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Additive-Counting-Rule">Additive Counting Rule<a class="anchor-link" href="#Additive-Counting-Rule">&#182;</a></h3><ul>
+<li>The 54-member Council for Security and Cooperation in Europe wishes to choose 3 member states for different leadership positions. The L lobby decrees that at least one of Lithuania, Lichtenstein, Latvia, and Luxembourg must be chosen. In how many ways can the committee be selected?</li>
+</ul>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
+<h3 id="Strategic-Overcounting">Strategic Overcounting<a class="anchor-link" href="#Strategic-Overcounting">&#182;</a></h3><ul>
+<li>In how many ways can Faris choose 3 of the 5 colors of M&amp;M's to eat?</li>
+</ul>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
+<ul>
+<li>In how many ways can $k$ objects be selected as a lot a set of n?</li>
+</ul>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
+<ul>
+<li>Find the number of different $k$-subsets of a set of cardinality $n$.</li>
+</ul>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
+<ul>
+<li>In how many ways can a three-person subcommittee be chosen from a five-person committee?</li>
+</ul>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
+<ul>
+<li>A set of points is chosen on the circumference of a circle so that the number of different triangles with all three vertices among the points is equal to the number of pentagons with all five vertices in the set. How many points are there?</li>
+</ul>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
+<ul>
+<li>How many rearrangements of the word LINGUINI are there?</li>
+</ul>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
+<ul>
+<li>Derive a formula for the number of rearrangements of a word consisting of $k_1$ copies of letter $1$, $k_2$ copies of letter $2$, and so on up to $k_j$ copies of letter $j$, with $n$ total letters.</li>
+</ul>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
+<ul>
+<li>In how many different ways can a set of cardinality $n$ be partitioned into $j$ subsets of cardinalities $\left\{k_1,k_2,\ldots,k_j\right\}$?</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Counting-beyond-Common-Sense">Counting beyond Common Sense<a class="anchor-link" href="#Counting-beyond-Common-Sense">&#182;</a></h3><ul>
+<li>A dog trainer wants to buy 8 dogs all of which are either cocker spaniels, Irish setters, or Russian wolfhounds. In how many ways can she make the choice?</li>
+</ul>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
+<ul>
+<li>Derive a simple formula for the number of ways to buy $k$ dogs if there are $n$ varieties to choose from.</li>
+</ul>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
+<ul>
+<li>Derive a simple formula for the number of solutions in nonnegative integers of $x_1 +x_2 + \cdots + x_n = k$.</li>
+</ul>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
+<ul>
+<li>In how many ways may five people be seated in a row of twenty chairs given that no two people may sit next to one another?</li>
+</ul>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
+<ul>
+<li>How many nonnegative integer solutions are there to $x_1 + x_2 + x_3 \le 50$?</li>
+</ul>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Principle-of-Inclusion-Exclusion-(PIE)">Principle of Inclusion-Exclusion (PIE)<a class="anchor-link" href="#Principle-of-Inclusion-Exclusion-(PIE)">&#182;</a></h3><ul>
+<li>There are 100 students taking language classes at Austin High School. If 60 are taking German and 75 are taking Spanish and these are the only languages taught, how many students take both Spanish and German?</li>
+</ul>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
 
 </div>
 </div>

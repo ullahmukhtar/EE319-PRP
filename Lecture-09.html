@@ -13117,37 +13117,139 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Dependencies-among-Component-Experiments">Dependencies among Component Experiments<a class="anchor-link" href="#Dependencies-among-Component-Experiments">&#182;</a></h3><ul>
-<li><p>In how many ways can a generous person give five differently-colored M&amp;M's to five kids?</p>
-<blockquote><p>Let us map parts of the problem statement to parts of a placement problem and those of a selection problem.
-| Problem statement | $\leftrightarrow$ | Placement problem | $\leftrightarrow$ | Selection problem |
-| -:- |-:-|-:-|-:-|-:-|
-| "give $\ldots$ differently-colored $\ldots$"   | $\leftrightarrow$ | "place with exclusion" |$\leftrightarrow$ | "sample without replacement" |
-| "five kids" |$\leftrightarrow$| "5 distinguishable objects" |$\leftrightarrow$| "ordered selection of 5 components" |
-| "five $\ldots$ M&amp;M's" |$\leftrightarrow$| "5 different cells" |$\leftrightarrow$| "5-element set" |</p>
-<p>The multiplicative counting principle applies to the selection problem with dependecy. Thus there are 5 choices (colors) for the first component (kid), 4 for the second, all the way to 1 for the fifth. That gives a total of 
+<li>In how many ways can a generous person give five differently-colored M&amp;M's to five kids?</li>
+</ul>
+<blockquote><p>Let us map parts of the problem statement to parts of a placement problem and those of a selection problem.</p>
+</blockquote>
+<table>
+<thead><tr>
+<th>Problem statement</th>
+<th>$\leftrightarrow$</th>
+<th>Placement problem</th>
+<th>$\leftrightarrow$</th>
+<th>Selection problem</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"give $\ldots$ differently-colored $\ldots$"</td>
+<td>$\leftrightarrow$</td>
+<td>"place with exclusion"</td>
+<td>$\leftrightarrow$</td>
+<td>"sample without replacement"</td>
+</tr>
+<tr>
+<td>"five kids"</td>
+<td>$\leftrightarrow$</td>
+<td>"5 distinguishable objects"</td>
+<td>$\leftrightarrow$</td>
+<td>"ordered selection of 5 components"</td>
+</tr>
+<tr>
+<td>"five $\ldots$ M&amp;M's"</td>
+<td>$\leftrightarrow$</td>
+<td>"5 different cells"</td>
+<td>$\leftrightarrow$</td>
+<td>"5-element set"</td>
+</tr>
+</tbody>
+</table>
+<blockquote><p>The multiplicative counting principle applies to the selection problem with dependecy. Thus there are 5 choices (colors) for the first component (kid), 4 for the second, all the way to 1 for the fifth. That gives a total of 
 $5\times 4\times 3\times 2\times 1$ ways. These are in fact $5$-permutations.</p>
 </blockquote>
-</li>
-<li><p>How many four-letter "words" are there with vowels in the middle two places and consonants in the other two, and with no letter repeated?</p>
-<blockquote><p>Let us map parts of the problem statement to parts of a placement problem and those of a selection problem.
-| Problem statement | $\leftrightarrow$ | Placement problem | $\leftrightarrow$ | Selection problem|
-| -:- |-:-|-:-|-:-|-:-|
-| "$\ldots$ with no letter repeated"   | $\leftrightarrow$ | "place with exclusion" |$\leftrightarrow$ | "sample without replacement" |
-| "vowels" |$\leftrightarrow$| "5 different cells" |$\leftrightarrow$| "5-element set" |
-| "$\ldots$ in the middle two places" |$\leftrightarrow$| "2 distinguishable objects" |$\leftrightarrow$| "ordered selection of 2 components" |
-| "consonants" |$\leftrightarrow$| "21 different cells" |$\leftrightarrow$| "21-element set" |
-| "$\ldots$ in the other two" |$\leftrightarrow$| "2 distinguishable objects" |$\leftrightarrow$| "ordered selection of 2 components" |</p>
-<p>In the language of selection problem, there are $5\times 4$ choices for the middle two letters (vowels) and $21\times 20$ for the other two (consonants). That gives us a total of $21\times 5\times 4\times 20$ words.</p>
+<ul>
+<li>How many four-letter "words" are there with vowels in the middle two places and consonants in the other two, and with no letter repeated?</li>
+</ul>
+<blockquote><p>Let us map parts of the problem statement to parts of a placement problem and those of a selection problem.</p>
 </blockquote>
-</li>
-<li><p>How many five-digit numbers ending with 1,2, or 4 are there with no digit repeated?</p>
-<blockquote><p>Let us map parts of the problem statement to parts of a placement problem and those of a selection problem.
-| Problem statement | $\leftrightarrow$ | Placement problem | $\leftrightarrow$ | Selection problem |
-| -:- |-:-|-:-|-:-|-:-|
-| "$\ldots$ with no digit repeated"   | $\leftrightarrow$ | "place with exclusion" |$\leftrightarrow$ | "sample without replacement" |
-| "implied decimals" |$\leftrightarrow$| "10 different cells" |$\leftrightarrow$| "10-element set" |
-| "five-digit numbers" |$\leftrightarrow$| "5 distinguishable objects" |$\leftrightarrow$| "ordered selection of 5 components" |</p>
-<p>In the language of selection problem, there are<br/>
+<table>
+<thead><tr>
+<th>Problem statement</th>
+<th>$\leftrightarrow$</th>
+<th>Placement problem</th>
+<th>$\leftrightarrow$</th>
+<th>Selection problem</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"$\ldots$ with no letter repeated"</td>
+<td>$\leftrightarrow$</td>
+<td>"place with exclusion"</td>
+<td>$\leftrightarrow$</td>
+<td>"sample without replacement"</td>
+</tr>
+<tr>
+<td>"vowels"</td>
+<td>$\leftrightarrow$</td>
+<td>"5 different cells"</td>
+<td>$\leftrightarrow$</td>
+<td>"5-element set"</td>
+</tr>
+<tr>
+<td>"$\ldots$ in the middle two places"</td>
+<td>$\leftrightarrow$</td>
+<td>"2 distinguishable objects"</td>
+<td>$\leftrightarrow$</td>
+<td>"ordered selection of 2 components"</td>
+</tr>
+<tr>
+<td>"consonants"</td>
+<td>$\leftrightarrow$</td>
+<td>"21 different cells"</td>
+<td>$\leftrightarrow$</td>
+<td>"21-element set"</td>
+</tr>
+<tr>
+<td>"$\ldots$ in the other two"</td>
+<td>$\leftrightarrow$</td>
+<td>"2 distinguishable objects"</td>
+<td>$\leftrightarrow$</td>
+<td>"ordered selection of 2 components"</td>
+</tr>
+</tbody>
+</table>
+<blockquote><p>In the language of selection problem, there are $5\times 4$ choices for the middle two letters (vowels) and $21\times 20$ for the other two (consonants). That gives us a total of $21\times 5\times 4\times 20$ words.</p>
+</blockquote>
+<ul>
+<li>How many five-digit numbers ending with 1,2, or 4 are there with no digit repeated?</li>
+</ul>
+<blockquote><p>Let us map parts of the problem statement to parts of a placement problem and those of a selection problem.</p>
+</blockquote>
+<table>
+<thead><tr>
+<th>Problem statement</th>
+<th>$\leftrightarrow$</th>
+<th>Placement problem</th>
+<th>$\leftrightarrow$</th>
+<th>Selection problem</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"$\ldots$ with no digit repeated"</td>
+<td>$\leftrightarrow$</td>
+<td>"place with exclusion"</td>
+<td>$\leftrightarrow$</td>
+<td>"sample without replacement"</td>
+</tr>
+<tr>
+<td>"implied decimals"</td>
+<td>$\leftrightarrow$</td>
+<td>"10 different cells"</td>
+<td>$\leftrightarrow$</td>
+<td>"10-element set"</td>
+</tr>
+<tr>
+<td>"five-digit numbers"</td>
+<td>$\leftrightarrow$</td>
+<td>"5 distinguishable objects"</td>
+<td>$\leftrightarrow$</td>
+<td>"ordered selection of 5 components"</td>
+</tr>
+</tbody>
+</table>
+<blockquote><p>In the language of selection problem, there are<br/>
 $|\{1,2,4\}|=3$ choices for the least significant digit $d_5$,<br/>
 $10-|\{0,d_5\}|=8$ choices for the most siginificant digit $d_1$,<br/>
 $10-|\{d_1,d_5\}|=8$ for the thousand-digit $d_2$,<br/>
@@ -13155,15 +13257,45 @@ $8-|\{d_2\}|=7$ for the hundred-digit $d_3$, and<br/>
 $7-|\{d_3\}|=6$ for the ten-digit $d_4$.<br/>
 That gives us a total of $8\times 8\times 7\times 6\times 3$ numbers.</p>
 </blockquote>
-</li>
-<li><p>In how many ways can $n$ people be seated in a row of $n$ chairs?</p>
-<blockquote><p>Let us map parts of the problem statement to parts of a placement problem and those of a selection problem.
-| Problem statement | $\leftrightarrow$ | Placement problem | $\leftrightarrow$ | Selection problem |
-| -:- |-:-|-:-|-:-|-:-|
-| "seated in a row"   | $\leftrightarrow$ | "place with exclusion" |$\leftrightarrow$ | "sample without replacement" |
-| "$n$ people" |$\leftrightarrow$| "$n$ different cells" |$\leftrightarrow$| "$n$-element set" |
-| "$n$ chairs" |$\leftrightarrow$| "$n$ distinguishable objects" |$\leftrightarrow$| "ordered selection of $n$ components" |</p>
-<p>Wonder why "seated in a row" was translated to "placement with exclusion". If a chair is put on top of another, you cannot say the chairs are in a row.<br>
+<ul>
+<li>In how many ways can $n$ people be seated in a row of $n$ chairs?</li>
+</ul>
+<blockquote><p>Let us map parts of the problem statement to parts of a placement problem and those of a selection problem.</p>
+</blockquote>
+<table>
+<thead><tr>
+<th>Problem statement</th>
+<th>$\leftrightarrow$</th>
+<th>Placement problem</th>
+<th>$\leftrightarrow$</th>
+<th>Selection problem</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"seated in a row"</td>
+<td>$\leftrightarrow$</td>
+<td>"place with exclusion"</td>
+<td>$\leftrightarrow$</td>
+<td>"sample without replacement"</td>
+</tr>
+<tr>
+<td>"$n$ people"</td>
+<td>$\leftrightarrow$</td>
+<td>"$n$ different cells"</td>
+<td>$\leftrightarrow$</td>
+<td>"$n$-element set"</td>
+</tr>
+<tr>
+<td>"$n$ chairs"</td>
+<td>$\leftrightarrow$</td>
+<td>"$n$ distinguishable objects"</td>
+<td>$\leftrightarrow$</td>
+<td>"ordered selection of $n$ components"</td>
+</tr>
+</tbody>
+</table>
+<blockquote><p>Wonder why "seated in a row" was translated to "placement with exclusion". If a chair is put on top of another, you cannot say the chairs are in a row.<br>
 In the language of selection problem, there are<br/>
 $n$ choices (persons) for chair $1$,<br/>
 $n-1$ choices for chair $2$,<br/>
@@ -13175,20 +13307,22 @@ $1$ choice left for the last chair<br/>
 The number of seatings is therefore
 $$n!=n\times(n-1)\times(n-2)\cdots 3\times 2\times 1$$</p>
 </blockquote>
-</li>
-<li><p>In how many ways can a row of $k$ seats be filled from a set of $n$ people?</p>
-</li>
+<ul>
+<li>In how many ways can a row of $k$ seats be filled from a set of $n$ people?</li>
 </ul>
 $$(n)_k=n(n-1)(n-2)\cdots (n-k+1)$$<ul>
-<li><p>In how many ways can $n$ people be seated in a circle of $n$ chairs?</p>
+<li>In how many ways can $n$ people be seated in a circle of $n$ chairs?</li>
+</ul>
 <blockquote><p>Treating this problem as if the chairs were in a row of $n$ chairs, there are $n!$ ways to seat $n$ people. This, however, overcounts the number of ways they can be seated in a circle as each distinct arrangement is counted $n$ times, once for each rotation of the chairs. The problem is said to feature rotational symmetry. To account for this, we must divide the number of arrangements by $n$, yielding $n!/n=(n-1)!$ distinct arrangements.</p>
 </blockquote>
-</li>
-<li><p>In how many ways can 6 different keys be arranged on a keychain?</p>
+<ul>
+<li>In how many ways can 6 different keys be arranged on a keychain?</li>
+</ul>
 <blockquote><p>This problem also features rotational symmetry and your first guess would be $(6-1)!$ arrangements. This, however, still overcounts the actual arrangements as each distinct arrangement is counted twice, once for each flip of that arrangement. The problem is said to feature reflective symmetry. To account for this, we must divide the number of arrangements by $2$, yielding $(6-1)!/2$ distinct arrangements.</p>
 </blockquote>
-</li>
-<li><p>In how many ways can a generous person give one M&amp;M each to two children if she has 3 different red, 4 different brown, and 5 different tan ones and the two children insist upon having M&amp;M's of different colors?</p>
+<ul>
+<li>In how many ways can a generous person give one M&amp;M each to two children if she has 3 different red, 4 different brown, and 5 different tan ones and the two children insist upon having M&amp;M's of different colors?</li>
+</ul>
 <blockquote><p>Think of a sequential experiment with two component experiments each of the form
 $$\Omega \leftrightarrow \text{"give one M&amp;M to one child"}$$
 so that the outcome space of the combined experiment is $\Omega^2$.<br/>
@@ -13207,8 +13341,6 @@ R\times T &amp; \leftrightarrow\text{"give a red-tan pair of M&amp;M's to the ch
 The required number of arrangements is obtained by summing the cardinalities of the six Cartesian products above, namely
 $$\left|R\times B\right|+\left|B\times R\right|+\left|B\times T\right|+\left|T\times B\right|+\left|T\times R\right|+\left|R\times T\right|=2\left(3\times4+4\times5+5\times3\right)=94$$</p>
 </blockquote>
-</li>
-</ul>
 
 </div>
 </div>
@@ -13220,27 +13352,27 @@ $$\left|R\times B\right|+\left|B\times R\right|+\left|B\times T\right|+\left|T\t
 <ul>
 <li><p>Distinguishable boxes</p>
 <ul>
-<li><p>distinguishable objects</p>
+<li>distinguishable objects</li>
+</ul>
 <blockquote><p>We need to view this as a selection problem if we are to apply the multiplicative counting principle. The "4 distinguishable objects" translates to "ordered selection of 4 components" and the "two distinguishable boxes" translates to "2-element set of objects (from which to sample with replacement)". There are $2$ choices for each of the $4$ components, yielding $2^4$ arrangements.</p>
 </blockquote>
-</li>
-<li><p>indistinguishable</p>
+<ul>
+<li>indistinguishable </li>
+</ul>
 <blockquote><p>Since the objects are indinguishable, all we need to know for each outcome is the number of objects in each box. The only possible outcomes are then $(4,0)$, $(3,1)$, $(2,2)$, $(1,3)$, and $(0,4)$. That amounts to a total of $5$ arrangements.</p>
 </blockquote>
 </li>
-</ul>
-</li>
 <li><p>Indistinguishable boxes</p>
 <ul>
-<li><p>distinguishable objects</p>
+<li>distinguishable objects </li>
+</ul>
 <blockquote><p>Since the boxes are indinguishable, we only need to consider how one box can be filled without caring about the other box. The box can be empty in only one way, it can hold one object (of the four distinguishable) in four ways, and it can hold two objects in three ways as any specific object (of the four) can be paired with any of the remaining three. That amounts to a total of $1+4+3$ arrangements. If you still do not get it, look at the table following the fourth case.</p>
 </blockquote>
-</li>
-<li><p>indistinguishable</p>
+<ul>
+<li>indistinguishable </li>
+</ul>
 <blockquote><p>Since the boxes as well as the objects are indinguishable, we only need to consider how the four objects can be split into two groups and list the number of objects in each group. The only possibe groupings are $\{4,0\}$, $\{3,1\}$, and $\{2,2\}$. That amounts to a total of $3$ arrangements.</p>
 </blockquote>
-</li>
-</ul>
 </li>
 </ul>
 </li>
@@ -13376,11 +13508,13 @@ $$\left|R\times B\right|+\left|B\times R\right|+\left|B\times T\right|+\left|T\t
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Counting-Something-Else">Counting Something Else<a class="anchor-link" href="#Counting-Something-Else">&#182;</a></h3><ul>
-<li><p>The $54$-member Council for Security and Cooperation in Europe wishes to choose $3$ member states for different leadership positions. The $\mathsf{L}$ lobby decrees that at least one of Lithuania, Lichtenstein, Latvia, and Luxembourg must be chosen. In how many ways can the committee be selected?</p>
+<li>The $54$-member Council for Security and Cooperation in Europe wishes to choose $3$ member states for different leadership positions. The $\mathsf{L}$ lobby decrees that at least one of Lithuania, Lichtenstein, Latvia, and Luxembourg must be chosen. In how many ways can the committee be selected?</li>
+</ul>
 <blockquote><p>The number of arrangements excluding the $\mathsf{L}$ lobby is $(50)_3$. This number, measuring the opposite of what is of interest here, must be subtracted from the total number of arrangements including all the member states, that is, $(54)_3$. The difference $(54)_3-(50)_3$ yields the required number of arrangements.</p>
 </blockquote>
-</li>
-<li><p>[<em>M&amp;M's Revisited</em>] In how many ways can a generous person give one M&amp;M each to two children if she has 3 different red, 4 different brown, and 5 different tan ones and the two children insist upon having M&amp;M's of different colors?</p>
+<ul>
+<li>[<em>M&amp;M's Revisited</em>] In how many ways can a generous person give one M&amp;M each to two children if she has 3 different red, 4 different brown, and 5 different tan ones and the two children insist upon having M&amp;M's of different colors?</li>
+</ul>
 <blockquote><p>Think of a sequential experiment with two component experiments each of the form
 $$\Omega \leftrightarrow \text{"give one M&amp;M to one child"}$$
 so that the outcome space of the combined experiment is $\Omega^2$.<br/>
@@ -13393,45 +13527,47 @@ T^2 &amp; \leftrightarrow\text{"give one tan M&amp;M each to the children"}\\
 The required number of arrangements is obtained by subtracting the cardinalities of the above three events from that of $\Omega^2$, namely
 $$\left|\Omega^2\right|-\left|R^2\right|-\left|B^2\right|-\left|T^2\right|=(3+4+5)^2-3^2-4^2-5^2=94$$</p>
 </blockquote>
-</li>
-</ul>
 <h3 id="Strategic-Overcounting">Strategic Overcounting<a class="anchor-link" href="#Strategic-Overcounting">&#182;</a></h3><ul>
-<li><p>In how many ways can Faris choose 3 of the 5 colors of M&amp;M's to eat?</p>
+<li>In how many ways can Faris choose 3 of the 5 colors of M&amp;M's to eat?</li>
+</ul>
 <blockquote><p>The problem indicates an unordered selection of 3 colors from a 5-element set. Treating the problem as if the selections were ordered, there are $(5)_3$ ways to choose the colors. This number of $3$-permutations, however, overcounts the number of unordered selections as each distinct selection is counted $3!$ times, once for each rearrangement of the colors. To account for this, we must divide the number of ordered selections by $3!$, yielding $(5)_3/3!$ distinct unordered selections. These are, in fact, $3$-combinations.</p>
 </blockquote>
-</li>
-<li><p>In how many ways can $k$ objects be selected as a lot a set of n?</p>
-</li>
+<ul>
+<li>In how many ways can $k$ objects be selected as a lot a set of n?</li>
 </ul>
 <blockquote><p>The number of $k$-permutations overcounts the number of $k$-combinations as each combination is counted $k!$ times, once for each rearrangement of the objects in the combination. To account for this, we must divide the number of $k$-permutations by $k!$, yielding $(n)_k/k!$ distinct combinations. The number of $k$-combinations is compactly denoted by the binomial coefficient $\binom{n}{k}$.</p>
 </blockquote>
 <ul>
-<li><p>Find the number of different $k$-element subsets of an $n$-element set.</p>
+<li>Find the number of different $k$-element subsets of an $n$-element set. </li>
+</ul>
 <blockquote>$$\binom{n}{k} = \frac{(n)_k}{k!} = \frac{n!}{k!(n-k)!}=\binom{n}{n-k}$$
 </blockquote>
-</li>
-<li><p>In how many ways can a three-person subcommittee be chosen from a five-person committee?</p>
+<ul>
+<li>In how many ways can a three-person subcommittee be chosen from a five-person committee?</li>
+</ul>
 <blockquote>$$\binom{5}{3} = \binom{5}{2}$$
 </blockquote>
-</li>
-<li><p>A set of points is chosen on the circumference of a circle so that the number of different triangles with all three vertices among the points is equal to the number of pentagons with all five vertices in the set. How many points are there?</p>
+<ul>
+<li>A set of points is chosen on the circumference of a circle so that the number of different triangles with all three vertices among the points is equal to the number of pentagons with all five vertices in the set. How many points are there?</li>
+</ul>
 <blockquote>$$\binom{n}{3} = \binom{n}{5} = \binom{n}{n-5}\Rightarrow n-5=3 \Rightarrow n=8$$
 </blockquote>
-</li>
-<li><p>How many rearrangements of the word LINGUINI are there?</p>
+<ul>
+<li>How many rearrangements of the word LINGUINI are there?</li>
+</ul>
 <blockquote><p>The word has some letters repeated. Treating the word as if the letters were all different, there are $8!$ rearrangements. This, however, overcounts the number of permutations with repetition as each distinct permutation is counted $3!$ times, once for each rearrangement of $\mathsf{L}$'s, and $2!$ times, once for each rearrangement of $\mathsf{I}$'s. To account for this, we must divide the number of rearrangements of the word by $3!$ and $2!$, yielding $8!/(3!\times 2!)$ distinct permutations.</p>
 </blockquote>
-</li>
-<li><p>Derive a formula for the number of rearrangements of a word consisting of $k_1$ copies of letter $1$, $k_2$ copies of letter $2$, and so on up to $k_m$ copies of letter $m$, with $n$ total letters.</p>
+<ul>
+<li>Derive a formula for the number of rearrangements of a word consisting of $k_1$ copies of letter $1$, $k_2$ copies of letter $2$, and so on up to $k_m$ copies of letter $m$, with $n$ total letters.</li>
+</ul>
 <blockquote><p>This number is given by the so-called multinomial coefficient
 $$\binom{n}{k_{1},k_{2},\cdots,k_{m}}=\frac{n!}{k_{1}!k_{2}!\cdots k_{m}!}$$</p>
 </blockquote>
-</li>
-<li><p>In how many different ways can an $n$-element set be partitioned into $m$ subsets of cardinalities $\left\{k_1,k_2,\ldots,k_m\right\}$?</p>
+<ul>
+<li>In how many different ways can an $n$-element set be partitioned into $m$ subsets of cardinalities $\left\{k_1,k_2,\ldots,k_m\right\}$?</li>
+</ul>
 <blockquote>$$\binom{n}{k_{1},k_{2},\cdots,k_{m}}=\binom{n}{k_{1}}\binom{n-k_{1}}{k_{2}}\binom{n-k_{1}-k_{2}}{k_{3}}\cdots\binom{n-\displaystyle\sum_{i=1}^{m-2}k_{i}}{k_{m-1}}=\frac{n!}{k_{1}!k_{2}!\cdots k_{m}!}$$
 </blockquote>
-</li>
-</ul>
 
 </div>
 </div>

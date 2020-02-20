@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 
 
-<title>Lecture-10</title>
+<title>Lecture-08</title>
 
 <style type="text/css">
     /*!
@@ -13108,100 +13108,311 @@ div#notebook {
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="EE319---Probability-&amp;-Random-Processes">EE319 - Probability &amp; Random Processes<a class="anchor-link" href="#EE319---Probability-&amp;-Random-Processes">&#182;</a></h1><h2 id="Dr.-Ing.-Mukhtar-Ullah,-FAST-NUCES,-Spring-2020"><em>Dr. Ing. Mukhtar Ullah</em>, FAST NUCES, Spring 2020<a class="anchor-link" href="#Dr.-Ing.-Mukhtar-Ullah,-FAST-NUCES,-Spring-2020">&#182;</a></h2><hr>
+<h1 id="EE319---Probability-&amp;-Random-Processes">EE319 - Probability &amp; Random Processes<a class="anchor-link" href="#EE319---Probability-&amp;-Random-Processes">&#182;</a></h1><h2 id="Dr.-Ing.-Mukhtar-Ullah,-FAST-NUCES,-Spring-2020"><em>Dr. Ing. Mukhtar Ullah</em>, FAST NUCES, Spring 2020<a class="anchor-link" href="#Dr.-Ing.-Mukhtar-Ullah,-FAST-NUCES,-Spring-2020">&#182;</a></h2><hr/>
 
-<h2 id="Lecture-10-(2020-02-21)"><strong>Lecture 10</strong> (2020-02-21)<a class="anchor-link" href="#Lecture-10-(2020-02-21)">&#182;</a></h2>
+<h2 id="Lecture-08-(2020-02-14)"><strong>Lecture 08</strong> (2020-02-14)<a class="anchor-link" href="#Lecture-08-(2020-02-14)">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Counting-beyond-Common-Sense">Counting beyond Common Sense<a class="anchor-link" href="#Counting-beyond-Common-Sense">&#182;</a></h3><ul>
-<li>A dog trainer wants to buy $8$ dogs all of which are either cocker spaniels, Irish setters, or Russian wolfhounds. In how many ways can she make the choice?</li>
-</ul>
-<blockquote><p>Viewed as a placement problem, the "$8$ dogs" are our "indistinguishable objects", each denoted by $\mathsf{d}$, to be placed without exclusion in three different cells labelled 1 (cocker spaniels), 2 (Irish setters) and 3 (Russian wolfhounds). The different placements can be depicted by strings of $8\ \mathsf{d}$'s with two partitioing bars placed at different positions. In other words, each different placement requires to choose two different positions for the bars from the available 8+(3-1) positions. That amounts to $\binom{8+3-1}{3-1}$ different ways to buy the dogs.</p>
-</blockquote>
-<ul>
-<li>Derive a simple formula for the number of ways to buy $k$ dogs if there are $n$ varieties to choose from.</li>
-</ul>
-<blockquote>$$\binom{k+n-1}{n-1}=\binom{k+n-1}{k}$$
-</blockquote>
-<ul>
-<li>Derive a simple formula for the number of solutions in nonnegative integers of $x_1 +x_2 + \cdots + x_n = k$.</li>
-</ul>
-<blockquote>$$\binom{k+n-1}{n-1}=\binom{k+n-1}{k}$$
-</blockquote>
-<ul>
-<li>In how many ways may five people be seated in a row of twenty chairs given that no two people may sit next to one another?</li>
-</ul>
-<blockquote><p>Any seating arrangement (of 5 people in a row of 20 chairs) that meets the restriction "no two people may sit next to one another" can be mapped to a seating arrangement (of 5 people in a row of 16 chairs) if one chair is removed from between each pair of people. The new types of seating arrangments is unrestricted in the sense that two people may sit next to one another. The number of seating arrangements then equals $\binom{16+5-1}{5-1}$.</p>
-</blockquote>
-<ul>
-<li>How many nonnegative integer solutions are there to $x_1 + x_2 + x_3 \le 50$?</li>
-</ul>
-<blockquote><p>The inequality can be turned into an equality
-$$x_1 + x_2 + x_3 + x_4 = 50$$
-provided $x_4$ is a nonnegative integer large enough for the equation to hold. The number of nonnegative integer solutions then equals $\binom{50+4-1}{4-1}$.</p>
-</blockquote>
+<h2 id="Sequential-Experiments-and-Counting">Sequential Experiments and Counting<a class="anchor-link" href="#Sequential-Experiments-and-Counting">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&quot;Select-2-objects-from-a-set-of-4-objects&quot;-$\leftrightarrow$-&quot;Place-2-objects-in-4-different-cells&quot;">"Select 2 objects from a set of 4 objects" $\leftrightarrow$ "Place 2 objects in 4 different cells"<a class="anchor-link" href="#&quot;Select-2-objects-from-a-set-of-4-objects&quot;-$\leftrightarrow$-&quot;Place-2-objects-in-4-different-cells&quot;">&#182;</a></h3><table>
+<thead><tr>
+<th style="text-align:right">Ordered<br>Selection<br>with<br>Replacement</th>
+<th>$\leftrightarrow$</th>
+<th style="text-align:left">Distinguishables<br>Placement<br>without<br>Exclusion</th>
+<th><img width=10/></th>
+<th style="text-align:right">Ordered<br>Selection<br>without<br>Replacement</th>
+<th>$\leftrightarrow$</th>
+<th style="text-align:left">Distinguishables<br>Placement<br>with<br>Exclusion</th>
+<th><img width=10/></th>
+<th style="text-align:right">Unordered<br>Selection<br>without<br>Replacement</th>
+<th>$\leftrightarrow$</th>
+<th style="text-align:left">Indistinguishables<br>Placement<br>with<br>Exclusion</th>
+<th><img width=10/></th>
+<th style="text-align:right">Unordered<br>Selection<br>with<br>Replacement</th>
+<th>$\leftrightarrow$</th>
+<th style="text-align:left">Indistinguishables<br>Placement<br>without<br>Exclusion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">$aa$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$s_{1}s_{2}\mid-\mid-\mid-$$</td>
+<td></td>
+<td style="text-align:right"></td>
+<td></td>
+<td style="text-align:left"></td>
+<td></td>
+<td style="text-align:right"></td>
+<td></td>
+<td style="text-align:left"></td>
+<td></td>
+<td style="text-align:right">$\left\{a:2\right\}$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$ss\mid -\mid-\mid-$$</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right">$bb$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$-\mid s_{1}s_{2}\mid-\mid-$$</td>
+<td></td>
+<td style="text-align:right"></td>
+<td></td>
+<td style="text-align:left"></td>
+<td></td>
+<td style="text-align:right"></td>
+<td></td>
+<td style="text-align:left"></td>
+<td></td>
+<td style="text-align:right">$\left\{b:2\right\}$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$-\mid ss\mid-\mid-$$</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right">$cc$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$-\mid-\mid s_{1}s_{2}\mid-$$</td>
+<td></td>
+<td style="text-align:right"></td>
+<td></td>
+<td style="text-align:left"></td>
+<td></td>
+<td style="text-align:right"></td>
+<td></td>
+<td style="text-align:left"></td>
+<td></td>
+<td style="text-align:right">$\left\{c:2\right\}$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$-\mid -\mid ss\mid-$$</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right">$dd$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$-\mid-\mid-\mid s_{1}s_{2}$$</td>
+<td></td>
+<td style="text-align:right"></td>
+<td></td>
+<td style="text-align:left"></td>
+<td></td>
+<td style="text-align:right"></td>
+<td></td>
+<td style="text-align:left"></td>
+<td></td>
+<td style="text-align:right">$\left\{d:2\right\}$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$-\mid -\mid-\mid ss$$</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right">$ab$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$s_{1}\mid s_{2}\mid-\mid-$$</td>
+<td></td>
+<td style="text-align:right">$ab$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$s_{1}\mid s_{2}\mid-\mid-$$</td>
+<td></td>
+<td style="text-align:right">$\left\{a,b\right\}$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$s\mid s\mid-\mid-$$</td>
+<td></td>
+<td style="text-align:right">$\left\{a,b\right\}$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$s\mid s\mid-\mid-$$</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right">$ba$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$s_{2}\mid s_{1}\mid-\mid-$$</td>
+<td></td>
+<td style="text-align:right">$ba$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$s_{2}\mid s_{1}\mid-\mid-$$</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right">$ac$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$s_{1}\mid-\mid s_{2}\mid-$$</td>
+<td></td>
+<td style="text-align:right">$ac$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$s_{1}\mid-\mid s_{2}\mid-$$</td>
+<td></td>
+<td style="text-align:right">$\left\{a,c\right\}$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$s\mid-\mid s\mid-$$</td>
+<td></td>
+<td style="text-align:right">$\left\{a,c\right\}$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$s\mid-\mid s\mid-$$</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right">$ca$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$s_{2}\mid-\mid s_{1}\mid-$$</td>
+<td></td>
+<td style="text-align:right">$ca$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$s_{2}\mid-\mid s_{1}\mid-$$</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right">$ad$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$s_{1}\mid-\mid-\mid s_{2}$$</td>
+<td></td>
+<td style="text-align:right">$ad$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$s_{1}\mid-\mid-\mid s_{2}$$</td>
+<td></td>
+<td style="text-align:right">$\left\{a,d\right\}$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$s\mid-\mid-\mid s$$</td>
+<td></td>
+<td style="text-align:right">$\left\{a,d\right\}$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$s\mid-\mid-\mid s$$</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right">$da$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$s_{2}\mid-\mid-\mid s_{1}$$</td>
+<td></td>
+<td style="text-align:right">$da$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$s_{2}\mid-\mid-\mid s_{1}$$</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right">$bc$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$-\mid s_{1}\mid s_{2}\mid-$$</td>
+<td></td>
+<td style="text-align:right">$bc$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$-\mid s_{1}\mid s_{2}\mid-$$</td>
+<td></td>
+<td style="text-align:right">$\left\{b,c\right\}$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$-\mid s\mid s\mid-$$</td>
+<td></td>
+<td style="text-align:right">$\left\{b,c\right\}$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$-\mid s\mid s\mid-$$</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right">$cb$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$-\mid s_{2}\mid s_{1}\mid-$$</td>
+<td></td>
+<td style="text-align:right">$cb$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$-\mid s_{2}\mid s_{1}\mid-$$</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right">$bd$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$-\mid s_{1}\mid-\mid s_{2}$$</td>
+<td></td>
+<td style="text-align:right">$bd$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$-\mid s_{1}\mid-\mid s_{2}$$</td>
+<td></td>
+<td style="text-align:right">$\left\{b,d\right\}$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$-\mid s\mid-\mid s$$</td>
+<td></td>
+<td style="text-align:right">$\left\{b,d\right\}$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$-\mid s\mid-\mid s$$</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right">$db$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$-\mid s_{2}\mid-\mid s_{1}$$</td>
+<td></td>
+<td style="text-align:right">$db$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$-\mid s_{2}\mid-\mid s_{1}$$</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right">$cd$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$-\mid-\mid s_{1}\mid s_{2}$$</td>
+<td></td>
+<td style="text-align:right">$cd$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$-\mid-\mid s_{1}\mid s_{2}$$</td>
+<td></td>
+<td style="text-align:right">$\left\{c,d\right\}$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$-\mid-\mid s\mid s$$</td>
+<td></td>
+<td style="text-align:right">$\left\{c,d\right\}$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$-\mid-\mid s\mid s$$</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:right">$dc$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$-\mid-\mid s_{2}\mid s_{1}$$</td>
+<td></td>
+<td style="text-align:right">$dc$</td>
+<td>$\leftrightarrow$</td>
+<td style="text-align:left">$$-\mid-\mid s_{2}\mid s_{1}$$</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Principle-of-Inclusion-Exclusion-(PIE)">Principle of Inclusion-Exclusion (PIE)<a class="anchor-link" href="#Principle-of-Inclusion-Exclusion-(PIE)">&#182;</a></h3><ul>
-<li>There are 100 students taking language classes at Austin High School. If 60 are taking German and 75 are taking Spanish and these are the only languages taught, how many students take both Spanish and German?</li>
+<h2 id="Counting-Examples-in-Sequential-Experiments">Counting Examples in Sequential Experiments<a class="anchor-link" href="#Counting-Examples-in-Sequential-Experiments">&#182;</a></h2><h2 id="Independent-Choices-in-Each-Component-Experiment">Independent Choices in Each Component Experiment<a class="anchor-link" href="#Independent-Choices-in-Each-Component-Experiment">&#182;</a></h2><ul>
+<li>How many four-letter "words" are there (ignoring spelling, etc.)?</li>
 </ul>
-<blockquote><p>Define the following events:
-\begin{align*}
-G &amp; \leftrightarrow\text{"Student takes German"}\\
-S &amp; \leftrightarrow\text{"Student takes Spanish"}\\
-S\cup G &amp; \leftrightarrow\text{"Student takes language classes"}\\
-S\cap G &amp; \leftrightarrow\text{"Student takes both Spanish and German"}
-\end{align*}
-The number of students taking both Spanish and German is 
-$$\left|S\cap G\right|=\left|S\right|+\left|G\right|-\left|S\cup G\right|=75+60-100=35$$</p>
+<blockquote><p>There $26$ independent choices for each letter.<br/>
+Therefore $26^4$ different words are there.<br/></p>
 </blockquote>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Summary-of-Four--of-Selection$\leftrightarrow$Placement-Cases">Summary of Four  of Selection$\leftrightarrow$Placement Cases<a class="anchor-link" href="#Summary-of-Four--of-Selection$\leftrightarrow$Placement-Cases">&#182;</a></h3><p>The following sets are used in the summary.
-\begin{align*}
-\Omega &amp; =\left\{ \omega_{1},\omega_{2},\ldots,\omega_{n}\right\} \leftrightarrow\text{"}n\text{-element sample space"} &amp;  &amp; \left\{ 1,2,\ldots,n\right\} \leftrightarrow\text{"}n\text{ different cells"}\\
- &amp; \left\{ 1,2,\ldots,k\right\} \leftrightarrow\text{"}k\text{ different positions for selected elements"} &amp;  &amp; S=\left\{ s_{1},s_{2},\ldots,s_{k}\right\} \leftrightarrow\text{"}k\text{ distinguishable objects"}\\
- &amp;  &amp;  &amp; \left\{ s\colon k\right\} \leftrightarrow\text{"}k\text{ indistinguishable objects"}
-\end{align*}</p>
 <ul>
-<li>Ordered Selection with Replacement $\leftrightarrow$ Placement of Distinguishable Objects without Exclusion
-\begin{align*}
-\Omega^{k} &amp; =\left\{ \left(x_{1},x_{2},\ldots,x_{k}\right)\colon x_{i}\in\Omega\right\} \\
-&amp; \leftrightarrow\left\{ \left(S_{1},S_{2},\ldots,S_{n}\right)\colon S_{i}\subseteq S,\sum_{i=1}^{n}\left|S_{i}\right|=k\right\} \\
-\left|\Omega^{k}\right| &amp; =n^{k}
-\end{align*}</li>
-<li>Ordered Selection without Replacement $\leftrightarrow$ Placement of Distinguishable Objects with Exclusion
-\begin{align*}
-\left(\Omega\right)_{k} &amp; =\left\{ \left(x_{1},x_{2},\ldots,x_{k}\right)\colon x_{i}\in\Omega,x_{i}\ne x_{j}\,\text{if}\,i\ne j\right\} \\
-&amp; \leftrightarrow\left\{ \left(S_{1},S_{2},\ldots,S_{n}\right)\colon S_{i}\subseteq S,\left|S_{i}\right|\le1,\sum_{i=1}^{n}\left|S_{i}\right|=k\right\} \\
-\left|\left(\Omega\right)_{k}\right| &amp; =\left(n\right)_{k}
-\end{align*}</li>
-<li>Unordered Selection without Replacement $\leftrightarrow$ Placement of Indistinguishable Objects with Exclusion
-\begin{align*}
-\binom{\Omega}{k} &amp; =\left\{ \left\{ x_{1},x_{2},\ldots,x_{k}\right\} \colon x_{i}\in\Omega\right\} \\
-&amp; \leftrightarrow\left\{ \left\{ S_{1},S_{2},\ldots,S_{n}\right\} \colon S_{i}\subseteq\left\{ s\right\} ,\sum_{i=1}^{n}\left|S_{i}\right|=k\right\} \\
-&amp; \leftrightarrow\left\{ \left(k_{1},k_{2},\ldots,k_{n}\right)\colon k_{i}\in\left\{ 0,1\right\} ,\sum_{i=1}^{n}k_{i}=k\right\} \\
-\left|\binom{\Omega}{k}\right| &amp; =\binom{n}{k}=\binom{n}{n-k}
-\end{align*}</li>
-<li>Unordered Selection with Replacement $\leftrightarrow$ Placement of Indistinguishable Objects without Exclusion
-\begin{align*}
-\biggl(\!\!\binom{\Omega}{k}\!\!\biggr) &amp; =\left\{ \left\{ x_{1}\colon m_{1},x_{2}\colon m_{2},\ldots,x_{r}\colon m_{r}\right\} \colon x_{i}\in\Omega,m_{i}\in\left\{1,2,\ldots,k\right\} ,\sum_{i=1}^{r}m_{i}=k\right\} \\
-&amp; \leftrightarrow\left\{ \left\{ S_{1},S_{2},\ldots,S_{n}\right\} \colon S_{i}\subseteq\left\{ s\colon k\right\} ,\sum_{i=1}^{n}\left|S_{i}\right|=k\right\} \\
-&amp; \leftrightarrow\left\{ \left(k_{1},k_{2},\ldots,k_{n}\right)\colon k_{i}\in\left\{0,1,\ldots,k\right\} ,\sum_{i=1}^{n}k_{i}=k\right\} \\
-\left|\biggl(\!\!\binom{\Omega}{k}\!\!\biggr)\right| &amp; =\biggl(\!\!\binom{n}{k}\!\!\biggr)=\binom{n-1+k}{n-1}=\binom{n-1+k}{k}
-\end{align*}</li>
+<li>How many four-letter "words" are there with vowels (not 'y') in the middle two places and a consonant at the end?</li>
 </ul>
+<blockquote><p>There are $26$ choices for the letter at the start, $5$ independent choices for each of the middle two places and $21$ independent choices the letter at the end.<br/>
+Therefore $26\times 5^2 \times 21$ different words are there.<br/></p>
+</blockquote>
+<ul>
+<li>In how many ways can a generous person give M&amp;M's to three kids? (M&amp;M's come in red,yellow, green, brown, and tan.)</li>
+</ul>
+<blockquote><p>There are $5$ choices for each kid.<br/>
+Therefore $5^3$ different allocations are possible.<br/></p>
+</blockquote>
+<p>Find the number of divisors of 72.</p>
+<blockquote><p>The prime factorization $72=2^3 \times 3^2$ requires that each divisor is of the form $2^a \times 3^b$ where $a\in\left\{0,1,2,3\right\}$ and $b\in\left\{0,1,2\right\}$.<br/>
+There are, independently, $4$ choices for $a$ and $3$ choices for $b$.
+Therefore $4\times 3=12$ different divisors of 72.<br/></p>
+</blockquote>
 
 </div>
 </div>

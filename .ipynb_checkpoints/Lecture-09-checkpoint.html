@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 
 
-<title>Lecture-03</title>
+<title>Lecture-09</title>
 
 <style type="text/css">
     /*!
@@ -13108,33 +13108,226 @@ div#notebook {
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="EE319---Probability-&amp;-Random-Processes">EE319 - Probability &amp; Random Processes<a class="anchor-link" href="#EE319---Probability-&amp;-Random-Processes">&#182;</a></h1><h2 id="Dr.-Ing.-Mukhtar-Ullah,-FAST-NUCES,-Spring-2020"><em>Dr. Ing. Mukhtar Ullah</em>, FAST NUCES, Spring 2020<a class="anchor-link" href="#Dr.-Ing.-Mukhtar-Ullah,-FAST-NUCES,-Spring-2020">&#182;</a></h2><h2 id="Lecture-03-(2020-01-28)"><strong>Lecture 03</strong> (2020-01-28)<a class="anchor-link" href="#Lecture-03-(2020-01-28)">&#182;</a></h2><h2 id="Axiomatic-Probability">Axiomatic Probability<a class="anchor-link" href="#Axiomatic-Probability">&#182;</a></h2><p>The frequentist probability suffers from the following problems.</p>
+<h1 id="EE319---Probability-&amp;-Random-Processes">EE319 - Probability &amp; Random Processes<a class="anchor-link" href="#EE319---Probability-&amp;-Random-Processes">&#182;</a></h1><h2 id="Dr.-Ing.-Mukhtar-Ullah,-FAST-NUCES,-Fall-2020"><em>Dr. Ing. Mukhtar Ullah</em>, FAST NUCES, Fall 2020<a class="anchor-link" href="#Dr.-Ing.-Mukhtar-Ullah,-FAST-NUCES,-Fall-2020">&#182;</a></h2><hr>
+
+<h2 id="Lecture-09-(2020-02-18)"><strong>Lecture 09</strong> (2020-02-18)<a class="anchor-link" href="#Lecture-09-(2020-02-18)">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Dependencies-among-Component-Experiments">Dependencies among Component Experiments<a class="anchor-link" href="#Dependencies-among-Component-Experiments">&#182;</a></h3><ul>
+<li>In how many ways can a generous person give five differently-colored M&amp;M's to five kids?</li>
+</ul>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
 <ul>
-<li>It cannot be applied to (events of) non-repeatable experiments</li>
-<li>convergence of the long-run relative frequency can be proved in restricted application domains<ul>
-<li>Not all probabilistic experiments are random</li>
+<li>How many four-letter "words" are there with vowels in the middle two places and consonants in the other two, and with no letter repeated?</li>
 </ul>
-</li>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
+<ul>
+<li>How many five-digit numbers ending with 1,2, or 4 are there with no digit repeated?</li>
 </ul>
-<h2 id="Other-intepretations-of-probability">Other intepretations of probability<a class="anchor-link" href="#Other-intepretations-of-probability">&#182;</a></h2><ul>
-<li>Subjective probability (degree of belief)<ul>
-<li>Put your money where your mouth is</li>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
+<ul>
+<li>In how many ways can $n$ people be seated in a row of $n$ chairs?</li>
 </ul>
-</li>
-<li>Logical probability (plausibilty, strength of evidence)<ul>
-<li>Rational individuals with same evidence should assign the same probability to an event</li>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
+<ul>
+<li>In how many ways can a row of $k$ seats be filled from a set of n people?</li>
 </ul>
-</li>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
+<ul>
+<li>In how many ways can $n$ people be seated in a circle of $n$ chairs?</li>
 </ul>
-<p><strong>Andrey Kolmogorov (1933) settled the debate by an axiomatic approach to probability that cares only about properties of probability and leaves the intepretation to the modeler.</strong></p>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
+<ul>
+<li>In how many ways can 6 different keys be arranged on a keychain?</li>
+</ul>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
+<ul>
+<li>In how many ways can a generous person give one M&amp;M each to two children if she has 3 different red, 4 different brown, and different 5 tan ones and the two children insist upon having M&amp;M's o f different colors?</li>
+</ul>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Resource-allocation-in-voice-packet-transmission">Resource allocation in voice packet transmission<a class="anchor-link" href="#Resource-allocation-in-voice-packet-transmission">&#182;</a></h2><p><img src="images/voice_packet_transmission.png" width="70%" /></p>
-<h2 id="How-many-active-speakers-in-a-short-time-slot">How many active speakers in a short time slot<a class="anchor-link" href="#How-many-active-speakers-in-a-short-time-slot">&#182;</a></h2><p><img src="images/active_speakers_distribution.png" width="70%" /></p>
+<h3 id="Distinguishability-Matters">Distinguishability Matters<a class="anchor-link" href="#Distinguishability-Matters">&#182;</a></h3><ul>
+<li>In how many ways can four objects be put into two boxes?<ul>
+<li>Distinguishable boxes<ul>
+<li>distinguishable objects
+<br/>
+<br/>
+<br/>
+<br/></li>
+<li>indistinguishable
+<br/>
+<br/>
+<br/>
+<br/></li>
+</ul>
+</li>
+<li>Indistinguishable boxes<ul>
+<li>distinguishable objects
+<br/>
+<br/>
+<br/>
+<br/></li>
+<li>indistinguishable
+<br/>
+<br/>
+<br/>
+<br/></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Additive-Counting-Rule">Additive Counting Rule<a class="anchor-link" href="#Additive-Counting-Rule">&#182;</a></h3><ul>
+<li>The 54-member Council for Security and Cooperation in Europe wishes to choose 3 member states for different leadership positions. The L lobby decrees that at least one of Lithuania, Lichtenstein, Latvia, and Luxembourg must be chosen. In how many ways can the committee be selected?</li>
+</ul>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
+<h3 id="Strategic-Overcounting">Strategic Overcounting<a class="anchor-link" href="#Strategic-Overcounting">&#182;</a></h3><ul>
+<li>In how many ways can Faris choose 3 of the 5 colors of M&amp;M's to eat?</li>
+</ul>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
+<ul>
+<li>In how many ways can $k$ objects be selected as a lot a set of n?</li>
+</ul>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
+<ul>
+<li>Find the number of different $k$-subsets of a set of cardinality $n$.</li>
+</ul>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
+<ul>
+<li>In how many ways can a three-person subcommittee be chosen from a five-person committee?</li>
+</ul>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
+<ul>
+<li>A set of points is chosen on the circumference of a circle so that the number of different triangles with all three vertices among the points is equal to the number of pentagons with all five vertices in the set. How many points are there?</li>
+</ul>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
+<ul>
+<li>How many rearrangements of the word LINGUINI are there?</li>
+</ul>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
+<ul>
+<li>Derive a formula for the number of rearrangements of a word consisting of $k_1$ copies of letter $1$, $k_2$ copies of letter $2$, and so on up to $k_j$ copies of letter $j$, with $n$ total letters.</li>
+</ul>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
+<ul>
+<li>In how many different ways can a set of cardinality $n$ be partitioned into $j$ subsets of cardinalities $\left\{k_1,k_2,\ldots,k_j\right\}$?</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Counting-beyond-Common-Sense">Counting beyond Common Sense<a class="anchor-link" href="#Counting-beyond-Common-Sense">&#182;</a></h3><ul>
+<li>A dog trainer wants to buy 8 dogs all of which are either cocker spaniels, Irish setters, or Russian wolfhounds. In how many ways can she make the choice?</li>
+</ul>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
+<ul>
+<li>Derive a simple formula for the number of ways to buy $k$ dogs if there are $n$ varieties to choose from.</li>
+</ul>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
+<ul>
+<li>Derive a simple formula for the number of solutions in nonnegative integers of $x_1 +x_2 + \cdots + x_n = k$.</li>
+</ul>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
+<ul>
+<li>In how many ways may five people be seated in a row of twenty chairs given that no two people may sit next to one another?</li>
+</ul>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
+<ul>
+<li>How many nonnegative integer solutions are there to $x_1 + x_2 + x_3 \le 50$?</li>
+</ul>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Principle-of-Inclusion-Exclusion-(PIE)">Principle of Inclusion-Exclusion (PIE)<a class="anchor-link" href="#Principle-of-Inclusion-Exclusion-(PIE)">&#182;</a></h3><ul>
+<li>There are 100 students taking language classes at Austin High School. If 60 are taking German and 75 are taking Spanish and these are the only languages taught, how many students take both Spanish and German?</li>
+</ul>
+<p><br/>
+<br/>
+<br/>
+<br/></p>
 
 </div>
 </div>

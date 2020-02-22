@@ -13325,22 +13325,22 @@ $$(n)_k=n(n-1)(n-2)\cdots (n-k+1)$$<ul>
 <li>In how many ways can a generous person give one M&amp;M each to two children if she has 3 different red, 4 different brown, and 5 different tan ones and the two children insist upon having M&amp;M's of different colors?</li>
 </ul>
 <blockquote><p>Think of a sequential experiment with two component experiments each of the form
-$$\Omega \leftrightarrow \text{"give one M&amp;M to one child"}$$
-so that the outcome space of the sequential experiment is $\Omega^2$.<br/>
+$$\mathsf{\Omega} \leftrightarrow \text{"give one M&amp;M to one child’}$$
+so that the outcome space of the sequential experiment is $\mathsf{\Omega}^2$.<br/>
 Following are the events of interest for this problem.
 \begin{align*}
-R &amp; \leftrightarrow\text{"give a red M&amp;M to one child"}\\
-B &amp; \leftrightarrow\text{"give a brown M&amp;M to one child"}\\
-T &amp; \leftrightarrow\text{"give a tan M&amp;M to one child"}\\
-R\times B &amp; \leftrightarrow\text{"give a red-brown pair of M&amp;M's to the children"}\\
-B\times R &amp; \leftrightarrow\text{"give a brown-red pair of M&amp;M's to the children"}\\
-B\times T &amp; \leftrightarrow\text{"give a brown-tan pair of M&amp;M's to the children"}\\
-T\times B &amp; \leftrightarrow\text{"give a tan-brown pair of M&amp;M's to the children"}\\
-T\times R &amp; \leftrightarrow\text{"give a tan-red pair of M&amp;M's to the children"}\\
-R\times T &amp; \leftrightarrow\text{"give a red-tan pair of M&amp;M's to the children"}
+\mathsf{R} &amp; \leftrightarrow\text{‘give a red M&amp;M to one child’}\\
+\mathsf{B} &amp; \leftrightarrow\text{‘give a brown M&amp;M to one child’}\\
+\mathsf{T} &amp; \leftrightarrow\text{‘give a tan M&amp;M to one child’}\\
+\mathsf{R}\times \mathsf{B} &amp; \leftrightarrow\text{‘give a red-brown pair of M&amp;M's to the children’}\\
+\mathsf{B}\times \mathsf{R} &amp; \leftrightarrow\text{‘give a brown-red pair of M&amp;M's to the children’}\\
+\mathsf{B}\times \mathsf{T} &amp; \leftrightarrow\text{‘give a brown-tan pair of M&amp;M's to the children’}\\
+\mathsf{T}\times \mathsf{B} &amp; \leftrightarrow\text{‘give a tan-brown pair of M&amp;M's to the children’}\\
+\mathsf{T}\times \mathsf{R} &amp; \leftrightarrow\text{‘give a tan-red pair of M&amp;M's to the children’}\\
+\mathsf{R}\times \mathsf{T} &amp; \leftrightarrow\text{‘give a red-tan pair of M&amp;M's to the children’}
 \end{align*}
 The required number of arrangements is obtained by summing the cardinalities of the six Cartesian products above, namely
-$$\left|R\times B\right|+\left|B\times R\right|+\left|B\times T\right|+\left|T\times B\right|+\left|T\times R\right|+\left|R\times T\right|=2\left(3\times4+4\times5+5\times3\right)=94$$</p>
+$$\left|\mathsf{R}\times \mathsf{B}\right|+\left|\mathsf{B}\times \mathsf{R}\right|+\left|\mathsf{B}\times \mathsf{T}\right|+\left|\mathsf{T}\times \mathsf{B}\right|+\left|\mathsf{T}\times \mathsf{R}\right|+\left|\mathsf{R}\times \mathsf{T}\right|=2\left(3\times4+4\times5+5\times3\right)=94$$</p>
 </blockquote>
 
 </div>
@@ -13517,16 +13517,16 @@ $$\left|R\times B\right|+\left|B\times R\right|+\left|B\times T\right|+\left|T\t
 <li>[<em>M&amp;M's Revisited</em>] In how many ways can a generous person give one M&amp;M each to two children if she has 3 different red, 4 different brown, and 5 different tan ones and the two children insist upon having M&amp;M's of different colors?</li>
 </ul>
 <blockquote><p>Think of a sequential experiment with two component experiments each of the form
-$$\Omega \leftrightarrow \text{"give one M&amp;M to one child"}$$
-so that the outcome space of the combined experiment is $\Omega^2$.<br/>
+$$\mathsf{\Omega} \leftrightarrow \text{‘give one M&amp;M to one child’}$$
+so that the outcome space of the combined experiment is $\mathsf{\Omega}^2$.<br/>
 The union of the following events is complementary to what is of interest for this problem.
 \begin{align*}
-R^2 &amp; \leftrightarrow\text{"give one red M&amp;M each the children"}\\
-B^2 &amp; \leftrightarrow\text{"give one brown M&amp;M each to the children"}\\
-T^2 &amp; \leftrightarrow\text{"give one tan M&amp;M each to the children"}\\
+\mathsf{R}^2 &amp; \leftrightarrow\text{‘give one red M&amp;M each the children’}\\
+\mathsf{B}^2 &amp; \leftrightarrow\text{‘give one brown M&amp;M each to the children’}\\
+\mathsf{T}^2 &amp; \leftrightarrow\text{‘give one tan M&amp;M each to the children’}\\
 \end{align*}
-The required number of arrangements is obtained by subtracting the cardinalities of the above three events from that of $\Omega^2$, namely
-$$\left|\Omega^2\right|-\left|R^2\right|-\left|B^2\right|-\left|T^2\right|=(3+4+5)^2-3^2-4^2-5^2=94$$</p>
+The required number of arrangements is obtained by subtracting the cardinalities of the above three events from that of $\mathsf{\Omega}^2$, namely
+$$\left|\mathsf{\Omega}^2\right|-\left|\mathsf{R}^2\right|-\left|\mathsf{B}^2\right|-\left|\mathsf{T}^2\right|=(3+4+5)^2-3^2-4^2-5^2=94$$</p>
 </blockquote>
 <h3 id="Strategic-Overcounting">Strategic Overcounting<a class="anchor-link" href="#Strategic-Overcounting">&#182;</a></h3><ul>
 <li>In how many ways can Faris choose 3 of the 5 colors of M&amp;M's to eat?</li>

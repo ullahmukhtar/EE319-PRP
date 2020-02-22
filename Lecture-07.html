@@ -13115,9 +13115,9 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Properties-of-Conditional-Probability">Properties of Conditional Probability<a class="anchor-link" href="#Properties-of-Conditional-Probability">&#182;</a></h2><h3 id="Product-Rule">Product Rule<a class="anchor-link" href="#Product-Rule">&#182;</a></h3>\begin{align*}
-P\left(A\cap B\right) &amp; =P\left(A\right)P\left(B\mid A\right)\\
-P\left(A\cap B\cap C\right) &amp; =P\left(A\right)P\left(B\mid A\right)P\left(C\mid A\cap B\right)\\
-P\left(\bigcap_{k=1}^{n}A_{k}\right) &amp; =P\left(A_{1}\right)P\left(A_{2}\mid A_{1}\right)\cdots P\left(A_{n}\mid\bigcap_{k=1}^{n-1}A_{k}\right)
+P\left(\mathsf{A}\cap \mathsf{B}\right) &amp; =P\left(\mathsf{A}\right)P\left(\mathsf{B}\mid \mathsf{A}\right)\\
+P\left(\mathsf{A}\cap \mathsf{B}\cap \mathsf{C}\right) &amp; =P\left(\mathsf{A}\right)P\left(\mathsf{B}\mid \mathsf{A}\right)P\left(\mathsf{C}\mid \mathsf{A}\cap \mathsf{B}\right)\\
+P\left(\bigcap_{k=1}^{n}\mathsf{A}_{k}\right) &amp; =P\left(\mathsf{A}_{1}\right)P\left(\mathsf{A}_{2}\mid \mathsf{A}_{1}\right)\cdots P\left(\mathsf{A}_{n}\mid\bigcap_{k=1}^{n-1}\mathsf{A}_{k}\right)
 \end{align*}<blockquote><h3 id="Example">Example<a class="anchor-link" href="#Example">&#182;</a></h3><p>Consider an urn containing three red, four white, and five blue balls.<br/>
 The probabilities of drawing “at random” a red (R), a white (W), or a blue (B) ball, separately, are
 <br/>
@@ -13147,19 +13147,19 @@ The probability of the event “draw three balls, a red, a white, and a blue, in
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Statistical-Independence-among-Events">Statistical Independence among Events<a class="anchor-link" href="#Statistical-Independence-among-Events">&#182;</a></h2><p>Say we have three events $A$, $B$, and $C$.</p>
-<h3 id="Joint-Independence">Joint Independence<a class="anchor-link" href="#Joint-Independence">&#182;</a></h3>$$P\left(A\cap B\cap C\right)=P\left(A\right)P\left(B\right)P\left(C\right)$$<h3 id="Pair-wise-Independence">Pair-wise Independence<a class="anchor-link" href="#Pair-wise-Independence">&#182;</a></h3>\begin{align*}
-P\left(A\cap B\right) &amp; =P\left(A\right)P\left(B\right) &amp; P\left(B\cap C\right) &amp; =P\left(B\right)P\left(C\right) &amp; P\left(C\cap A\right) &amp; =P\left(C\right)P\left(A\right)
+<h2 id="Statistical-Independence-among-Events">Statistical Independence among Events<a class="anchor-link" href="#Statistical-Independence-among-Events">&#182;</a></h2><p>Say we have three events $\mathsf{A}$, $\mathsf{B}$, and $\mathsf{C}$.</p>
+<h3 id="Joint-Independence">Joint Independence<a class="anchor-link" href="#Joint-Independence">&#182;</a></h3>$$P\left(\mathsf{A}\cap \mathsf{B}\cap \mathsf{C}\right)=P\left(\mathsf{A}\right)P\left(\mathsf{B}\right)P\left(\mathsf{C}\right)$$<h3 id="Pair-wise-Independence">Pair-wise Independence<a class="anchor-link" href="#Pair-wise-Independence">&#182;</a></h3>\begin{align*}
+P\left(\mathsf{A}\cap \mathsf{B}\right) &amp; =P\left(\mathsf{A}\right)P\left(\mathsf{B}\right) &amp; P\left(\mathsf{B}\cap \mathsf{C}\right) &amp; =P\left(\mathsf{B}\right)P\left(\mathsf{C}\right) &amp; P\left(\mathsf{C}\cap \mathsf{A}\right) &amp; =P\left(\mathsf{C}\right)P\left(\mathsf{A}\right)
 \end{align*}<h3 id="Mutual-Independence">Mutual Independence<a class="anchor-link" href="#Mutual-Independence">&#182;</a></h3><ul>
 <li>Pair-wise independence, and</li>
 <li>joint independence</li>
 </ul>
-<p>Events $A_1,A_2,\cdots,A_n$ are said to be (mutually) independent iff
-$$P\left(\bigcap_{i=1}^{k}A_{i}\right)=\prod_{i=1}^{k}P\left(A_{i}\right)\ \text{for each}\ k=2,3,\cdots,n$$
+<p>Events $\mathsf{A}_1,\mathsf{A}_2,\cdots,\mathsf{A}_n$ are said to be (mutually) independent iff
+$$P\left(\bigcap_{i=1}^{k}\mathsf{A}_{i}\right)=\prod_{i=1}^{k}P\left(\mathsf{A}_{i}\right)\ \text{for each}\ k=2,3,\cdots,n$$
 That is, events in any subcollection are jointly independent.</p>
 <blockquote><h3 id="Example">Example<a class="anchor-link" href="#Example">&#182;</a></h3><p>Consider the outcome space $\Omega=\left\{ \text{HH},\text{HT},\text{TH},\text{TT}\right\}$ and the events
 \begin{align*}
-A= &amp; \left\{ \text{TT},\text{TH}\right\}  &amp; B= &amp; \left\{ \text{TT},\text{HT}\right\}  &amp; C= &amp; \left\{ \text{TH},\text{HT}\right\} 
+\mathsf{A}= &amp; \left\{ \text{TT},\text{TH}\right\}  &amp; \mathsf{B}= &amp; \left\{ \text{TT},\text{HT}\right\}  &amp; \mathsf{C}= &amp; \left\{ \text{TH},\text{HT}\right\} 
 \end{align*}
 <br/>
 <br/>
@@ -13179,9 +13179,9 @@ A= &amp; \left\{ \text{TT},\text{TH}\right\}  &amp; B= &amp; \left\{ \text{TT},\
 <ul>
 <li>Independent experiments can be viewed as component experiments of a so-called product experiment.
 \begin{align*}
-\left(\Omega_{1},\mathcal{F}_{1},P_{1}\right) &amp; \leftrightarrow\text{"First coin toss"}&amp; \Omega_{1}= &amp; \left\{ \text{T},\text{H}\right\} \\
-\left(\Omega_{2},\mathcal{F}_{2},P_{2}\right) &amp; \leftrightarrow\text{"Second coin toss"}&amp; \Omega_{2}= &amp; \left\{ \text{T},\text{H}\right\} \\
-\left(\Omega,\mathcal{F},P\right) &amp; \leftrightarrow\text{"Two coin tosses"} &amp; \Omega &amp; =\Omega_{1}\times\Omega_{2}
+\left(\Omega_{1},\mathcal{F}_{1},P_{1}\right) &amp; \leftrightarrow\text{‘First coin toss’}&amp; \Omega_{1}= &amp; \left\{ \text{T},\text{H}\right\} \\
+\left(\Omega_{2},\mathcal{F}_{2},P_{2}\right) &amp; \leftrightarrow\text{‘Second coin toss’}&amp; \Omega_{2}= &amp; \left\{ \text{T},\text{H}\right\} \\
+\left(\Omega,\mathcal{F},P\right) &amp; \leftrightarrow\text{‘Two coin tosses’} &amp; \Omega &amp; =\Omega_{1}\times\Omega_{2}
 \end{align*}</li>
 </ul>
 </blockquote>

@@ -13154,13 +13154,13 @@ provided $x_4$ is a nonnegative integer large enough for the equation to hold. T
 </ul>
 <blockquote><p>Define the following events:
 \begin{align*}
-G &amp; \leftrightarrow\text{"Student takes German"}\\
-S &amp; \leftrightarrow\text{"Student takes Spanish"}\\
-S\cup G &amp; \leftrightarrow\text{"Student takes language classes"}\\
-S\cap G &amp; \leftrightarrow\text{"Student takes both Spanish and German"}
+\mathsf{G} &amp; \leftrightarrow\text{‘Student takes German’}\\
+\mathsf{S} &amp; \leftrightarrow\text{‘Student takes Spanish’}\\
+\mathsf{S}\cup \mathsf{G} &amp; \leftrightarrow\text{‘Student takes language classes’}\\
+\mathsf{S}\cap \mathsf{G} &amp; \leftrightarrow\text{‘Student takes both Spanish and German’}
 \end{align*}
 The number of students taking both Spanish and German is 
-$$\left|S\cap G\right|=\left|S\right|+\left|G\right|-\left|S\cup G\right|=75+60-100=35$$</p>
+$$\left|\mathsf{S}\cap \mathsf{G}\right|=\left|\mathsf{S}\right|+\left|\mathsf{G}\right|-\left|\mathsf{S}\cup \mathsf{G}\right|=75+60-100=35$$</p>
 </blockquote>
 
 </div>
@@ -13170,36 +13170,36 @@ $$\left|S\cap G\right|=\left|S\right|+\left|G\right|-\left|S\cup G\right|=75+60-
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Summary-of-Four--of-Selection$\leftrightarrow$Placement-Cases">Summary of Four  of Selection$\leftrightarrow$Placement Cases<a class="anchor-link" href="#Summary-of-Four--of-Selection$\leftrightarrow$Placement-Cases">&#182;</a></h3><p>The following sets are used in the summary.
 \begin{align*}
-\Omega &amp; =\left\{ \omega_{1},\omega_{2},\ldots,\omega_{n}\right\} \leftrightarrow\text{"}n\text{-element sample space"} &amp;  &amp; \left\{ 1,2,\ldots,n\right\} \leftrightarrow\text{"}n\text{ different cells"}\\
- &amp; \left\{ 1,2,\ldots,k\right\} \leftrightarrow\text{"}k\text{ different positions for selected elements"} &amp;  &amp; S=\left\{ s_{1},s_{2},\ldots,s_{k}\right\} \leftrightarrow\text{"}k\text{ distinguishable objects"}\\
+\mathsf{\Omega} &amp; =\left\{ \omega_{1},\omega_{2},\ldots,\omega_{n}\right\} \leftrightarrow\text{"}n\text{-element sample space"} &amp;  &amp; \left\{ 1,2,\ldots,n\right\} \leftrightarrow\text{"}n\text{ different cells"}\\
+ &amp; \left\{ 1,2,\ldots,k\right\} \leftrightarrow\text{"}k\text{ different positions for selected elements"} &amp;  &amp; \mathsf{S}=\left\{ s_{1},s_{2},\ldots,s_{k}\right\} \leftrightarrow\text{"}k\text{ distinguishable objects"}\\
  &amp;  &amp;  &amp; \left\{ s\colon k\right\} \leftrightarrow\text{"}k\text{ indistinguishable objects"}
 \end{align*}</p>
 <ul>
 <li>Ordered Selection with Replacement $\leftrightarrow$ Placement of Distinguishable Objects without Exclusion
 \begin{align*}
-\Omega^{k} &amp; =\left\{ \left(x_{1},x_{2},\ldots,x_{k}\right)\colon x_{i}\in\Omega\right\} \\
-&amp; \leftrightarrow\left\{ \left(S_{1},S_{2},\ldots,S_{n}\right)\colon S_{i}\subseteq S,\sum_{i=1}^{n}\left|S_{i}\right|=k\right\} \\
-\left|\Omega^{k}\right| &amp; =n^{k}
+\mathsf{\Omega}^{k} &amp; =\left\{ \left(x_{1},x_{2},\ldots,x_{k}\right)\colon x_{i}\in\mathsf{\Omega}\right\} \\
+&amp; \leftrightarrow\left\{ \left(\mathsf{S}_{1},\mathsf{S}_{2},\ldots,\mathsf{S}_{n}\right)\colon \mathsf{S}_{i}\subseteq \mathsf{S},\sum_{i=1}^{n}\left|\mathsf{S}_{i}\right|=k\right\} \\
+\left|\mathsf{\Omega}^{k}\right| &amp; =n^{k}
 \end{align*}</li>
 <li>Ordered Selection without Replacement $\leftrightarrow$ Placement of Distinguishable Objects with Exclusion
 \begin{align*}
-\left(\Omega\right)_{k} &amp; =\left\{ \left(x_{1},x_{2},\ldots,x_{k}\right)\colon x_{i}\in\Omega,x_{i}\ne x_{j}\,\text{if}\,i\ne j\right\} \\
-&amp; \leftrightarrow\left\{ \left(S_{1},S_{2},\ldots,S_{n}\right)\colon S_{i}\subseteq S,\left|S_{i}\right|\le1,\sum_{i=1}^{n}\left|S_{i}\right|=k\right\} \\
-\left|\left(\Omega\right)_{k}\right| &amp; =\left(n\right)_{k}
+\left(\mathsf{\Omega}\right)_{k} &amp; =\left\{ \left(x_{1},x_{2},\ldots,x_{k}\right)\colon x_{i}\in\mathsf{\Omega},x_{i}\ne x_{j}\,\text{if}\,i\ne j\right\} \\
+&amp; \leftrightarrow\left\{ \left(\mathsf{S}_{1},\mathsf{S}_{2},\ldots,\mathsf{S}_{n}\right)\colon \mathsf{S}_{i}\subseteq \mathsf{S},\left|\mathsf{S}_{i}\right|\le1,\sum_{i=1}^{n}\left|\mathsf{S}_{i}\right|=k\right\} \\
+\left|\left(\mathsf{\Omega}\right)_{k}\right| &amp; =\left(n\right)_{k}
 \end{align*}</li>
 <li>Unordered Selection without Replacement $\leftrightarrow$ Placement of Indistinguishable Objects with Exclusion
 \begin{align*}
-\binom{\Omega}{k} &amp; =\left\{ \left\{ x_{1},x_{2},\ldots,x_{k}\right\} \colon x_{i}\in\Omega\right\} \\
-&amp; \leftrightarrow\left\{ \left( S_{1},S_{2},\ldots,S_{n}\right) \colon S_{i}\subseteq\left\{ s\right\} ,\sum_{i=1}^{n}\left|S_{i}\right|=k\right\} \\
+\binom{\mathsf{\Omega}}{k} &amp; =\left\{ \left\{ x_{1},x_{2},\ldots,x_{k}\right\} \colon x_{i}\in\mathsf{\Omega}\right\} \\
+&amp; \leftrightarrow\left\{ \left( \mathsf{S}_{1},\mathsf{S}_{2},\ldots,\mathsf{S}_{n}\right) \colon \mathsf{S}_{i}\subseteq\left\{ s\right\} ,\sum_{i=1}^{n}\left|\mathsf{S}_{i}\right|=k\right\} \\
 &amp; \leftrightarrow\left\{ \left(k_{1},k_{2},\ldots,k_{n}\right)\colon k_{i}\in\left\{ 0,1\right\} ,\sum_{i=1}^{n}k_{i}=k\right\} \\
-\left|\binom{\Omega}{k}\right| &amp; =\binom{n}{k}=\binom{n}{n-k}
+\left|\binom{\mathsf{\Omega}}{k}\right| &amp; =\binom{n}{k}=\binom{n}{n-k}
 \end{align*}</li>
 <li>Unordered Selection with Replacement $\leftrightarrow$ Placement of Indistinguishable Objects without Exclusion
 \begin{align*}
-\biggl(\!\!\binom{\Omega}{k}\!\!\biggr) &amp; =\left\{ \left\{ x_{1}\colon m_{1},x_{2}\colon m_{2},\ldots,x_{r}\colon m_{r}\right\} \colon x_{i}\in\Omega,m_{i}\in\left\{1,2,\ldots,k\right\} ,\sum_{i=1}^{r}m_{i}=k\right\} \\
-&amp; \leftrightarrow\left\{ \left(S_{1},S_{2},\ldots,S_{n}\right) \colon S_{i}\subseteq\left\{ s\colon k\right\} ,\sum_{i=1}^{n}\left|S_{i}\right|=k\right\} \\
+\biggl(\!\!\binom{\mathsf{\Omega}}{k}\!\!\biggr) &amp; =\left\{ \left\{ x_{1}\colon m_{1},x_{2}\colon m_{2},\ldots,x_{r}\colon m_{r}\right\} \colon x_{i}\in\mathsf{\Omega},m_{i}\in\left\{1,2,\ldots,k\right\} ,\sum_{i=1}^{r}m_{i}=k\right\} \\
+&amp; \leftrightarrow\left\{ \left(\mathsf{S}_{1},\mathsf{S}_{2},\ldots,\mathsf{S}_{n}\right) \colon \mathsf{S}_{i}\subseteq\left\{ s\colon k\right\} ,\sum_{i=1}^{n}\left|\mathsf{S}_{i}\right|=k\right\} \\
 &amp; \leftrightarrow\left\{ \left(k_{1},k_{2},\ldots,k_{n}\right)\colon k_{i}\in\left\{0,1,\ldots,k\right\} ,\sum_{i=1}^{n}k_{i}=k\right\} \\
-\left|\biggl(\!\!\binom{\Omega}{k}\!\!\biggr)\right| &amp; =\biggl(\!\!\binom{n}{k}\!\!\biggr)=\binom{n-1+k}{n-1}=\binom{n-1+k}{k}
+\left|\biggl(\!\!\binom{\mathsf{\Omega}}{k}\!\!\biggr)\right| &amp; =\biggl(\!\!\binom{n}{k}\!\!\biggr)=\binom{n-1+k}{n-1}=\binom{n-1+k}{k}
 \end{align*}</li>
 </ul>
 

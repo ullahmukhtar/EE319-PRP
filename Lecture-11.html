@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 
 
-<title>Lecture-10</title>
+<title>Lecture-11</title>
 
 <style type="text/css">
     /*!
@@ -13110,57 +13110,142 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="EE319---Probability-&amp;-Random-Processes">EE319 - Probability &amp; Random Processes<a class="anchor-link" href="#EE319---Probability-&amp;-Random-Processes">&#182;</a></h1><h2 id="Dr.-Ing.-Mukhtar-Ullah,-FAST-NUCES,-Spring-2020"><em>Dr. Ing. Mukhtar Ullah</em>, FAST NUCES, Spring 2020<a class="anchor-link" href="#Dr.-Ing.-Mukhtar-Ullah,-FAST-NUCES,-Spring-2020">&#182;</a></h2><hr>
 
-<h2 id="Lecture-10-(2020-02-21)"><strong>Lecture 10</strong> (2020-02-21)<a class="anchor-link" href="#Lecture-10-(2020-02-21)">&#182;</a></h2>
+<h2 id="Lecture-11-(2020-02-25)"><strong>Lecture 11</strong> (2020-02-25)<a class="anchor-link" href="#Lecture-11-(2020-02-25)">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Counting-beyond-Common-Sense">Counting beyond Common Sense<a class="anchor-link" href="#Counting-beyond-Common-Sense">&#182;</a></h3><ul>
-<li>A dog trainer wants to buy $8$ dogs all of which are either cocker spaniels, Irish setters, or Russian wolfhounds. In how many ways can she make the choice?</li>
-</ul>
-<blockquote><p>Viewed as a placement problem, the “$8$ dogs” are our “indistinguishable objects”, each denoted by $\mathsf{d}$, to be placed without exclusion in three different cells labelled 1 (cocker spaniels), 2 (Irish setters) and 3 (Russian wolfhounds). The different placements can be depicted by strings of $8\ \mathsf{d}$'s with two partitioing bars placed at different positions. In other words, each different placement requires to choose two different positions for the bars from the available 8+(3-1) positions. That amounts to $\binom{8+3-1}{3-1}$ different ways to buy the dogs.</p>
-</blockquote>
+<h3 id="The-so-called-Four-Cases-of-Selection-$\leftrightarrow$-Placement">The so-called Four Cases of Selection $\leftrightarrow$ Placement<a class="anchor-link" href="#The-so-called-Four-Cases-of-Selection-$\leftrightarrow$-Placement">&#182;</a></h3><p>The following definitions are used in the summary.
+\begin{align*}
+\mathsf{\Omega} &amp; =\left\{ \omega_{i}\mid i\in\mathsf{M}\right\} \leftrightarrow\text{‘Base sample space’} &amp; \mathsf{M} &amp; =\left\{ 1,2,\ldots,m\right\} \leftrightarrow\text{‘Index set for different cells’}\\
+\mathsf{N} &amp; =\left\{ 1,2,\ldots,n\right\} \leftrightarrow\text{‘Index set for selected elements’} &amp; \mathsf{S} &amp; =\left\{ s_{i}\mid i\in\mathsf{N}\right\} \leftrightarrow\text{‘Set of distinguishable objects’}\\
+P\left(\left\{ \omega_{i}\right\} \right) &amp; =p_{i},\ i\in\mathsf{M}\leftrightarrow\text{‘ Base probability measure’} &amp;  &amp; \left\{ s\colon n\right\} \leftrightarrow\text{‘Multiset of indistinguishable objects’}
+\end{align*}</p>
+<p>How the probabilities are assigned to elementary events by a probability
+measure is decribed by what is called a probability distribution.
+A uniform probability distribution assign equal probabilities to elementary
+events of a discrete outcome space. In the present setting, the base
+probability distribution is uniform if $p_{i}=1/m$ for all $i\in\mathsf{M}$.</p>
 <ul>
-<li>Derive a simple formula for the number of ways to buy $k$ dogs if there are $n$ varieties to choose from.</li>
-</ul>
-<blockquote>$$\binom{k+n-1}{n-1}=\binom{k+n-1}{k}$$
-</blockquote>
+<li><p>Ordered Selection with Replacement $\leftrightarrow$ Placement of Distinguishable Objects without Exclusion</p>
+<blockquote><p>For all selection indices $i\in\mathsf{N}$ of the component experiments,
+$$\mathsf{\Omega}_{i}=\mathsf{\Omega},\ P_{i}=P$$
+The (combined) sample space
+\begin{align*}
+\mathsf{\Omega}^{n} &amp; =\Bigl\{\left(x_{i}\right)_{i\in\mathsf{N}}\mid x_{i}\in\mathsf{\Omega}\Bigr\}\leftrightarrow\left\{ \left(\mathsf{S}_{i}\right)_{i\in\mathsf{M}}\mid\mathsf{S}_{i}\subseteq\mathsf{S},\sum_{i=1}^{m}\left|\mathsf{S}_{i}\right|=n\right\} 
+\end{align*}
+The size of the sample space
+$$\left|\mathsf{\Omega}^{n}\right|=m^{n}$$
+For every elementary event $\left(x_{i}\right)_{i\in\mathsf{N}}\in\mathsf{\Omega}^{n}$,
+$$P_{\mathrm{o\text{-}r}}\left(\left\{ \left(x_{i}\right)_{i\in\mathsf{N}}\right\} \right)=P\left(\prod_{i=1}^{n}\left\{ x_{i}\right\} \right)=\prod_{i=1}^{n}P\left(\left\{ x_{i}\right\} \right)$$</p>
 <ul>
-<li>Derive a simple formula for the number of solutions in nonnegative integers of $x_1 +x_2 + \cdots + x_n = k$.</li>
+<li>One special case of interest is that of $m=2$, $p_{1}=p$ and $n_{1}=k$
+which reduces the above probability expression to $p^{k}\left(1-p\right)^{n-k}$. This expression will appear in what is called a Bernoulli distribution. </li>
+<li>If the base probability distribution is uniform, then the elementary events are equiprobable, each with probability $1/m^{n}$.</li>
 </ul>
-<blockquote>$$\binom{k+n-1}{n-1}=\binom{k+n-1}{k}$$
 </blockquote>
+</li>
+<li><p>Ordered Selection without Replacement $\leftrightarrow$ Placement of Distinguishable Objects with Exclusion</p>
+<blockquote><p>The sample space
+\begin{align*}
+\left(\mathsf{\Omega}\right)_{n} &amp; =\left\{ \left(x_{i}\right)_{i\in\mathsf{N}}\mid x_{i}\in\mathsf{\Omega}\setminus\bigcup_{j=1}^{i-1}\left\{ x_{j}\right\} \right\} \leftrightarrow\left\{ \left(\mathsf{S}_{i}\right)_{i\in\mathsf{M}}\mid\mathsf{S}_{i}\subseteq\mathsf{S},\left|\mathsf{S}_{i}\right|\le1,\sum_{i=1}^{m}\left|\mathsf{S}_{i}\right|=n\right\} 
+\end{align*}
+The size of the sample space
+$$\left|\left(\mathsf{\Omega}\right)_{n}\right|=\left(m\right)_{n}=m\left(m-1\right)\cdot\cdots\left(m-n+1\right)=\left(m-n+1\right)^{(n)}$$
+For all the elementary events $\left(x_{i}\right)_{i\in\mathsf{N}}\in\left(\mathsf{\Omega}\right)_{n}$,
+\begin{multline*}
+P_{\mathrm{o\text{-}\bar{r}}}\left(\left\{ \left(x_{i}\right)_{i\in\mathsf{N}}\right\} \right)\\
+\quad=P_{1}\left(\left\{ x_{1}\right\} \right)P_{2\mid1}\left(\left\{ x_{2}\right\} \mid\left\{ x_{1}\right\} \right)P_{3\mid1,2}\left(\left\{ x_{3}\right\} \mid\left\{ \left(x_{1},x_{2}\right)\right\} \right)\cdots P_{n\mid1,2,\cdots,n-1}\left(\left\{ x_{n}\right\} \mid\left\{ \left(x_{1},x_{2},\ldots,x_{n-1}\right)\right\} \right)
+\end{multline*}
+If the base probability distribution is uniform, the sample space
+is reduced by a single element at each stage of selection and, consequently,
+the elementary events are equiprobable, each with probability
+$$\frac{1}{m}\times\frac{1}{m-1}\times\frac{1}{m-2}\cdots\times\frac{1}{\left(m-n+1\right)}=\frac{1}{\left(m\right)_{n}}$$</p>
+</blockquote>
+</li>
+<li><p>Unordered Selection without Replacement $\leftrightarrow$ Placement of Indistinguishable Objects with Exclusion</p>
+<blockquote><p>The sample space
+\begin{multline*}
+\binom{\mathsf{\Omega}}{n}=\left\{ \left\{ x_{i}\mid i\in\mathsf{N}\right\} \mid x_{i}\in\mathsf{\Omega}\setminus\bigcup_{j=1}^{i-1}\left\{ x_{j}\right\} \right\} \\
+\qquad\qquad\leftrightarrow\left\{ \left(\mathsf{S}_{i}\right)_{i\in\mathsf{M}}\mid\mathsf{S}_{i}\subseteq\left\{ s\right\} ,\sum_{i=1}^{m}\left|\mathsf{S}_{i}\right|=n\right\} \leftrightarrow\left\{ \left(n_{i}\right)_{i\in\mathsf{M}}\mid n_{i}\in\left\{ 0,1\right\} ,\sum_{i=1}^{m}n_{i}=n\right\} 
+\end{multline*}
+The size of the sample space
+$$\left|\binom{\mathsf{\Omega}}{n}\right|=\binom{m}{n}=\dfrac{\left(m\right)_{n}}{n!}=\binom{m}{m-n}$$</p>
+<p>For all the elementary events $\left\{ x_{i}\mid i\in\mathsf{N}\right\} \in\binom{\mathsf{\Omega}}{n}$,
+\begin{align*}
+P_{\mathrm{\bar{o}\text{-}\bar{r}}}\left(\left\{ \left\{ x_{i}\mid i\in\mathsf{N}\right\} \right\} \right) &amp; =P_{\mathrm{o\text{-}\bar{r}}}\left(\Bigl\{\left(y_{i}\right)_{i\in\mathsf{N}}\mid y_{i}\in\left\{ x_{i}\mid i\in\mathsf{N}\right\} \Bigr\}\right)=n!P_{\mathrm{o\text{-}\bar{r}}}\left(\left\{ \left(x_{i}\right)_{i\in\mathsf{N}}\right\} \right)
+\end{align*}</p>
 <ul>
-<li>In how many ways may five people be seated in a row of twenty chairs given that no two people may sit next to one another?</li>
+<li>If the base probability distribution is uniform, the set $\binom{\mathsf{\Omega}}{n}$
+is essentially a contraction of $\left(\mathsf{\Omega}\right)_{n}$
+by a factor $n!$, and the elementary events are, still, equiprobable,
+each probability
+$$\dfrac{n!}{\left(m\right)_{n}}=\dbinom{m}{n}^{-1}$$</li>
+<li>Furthermore, consider a partition $\left\{ \mathsf{R},\mathsf{R^{c}}\right\} $of
+the base sample space $\mathsf{\Omega}$ with sizes $\left|\mathsf{R}\right|=r$
+and $\left|\mathsf{R^{c}}\right|=m-r$. Say our interest lies in the number of elements
+of $\mathsf{R}$ in our selection. The appropriate
+event is
+$$\mathsf{R}_{k}\leftrightarrow \text{‘} k\text{ elements of }\mathsf{R}\text{ and }n-k\text{ elements of }\mathsf{R^{c}}\text{ in the }n\text{-element selection’}$$
+There are $\dbinom{r}{k}$
+ways to select $k$ elements of $\mathsf{R}$ and, independently,
+$\dbinom{m-r}{n-k}$ ways to select $n-k$ elements of $\mathsf{R^{c}}$.
+Assuming a uniform base probability distribution, the event of our
+interest has the probability: 
+$$P_{\mathrm{\bar{o}\text{-}\bar{r}}}\left(\mathsf{R}_{k}\right)=\dfrac{\dbinom{r}{k}\dbinom{m-r}{n-k}}{\dbinom{m}{n}}$$
+This is known as the hypergeometric distribution.</li>
 </ul>
-<blockquote><p>Any seating arrangement (of 5 people in a row of 20 chairs) that meets the restriction “no two people may sit next to one another” can be mapped to a seating arrangement (of 5 people in a row of 16 chairs) if one chair is removed from between each pair of people. The new types of seating arrangments is unrestricted in the sense that two people may sit next to one another. The number of seating arrangements then equals $\binom{16+5-1}{5-1}$.</p>
 </blockquote>
+</li>
+<li><p>Unordered Selection with Replacement $\leftrightarrow$ Placement of Indistinguishable Objects without Exclusion</p>
+<blockquote><p>The sample space
+\begin{multline*}
+\biggl(\!\!\binom{\mathsf{\Omega}}{n}\!\!\biggr)=\left\{ \left\{ \omega_{i}\colon n_{i}\mid i\in\mathsf{M}\right\} \mid\omega_{i}\in\mathsf{\Omega},n_{i}\in\left\{ 0\right\} \cup\mathsf{N},\sum_{i=1}^{m}n_{i}=n\right\} \\
+\qquad\qquad\leftrightarrow\left\{ \left(\mathsf{S}_{i}\right)_{i\in\mathsf{M}}\mid\mathsf{S}_{i}\subseteq\left\{ s\colon n\right\} ,\sum_{i=1}^{m}\left|\mathsf{S}_{i}\right|=n\right\} \leftrightarrow\left\{ \left(n_{i}\right)_{i\in\mathsf{M}}\mid n_{i}\in\left\{ 0\right\} \cup\mathsf{N},\sum_{i=1}^{m}n_{i}=n\right\} 
+\end{multline*}
+The size of the sample space
+$$\left|\biggl(\!\!\binom{\mathsf{\Omega}}{n}\!\!\biggr)\right|=\biggl(\!\!\binom{m}{n}\!\!\biggr)=\binom{m-1+n}{n}=\frac{\left(m-1+n\right)_{n}}{n!}=\frac{\left(m\right)^{(n)}}{n!}=\binom{m-1+n}{m-1}$$</p>
+<p>For all the elementary events $\left\{ \omega_{i}\colon n_{i}\mid i\in\mathsf{M}\right\} \in\bigl(\!\!\binom{\mathsf{\Omega}}{n}\!\!\bigr)$,
+\begin{multline*}
+P_{\mathrm{\bar{o}\text{-}r}}\left(\left\{ \left\{ \omega_{i}\colon n_{i}\mid i\in\mathsf{M}\right\} \right\} \right)\\
+\shoveleft{\begin{split}\qquad &amp; =P_{\mathrm{o\text{-}r}}\left(\Bigl\{\left(x_{j}\right)_{j\in\mathsf{N}}\mid x_{j}\in\left\{ \omega_{i}\colon n_{i}\mid i\in\mathsf{M}\right\} \Bigr\}\right)\\
+&amp; =\binom{n}{n_{1},n_{2},\cdots,n_{m}}P_{\mathrm{o\text{-}r}}\left(\prod_{i=1}^{m}\left\{ \omega_{i}\right\} ^{n_{i}}\right)\\
+&amp; =\binom{n}{n_{1},n_{2},\cdots,n_{m}}\prod_{i=1}^{m}p_{i}^{n_{i}}
+\end{split}
+}
+\end{multline*}
+The elementary events in this case are not equiprobable. Instead the
+probabilities assignment follows what is called a multinomial distribution.</p>
 <ul>
-<li>How many nonnegative integer solutions are there to $x_1 + x_2 + x_3 \le 50$?</li>
+<li>Even if the base probability distribution is uniform, the probabilties
+$$\binom{n}{n_{1},n_{2},\cdots,n_{m}}\prod_{i=1}^{m}\left(\frac{1}{m}\right)^{n_{i}}=\dfrac{1}{m^{n}}\binom{n}{n_{1},n_{2},\cdots,n_{m}}$$
+are not all equal.</li>
+<li>In the special case of $m=2$, $p_{1}=p$ , and $n_{1}=k$, the probability
+distribution reduces to what is called a binomial distribution
+$$P_{\mathrm{\bar{o}\text{-}r}}\left(\left\{ \left\{ \omega_{1}\colon k,\omega_{2}\colon n-k\right\} \right\} \right)=\binom{n}{k}p^{k}\left(1-p\right)^{n-k}$$</li>
 </ul>
-<blockquote><p>The inequality can be turned into an equality
-$$x_1 + x_2 + x_3 + x_4 = 50$$
-provided $x_4$ is a nonnegative integer large enough for the equation to hold. The number of nonnegative integer solutions then equals $\binom{50+4-1}{4-1}$.</p>
 </blockquote>
+</li>
+</ul>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Principle-of-Inclusion-Exclusion-(PIE)">Principle of Inclusion-Exclusion (PIE)<a class="anchor-link" href="#Principle-of-Inclusion-Exclusion-(PIE)">&#182;</a></h3><ul>
-<li>There are 100 students taking language classes at Austin High School. If 60 are taking German and 75 are taking Spanish and these are the only languages taught, how many students take both Spanish and German?</li>
-</ul>
-<blockquote><p>Define the following events:
-\begin{align*}
-\mathsf{G} &amp; \leftrightarrow\text{‘Student takes German’}\\
-\mathsf{S} &amp; \leftrightarrow\text{‘Student takes Spanish’}\\
-\mathsf{S}\cup \mathsf{G} &amp; \leftrightarrow\text{‘Student takes language classes’}\\
-\mathsf{S}\cap \mathsf{G} &amp; \leftrightarrow\text{‘Student takes both Spanish and German’}
+<h3 id="Uncountable-Sets-Revisited">Uncountable Sets Revisited<a class="anchor-link" href="#Uncountable-Sets-Revisited">&#182;</a></h3><h4 id="How-to-generate-an-event-space-for-the-real-line?"><em>How to generate an event space for the real line?</em><a class="anchor-link" href="#How-to-generate-an-event-space-for-the-real-line?">&#182;</a></h4><p>The so-called Borel field over the real line, denoted $\mathcal{B}\left(\mathbb{R}\right)$ can be generated by events of the form $\mathsf{B}_{x}=\left(-\infty,x\right]$ that include all subsets we encounter
+in practice. Mathematically we write
+$$\mathcal{B}\left(\mathbb{R}\right)=\sigma\left(\left\{ \mathsf{B}_{x}:x\in\mathbb{R}\right\} \right)$$</p>
+<p>Following are a few examples of events thus generated.
+&gt;</p>
+<blockquote>\begin{align*}
+\left(a,\infty\right) &amp; =\overline{\left(-\infty,a\right]}=\overline{\mathsf{B}_{a}}\\
+\left(a,b\right] &amp; =\left(a,\infty\right)\cap\left(-\infty,b\right]=\overline{\mathsf{B}_{a}}\cap \mathsf{B}_{b}\\
+\left\{ a\right\}  &amp; =\bigcap_{n=1}^{\infty}\left(a-1/n,a\right]=\bigcap_{n=1}^{\infty}\left(\overline{\mathsf{B}_{a-1/n}}\cap B_{a}\right)\\
+\left(a,b\right) &amp; =\bigcup_{n=1}^{n}\left(a,b-1/n\right]=\bigcup_{n=1}^{n}\left(\overline{\mathsf{B}_{a}}\cap B_{b-1/n}\right)\\
+\left[a,b\right] &amp; =\bigcap_{n=1}^{\infty}\left(a-1/n,b\right]=\bigcap_{n=1}^{\infty}\left(\overline{\mathsf{B}_{a-1/n}}\cap \mathsf{B}_{b}\right)
 \end{align*}
-The number of students taking both Spanish and German is 
-$$\left|\mathsf{S}\cap \mathsf{G}\right|=\left|\mathsf{S}\right|+\left|\mathsf{G}\right|-\left|\mathsf{S}\cup \mathsf{G}\right|=75+60-100=35$$</p>
 </blockquote>
 
 </div>

@@ -13274,9 +13274,10 @@ our advantage here if $m\gg n$.
 \end{align*}
 That simplifies to
 $$\left(n-1\right)n&gt;-2m\ln\frac{1}{2}=2m\ln2$$
-Noting that the left side is smaller than $n^{2}$, the inequality
-can be simplifed even further.
-$$n^{2}&gt;-2m\ln\frac{1}{2}=2m\ln2\implies n&gt;\sqrt{2m\ln2}=\sqrt{2\times365\times\ln2}\approx22.5$$
+Add $1/4$ to both sides to complete the square on the left side
+$$\left(n-\frac{1}{2}\right)^{2}&gt;2m\ln2+\frac{1}{4}$$
+The inequality further simplifes to
+$$\left(n-\frac{1}{2}\right)^{2}&gt;2m\ln2+\frac{1}{4}\implies n&gt;\frac{1}{2}+\sqrt{2m\ln2+\frac{1}{4}}=\frac{1}{2}+\sqrt{2\times365\times\ln2+\frac{1}{4}}\approx22.99$$
 The smallest integer value of $n$ satisfying the last inequality is $23$. Thus at least 23 people are needed to make at least one coincidence of birthdays more likely than no coincidence at all.</p>
 <p>If you find this number surprisingly small, you need to realize that the number of distinct pairs of people, $\binom{23}{2}=253$, is large enough for a birthday match to be more likely than not.</p>
 </blockquote>

@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 
 
-<title>Lecture-12</title>
+<title>Lecture-07</title>
 
 <style type="text/css">
     /*!
@@ -13108,170 +13108,91 @@ div#notebook {
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="EE319---Probability-&amp;-Random-Processes">EE319 - Probability &amp; Random Processes<a class="anchor-link" href="#EE319---Probability-&amp;-Random-Processes">&#182;</a></h1><h2 id="Dr.-Ing.-Mukhtar-Ullah,-FAST-NUCES,-Spring-2020"><em>Dr.-Ing. Mukhtar Ullah</em>, FAST NUCES, Spring 2020<a class="anchor-link" href="#Dr.-Ing.-Mukhtar-Ullah,-FAST-NUCES,-Spring-2020">&#182;</a></h2><hr>
-
-<h2 id="Lecture-12-(2020-02-28)"><strong>Lecture 12</strong> (2020-02-28)<a class="anchor-link" href="#Lecture-12-(2020-02-28)">&#182;</a></h2><h2 id="More-Applications-of-Probability">More Applications of Probability<a class="anchor-link" href="#More-Applications-of-Probability">&#182;</a></h2>
+<h1 id="EE319---Probability-&amp;-Random-Processes">EE319 - Probability &amp; Random Processes<a class="anchor-link" href="#EE319---Probability-&amp;-Random-Processes">&#182;</a></h1><h2 id="Dr.-Ing.-Mukhtar-Ullah,-FAST-NUCES,-Spring-2020"><em>Dr.-Ing. Mukhtar Ullah</em>, FAST NUCES, Spring 2020<a class="anchor-link" href="#Dr.-Ing.-Mukhtar-Ullah,-FAST-NUCES,-Spring-2020">&#182;</a></h2><h2 id="Lecture-07-(2020-02-11)"><strong>Lecture 07</strong> (2020-02-11)<a class="anchor-link" href="#Lecture-07-(2020-02-11)">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Resource-allocation-in-voice-packet-transmission">Resource allocation in voice packet transmission<a class="anchor-link" href="#Resource-allocation-in-voice-packet-transmission">&#182;</a></h3><p><img src="images/voice_packet_transmission.png" width="70%" /></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Properties-of-Conditional-Probability">Properties of Conditional Probability<a class="anchor-link" href="#Properties-of-Conditional-Probability">&#182;</a></h2><h3 id="Product-Rule">Product Rule<a class="anchor-link" href="#Product-Rule">&#182;</a></h3>\begin{align*}
+P\left(\mathsf{A}\cap \mathsf{B}\right) &amp; =P\left(\mathsf{A}\right)P\left(\mathsf{B}\mid \mathsf{A}\right)\\
+P\left(\mathsf{A}\cap \mathsf{B}\cap \mathsf{C}\right) &amp; =P\left(\mathsf{A}\right)P\left(\mathsf{B}\mid \mathsf{A}\right)P\left(\mathsf{C}\mid \mathsf{A}\cap \mathsf{B}\right)\\
+P\left(\bigcap_{k=1}^{n}\mathsf{A}_{k}\right) &amp; =P\left(\mathsf{A}_{1}\right)P\left(\mathsf{A}_{2}\mid \mathsf{A}_{1}\right)\cdots P\left(\mathsf{A}_{n}\mid\bigcap_{k=1}^{n-1}\mathsf{A}_{k}\right)
+\end{align*}<blockquote><h3 id="Example">Example<a class="anchor-link" href="#Example">&#182;</a></h3><p>Consider an urn containing three red, four white, and five blue balls.<br/>
+The probabilities of drawing “at random” a red (R), a white (W), or a blue (B) ball, separately, are
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+The probability of the event “draw three balls, a red, a white, and a blue, in that sequence”</p>
 <ul>
-<li>What is the sample space</li>
+<li>with replacement
+<br/>
+<br/>
+<br/>
+<br/>
+<br/></li>
+<li>without replacement
+<br/>
+<br/>
+<br/>
+<br/>
+<br/></li>
 </ul>
-<blockquote><p>All the 48 users are either active or silent in each the fixed time interval. Therefore our base sample space is simply
-$$\mathsf{\Omega}=\{\mathrm{A},\mathrm{S}\}$$</p>
 </blockquote>
-<ul>
-<li>Which case of selection $\leftrightarrow$ prediction? </li>
-</ul>
-<blockquote><p>The users are indistinguishable because being active or silent is the only state that matters in this problem. &gt;More than one users can be active (or silent for that matter). The sequential experiment here is then</p>
-<ul>
-<li>Unordered selection of size $48$ with replacement from a 2-element base space</li>
-<li>Placement of $48$ intinguishable objects in two different cells </li>
-</ul>
-</blockquote>
-<ul>
-<li>What is the probability that $k$ of $48$ users are active (during the fixed time interval)? </li>
-</ul>
-<blockquote><p>The base probabilities are $1/3$ for active and $2/3$ for silence. The required probability then equals</p>
-</blockquote>
-$$\binom{48}{k}\left(\frac{1}{3}\right)\left(\frac{2}{3}\right)^{48-k}$$
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="How-many-active-speakers-in-a-short-time-slot">How many active speakers in a short time slot<a class="anchor-link" href="#How-many-active-speakers-in-a-short-time-slot">&#182;</a></h3><p><img src="images/active_speakers_distribution.png" width="70%" /></p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="System-reliability">System reliability<a class="anchor-link" href="#System-reliability">&#182;</a></h3><ul>
-<li>Given probability $p_i$ that link $i$ fails independently of other links, what is the probability of system failure?</li>
+<h2 id="Statistical-Independence-among-Events">Statistical Independence among Events<a class="anchor-link" href="#Statistical-Independence-among-Events">&#182;</a></h2><p>Say we have three events $\mathsf{A}$, $\mathsf{B}$, and $\mathsf{C}$.</p>
+<h3 id="Joint-Independence">Joint Independence<a class="anchor-link" href="#Joint-Independence">&#182;</a></h3>$$P\left(\mathsf{A}\cap \mathsf{B}\cap \mathsf{C}\right)=P\left(\mathsf{A}\right)P\left(\mathsf{B}\right)P\left(\mathsf{C}\right)$$<h3 id="Pair-wise-Independence">Pair-wise Independence<a class="anchor-link" href="#Pair-wise-Independence">&#182;</a></h3>\begin{align*}
+P\left(\mathsf{A}\cap \mathsf{B}\right) &amp; =P\left(\mathsf{A}\right)P\left(\mathsf{B}\right) &amp; P\left(\mathsf{B}\cap \mathsf{C}\right) &amp; =P\left(\mathsf{B}\right)P\left(\mathsf{C}\right) &amp; P\left(\mathsf{C}\cap \mathsf{A}\right) &amp; =P\left(\mathsf{C}\right)P\left(\mathsf{A}\right)
+\end{align*}<h3 id="Mutual-Independence">Mutual Independence<a class="anchor-link" href="#Mutual-Independence">&#182;</a></h3><ul>
+<li>Pair-wise independence, and</li>
+<li>joint independence</li>
 </ul>
-<blockquote><p>Define events
-$$\mathsf{F}_{i}\leftrightarrow\text{‘Link }i\text{ functions’}\qquad\mathsf{F}\leftrightarrow\text{‘The system functions’}$$</p>
-</blockquote>
-<ul>
-<li><p>Links in series</p>
-<blockquote><p><img src="images/system_reliability_series.png" width="70%" /></p>
-<p>The series configuration enforces the relation $\mathsf{F}=\bigcap_{i=1}^{k}\mathsf{F}_{i}$ among the events.
-The required probability is then
-$$P\left(\mathsf{F}^\mathsf{c}\right) = 1-P\left(\mathsf{F}\right) = 1-P\left(\bigcap_{i=1}^{k}\mathsf{F}_{i}\right)=\prod_{i=1}^{k}P\left(\mathsf{F}_{i}\right)=\prod_{i=1}^{k}\left(1-p_{i}\right)$$</p>
-</blockquote>
-</li>
-<li><p>Links in parallel</p>
-<blockquote><p>
- <img src="images/system_reliability_parallel.png" width="60%" /></p>
-<p>The parallel configuration enforces the relation $\mathsf{F}^\mathsf{c}=\bigcap_{i=1}^{k}\mathsf{F}_{i}^\mathsf{c}$ among the events.
-The required probability is then
-$$P\left(\mathsf{F}^\mathsf{c}\right) = P\left(\bigcap_{i=1}^{k}\mathsf{F}_{i}^\mathsf{c}\right)=\prod_{i=1}^{k}P\left(\mathsf{F}_{i}^\mathsf{c}\right)=\prod_{i=1}^{k}p_{i}$$</p>
-</blockquote>
-</li>
-<li><p>Links in a complicated configuration</p>
-<blockquote><p>
- <img src="images/system_reliability_mixed.png" width="60%" /></p>
-<p>Attacking this problem directly is not straightforward. Let us identify what makes this configuration difficult. It turns out to be link $5$. But the link can only exist in two states and we could deal with them separately.</p>
-<ul>
-<li><p>Link $5$ fails</p>
-<p><img src="images/system_reliability_mixed_1.png" width="60%" /></p>
-<p>This conditional configuration enforces the conditional relation $\mathsf{F}^\mathsf{c}\mid\mathsf{F}_{5}^\mathsf{c}=\left(\mathsf{F}_{1}\cap\mathsf{F}_{2}\right)^\mathsf{c}\cap\left(\mathsf{F}_{3}\cap\mathsf{F}_{4}\right)^\mathsf{c}$ among the events. The conditional probability of system failure is then
-$$P\left(\mathsf{F}^\mathsf{c}\mid\mathsf{F}_{5}^\mathsf{c}\right)=\Bigl(1-\left(1-p_1\right)\left(1-p_2\right)\Bigr)\Bigl(1-\left(1-p_3\right)\left(1-p_4\right)\Bigr)$$</p>
-</li>
-<li><p>Link $5$ functions</p>
-<p><img src="images/system_reliability_mixed_2.png" width="60%" /></p>
-<p>This conditional configuration enforces the conditional relation $\mathsf{F}\mid\mathsf{F}_{5}=\left(\mathsf{F}_{1}^\mathsf{c}\cap\mathsf{F}_{3}^\mathsf{c}\right)^\mathsf{c}\cap\left(\mathsf{F}_{2}^\mathsf{c}\cap\mathsf{F}_{4}^\mathsf{c}\right)^\mathsf{c}$ among the events. The conditional probability of system failure is then
-$$P\left(\mathsf{F}^\mathsf{c}\mid\mathsf{F}_{5}^\mathsf{c}\right)=1-P\left(\mathsf{F}\mid\mathsf{F}_{5}\right)=1-\left(1-p_{1}p_{3}\right)\left(1-p_{2}p_{4}\right)$$</p>
-</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Balls-in-a-urn">Balls in a urn<a class="anchor-link" href="#Balls-in-a-urn">&#182;</a></h3><ul>
-<li>An urn contains five balls numbered $1$ to $5$. Suppose we draw three balls with replacement. What is the probability that all three balls are different?<blockquote><p>The base sample space has size $5$. The sample space of drawing three balls with replacement has size $5^3$. The event representing three different balls drawn has size $(5)_3$. The required probability is thus
-$$\dfrac{(5)_3}{\mathsf{5^3}}$$</p>
-</blockquote>
-</li>
-</ul>
-<h3 id="Balls-in-cells">Balls in cells<a class="anchor-link" href="#Balls-in-cells">&#182;</a></h3><ul>
-<li>Suppose that $12$ balls are placed at random into $12$ cells, where more than 1 ball is allowed to occupy a cell. What is the probability that all cells are occupied?<blockquote><p>All cells can be occupied only if each cell receives exactly one ball. The balls to be placed are indistinguishable. Since the elementary events of the combined experiment are not equiprobable, we must use the probability measure of the associated experiment in which the balls are viewed as distinguishable. Assuming a uniform base probability distribution, the required probability is then
-$$\dfrac{1}{12^{12}}\binom{12}{1,1,\cdots,1}=\dfrac{12!}{12^{12}}$$</p>
-</blockquote>
-</li>
-</ul>
-<h3 id="Airplace-crashes-in-a-year">Airplace crashes in a year<a class="anchor-link" href="#Airplace-crashes-in-a-year">&#182;</a></h3><ul>
-<li>Given that 12 airplane crashes occur at random in a year, what is the probability that there is exactly 1 crash each month?<blockquote><p>Assuming a uniform base probability distribution, the required probability is the same as above
-$$\dfrac{12!}{12^{12}}$$
-However, assuming that the same probability of a plane crash every does not seem to be realistic as evident from the extremely small probability obained above.</p>
-</blockquote>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Birthday-problem">Birthday problem<a class="anchor-link" href="#Birthday-problem">&#182;</a></h3><ul>
-<li>What is the minimum number of people who need to be in a room so that it is more likely than not that at least two of them have the same birthday?<blockquote><p>We need to solve a simpler problem first.</p>
-<p><em>Determine the probability that, in a set of $n$ randomly chosen people in a room, there is at least one
-pair of people who have the same birthday.</em></p>
-<p>Assume the following for convenience.</p>
-
-<pre><code>- It is not a leap year
-- Each day of the year is equally probable for a birthday
-- Birthdays of the people in the room are independent
-- There are no twins, triplets, and so on.
-</code></pre>
-<p>The base sample space has $365$ elements representing the possible birthdays for an individual under the stated assumptions. The essential point to note in the problem statement is the element of surprise or coincidence. It will not surprise you to know that two twins have the same birthday. Two persons, different otherwise, with the same birthday will surpise you. Under the stated assumptions, asking and noting the birthdays of $n$ randomly chosen people in a room is equivalent to the following experiments.</p>
-<ul>
-<li>Ordered selection of $n$ objects from a base sample space of $365$ elements</li>
-<li>Placement of $n$ distinguishable objects in $365$ different cells</li>
-</ul>
-<p>Let us define the event of our interest
-$$\mathsf{A}\leftrightarrow\text{‘At least two people have the same birthday’}$$
-It is much easier, however, to work out the probabiliy of an event that is exactly the opposite of our interest. 
-$$\mathsf{A}^\mathsf{c}\leftrightarrow\text{‘No two people have the same birthday’}$$
-The assumed uniform base probability distribution allows to write
-$$P\left(\mathsf{A}^\mathsf{c}\right)=\dfrac{\left(365\right)_{n}}{365^{n}}$$
-The required probability (that at least two people have the same birthday) is then
-$$P\left(\mathsf{A}\right)=1-\dfrac{\left(365\right)_n}{365^{n}}$$
-Getting back to the original problem, we need to find the smallest $n$ that satisfies $P\left(\mathsf{A}\right)&gt;P\left(\mathsf{A}^\mathsf{c}\right)$, or, equivalently, $P\left(\mathsf{A}^\mathsf{c}\right)&lt;1/2$. That casts our problem to finding the smallest $n$ satisfying $\left(365\right)_{n}/365^{n}&lt;1/2$. Let us write $m=365$ for convenience and work out the math as follows.
-$$\frac{1}{2}&gt;\frac{\left(m\right)_{n}}{m^{n}}=\frac{m}{m}\frac{\left(m-1\right)}{m}\cdots\frac{\left(m-n+1\right)}{m}$$
-It would be hopeless to try a solution to this inequality directly.
-Let us turn the product to a sum by taking natural logarithm.
-$$\ln\frac{1}{2}&gt;\ln\left(1-\frac{1}{m}\right)+\cdots+\ln\left(1-\frac{n-1}{m}\right)$$
-Recall a nice property of the exponential function, $\mathrm{e}^{x}\approx1+x$,
-that holds for small $x$. Taking the natural logarithm on both sides
-gives $x\approx\ln\left(1+x\right)$. This property of natural logarithm has a deeper meaning in the context of plots using logarithm scales: a small increment on a linear scale corresponds to almost the same increment on the corresponding logarithmic scale if the natural logarithm has been used. This should give you enough reason to see why it is called the natural logarithm. We can use this property to
-our advantage here if $m\gg n$.
+<p>Events $\mathsf{A}_1,\mathsf{A}_2,\cdots,\mathsf{A}_n$ are said to be (mutually) independent iff
+$$P\left(\bigcap_{i=1}^{k}\mathsf{A}_{i}\right)=\prod_{i=1}^{k}P\left(\mathsf{A}_{i}\right)\ \text{for each}\ k=2,3,\cdots,n$$
+That is, events in any subcollection are jointly independent.</p>
+<blockquote><h3 id="Example">Example<a class="anchor-link" href="#Example">&#182;</a></h3><p>Consider the outcome space $\mathsf{\Omega}=\left\{ \text{HH},\text{HT},\text{TH},\text{TT}\right\}$ and the events
 \begin{align*}
-\ln\frac{1}{2} &amp; &gt;\ln\left(1-\frac{1}{m}\right)+\cdots+\ln\left(1-\frac{n-1}{m}\right)\\
-&amp; \approx-\frac{1}{m}-\frac{2}{m}-\cdots-\frac{n-1}{m}\\
-&amp; =-\frac{\left(n-1\right)n}{2m}
+\mathsf{A}= &amp; \left\{ \text{TT},\text{TH}\right\}  &amp; \mathsf{B}= &amp; \left\{ \text{TT},\text{HT}\right\}  &amp; \mathsf{C}= &amp; \left\{ \text{TH},\text{HT}\right\} 
 \end{align*}
-That simplifies to
-$$\left(n-1\right)n&gt;-2m\ln\frac{1}{2}=2m\ln2$$
-Noting that the left side is smaller than $n^{2}$, the inequality
-can be simplifed even further.
-$$n^{2}&gt;-2m\ln\frac{1}{2}=2m\ln2\implies n&gt;\sqrt{2m\ln2}=\sqrt{2\times365\times\ln2}\approx22.5$$
-The smallest integer value of $n$ satisfying the last inequality is $23$. Thus at least 23 people are needed to make at least one coincidence of birthdays more likely than no coincidence at all.</p>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/></p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Sequential-Experiments">Sequential Experiments<a class="anchor-link" href="#Sequential-Experiments">&#182;</a></h2><p>Imagine a sequence of $k$ probabilistic experiments.</p>
+<ul>
+<li>The experiments (in the sequence) are said to be independent iff<blockquote><p>the outcomes in any one experiment does not affect outcomes of any other</p>
+<ul>
+<li>Independent experiments can be viewed as component experiments of a so-called product experiment.
+\begin{align*}
+\left(\mathsf{\Omega}_{1},\mathcal{F}_{1},P_{1}\right) &amp; \leftrightarrow\text{‘First coin toss’}&amp; \mathsf{\Omega}_{1}= &amp; \left\{ \text{T},\text{H}\right\} \\
+\left(\mathsf{\Omega}_{2},\mathcal{F}_{2},P_{2}\right) &amp; \leftrightarrow\text{‘Second coin toss’}&amp; \mathsf{\Omega}_{2}= &amp; \left\{ \text{T},\text{H}\right\} \\
+\left(\mathsf{\Omega},\mathcal{F},P\right) &amp; \leftrightarrow\text{‘Two coin tosses’} &amp; \mathsf{\Omega} &amp; =\mathsf{\Omega}_{1}\times\mathsf{\Omega}_{2}
+\end{align*}</li>
+</ul>
+</blockquote>
+</li>
+<li>The experiments are said to be identical iff<blockquote><p>the probabilistic (experimental) setup remains the same for all the experiments</p>
+</blockquote>
+</li>
+<li>The experiments are said to be random trials of a random experiment if <blockquote><p>the experiments are identical and independent</p>
+<ul>
+<li>Random trials are also referred to as independent and identical trials. </li>
+</ul>
 </blockquote>
 </li>
 </ul>

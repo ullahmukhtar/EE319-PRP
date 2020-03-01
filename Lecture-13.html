@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 
 
-<title>Lecture-12</title>
+<title>Lecture-13</title>
 
 <style type="text/css">
     /*!
@@ -13110,90 +13110,30 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="EE319---Probability-&amp;-Random-Processes">EE319 - Probability &amp; Random Processes<a class="anchor-link" href="#EE319---Probability-&amp;-Random-Processes">&#182;</a></h1><h2 id="Dr.-Ing.-Mukhtar-Ullah,-FAST-NUCES,-Spring-2020"><em>Dr.-Ing. Mukhtar Ullah</em>, FAST NUCES, Spring 2020<a class="anchor-link" href="#Dr.-Ing.-Mukhtar-Ullah,-FAST-NUCES,-Spring-2020">&#182;</a></h2><hr>
 
-<h2 id="Lecture-12-(2020-02-28)"><strong>Lecture 12</strong> (2020-02-28)<a class="anchor-link" href="#Lecture-12-(2020-02-28)">&#182;</a></h2><h2 id="More-Applications-of-Probability">More Applications of Probability<a class="anchor-link" href="#More-Applications-of-Probability">&#182;</a></h2>
+<h2 id="Lecture-13-(2020-03-03)"><strong>Lecture 13</strong> (2020-03-03)<a class="anchor-link" href="#Lecture-13-(2020-03-03)">&#182;</a></h2><h2 id="More-Applications-of-Probability-(continued)">More Applications of Probability (continued)<a class="anchor-link" href="#More-Applications-of-Probability-(continued)">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Resource-allocation-in-voice-packet-transmission">Resource allocation in voice packet transmission<a class="anchor-link" href="#Resource-allocation-in-voice-packet-transmission">&#182;</a></h3><p><img src="images/voice_packet_transmission.png" width="70%" /></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>What is the sample space</li>
-</ul>
-<blockquote><p>All the 48 users are either active or silent in each the fixed time interval. Therefore our base sample space is simply
-$$\mathsf{\Omega}=\{\mathrm{A},\mathrm{S}\}$$</p>
-</blockquote>
-<ul>
-<li>Which case of selection $\leftrightarrow$ prediction? </li>
-</ul>
-<blockquote><p>The users are indistinguishable because being active or silent is the only state that matters in this problem. &gt;More than one users can be active (or silent for that matter). The sequential experiment here is then</p>
-<ul>
-<li>Unordered selection of size $48$ with replacement from a 2-element base space</li>
-<li>Placement of $48$ intinguishable objects in two different cells </li>
-</ul>
-</blockquote>
-<ul>
-<li>What is the probability that $k$ of $48$ users are active (during the fixed time interval)? </li>
-</ul>
-<blockquote><p>The base probabilities are $1/3$ for active and $2/3$ for silence. The required probability then equals</p>
-</blockquote>
-$$\binom{48}{k}\left(\frac{1}{3}\right)\left(\frac{2}{3}\right)^{48-k}$$
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="How-many-active-speakers-in-a-short-time-slot">How many active speakers in a short time slot<a class="anchor-link" href="#How-many-active-speakers-in-a-short-time-slot">&#182;</a></h3><p><img src="images/active_speakers_distribution.png" width="70%" /></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="System-reliability">System reliability<a class="anchor-link" href="#System-reliability">&#182;</a></h3><ul>
-<li>Given probability $p_i$ that link $i$ fails independently of other links, what is the probability of system failure?</li>
-</ul>
-<blockquote><p>Define events
-$$\mathsf{F}_{i}\leftrightarrow\text{‘Link }i\text{ functions’}\qquad\mathsf{F}\leftrightarrow\text{‘The system functions’}$$</p>
-</blockquote>
-<ul>
-<li><p>Links in series</p>
-<blockquote><p><img src="images/system_reliability_series.png" width="70%" /></p>
-<p>The series configuration enforces the relation $\mathsf{F}=\bigcap_{i=1}^{k}\mathsf{F}_{i}$ among the events.
-The required probability is then
-$$P\left(\mathsf{F}^\mathsf{c}\right) = 1-P\left(\mathsf{F}\right) = 1-P\left(\bigcap_{i=1}^{k}\mathsf{F}_{i}\right)=\prod_{i=1}^{k}P\left(\mathsf{F}_{i}\right)=\prod_{i=1}^{k}\left(1-p_{i}\right)$$</p>
+<h3 id="Quality-control">Quality control<a class="anchor-link" href="#Quality-control">&#182;</a></h3><ul>
+<li>A batch of $50$ items contains $10$ defective items. Suppose $10$ items are selected at random and tested. What is the probability that exactly $5$ of the items tested are defective?<blockquote><p>The base sample space $\mathsf{\Omega}$ has size $50$. The base space can be partitioned into two events: $\mathsf{D}$ for defective items and $\mathsf{D^c}$ for nondefective items. The sequential experiment involves an unordered selection without replacement. ‘Unordered’ because only the number of defective items is of interest. ‘Without replacement’ because it makes no sense to test an item that has already been tested. The sequential experiment has size $\binom{50}{10}$ for the number of ways $10$ items can be selected from $\mathsf{\Omega}$. The event of our interest has size $\binom{10}{5}\binom{40}{5}$ for the number of ways $5$ defective items can be selected from $\mathsf{D}$ and $5$ nondefective items from $\mathsf{D^c}$. The required probability is
+$$\dfrac{\binom{10}{5}\binom{40}{5}}{\binom{50}{10}}$$</p>
 </blockquote>
 </li>
-<li><p>Links in parallel</p>
-<blockquote><p>
- <img src="images/system_reliability_parallel.png" width="60%" /></p>
-<p>The parallel configuration enforces the relation $\mathsf{F}^\mathsf{c}=\bigcap_{i=1}^{k}\mathsf{F}_{i}^\mathsf{c}$ among the events.
-The required probability is then
-$$P\left(\mathsf{F}^\mathsf{c}\right) = P\left(\bigcap_{i=1}^{k}\mathsf{F}_{i}^\mathsf{c}\right)=\prod_{i=1}^{k}P\left(\mathsf{F}_{i}^\mathsf{c}\right)=\prod_{i=1}^{k}p_{i}$$</p>
+</ul>
+<h3 id="Die-rolls">Die rolls<a class="anchor-link" href="#Die-rolls">&#182;</a></h3><ul>
+<li>A six-sided die is tossed $12$ times. How many distinct sequences of faces (numbers from $1$ to $6$) have each number appearing exactly twice? What is the probability of obtaining such a sequence?<blockquote><p>The base sample space $\mathsf{\Omega}$ has size $6$. The $12$-toss sequential experiment has size $6^{12}$ for the number of distinct sequences of faces possible. The appearance of each side twice is in fact its multiplicity in a multinomial cofficient associated with $12$. The number of such distinct sequences is 
+$$\binom{12}{2,2,2,2,2,2}$$
+The probability of obtaining such a sequence is
+$$\dfrac{1}{6^{12}}\binom{12}{2,2,2,2,2,2}$$</p>
 </blockquote>
 </li>
-<li><p>Links in a complicated configuration</p>
-<blockquote><p>
- <img src="images/system_reliability_mixed.png" width="60%" /></p>
-<p>Attacking this problem directly is not straightforward. Let us identify what makes this configuration difficult. It turns out to be link $5$. But the link can only exist in two states and we could deal with them separately.</p>
-<ul>
-<li><p>Link $5$ fails</p>
-<p><img src="images/system_reliability_mixed_1.png" width="60%" /></p>
-<p>This conditional configuration enforces the conditional relation $\mathsf{F}^\mathsf{c}\mid\mathsf{F}_{5}^\mathsf{c}=\left(\mathsf{F}_{1}\cap\mathsf{F}_{2}\right)^\mathsf{c}\cap\left(\mathsf{F}_{3}\cap\mathsf{F}_{4}\right)^\mathsf{c}$ among the events. The conditional probability of system failure is then
-$$P\left(\mathsf{F}^\mathsf{c}\mid\mathsf{F}_{5}^\mathsf{c}\right)=\Bigl(1-\left(1-p_1\right)\left(1-p_2\right)\Bigr)\Bigl(1-\left(1-p_3\right)\left(1-p_4\right)\Bigr)$$</p>
-</li>
-<li><p>Link $5$ functions</p>
-<p><img src="images/system_reliability_mixed_2.png" width="60%" /></p>
-<p>This conditional configuration enforces the conditional relation $\mathsf{F}\mid\mathsf{F}_{5}=\left(\mathsf{F}_{1}^\mathsf{c}\cap\mathsf{F}_{3}^\mathsf{c}\right)^\mathsf{c}\cap\left(\mathsf{F}_{2}^\mathsf{c}\cap\mathsf{F}_{4}^\mathsf{c}\right)^\mathsf{c}$ among the events. The conditional probability of system failure is then
-$$P\left(\mathsf{F}^\mathsf{c}\mid\mathsf{F}_{5}^\mathsf{c}\right)=1-P\left(\mathsf{F}\mid\mathsf{F}_{5}\right)=1-\left(1-p_{1}p_{3}\right)\left(1-p_{2}p_{4}\right)$$</p>
-</li>
 </ul>
+<h3 id="The-two-urn-experiment">The two-urn experiment<a class="anchor-link" href="#The-two-urn-experiment">&#182;</a></h3><ul>
+<li>A sequential experiment involves repeatedly drawing a ball from one of two urns, noting the number on the ball, and replacing the ball in its urn. Urn $0$ contains a ball with the number $1$ and two balls with the number $0$, and urn $1$ contains five balls with the number $1$ and one ball with the number $0$. The urn from which the first draw is made is selected at random by flipping a fair coin. Urn $0$ is used if the outcome is heads and urn $1$ if the outcome is tails. Thereafter the urn used in a subexperiment corresponds to the number on the ball selected in the previous subexperiment.<blockquote><p><img src="images/two_urn_experiment.png" width="60%" /></p>
+<p>Find the probability of the sequence $0011$?
+$$P_{1,2,3,4}\left(\{0011\}\right)=P_{1}\left(\{0\}\right)P_{2\mid 1}\left(\{0\}\mid\{0\}\right)P_{3\mid 2}\left(\{1\}\mid\{0\}\right)P_{4\mid 3}\left(\{1\}\mid\{1\}\right)=\frac{1}{2}\times\frac{2}{3}\times\frac{1}{3}\times\frac{5}{6}=\frac{5}{54}$$</p>
 </blockquote>
 </li>
 </ul>
@@ -13203,78 +13143,18 @@ $$P\left(\mathsf{F}^\mathsf{c}\mid\mathsf{F}_{5}^\mathsf{c}\right)=1-P\left(\mat
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Balls-in-a-urn">Balls in a urn<a class="anchor-link" href="#Balls-in-a-urn">&#182;</a></h3><ul>
-<li>An urn contains five balls numbered $1$ to $5$. Suppose we draw three balls with replacement. What is the probability that all three balls are different?<blockquote><p>The base sample space has size $5$. The sample space of drawing three balls with replacement has size $5^3$. The event representing three different balls drawn has size $(5)_3$. The required probability is thus
-$$\dfrac{(5)_3}{\mathsf{5^3}}$$</p>
-</blockquote>
-</li>
-</ul>
-<h3 id="Balls-in-cells">Balls in cells<a class="anchor-link" href="#Balls-in-cells">&#182;</a></h3><ul>
-<li>Suppose that $12$ balls are placed at random into $12$ cells, where more than 1 ball is allowed to occupy a cell. What is the probability that all cells are occupied?<blockquote><p>All cells can be occupied only if each cell receives exactly one ball. The balls to be placed are indistinguishable. Since the elementary events of the combined experiment are not equiprobable, we must use the probability measure of the associated experiment in which the balls are viewed as distinguishable. Assuming a uniform base probability distribution, the required probability is then
-$$\dfrac{1}{12^{12}}\binom{12}{1,1,\cdots,1}=\dfrac{12!}{12^{12}}$$</p>
-</blockquote>
-</li>
-</ul>
-<h3 id="Airplace-crashes-in-a-year">Airplace crashes in a year<a class="anchor-link" href="#Airplace-crashes-in-a-year">&#182;</a></h3><ul>
-<li>Given that 12 airplane crashes occur at random in a year, what is the probability that there is exactly 1 crash each month?<blockquote><p>Assuming a uniform base probability distribution, the required probability is the same as above
-$$\dfrac{12!}{12^{12}}$$
-However, assuming that the same probability of a plane crash every does not seem to be realistic as evident from the extremely small probability obained above.</p>
-</blockquote>
-</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Birthday-problem">Birthday problem<a class="anchor-link" href="#Birthday-problem">&#182;</a></h3><ul>
-<li>What is the minimum number of people who need to be in a room so that it is more likely than not that at least two of them have the same birthday?<blockquote><p>We need to solve a simpler problem first.</p>
-<p><em>Determine the probability that, in a set of $n$ randomly chosen people in a room, there is at least one
-pair of people who have the same birthday.</em></p>
-<p>Assume the following for convenience.</p>
-
-<pre><code>- It is not a leap year
-- Each day of the year is equally probable for a birthday
-- Birthdays of the people in the room are independent
-- There are no twins, triplets, and so on.
-</code></pre>
-<p>The base sample space has $365$ elements representing the possible birthdays for an individual under the stated assumptions. The essential point to note in the problem statement is the element of surprise or coincidence. It will not surprise you to know that two twins have the same birthday. Two persons, different otherwise, with the same birthday will surpise you. Under the stated assumptions, asking and noting the birthdays of $n$ randomly chosen people in a room is equivalent to the following experiments.</p>
-<ul>
-<li>Ordered selection of $n$ objects from a base sample space of $365$ elements</li>
-<li>Placement of $n$ distinguishable objects in $365$ different cells</li>
-</ul>
-<p>Let us define the event of our interest
-$$\mathsf{A}\leftrightarrow\text{‘At least two people have the same birthday’}$$
-It is much easier, however, to work out the probabiliy of an event that is exactly the opposite of our interest. 
-$$\mathsf{A}^\mathsf{c}\leftrightarrow\text{‘No two people have the same birthday’}$$
-The assumed uniform base probability distribution allows to write
-$$P\left(\mathsf{A}^\mathsf{c}\right)=\dfrac{\left(365\right)_{n}}{365^{n}}$$
-The required probability (that at least two people have the same birthday) is then
-$$P\left(\mathsf{A}\right)=1-\dfrac{\left(365\right)_n}{365^{n}}$$
-Getting back to the original problem, we need to find the smallest $n$ that satisfies $P\left(\mathsf{A}\right)&gt;P\left(\mathsf{A}^\mathsf{c}\right)$, or, equivalently, $P\left(\mathsf{A}^\mathsf{c}\right)&lt;1/2$. That casts our problem to finding the smallest $n$ satisfying $\left(365\right)_{n}/365^{n}&lt;1/2$. Let us write $m=365$ for convenience and work out the math as follows.
-$$\frac{1}{2}&gt;\frac{\left(m\right)_{n}}{m^{n}}=\frac{m}{m}\frac{\left(m-1\right)}{m}\cdots\frac{\left(m-n+1\right)}{m}$$
-It would be hopeless to try a solution to this inequality directly.
-Let us turn the product to a sum by taking natural logarithm.
-$$\ln\frac{1}{2}&gt;\ln\left(1-\frac{1}{m}\right)+\cdots+\ln\left(1-\frac{n-1}{m}\right)$$
-Recall a nice property of the exponential function, $\mathrm{e}^{x}\approx1+x$,
-that holds for small $x$. Taking the natural logarithm on both sides
-gives $x\approx\ln\left(1+x\right)$. This property of natural logarithm has a deeper meaning in the context of plots using logarithm scales: a small increment on a linear scale corresponds to almost the same increment on the corresponding logarithmic scale if the natural logarithm has been used. This should give you enough reason to see why it is called the natural logarithm. We can use this property to
-our advantage here if $m\gg n$.
-\begin{align*}
-\ln\frac{1}{2} &amp; &gt;\ln\left(1-\frac{1}{m}\right)+\cdots+\ln\left(1-\frac{n-1}{m}\right)\\
-&amp; \approx-\frac{1}{m}-\frac{2}{m}-\cdots-\frac{n-1}{m}\\
-&amp; =-\frac{\left(n-1\right)n}{2m}
+<h3 id="Uncountable-Sets-Revisited">Uncountable Sets Revisited<a class="anchor-link" href="#Uncountable-Sets-Revisited">&#182;</a></h3><h4 id="How-to-generate-an-event-space-for-the-real-line?"><em>How to generate an event space for the real line?</em><a class="anchor-link" href="#How-to-generate-an-event-space-for-the-real-line?">&#182;</a></h4><p>The so-called Borel field over the real line, denoted $\mathcal{B}\left(\mathbb{R}\right)$ can be generated by events of the form $\mathsf{B}_{x}=\left(-\infty,x\right]$ that include all subsets we encounter
+in practice. Mathematically we write
+$$\mathcal{B}\left(\mathbb{R}\right)=\sigma\left(\left\{ \mathsf{B}_{x}:x\in\mathbb{R}\right\} \right)$$</p>
+<p>Following are a few examples of events thus generated.</p>
+<blockquote>\begin{align*}
+\left(a,\infty\right) &amp; =\overline{\left(-\infty,a\right]}=\overline{\mathsf{B}_{a}}\\
+\left(a,b\right] &amp; =\left(a,\infty\right)\cap\left(-\infty,b\right]=\overline{\mathsf{B}_{a}}\cap \mathsf{B}_{b}\\
+\left\{ a\right\}  &amp; =\bigcap_{n=1}^{\infty}\left(a-1/n,a\right]=\bigcap_{n=1}^{\infty}\left(\overline{\mathsf{B}_{a-1/n}}\cap B_{a}\right)\\
+\left(a,b\right) &amp; =\bigcup_{n=1}^{\infty}\left(a,b-1/n\right]=\bigcup_{n=1}^{\infty}\left(\overline{\mathsf{B}_{a}}\cap B_{b-1/n}\right)\\
+\left[a,b\right] &amp; =\bigcap_{n=1}^{\infty}\left(a-1/n,b\right]=\bigcap_{n=1}^{\infty}\left(\overline{\mathsf{B}_{a-1/n}}\cap \mathsf{B}_{b}\right)
 \end{align*}
-That simplifies to
-$$\left(n-1\right)n&gt;-2m\ln\frac{1}{2}=2m\ln2$$
-Noting that the left side is smaller than $n^{2}$, the inequality
-can be simplifed even further.
-$$n^{2}&gt;-2m\ln\frac{1}{2}=2m\ln2\implies n&gt;\sqrt{2m\ln2}=\sqrt{2\times365\times\ln2}\approx22.5$$
-The smallest integer value of $n$ satisfying the last inequality is $23$. Thus at least 23 people are needed to make at least one coincidence of birthdays more likely than no coincidence at all.</p>
 </blockquote>
-</li>
-</ul>
 
 </div>
 </div>

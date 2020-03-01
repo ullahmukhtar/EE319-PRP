@@ -13253,16 +13253,16 @@ $$P\left(\mathsf{A}^\mathsf{c}\right)=\dfrac{\left(365\right)_{n}}{365^{n}}$$
 The required probability (that at least two people have the same birthday) is then
 $$P\left(\mathsf{A}\right)=1-\dfrac{\left(365\right)_n}{365^{n}}$$
 Getting back to the original problem, we need to find the smallest $n$ that satisfies $P\left(\mathsf{A}\right)&gt;P\left(\mathsf{A}^\mathsf{c}\right)$, or, equivalently, $P\left(\mathsf{A}^\mathsf{c}\right)&lt;1/2$. That casts our problem to finding the smallest $n$ satisfying $\left(365\right)_{n}/365^{n}&lt;1/2$. Let us write $m=365$ for convenience and work out the math as follows.
-$$\frac{1}{2}&gt;\frac{\left(m\right)_{n}}{m^{n}}=\frac{m}{m}\frac{\left(m-1\right)}{m}\cdots\frac{\left(m-n+1\right)}{m}$$
+$$\frac{1}{2}&gt;\frac{\left(m\right)_{n}}{m^{n}}=\frac{m}{m}\frac{\left(m-1\right)}{m}\cdots\frac{\left(m-n+1\right)}{m}=\left(1-\frac{1}{m}\right)\left(1-\frac{2}{m}\right)\cdots\left(1-\frac{n-1}{m}\right)$$
 It would be hopeless to try a solution to this inequality directly.
 Let us turn the product to a sum by taking natural logarithm.
-$$\ln\frac{1}{2}&gt;\ln\left(1-\frac{1}{m}\right)+\cdots+\ln\left(1-\frac{n-1}{m}\right)$$
+$$\ln\frac{1}{2}&gt;\ln\left(1-\frac{1}{m}\right)+\ln\left(1-\frac{2}{m}\right)+\cdots+\ln\left(1-\frac{n-1}{m}\right)$$
 Recall a nice property of the exponential function, $\mathrm{e}^{x}\approx1+x$,
 that holds for small $x$. Taking the natural logarithm on both sides
 gives $x\approx\ln\left(1+x\right)$. This property of natural logarithm has a deeper meaning in the context of plots using logarithm scales: a small increment on a linear scale corresponds to almost the same increment on the corresponding logarithmic scale if the natural logarithm has been used. This should give you enough reason to see why it is called the natural logarithm. We can use this property to
 our advantage here if $m\gg n$.
 \begin{align*}
-\ln\frac{1}{2} &amp; &gt;\ln\left(1-\frac{1}{m}\right)+\cdots+\ln\left(1-\frac{n-1}{m}\right)\\
+\ln\frac{1}{2} &amp; &gt;\ln\left(1-\frac{1}{m}\right)+\ln\left(1-\frac{2}{m}\right)+\cdots+\ln\left(1-\frac{n-1}{m}\right)\\
 &amp; \approx-\frac{1}{m}-\frac{2}{m}-\cdots-\frac{n-1}{m}\\
 &amp; =-\frac{\left(n-1\right)n}{2m}
 \end{align*}
@@ -13272,6 +13272,7 @@ Noting that the left side is smaller than $n^{2}$, the inequality
 can be simplifed even further.
 $$n^{2}&gt;-2m\ln\frac{1}{2}=2m\ln2\implies n&gt;\sqrt{2m\ln2}=\sqrt{2\times365\times\ln2}\approx22.5$$
 The smallest integer value of $n$ satisfying the last inequality is $23$. Thus at least 23 people are needed to make at least one coincidence of birthdays more likely than no coincidence at all.</p>
+<p>If you find this number surprisingly small, you need to realize that the number of distinct pairs of people, $23\times 22/2=253$, is large enough for a birthday match to be more likely than not.</p>
 </blockquote>
 </li>
 </ul>

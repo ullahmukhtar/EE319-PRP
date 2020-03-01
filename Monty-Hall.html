@@ -13134,26 +13134,26 @@ div#notebook {
 <h2 id="An-Elegent-(but-less-revealing)-Approach">An Elegent (but less revealing) Approach<a class="anchor-link" href="#An-Elegent-(but-less-revealing)-Approach">&#182;</a></h2><p>Since both Monty Hall and the contestant are part of the game, the decision of whether to switch or not is essentially as choice between two different experiments which we will refer to as the "stay strategy" and "switch strategy". Define the events
 \begin{align*}
 \mathsf{C} &amp; \leftrightarrow\text{“Initial pick hides the car”}\\
-\mathsf{C}^{\prime} &amp; \leftrightarrow\text{“Initial pick hides a goat”}\\
+\mathsf{C^c} &amp; \leftrightarrow\text{“Initial pick hides a goat”}\\
 \mathsf{W} &amp; \leftrightarrow\text{“The contestant wins the car”}
 \end{align*}
 It is reasonable to assume the following probability assignment.
 \begin{align*}
-P\left(\mathsf{C}\right) &amp; =\frac{1}{3} &amp; P\left(\mathsf{C}^{\prime}\right) &amp; =\frac{2}{3}
+P\left(\mathsf{C}\right) &amp; =\frac{1}{3} &amp; P\left(\mathsf{C^c}\right) &amp; =\frac{2}{3}
 \end{align*}
 Let us consider the two strtategies separately.</p>
 <h3 id="The-Stay-Strategy">The Stay Strategy<a class="anchor-link" href="#The-Stay-Strategy">&#182;</a></h3><p>The strategy of staying with the initial pick can be modeled by the following conditional probabilities:
 \begin{align*}
-P\left(\mathsf{W}\mid \mathsf{C}\right) &amp; =1 &amp; P\left(\mathsf{W}\mid \mathsf{C}^{\prime}\right) &amp; =0
+P\left(\mathsf{W}\mid \mathsf{C}\right) &amp; =1 &amp; P\left(\mathsf{W}\mid \mathsf{C^c}\right) &amp; =0
 \end{align*}
 The probability of win follows from the law of total probability:
-$$P\left(\mathsf{W}\right)=P\left(\mathsf{C}\right)P\left(\mathsf{W}\mid \mathsf{C}\right)+P\left(\mathsf{C}^{\prime}\right)P\left(\mathsf{W}\mid \mathsf{C}^{\prime}\right)=\frac{1}{3}\times1+\frac{2}{3}\times0=\frac{1}{3}$$</p>
+$$P\left(\mathsf{W}\right)=P\left(\mathsf{C}\right)P\left(\mathsf{W}\mid \mathsf{C}\right)+P\left(\mathsf{C^c}\right)P\left(\mathsf{W}\mid \mathsf{C^c}\right)=\frac{1}{3}\times1+\frac{2}{3}\times0=\frac{1}{3}$$</p>
 <h3 id="The-Switch-Strategy">The Switch Strategy<a class="anchor-link" href="#The-Switch-Strategy">&#182;</a></h3><p>The strategy of switching the door can be modeled by the following conditional probabilities:
 \begin{align*}
-P\left(\mathsf{W}\mid \mathsf{C}\right) &amp; =0 &amp; P\left(\mathsf{W}\mid \mathsf{C}^{\prime}\right) &amp; =1
+P\left(\mathsf{W}\mid \mathsf{C}\right) &amp; =0 &amp; P\left(\mathsf{W}\mid \mathsf{C^c}\right) &amp; =1
 \end{align*}
 The probability of win follows from the law of total probability:
-$$P\left(\mathsf{W}\right)=P\left(\mathsf{C}\right)P\left(\mathsf{W}\mid \mathsf{C}\right)+P\left(\mathsf{C}^{\prime}\right)P\left(\mathsf{W}\mid \mathsf{C}^{\prime}\right)=\frac{1}{3}\times0+\frac{2}{3}\times1=\frac{2}{3}$$
+$$P\left(\mathsf{W}\right)=P\left(\mathsf{C}\right)P\left(\mathsf{W}\mid \mathsf{C}\right)+P\left(\mathsf{C^c}\right)P\left(\mathsf{W}\mid \mathsf{C^c}\right)=\frac{1}{3}\times0+\frac{2}{3}\times1=\frac{2}{3}$$
 Thus switching the door doubles the probabiliy of winning the car from $1/3$ to $2/3$.</p>
 
 </div>

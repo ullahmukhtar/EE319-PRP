@@ -13393,25 +13393,202 @@ div#notebook {
 <h2 id="Counting-Examples-in-Sequential-Experiments">Counting Examples in Sequential Experiments<a class="anchor-link" href="#Counting-Examples-in-Sequential-Experiments">&#182;</a></h2><h2 id="Independent-Choices-in-Each-Component-Experiment">Independent Choices in Each Component Experiment<a class="anchor-link" href="#Independent-Choices-in-Each-Component-Experiment">&#182;</a></h2><ul>
 <li>How many four-letter "words" are there (ignoring spelling, etc.)?</li>
 </ul>
-<blockquote><p>There $26$ independent choices for each letter.<br/>
+<p>&gt;</p>
+<blockquote><table>
+<thead><tr>
+<th>Problem statement</th>
+<th>$\leftrightarrow$</th>
+<th>Placement problem</th>
+<th>$\leftrightarrow$</th>
+<th>Selection problem</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"ignoring spelling"</td>
+<td>$\leftrightarrow$</td>
+<td>"place without exclusion"</td>
+<td>$\leftrightarrow$</td>
+<td>"sample with replacement"</td>
+</tr>
+<tr>
+<td>"four-letter words"</td>
+<td>$\leftrightarrow$</td>
+<td>"4 distinguishable objects"</td>
+<td>$\leftrightarrow$</td>
+<td>"ordered selection of 4 elements"</td>
+</tr>
+<tr>
+<td>"implied alphabet"</td>
+<td>$\leftrightarrow$</td>
+<td>"26 different cells"</td>
+<td>$\leftrightarrow$</td>
+<td>"26-element sample space"</td>
+</tr>
+</tbody>
+</table>
+<p>There $26$ independent choices for each letter.<br/>
 Therefore $26^4$ different words are there.<br/></p>
 </blockquote>
 <ul>
 <li>How many four-letter "words" are there with vowels (not 'y') in the middle two places and a consonant at the end?</li>
 </ul>
-<blockquote><p>There are $26$ choices for the letter at the start, $5$ independent choices for each of the middle two places and $21$ independent choices the letter at the end.<br/>
+<p>&gt;</p>
+<blockquote><table>
+<thead><tr>
+<th>Problem statement</th>
+<th>$\leftrightarrow$</th>
+<th>Placement problem</th>
+<th>$\leftrightarrow$</th>
+<th>Selection problem</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"implied allowance of spelling errors"</td>
+<td>$\leftrightarrow$</td>
+<td>"place without exclusion"</td>
+<td>$\leftrightarrow$</td>
+<td>"sample with replacement"</td>
+</tr>
+<tr>
+<td>"implied alphabet"</td>
+<td>$\leftrightarrow$</td>
+<td>"26 different cells"</td>
+<td>$\leftrightarrow$</td>
+<td>"26-element sample space"</td>
+</tr>
+<tr>
+<td>"$\ldots$ at the start"</td>
+<td>$\leftrightarrow$</td>
+<td>"single object"</td>
+<td>$\leftrightarrow$</td>
+<td>"single element"</td>
+</tr>
+<tr>
+<td>"vowels"</td>
+<td>$\leftrightarrow$</td>
+<td>"5 different cells"</td>
+<td>$\leftrightarrow$</td>
+<td>"5-element sample space"</td>
+</tr>
+<tr>
+<td>"$\ldots$ in the middle two places"</td>
+<td>$\leftrightarrow$</td>
+<td>"2 distinguishable objects"</td>
+<td>$\leftrightarrow$</td>
+<td>"ordered selection of 2 elements"</td>
+</tr>
+<tr>
+<td>"consonant"</td>
+<td>$\leftrightarrow$</td>
+<td>"21 different cells"</td>
+<td>$\leftrightarrow$</td>
+<td>"21-element sample space"</td>
+</tr>
+<tr>
+<td>"$\ldots$ at the end"</td>
+<td>$\leftrightarrow$</td>
+<td>"single object"</td>
+<td>$\leftrightarrow$</td>
+<td>"single element"</td>
+</tr>
+</tbody>
+</table>
+<p>There are $26$ choices for the letter at the start, $5$ independent choices for each of the middle two places and $21$ independent choices the letter at the end.<br/>
 Therefore $26\times 5^2 \times 21$ different words are there.<br/></p>
 </blockquote>
 <ul>
 <li>In how many ways can a generous person give M&amp;M's to three kids? (M&amp;M's come in red,yellow, green, brown, and tan.)</li>
 </ul>
-<blockquote><p>There are $5$ choices for each kid.<br/>
+<p>&gt;</p>
+<blockquote><table>
+<thead><tr>
+<th>Problem statement</th>
+<th>$\leftrightarrow$</th>
+<th>Placement problem</th>
+<th>$\leftrightarrow$</th>
+<th>Selection problem</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>$\leftrightarrow$</td>
+<td>"place without exclusion"</td>
+<td>$\leftrightarrow$</td>
+<td>"sample with replacement"</td>
+</tr>
+<tr>
+<td>"four-letter words"</td>
+<td>$\leftrightarrow$</td>
+<td>"4 distinguishable objects"</td>
+<td>$\leftrightarrow$</td>
+<td>"ordered selection of 4 elements"</td>
+</tr>
+<tr>
+<td>"M&amp;M's come in $\ldots$"</td>
+<td>$\leftrightarrow$</td>
+<td>"5 different cells"</td>
+<td>$\leftrightarrow$</td>
+<td>"5-element sample space"</td>
+</tr>
+</tbody>
+</table>
+<p>There are $5$ choices for each kid.<br/>
 Therefore $5^3$ different allocations are possible.<br/></p>
 </blockquote>
 <p>Find the number of divisors of 72.</p>
-<blockquote><p>The prime factorization $72=2^3 \times 3^2$ requires that each divisor is of the form $2^a \times 3^b$ where $a\in\left\{0,1,2,3\right\}$ and $b\in\left\{0,1,2\right\}$.<br/>
-There are, independently, $4$ choices for $a$ and $3$ choices for $b$.
-Therefore $4\times 3=12$ different divisors of 72.<br/></p>
+<blockquote><p>The prime factorization $72=2^3 \times 3^2$ requires that each divisor is of the form $2^a \times 3^b$ where $a\in\left\{0,1,2,3\right\}$ and $b\in\left\{0,1,2\right\}$.<br/></p>
+<table>
+<thead><tr>
+<th>Problem statement</th>
+<th>$\leftrightarrow$</th>
+<th>Placement problem</th>
+<th>$\leftrightarrow$</th>
+<th>Selection problem</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"divisors"</td>
+<td>$\leftrightarrow$</td>
+<td>"place without exclusion"</td>
+<td>$\leftrightarrow$</td>
+<td>"sample with replacement"</td>
+</tr>
+<tr>
+<td>"implied exponents"</td>
+<td>$\leftrightarrow$</td>
+<td>"4 different cells"</td>
+<td>$\leftrightarrow$</td>
+<td>"4-element sample space"</td>
+</tr>
+<tr>
+<td>"of $2$"</td>
+<td>$\leftrightarrow$</td>
+<td>"single object"</td>
+<td>$\leftrightarrow$</td>
+<td>"single element"</td>
+</tr>
+<tr>
+<td>"implied exponents"</td>
+<td>$\leftrightarrow$</td>
+<td>"3 different cells"</td>
+<td>$\leftrightarrow$</td>
+<td>"3-element sample space"</td>
+</tr>
+<tr>
+<td>"of $3$"</td>
+<td>$\leftrightarrow$</td>
+<td>"single object"</td>
+<td>$\leftrightarrow$</td>
+<td>"single element"</td>
+</tr>
+</tbody>
+</table>
+<p>There are, independently, $4$ choices for $a$ and $3$ choices for $b$.<br/>
+There are $4\times 3=12$ different divisors of 72.</p>
 </blockquote>
 
 </div>

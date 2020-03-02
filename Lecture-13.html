@@ -13145,20 +13145,20 @@ $$\mathsf{\Omega}_{\mathrm{geo}}=\{\mathrm{H},\mathrm{TH},\mathrm{TTH},\ldots\}=
 It can be seen that this does not fit in our classification of four cases of counting as the size $n$ of sequences gets larger and larger without bound, or in mathematical parlance, gets infinitely large. That is not an issue as far as probability calculation is concerned because the product rule of probability is still applicable.<br/>
 Events of our interest are of the form
 $$\mathsf{A}_{k}=\left\{ \mathrm{T}\right\} ^{k-1}\times\left\{ \mathrm{H}\right\}\leftrightarrow\text{‘}k\text{ tosses are required until the first head occurs’}$$
-Application of the product rule of probability yields what is called a <em>geometric</em> probability distribution.
+Application of the product rule of probability yields what is called a <em>geometric probability distribution</em>.
 $$P_{\mathrm{geo}}\left(\mathsf{A}_{k}\right)=P_{\mathrm{geo}}\left(\left\{ \mathrm{T}\right\} ^{k-1}\times\left\{ \mathrm{H}\right\} \right)=\left[P\left(\left\{ \mathrm{T}\right\} \right)\right]^{k-1}P\left(\left\{ \mathrm{H}\right\} \right)=\left(1-p\right)^{k-1}p$$</p>
 </blockquote>
 </li>
 </ul>
 <h3 id="Repeated-Bernoulli-trials-until-the-$r$th-success">Repeated Bernoulli trials until the $r$th success<a class="anchor-link" href="#Repeated-Bernoulli-trials-until-the-$r$th-success">&#182;</a></h3><ul>
-<li>A coin is tossed repeatedly until the $r$th head shows up; the outcome of the experiment is the number of tosses required until the $r$th head occurs. Find a probability law for this experiment. 
+<li>A coin is tossed repeatedly until the $r$th head shows up; the outcome of the experiment is the number of tosses required until the $r$th head occurs. Find a probability law for this experiment.<blockquote><p>The base sample space and the base probability distribution are the same as above. As before, the sequential experiment has as outcomes sequences of ever increasing length.
 $$\mathsf{\Omega}_{\mathrm{nb}}=\Bigl\{\left(x_{i}\right)_{i\in\left\{ 1,2,\ldots,n\right\} }\mid x_{i}\in\left\{ \mathrm{H},\mathrm{T}\right\} ,x_{n}=\mathrm{H},\left|\left\{ i\mid x_{i}=\mathrm{H}\right\} \right|=r,n\in\mathbb{N}\Bigr\}$$
-&gt;<blockquote><p>Define events of the form
+Define events of the form
 $$\mathsf{A}_{j/ n}\leftrightarrow\text{‘}j\text{ heads occur in }n\text{ tosses’}$$
 that arise in binomial distribution.<br/>
 Events of our interest take the form
 $$\mathsf{A}_{k\backslash r}=\mathsf{A}_{(r-1)/(k-1)}\times\left\{ \mathrm{H}\right\}\leftrightarrow\text{‘}k\text{ tosses are required until the }r\text{th head occurs’}$$
-Application of the product rule of probability yields what is called a <em>negative-binomial</em> probability distribution.
+Application of the product rule of probability yields what is called a <em>negative-binomial probability distribution</em>.
 $$P_{\mathrm{nb}}\left(\mathsf{A}_{k\backslash r}\right)=P_{\mathrm{bin}}\left(\mathsf{A}_{(r-1)/(k-1)}\right)P\left(\left\{ \mathrm{H}\right\} \right)=\binom{k-1}{r-1}p^{r-1}\left(1-p\right)^{k-r}p$$</p>
 </blockquote>
 </li>

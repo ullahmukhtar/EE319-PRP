@@ -13196,7 +13196,10 @@ look for special subsets each determined entirely by a single real number.</p>
 in practice. Mathematically we write
 $$\mathfrak{B}\left(\mathbb{R}\right)=\sigma\left(\left\{ \mathsf{B}_{x}:x\in\mathbb{R}\right\} \right)$$
 We need a convenient notation for the limit of a monotonic sequence of events.
-$$\mathsf{B}_{a^{-}}=\lim_{x\rightarrow a^{-}}\mathsf{B}_{x}=\bigcup_{n=1}^{\infty}\mathsf{B}_{a-1/n},\quad\mathsf{B}_{a^{-}}^{\mathsf{c}}=\left(\lim_{x\rightarrow a^{-}}\mathsf{B}_{x}\right)^{\mathsf{c}}=\bigcap_{n=1}^{\infty}\mathsf{B}_{a-1/n}^{\mathsf{c}}$$
+\begin{align*}
+\mathsf{B}_{a^{-}} &amp; =\lim_{x\uparrow a}\mathsf{B}_{x}=\bigcup_{n=1}^{\infty}\mathsf{B}_{a-1/n}\subset\mathsf{B}_{a}\\
+\mathsf{B}_{a^{+}} &amp; =\lim_{x\downarrow a}\mathsf{B}_{x}=\bigcap_{n=1}^{\infty}\mathsf{B}_{a+1/n}=\mathsf{B}_{a}
+\end{align*}
 Following are a few examples of events thus generated.
 \begin{align*}
 \left(a,\infty\right) &amp; =\left(-\infty,a\right]^{\mathsf{c}}=\mathsf{B}_{a}^{\mathsf{c}}\\

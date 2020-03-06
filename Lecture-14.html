@@ -13239,7 +13239,7 @@ $$p_{k}=\dfrac{\dbinom{r}{k}\dbinom{m-r}{n-k}}{\dbinom{m}{n}}$$</p>
 <h3 id="Continuous-Distribution">Continuous Distribution<a class="anchor-link" href="#Continuous-Distribution">&#182;</a></h3><p>First, we revisit the spinning arrow in a wheel for a finer treatment.</p>
 <blockquote><p><strong>Spinning arrow in a wheel (continued)</strong>
 A more detailed representation of our events of interest is to reserve the interval $\mathcal{X}=\left[0,n\right]$ and map the segments, in order, to the (sub)intervals $\left(0,1\right],\left(1,2\right],\ldots,\left(n-1,n\right]$. For reasons that will become obvious soon, an even better choice is to reserve the interval $\mathcal{X}=\left[0,1\right]$ and map the segments, in order, to the intervals $\left(0,1/n\right],\left(1/n,2/n\right],\ldots,\left(\left(n-1\right)/n,1\right]$ among which the total probability is distributed uniformly so that each subset has probability $1/n$. The remaining subset $\mathbb{R}\setminus\mathcal{X}$ is assigned probability $0$. The CDF $F\left(x\right)$ assumes a value of zero in the open interval $\left(-\infty,0\right)$, rises gradually from $0$ to $1/n$ in $\left(0,1/n\right]$, from $1/n$ to $2/n$ in $\left(1/n,2/n\right]$, all the way up to a rise from $\left(n-1\right)/n$ to $1$ in $\left(\left(n-1\right)/n,1\right]$ and remains at that value in $\left(1,\infty\right)$. The pattern suggests a uniform increase of the CDF from $0$ to $1$ in the interval
-$\mathcal{X}$. This becomes more obvious in the limiting case of infinitely large $n$. As $n$ gets larger and larger, each (sub)interval shrinks to point and the probability increment in each interval approaches zero, and yet the CDF keeps increasing. That is exactly how continuous changes occur. The CDF takes the form
+$\mathcal{X}$. This becomes more obvious in the limiting case of infinitely large $n$. As $n$ gets larger and larger, each (sub)interval shrinks to a point and the probability increment in each interval approaches zero, and yet the CDF keeps increasing. That is exactly how continuous changes occur. The CDF takes the form
 $$F\left(x\right)=\begin{cases}
 0 &amp; x&lt;0\\
 x &amp; 0\le x&lt;1\\
@@ -13257,7 +13257,7 @@ Mathematically, we write
 $$f\left(x\right)=\frac{\mathrm{d}F}{\mathrm{d}x^{-}}=\left[0&lt;x\le1\right]$$
 We see that the $\mathcal{X}$ is the support of $f$ as it assigns nonzero values only therein.</p>
 </blockquote>
-<p>Generalizing this example, imagine a subset $\mathcal{X}$ of the real line and a continuous probability measure $P$ that can assigns probabilties according to a CDF $F$ that, itself, can be expressed in terms of a density by
+<p>Generalizing this example, imagine a subset $\mathcal{X}$ of the real line and a continuous probability measure $P$ that assigns probabilties according to a CDF $F$ that, itself, can be expressed in terms of a density by
 $$F\left(x\right)=P\left(\left(-\infty,x\right]\right)=\intop_{-\infty}^{x}f\left(x^{*}\right)\mathrm{d}x^{*}$$
 With a continuous PDF available, we can express probability of any Borel set $\mathsf{B}$ by 
 $$P\left(\mathsf{B}\right)=\intop_{\mathsf{B}}f\left(x\right)\mathrm{d}x$$

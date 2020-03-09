@@ -13194,18 +13194,7 @@ $$
 \lim_{n\rightarrow\infty}\frac{k_{\max}}{n}=p
 $$
 This relates the long-run relative frequency of successes to the probability of success a single trial.</p>
-<p>In many physical situations, the most likely, or expected number of
-successes, is approximately a fixed number, often denoted $\lambda$,
-determined by physical constraints. Examples are the expected number
-of clicks on a website in a fixed duration, the expected number of
-active users in a fixed duration, the expected number of defects in
-a fixed length of a bar, the expected number of animals in a fixed
-area of a forest, and so forth. Diving such a fixed interval (duration
-or region) into an arbitrarily large number $n$ of tiny intervals
-means that success in each tiny interval is rare, that is, of an arbitrarily
-small probability $p=\lambda/n$. In the language of limits, we say
-that as $n\rightarrow\infty$, $p\rightarrow0$ so as to keep $\lambda$
-constant.</p>
+<p>In many physical situations, the most likely, or expected number of successes, is approximately a fixed number, often denoted $\lambda$, determined by physical constraints. Examples are the expected number of clicks on a website in a fixed duration, the expected number of active users in a fixed duration, the expected number of defects in a fixed length of a bar, the expected number of animals in a fixed area of a forest, and so forth. Dividing such a fixed interval (duration or region) into an arbitrarily large number $n$ of tiny intervals means that success in each tiny interval is rare, that is, of an arbitrarily small probability $p=\lambda/n$. In the language of limits, we say that as $n\rightarrow\infty$, $p\rightarrow0$ so as to keep $\lambda$ constant.</p>
 </blockquote>
 
 </div>
@@ -13253,7 +13242,7 @@ The density is recovered as
 $$
 f\left(x\right)=\frac{\mathrm{d}F}{\mathrm{d}x^{-}}=\lambda\mathrm{e}^{-\lambda x}\left[x&gt;0\right]
 $$
-Thus, a batchwise finer treatment of a (discrete) geometric distribution gave rise to a continuous exponential distribution.</p>
+Thus, a batch-wise finer treatment of a (discrete) geometric distribution gave rise to a continuous exponential distribution.</p>
 </blockquote>
 <p>Generalizing the two examples above, imagine a subset $\mathcal{X}$ of the real line and a continuous probability measure $P$ that assigns probabilities according to a CDF $F$ that, itself, can be expressed in terms of a density by
 $$F\left(x\right)=P\left(\left(-\infty,x\right]\right)=\intop_{-\infty}^{x}f\left(x^{*}\right)\mathrm{d}x^{*}$$
@@ -13287,7 +13276,7 @@ and the strictly positive continuous density function
 $$
 f^{\wedge}\colon\mathcal{X}\rightarrow\mathbb{R}_{+}\quad\text{defined by}\quad f^{\wedge}\left(x\right)=\frac{\mathrm{d}F^{\wedge}}{\mathrm{d}x^{-}}
 $$
- Equipped with these two new (striclty defined) functions, the (orginal)
+ Equipped with these two new (strictly defined) functions, the (original)
 continuous PDF can be expressed as
 $$
 f\left(x\right)=f^{\wedge}\left(x\right)\left[x\in\mathcal{X}\right]
@@ -13315,7 +13304,7 @@ probability of any Borel set $\mathsf{B}$ by
 $$
 P\left(\mathsf{B}\right)=\sum_{x\in\mathcal{X}^{\#}}f^{\#}\left(x\right)\left[x\in\mathsf{B}\right]+\intop_{\mathcal{X}}f^{\wedge}\left(x\right)\left[x\in\mathsf{B}\right]\mathrm{d}x
 $$</p>
-<h3 id="Measures-of-size-for-(un)countable-sets">Measures of size for (un)countable sets<a class="anchor-link" href="#Measures-of-size-for-(un)countable-sets">&#182;</a></h3><p>The lebesgue measure, denoted $\mu^{\wedge}$, of a set generalizes the concept of length of an interval in 1-D, area of a rectangle in 2-D, volume of a cuboid in 3-D, and so on. The Lebesgue measure is useful for uncountable sets but not so for countable sets as it assigns zero value to singletons. To deal with countable sets, the so-called counting measure, denoted $\mu^{\#}$, of a finite set measures its cardinality.</p>
+<h3 id="Measures-of-size-for-(un)countable-sets">Measures of size for (un)countable sets<a class="anchor-link" href="#Measures-of-size-for-(un)countable-sets">&#182;</a></h3><p>The Lebesgue measure, denoted $\mu^{\wedge}$, of a set generalizes the concept of length of an interval in 1-D, area of a rectangle in 2-D, volume of a cuboid in 3-D, and so on. The Lebesgue measure is useful for uncountable sets but not so for countable sets as it assigns zero value to singletons. To deal with countable sets, the so-called counting measure, denoted $\mu^{\#}$, of a finite set measures its cardinality.</p>
 <p>The two measures of the infinitesimal interval
 $$
 \mathrm{d}\mathsf{B}_{x}=\left(x-\mathrm{d}x,x\right]=\left[x,x+\mathrm{d}x\right)

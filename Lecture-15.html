@@ -13227,7 +13227,7 @@ Thus, a finer treatment of a discrete uniform distribution gave rise to a contin
 <blockquote><p><strong>Groups of trials until the first success</strong></p>
 <p>The strictly positive density of the geometric distribution is
 $$
-f^{\#}\left(k\right)=\left(1-p\right)^{k-1}p^{k}
+f^{\#}\left(k\right)=\left(1-p\right)^{k-1}p
 $$
 with support $\mathbb{N}$.</p>
 <p>Partition the outcome space $\mathbb{N}$ into $n$-element subsets $\left[1\cdot\cdot n\right],\left[n+1\cdot\cdot2n\right],\left[2n+1\cdot\cdot3n\right],\ldots$, viewed as an ordered sequence of groups of trials. Map these trial groups, in order, to the intervals $\left[1/n,1\right],\left[1+1/n,2\right],\left[2+1/n,3\right],\ldots$ and so on. As $n$ gets larger and larger without bound, these intervals approach, in order, $\left(0,1\right],\left(1,2\right],\left(2,3\right],\ldots, $and so on. The probability of no success in $k$ trials, or $x_{k}=k/n$ groups, reads
@@ -13242,7 +13242,7 @@ The density is recovered as
 $$
 f\left(x\right)=\frac{\mathrm{d}F}{\mathrm{d}x^{-}}=\lambda\mathrm{e}^{-\lambda x}\left[x&gt;0\right]
 $$
-Thus, a groups-wise finer treatment of a (discrete) geometric distribution gave rise to a continuous exponential distribution.</p>
+Thus, a group-wise finer treatment of a (discrete) geometric distribution gave rise to a continuous exponential distribution.</p>
 </blockquote>
 <p>Generalizing the two examples above, imagine a subset $\mathcal{X}$ of the real line and a continuous probability measure $P$ that assigns probabilities according to a CDF $F$ that, itself, can be expressed in terms of a density by
 $$F\left(x\right)=P\left(\left(-\infty,x\right]\right)=\intop_{-\infty}^{x}f\left(x^{*}\right)\mathrm{d}x^{*}$$
@@ -13293,51 +13293,17 @@ $$</p>
 <h3 id="Mixed-Distribution">Mixed Distribution<a class="anchor-link" href="#Mixed-Distribution">&#182;</a></h3><p>The discrete and continuous distributions can be merged into a single
 mixed distribution with PDF
 $$
-f\left(x\right)=f^{\#}\left(x\right)\left[x\in\mathcal{X}^{\#}\right]+f^{\wedge}\left(x\right)\left[x\in\mathcal{X}\right]
+f\left(x\right)=f^{\#}\left(x\right)\left[x\in\mathcal{X}^{\#}\right]+f^{\wedge}\left(x\right)\left[x\in\mathcal{X\setminus\mathcal{X}^{\#}}\right]
 $$
 and CDF
 $$
-F\left(x\right)=F^{\#}\left(\max\left(\mathcal{X}^{\#}\cap\left(-\infty,x\right]\right)\right)+F^{\wedge}\left(\max\left(\mathcal{X}\cap\left(-\infty,x\right]\right)\right)
+F\left(x\right)=F^{\#}\left(\max\left(\left(-\infty,x\right]\cap\mathcal{X}^{\#}\right)\right)+F^{\wedge}\left(\max\left(\left(-\infty,x\right]\cap\mathcal{X}\setminus\mathcal{X}^{\#}\right)\right)
 $$
 Equipped with a single PDF for a mixed distribution, we can express
 probability of any Borel set $\mathsf{B}$ by
 $$
 P\left(\mathsf{B}\right)=\sum_{x\in\mathcal{X}^{\#}}f^{\#}\left(x\right)\left[x\in\mathsf{B}\right]+\intop_{\mathcal{X}}f^{\wedge}\left(x\right)\left[x\in\mathsf{B}\right]\mathrm{d}x
 $$</p>
-<h3 id="Measures-of-size-for-(un)countable-sets">Measures of size for (un)countable sets<a class="anchor-link" href="#Measures-of-size-for-(un)countable-sets">&#182;</a></h3><p>The Lebesgue measure, denoted $\mu^{\wedge}$, of a set generalizes the concept of length of an interval in 1-D, area of a rectangle in 2-D, volume of a cuboid in 3-D, and so on. The Lebesgue measure is useful for uncountable sets but not so for countable sets as it assigns zero value to singletons. To deal with countable sets, the so-called counting measure, denoted $\mu^{\#}$, of a finite set measures its cardinality.</p>
-<p>The two measures of the infinitesimal interval
-$$
-\mathrm{d}\mathsf{B}_{x}=\left(x-\mathrm{d}x,x\right]=\left[x,x+\mathrm{d}x\right)
-$$
-are then
-$$
-\mu^{\#}\left(\mathrm{d}\mathsf{B}_{x}\right)=1,\quad\mu^{\wedge}\left(\mathrm{d}\mathsf{B}_{x}\right)=\mathrm{d}x
-$$
-In terms of these two measures, the probability of a Borel set $B$ takes the form of a so-called Lebesgue-Stieltjes integral
-$$
-P\left(\mathsf{B}\right)=\intop_{\mathcal{X}^{\#}}f^{\#}\left(x\right)\left[x\in\mathsf{B}\right]\mu^{\#}\left(\mathrm{d}\mathsf{B}_{x}\right)+\intop_{\mathcal{X}}f^{\wedge}\left(x\right)\left[x\in\mathsf{B}\right]\mu^{\wedge}\left(\mathrm{d}\mathsf{B}_{x}\right)
-$$
-This justifies the usage of the names discrete probability density (derivative of the probability measure with respect to the counting measure) and continuous probability density (derivative of the probability measure with respect to the Lebesgue measure):
-$$
-f^{\#}=\frac{\mathrm{d}P}{\mathrm{d}\mu^{\#}},\quad f^{\wedge}=\frac{\mathrm{d}P}{\mathrm{d}\mu^{\wedge}}
-$$</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="The-Random-Variable">The Random Variable<a class="anchor-link" href="#The-Random-Variable">&#182;</a></h3><p>Recall out proposed strategy for solving any probability problem.</p>
-<ol>
-<li>Identify events of interest in any problem.</li>
-<li>Find a representation of your events in the form of Borel sets on the real line.</li>
-<li>Assign probabilities to simpler Borel sets, that is, right-bounded right-closed intervals.</li>
-<li><p>Determine probabilities of events of interest by application of Kolmogorov axioms and its corollaries.</p>
-<p>We need to focus on the second point: a way to represent events of interest (in the original event space) to Borel sets (in the event space over the real line). Towards that end, we will employ the concept of a function, or a mapping. Given a probability space $\left(\Omega,\mathcal{F},P\right)$ as a model of an experiment, we need a function
-$X\colon\mathsf{\Omega}\rightarrow\mathbb{R}$ that assigns a real number  $X(\omega)$ to every point $\omega$ of the outcome space in a way that preserves the event structure of the event space $\mathcal{F}$ so that a new probability space $\left(\mathbb{R},\mathfrak{B}\left(\mathbb{R}\right),P_{X}\right)$ can be conveniently used to assign probabilities. The event structute of $\mathcal{F}$ can be preserved only if the inverse $X^{-1}\left[\mathsf{B}\right]$ of every Borel set $B\in\mathfrak{B}$ is contained in $\mathcal{F}$. Checking all Borel sets in this way is not practical. Fortunately, we only need to check the right-bounded right-closed intervals of the $\mathsf{B}_{x}$. All this reasoning leads to the following definition of a random variable.</p>
-</li>
-</ol>
-<p>A random variable (RV) $X$ is a function  $X\colon\mathsf{\Omega}\rightarrow\mathbb{R}$ that satisfies $X^{-1}\left[\mathsf{B}_{x}\right]$ for each real $x$.</p>
 
 </div>
 </div>

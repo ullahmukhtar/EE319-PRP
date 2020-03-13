@@ -12,6 +12,7 @@ https://ullahmukhtar.github.com/EE319-PRP/Lecture-12.html
 https://ullahmukhtar.github.com/EE319-PRP/Lecture-13.html
 https://ullahmukhtar.github.com/EE319-PRP/Lecture-14.html
 https://ullahmukhtar.github.com/EE319-PRP/Lecture-15.html
+https://ullahmukhtar.github.com/EE319-PRP/Lecture-16.html
 
 clear workspace
 http://localhost:8888/lab/workspaces/lab?reset

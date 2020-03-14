@@ -69,7 +69,7 @@ Remove-Item -path "C:\Users\$($_.Name)\AppData\Local\Google\Chrome\User Data\Def
     ""
     "-------------------"
     # Clear Internet Explorer
-    Write-Host -ForegroundColor Green "SECTION 5: Clearing Internet Explorer Caches"
+    <# Write-Host -ForegroundColor Green "SECTION 5: Clearing Internet Explorer Caches"
      "-------------------"
     Write-Host -ForegroundColor yellow "Clearing Google caches"
     Write-Host -ForegroundColor cyan
@@ -81,7 +81,7 @@ Remove-Item -path "C:\Users\$($_.Name)\AppData\Local\Google\Chrome\User Data\Def
 	    Remove-Item -path "C:\`$recycle.bin\" -Recurse -Force -EA SilentlyContinue -Verbose
             }
 
-    Write-Host -ForegroundColor yellow "Done..."
+    Write-Host -ForegroundColor yellow "Done..." #>
     ""
     Write-Host -ForegroundColor Green "All Tasks Done!"
     } else {

@@ -13154,11 +13154,11 @@ of values assigned to elements of a set $\mathsf{A}_{1}\subseteq\mathsf{A}$
 is called the image of a set and denoted by $g\left[\mathsf{A}_{1}\right]$.
 If the inverse of $g$ exists, that is, if $g$ is one-to-one, then
 we write $g^{-1}\left(b\right)$ for the pre-image of $b$. When $g$
-is not one-to-one, the pointwise inverse does not exist. The inverse
+is not one-to-one, the point-wise inverse does not exist. The inverse
 can still be defined for sets though. For example, $g^{-1}\left[\mathsf{B}_{1}\right]$
 is the pre-image of a set $\mathsf{B}_{1}\subseteq\mathsf{B}$.</p>
 <p>Given a probability space $\left(\Omega,\mathcal{F},P\right)$ as a model of an experiment, we need a function $X\colon\mathsf{\Omega}\rightarrow\mathbb{R}$ that assigns a real number  $X(\omega)$ to every point $\omega$ of the outcome space in a way that preserves the event structure of the event space $\mathcal{F}$ so that a new probability space $\left(\mathbb{R},\mathfrak{B}\left(\mathbb{R}\right),P_{X}\right)$ can be conveniently used to assign probabilities. The event structure of $\mathcal{F}$ can be preserved only if the inverse $X^{-1}\left[\mathsf{B}\right]$ of every Borel set $B\in\mathfrak{B}\left(\mathbb{R}\right)$ is contained in $\mathcal{F}$. Checking all Borel sets in this way is not practical. Fortunately, we only need to check the right-bounded right-closed intervals of the form $\mathsf{B}_{x}$. All this reasoning leads to the following definition of a random variable.</p>
-<p>A <em>random variable (RV)</em> with respect to an event space $\mathcal{F}$ is a function  $X\colon\mathsf{\Omega}\rightarrow\mathbb{R}$ that satisfies $X^{-1}\left[\mathsf{B}_{x}\right]\in\mathcal{F}$ for each real $x$. Note that the validity of a function as a RV is determined entirely by the event space $\mathcal{F}$. Neither the values assigned by the RV nor the probability measure $P$ has any role to play as far the validity of a RV is concerned. However, a RV is useful only if it assigns values that reflect our quantity of interest.</p>
+<p>A <em>random variable (RV)</em> with respect to an event space $\mathcal{F}$ is a function  $X\colon\mathsf{\Omega}\rightarrow\mathbb{R}$ that satisfies $X^{-1}\left[\mathsf{B}_{x}\right]\in\mathcal{F}$ for each real $x$. Note that the validity of a function as a RV is determined entirely by the event space $\mathcal{F}$. Neither the values assigned by the RV nor the probability measure $P$ has any role to play as far the validity of a RV is concerned. However, a RV is useful only if it assigns values that reflect our quantity of interest. We will write $\mathcal{X}$ for the range of $X$, that is, the image set $X\left[\mathsf{\Omega}\right]$.</p>
 <p>To distinguish distributions from one another, we will use the subscript $X$ when writing functions such as PDF and CDF. Thus $f_{X}$ is the PDF and $F_{X}$ is the CDF. Moreover, the support of the density is $\mathcal{X}=X\left[\mathsf{\Omega}\right]$.</p>
 <p>The probability of an event that has been represented as a Borel set
 $\mathsf{B}$ is then expressed as
@@ -13166,7 +13166,12 @@ $$
 P_{X}\left(\mathsf{B}\right)=P\left(X^{-1}\left[\mathsf{B}\right]\right)
 $$
 Frequently, though, the pre-image $X^{-1}\left[\mathsf{B}\right]$
-is written as $X\in\mathsf{B}$ for convenience.</p>
+is written as $X\in\mathsf{B}$ for convenience.  Though you should
+not confuse the event $X\in\mathsf{B}$ with the Boolean expression $\left[x\in\mathsf{B}\right]$,
+an interesting analogy can be drawn between probabilistic logic (plausible
+reasoning) and deterministic logic (deductive reasoning). If you can
+still not get what I mean, note that $\left[x\in\mathsf{B}\right]$
+is either true or false, whereas the event $X\in\mathsf{B}$ occurs with some probability.</p>
 <blockquote><p><strong>Example</strong>: Is it a RV?</p>
 <p>Consider the sample space
 $$
@@ -13185,24 +13190,25 @@ Check the validity of these two point functions
 X\left(\text{TT}\right) &amp; =0, &amp; X\left(\text{TH}\right) &amp; =1, &amp; X\left(\text{HT}\right) &amp; =1, &amp; X\left(\text{HH}\right) &amp; =2\\
 Y\left(\text{TT}\right) &amp; =0, &amp; Y\left(\text{TH}\right) &amp; =-1, &amp; Y\left(\text{HT}\right) &amp; =1, &amp; Y\left(\text{HH}\right) &amp; =0
 \end{align*}
-The range of values assigned by $X$ is
+The range of $X$ is
 $$
-\mathcal{X}^{\#}=\left\{ 0,1,2\right\} 
-$$
-Checking a few pre-images
-$$
-X^{-1}\left(\left\{ 0\right\} \right)=\mathsf{A}_{0}\in\mathcal{F},\ X^{-1}\left(\left\{ 1\right\} \right)=\mathsf{A}_{1}\in\mathcal{F},\ X^{-1}\left(\left\{ 2\right\} \right)=\mathsf{A}_{2}\in\mathcal{F}
-$$
-Do you need to test any other events?
-The range of values assigned by $Y$ is
-$$
-\mathcal{Y}^{\#}=\left\{ -1,0,1\right\} 
+\mathcal{X}=\left\{ 0,1,2\right\} 
 $$
 Checking a few pre-images
 $$
-Y^{-1}\left(\left\{ -1\right\} \right)=\left\{ \text{TH}\right\} \notin\mathcal{F},\ Y^{-1}\left(\left\{ 0\right\} \right)=\mathsf{A}_{1}\in\mathcal{F},\ Y^{-1}\left(\left\{ 1\right\} \right)=\left\{ \text{HT}\right\} \notin\mathcal{F}
+X^{-1}\left(\left\{ 0\right\} \right)=\mathsf{A}_{0}\in\mathcal{F},\ X^{-1}\left(\left\{ 1\right\} \right)=\mathsf{A}_{1}\in\mathcal{F},\ X^{-1}\left(\left\{ 2\right\} \right)=\mathsf{A}_{2}\in\mathcal{F},\ X^{-1}\left(\mathbb{R}\setminus\mathcal{X}\right)=\emptyset\in\mathcal{F}
 $$
 Do you need to test any other events?</p>
+<p>The range of values assigned by $Y$ is
+$$
+\mathcal{Y}=\left\{ -1,0,1\right\} 
+$$
+Checking a few pre-images
+$$
+Y^{-1}\left(\left\{ -1\right\} \right)=\left\{ \text{TH}\right\} \notin\mathcal{F},\ Y^{-1}\left(\left\{ 0\right\} \right)=\mathsf{A}_{1}^{\mathsf{c}}\in\mathcal{F},\ Y^{-1}\left(\left\{ 1\right\} \right)=\left\{ \text{HT}\right\} \notin\mathcal{F},\ Y^{-1}\left(\mathbb{R}\setminus\mathcal{Y}\right)=\emptyset\in\mathcal{F}
+$$
+Do you need to test any other events?</p>
+<p>Clearly, $X$ qualifies as a RV with respect to $\mathcal{F}$ whereas $Y$ does not. Note, however, that $Y$ could be a RV with respect to some other event space. Could you find that event space?</p>
 </blockquote>
 <h4 id="A-RV-must-respect-the-partition">A RV must respect the partition<a class="anchor-link" href="#A-RV-must-respect-the-partition">&#182;</a></h4><p>How would you define a RV for these partitions?
 <img src="images/two_dice_partition_wrt_sum.png" width="70%" /></p>
@@ -13212,16 +13218,30 @@ Do you need to test any other events?</p>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Dirac-Measure">Dirac Measure<a class="anchor-link" href="#Dirac-Measure">&#182;</a></h4><p>Consider the event space is $\mathcal{F}=\left\{ \emptyset,\mathsf{\Omega}\right\} $. Any RV $X$ definable on $\mathsf{\Omega}$ with respect to $\mathcal{F}$ must assign a constant value $c$ to all the outcomes. The probability of any Borel set $\mathsf{B}$ is then
+<h4 id="Dirac-Measure">Dirac Measure<a class="anchor-link" href="#Dirac-Measure">&#182;</a></h4><p>Consider the event space is $\mathcal{F}=\left\{ \emptyset,\mathsf{\Omega}\right\} $. Any RV $X$ definable on $\mathsf{\Omega}$ with respect to $\mathcal{F}$ must assign a constant value $a$ to all the outcomes. The probability of any Borel set $\mathsf{B}$ is then
 $$
-P_{X}\left(\mathsf{B}\right)=P\left(X^{-1}\left[\mathsf{B}\right]\right)=\left[c\in\mathsf{\mathsf{B}}\right]
+P_{X}\left(\mathsf{B}\right)=P\left(X^{-1}\left[\mathsf{B}\right]\right)=\left[a\in\mathsf{B}\right]
 $$
-This probability measure is called the Dirac measure centered at $c$. A Dirac measure center at a point $x$, denoted by $\delta_{x}$, is the probability measure that assigns all the available probability, $1$, to any Borel set $\mathsf{\mathsf{B}}$ containing $x$ and zero to any event not containing $x$. Mathematically,
+This probability measure is an example what is called a Dirac measure.
+A Dirac measure center at a point $a$, denoted by $\delta_{x}$,
+is the probability measure that assigns all the probability,
+$1$, to any Borel set $\mathsf{B}$ including $a$ and zero probability to any
+Borel set not including $a$. Mathematically, 
 $$
-\delta_{x}\left(\mathsf{\mathsf{B}}\right)=\left[x\in\mathsf{\mathsf{B}}\right]
+\delta_{a}\left(\mathsf{B}\right)=\left[a\in\mathsf{B}\right]
 $$
-The associated probability distribution is called the Dirac distribution. That $X$ is Dirac distributed
-is written as $X\sim\delta_{x}$.</p>
+ The associated probability distribution is called the Dirac distribution.
+That $X$ is Dirac distributed at $a$ is written as $X\sim\delta_{a}$ with
+the following implications.
+$$
+\mathcal{X}=\left\{ a\right\} ,\ f_{X}^{\#}\left(a\right)=F_{X}^{\#}\left(a\right)=1
+$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Bernoulli-Measure">Bernoulli Measure<a class="anchor-link" href="#Bernoulli-Measure">&#182;</a></h4><p>Say the event $\mathsf{A}$ is the only event of interest among all
 the subsets of an outcome space $\mathsf{\Omega}$. The event space
 generated by $\mathsf{A}$ is $\mathcal{F}=\left\{ \emptyset,\mathsf{\Omega},\mathsf{A},\mathsf{A^{c}}\right\} $.
@@ -13232,7 +13252,17 @@ $$
 X\left[\mathsf{A}\right]=\left\{ 1\right\} ,\ X\left[\mathsf{A^{c}}\right]=\left\{ 0\right\} 
 $$
 Remember that we treated $\mathsf{A}$ as success and $\mathsf{A^{c}}$
-as failure.</p>
+as failure. That $X$ is Bernoulli distributed with probability $p$
+of success is written as $X\sim\mathrm{Ber}_{p}$ with the following
+implications.
+$$
+\mathcal{X}=\left\{ 0,1\right\} ,\ f_{X}^{\#}\left(k\right)=\mathrm{Ber}\left(k\mid p\right)=p^{k}\left(1-p\right)^{1-k},\ F_{X}^{\#}\left(k\right)=1-\left(1-k\right)p
+$$
+Could we express a Bernoulli measure in terms of Dirac measures? The
+answer is affirmative.
+$$
+\mathrm{Ber}_{p}=\left(1-p\right)\delta_{0}+p\delta_{1}
+$$</p>
 
 </div>
 </div>

@@ -13139,7 +13139,7 @@ $$</p>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="The-Random-Variable">The Random Variable<a class="anchor-link" href="#The-Random-Variable">&#182;</a></h3><p>Recall out proposed strategy for solving any probability problem.</p>
+<h3 id="The-Random-Variable">The Random Variable<a class="anchor-link" href="#The-Random-Variable">&#182;</a></h3><p>Recall our proposed strategy for solving any probability problem.</p>
 <ol>
 <li>Identify events of interest in any problem.</li>
 <li>Find a representation of your events in the form of Borel sets on the real line.</li>
@@ -13158,20 +13158,37 @@ is not one-to-one, the point-wise inverse does not exist. The inverse
 can still be defined for sets though. For example, $g^{-1}\left[\mathsf{B}_{1}\right]$
 is the pre-image of a set $\mathsf{B}_{1}\subseteq\mathsf{B}$.</p>
 <p>Given a probability space $\left(\Omega,\mathcal{F},P\right)$ as a model of an experiment, we need a function $X\colon\mathsf{\Omega}\rightarrow\mathbb{R}$ that assigns a real number  $X(\omega)$ to every point $\omega$ of the outcome space in a way that preserves the event structure of the event space $\mathcal{F}$ so that a new probability space $\left(\mathbb{R},\mathfrak{B}\left(\mathbb{R}\right),P_{X}\right)$ can be conveniently used to assign probabilities. The event structure of $\mathcal{F}$ can be preserved only if the inverse $X^{-1}\left[\mathsf{B}\right]$ of every Borel set $B\in\mathfrak{B}\left(\mathbb{R}\right)$ is contained in $\mathcal{F}$. Checking all Borel sets in this way is not practical. Fortunately, we only need to check the right-bounded right-closed intervals of the form $\mathsf{B}_{x}$. All this reasoning leads to the following definition of a random variable.</p>
-<p>A <em>random variable (RV)</em> with respect to an event space $\mathcal{F}$ is a function  $X\colon\mathsf{\Omega}\rightarrow\mathbb{R}$ that satisfies $X^{-1}\left[\mathsf{B}_{x}\right]\in\mathcal{F}$ for each real $x$. Note that the validity of a function as a RV is determined entirely by the event space $\mathcal{F}$. Neither the values assigned by the RV nor the probability measure $P$ has any role to play as far the validity of a RV is concerned. However, a RV is useful only if it assigns values that reflect our quantity of interest. We will write $\mathcal{X}$ for the range of $X$, that is, the image set $X\left[\mathsf{\Omega}\right]$.</p>
-<p>To distinguish distributions from one another, we will use the subscript $X$ when writing functions such as PDF and CDF. Thus $f_{X}$ is the PDF and $F_{X}$ is the CDF. Moreover, the support of the density is $\mathcal{X}=X\left[\mathsf{\Omega}\right]$.</p>
+<p>A <em>random variable (RV)</em> with respect to an event space $\mathcal{F}$ is a function  $X\colon\mathsf{\Omega}\rightarrow\mathbb{R}$ that satisfies $X^{-1}\left[\mathsf{B}_{x}\right]\in\mathcal{F}$ for each real $x$. Note that the validity of a function as a RV is determined entirely by the event space $\mathcal{F}$. Neither the values assigned by the RV nor the probability measure $P$ has any role to play as far as the validity of a function to qualify as a RV is concerned. However, a RV is useful only if it assigns values that reflect our quantity of interest. The image set $X\left[\mathsf{\Omega}\right]$ of all the values assigned by $X$ will be referred to as the range of $X$ and denoted by $\mathcal{X}$.</p>
+<p>To distinguish distributions from one another, we will use the subscript
+$X$ when writing functions such as PDF and CDF. Thus we write $f_{X}$
+for the density of $P_{X}$ and refer to it as the PDF of $X$ for
+convenience. Similarly, we write $F_{X}$ for the distribution of
+$P_{X}$ and refer to it as the CDF of $X$ for convenience. It can
+be seen that the range $\mathcal{X}$ of $X$ is also the support
+of the density $f_{X}$. The CDF of a discrete RV is a piecewise constant
+function. The CDF of a continuous RV is a continuous function. The
+CDF of a mixed RV is piecewise continuous function. Only for a mixed
+RV will we write $\mathcal{X}^{\#}$ for the set of points at which
+the CDF has a jump discontinuity.</p>
 <p>The probability of an event that has been represented as a Borel set
 $\mathsf{B}$ is then expressed as
 $$
-P_{X}\left(\mathsf{B}\right)=P\left(X^{-1}\left[\mathsf{B}\right]\right)
+P_{X}\left(\mathsf{B}\right)=P\left(X^{-1}\left[\mathsf{B}\right]\right)=P\left(X\in\mathsf{B}\right)
 $$
-Frequently, though, the pre-image $X^{-1}\left[\mathsf{B}\right]$
-is written as $X\in\mathsf{B}$ for convenience.  Though you should
-not confuse the event $X\in\mathsf{B}$ with the Boolean expression $\left[x\in\mathsf{B}\right]$,
-an interesting analogy can be drawn between probabilistic logic (plausible
-reasoning) and deterministic logic (deductive reasoning). If you can
-still not get what I mean, note that $\left[x\in\mathsf{B}\right]$
-is either true or false, whereas the event $X\in\mathsf{B}$ occurs with some probability.</p>
+The notation $X\in\mathsf{B}$ is a convenient alternative to the
+more mathematical $X^{-1}\left[\mathsf{B}\right]$. Though you should
+not confuse the event $X\in\mathsf{B}$ with the Boolean expression
+$\left[x\in\mathsf{B}\right]$, an interesting analogy can be drawn
+between probabilistic logic (plausible reasoning) and deterministic
+logic (deductive reasoning). If you can still not get what I mean,
+note that $\left[x\in\mathsf{B}\right]$ is either true or false,
+whereas the event $X\in\mathsf{B}$ occurs with some probability.</p>
+<p>Let us cast the definitions of CDF and PDF associated with a RV $X$
+in our newly acquired language.
+\begin{align*}
+F_{X}\left(x\right) &amp; =P_{X}\left(\left(-\infty,x\right]\right)=P\left(X\le x\right)\\
+f_{X}\left(x\right) &amp; =P_{X}\left(\left\{ x\right\} \right)\left[F_{X}\left(x\right)\ne F_{X}\left(x^{-}\right)\right]+\frac{\mathrm{d}F_{X}}{\mathrm{d}x^{-}}\left[F_{X}\left(x\right)=F_{X}\left(x^{-}\right)\right]
+\end{align*}</p>
 <blockquote><p><strong>Example</strong>: Is it a RV?</p>
 <p>Consider the sample space
 $$

@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 
 
-<title>Lecture-13</title>
+<title>Lecture-12</title>
 
 <style type="text/css">
     /*!
@@ -13110,56 +13110,121 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="EE319---Probability-&amp;-Random-Processes">EE319 - Probability &amp; Random Processes<a class="anchor-link" href="#EE319---Probability-&amp;-Random-Processes">&#182;</a></h1><h2 id="Dr.-Ing.-Mukhtar-Ullah,-FAST-NUCES,-Spring-2020"><em>Dr.-Ing. Mukhtar Ullah</em>, FAST NUCES, Spring 2020<a class="anchor-link" href="#Dr.-Ing.-Mukhtar-Ullah,-FAST-NUCES,-Spring-2020">&#182;</a></h2><hr>
 
-<h2 id="Lecture-13-(2020-03-03)"><strong>Lecture 13</strong> (2020-03-03)<a class="anchor-link" href="#Lecture-13-(2020-03-03)">&#182;</a></h2><h2 id="More-Applications-of-Probability-(continued)">More Applications of Probability (continued)<a class="anchor-link" href="#More-Applications-of-Probability-(continued)">&#182;</a></h2>
+<h2 id="Lecture-12-(2020-02-28)"><strong>Lecture 12</strong> (2020-02-28)<a class="anchor-link" href="#Lecture-12-(2020-02-28)">&#182;</a></h2><h2 id="More-Applications-of-Probability">More Applications of Probability<a class="anchor-link" href="#More-Applications-of-Probability">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Quality-control">Quality control<a class="anchor-link" href="#Quality-control">&#182;</a></h3><ul>
-<li>A batch of $50$ items contains $10$ defective items. Suppose $10$ items are selected at random and tested. What is the probability that exactly $5$ of the items tested are defective?<blockquote><p>The base sample space $\mathsf{\Omega}$ has size $50$. The base space can be partitioned into two events: $\mathsf{D}$ for defective items and $\mathsf{D^c}$ for nondefective items. The sequential experiment involves an unordered selection without replacement. ‘Unordered’ because only the number of defective items is of interest. ‘Without replacement’ because it makes no sense to test an item that has already been tested. The sequential experiment has size $\binom{50}{10}$ for the number of ways $10$ items can be selected from $\mathsf{\Omega}$. The event of our interest has size $\binom{10}{5}\binom{40}{5}$ for the number of ways $5$ defective items can be selected from $\mathsf{D}$ and $5$ nondefective items from $\mathsf{D^c}$. The required probability is
-$$\dfrac{\binom{10}{5}\binom{40}{5}}{\binom{50}{10}}$$</p>
+<h3 id="Resource-allocation-in-voice-packet-transmission">Resource allocation in voice packet transmission<a class="anchor-link" href="#Resource-allocation-in-voice-packet-transmission">&#182;</a></h3><p><img src="images/voice_packet_transmission.png" width="70%" /></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>What is the sample space</li>
+</ul>
+<blockquote><p>All the 48 users are either active or silent in a fixed time interval. Therefore our base sample space is simply
+$$\mathsf{\Omega}=\{\mathrm{A},\mathrm{S}\}$$</p>
+</blockquote>
+<ul>
+<li>Which case of selection $\leftrightarrow$ placement? </li>
+</ul>
+<blockquote><p>The users are indistinguishable because being active or silent is the only state that matters in this problem. More than one users can be active (or silent for that matter). The sequential experiment here is then</p>
+<ul>
+<li>Unordered selection of size $48$ with replacement from a 2-element base space</li>
+<li>Placement of $48$ intinguishable objects in two different cells </li>
+</ul>
+</blockquote>
+<ul>
+<li>What is the probability that $k$ of $48$ users are active (during the fixed time interval)? </li>
+</ul>
+<blockquote><p>The base probabilities are $1/3$ for active and $2/3$ for silence. The required probability then equals</p>
+</blockquote>
+$$\binom{48}{k}\left(\frac{1}{3}\right)\left(\frac{2}{3}\right)^{48-k}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="How-many-active-speakers-in-a-short-time-slot">How many active speakers in a short time slot<a class="anchor-link" href="#How-many-active-speakers-in-a-short-time-slot">&#182;</a></h3><p><img src="images/active_speakers_distribution.png" width="70%" /></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="System-reliability">System reliability<a class="anchor-link" href="#System-reliability">&#182;</a></h3><ul>
+<li><p>Given probability $p_i$ that link $i$ fails independently of other links, what is the probability of system failure?</p>
+<blockquote><p>Define events
+$$\mathsf{F}_{i}\leftrightarrow\text{‘Link }i\text{ functions’}\qquad\mathsf{F}\leftrightarrow\text{‘The system functions’}$$</p>
+</blockquote>
+<ul>
+<li><p>Links in series</p>
+<blockquote><p><img src="images/system_reliability_series.png" width="70%" /></p>
+<p>The series configuration enforces the relation $\mathsf{F}=\bigcap_{i=1}^{k}\mathsf{F}_{i}$ among the events.
+The required probability is
+$$P\left(\mathsf{F}^\mathsf{c}\right) = 1-P\left(\mathsf{F}\right) = 1-P\left(\bigcap_{i=1}^{k}\mathsf{F}_{i}\right)=\prod_{i=1}^{k}P\left(\mathsf{F}_{i}\right)=\prod_{i=1}^{k}\left(1-p_{i}\right)$$</p>
+</blockquote>
+</li>
+<li><p>Links in parallel</p>
+<blockquote><p>
+ <img src="images/system_reliability_parallel.png" width="60%" /></p>
+<p>The parallel configuration enforces the relation $\mathsf{F}^\mathsf{c}=\bigcap_{i=1}^{k}\mathsf{F}_{i}^\mathsf{c}$ among the events.
+The required probability is
+$$P\left(\mathsf{F}^\mathsf{c}\right) = P\left(\bigcap_{i=1}^{k}\mathsf{F}_{i}^\mathsf{c}\right)=\prod_{i=1}^{k}P\left(\mathsf{F}_{i}^\mathsf{c}\right)=\prod_{i=1}^{k}p_{i}$$</p>
+</blockquote>
+</li>
+<li><p>Links in a complicated configuration</p>
+<blockquote><p>
+ <img src="images/system_reliability_mixed.png" width="60%" /></p>
+<p>Attacking this problem directly is not straightforward. Let us identify what makes this configuration difficult. It turns out to be link $5$. But the link can only exist in two states and we could deal with them separately.</p>
+<ul>
+<li><p>Link $5$ fails</p>
+<p><img src="images/system_reliability_mixed_1.png" width="60%" /></p>
+<p>This conditional configuration enforces the conditional relation $\mathsf{F}^\mathsf{c}\mid\mathsf{F}_{5}^\mathsf{c}=\left(\mathsf{F}_{1}\cap\mathsf{F}_{2}\right)^\mathsf{c}\cap\left(\mathsf{F}_{3}\cap\mathsf{F}_{4}\right)^\mathsf{c}$ among the events. The conditional probability of system failure is
+$$P\left(\mathsf{F}^\mathsf{c}\mid\mathsf{F}_{5}^\mathsf{c}\right)=\Bigl(1-\left(1-p_1\right)\left(1-p_2\right)\Bigr)\Bigl(1-\left(1-p_3\right)\left(1-p_4\right)\Bigr)$$</p>
+</li>
+<li><p>Link $5$ functions</p>
+<p><img src="images/system_reliability_mixed_2.png" width="60%" /></p>
+<p>This conditional configuration enforces the conditional relation $\mathsf{F}\mid\mathsf{F}_{5}=\left(\mathsf{F}_{1}^\mathsf{c}\cap\mathsf{F}_{3}^\mathsf{c}\right)^\mathsf{c}\cap\left(\mathsf{F}_{2}^\mathsf{c}\cap\mathsf{F}_{4}^\mathsf{c}\right)^\mathsf{c}$ among the events. The conditional probability of system failure is
+$$P\left(\mathsf{F}^\mathsf{c}\mid\mathsf{F}_{5}\right)=1-P\left(\mathsf{F}\mid\mathsf{F}_{5}\right)=1-\left(1-p_{1}p_{3}\right)\left(1-p_{2}p_{4}\right)$$</p>
+</li>
+</ul>
+<p>The (unconditional) probability of system failure is obtained through the law of total probability.
+\begin{align*}
+P\left(\mathsf{F}^\mathsf{c}\right) &amp; =P\left(\mathsf{F}_{5}^\mathsf{c}\right)P\left(\mathsf{F}^\mathsf{c}\mid\mathsf{F}_{5}^\mathsf{c}\right)+P\left(\mathsf{F}_{5}\right)P\left(\mathsf{F}^\mathsf{c}\mid\mathsf{F}_{5}\right)\\
+&amp; =p_{5}\Bigl(1-\left(1-p_1\right)\left(1-p_2\right)\Bigr)\Bigl(1-\left(1-p_3\right)\left(1-p_4\right)\Bigr)+\left(1-p_{5}\right)\Bigl(1-\left(1-p_{1}p_{3}\right)\left(1-p_{2}p_{4}\right)\Bigr)
+\end{align*}</p>
 </blockquote>
 </li>
 </ul>
-<h3 id="Die-rolls">Die rolls<a class="anchor-link" href="#Die-rolls">&#182;</a></h3><ul>
-<li>A six-sided die is tossed $12$ times. How many distinct sequences of faces (numbers from $1$ to $6$) have each number appearing exactly twice? What is the probability of obtaining such a sequence?<blockquote><p>The base sample space $\mathsf{\Omega}$ has size $6$. The $12$-toss sequential experiment has size $6^{12}$ for the number of distinct sequences of faces possible. The appearance of each side twice is in fact its multiplicity in a multinomial cofficient associated with $12$. The number of such distinct sequences is 
-$$\binom{12}{2,2,2,2,2,2}$$
-The probability of obtaining such a sequence is
-$$\dfrac{1}{6^{12}}\binom{12}{2,2,2,2,2,2}$$</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Balls-in-a-urn">Balls in a urn<a class="anchor-link" href="#Balls-in-a-urn">&#182;</a></h3><ul>
+<li>An urn contains five balls numbered $1$ to $5$. Suppose we draw three balls with replacement. What is the probability that all three balls are different?<blockquote><p>The base sample space has size $5$. The sample space of drawing three balls with replacement has size $5^3$. The event representing three different balls drawn has size $(5)_3$. The required probability is thus
+$$\dfrac{(5)_3}{\mathsf{5^3}}$$</p>
 </blockquote>
 </li>
 </ul>
-<h3 id="The-two-urn-experiment">The two-urn experiment<a class="anchor-link" href="#The-two-urn-experiment">&#182;</a></h3><ul>
-<li>A sequential experiment involves repeatedly drawing a ball from one of two urns, noting the number on the ball, and replacing the ball in its urn. Urn $0$ contains a ball with the number $1$ and two balls with the number $0$, and urn $1$ contains five balls with the number $1$ and one ball with the number $0$. The urn from which the first draw is made is selected at random by flipping a fair coin. Urn $0$ is used if the outcome is heads and urn $1$ if the outcome is tails. Thereafter the urn used in a subexperiment corresponds to the number on the ball selected in the previous subexperiment.<blockquote><p><img src="images/two_urn_experiment.png" width="60%" /></p>
-<p>Find the probability of the sequence $0011$?
-$$P_{1\cdot\cdot 4}\left(\{0011\}\right)=P_{1}\left(\{0\}\right)P_{2\mid 1}\left(\{0\}\mid\{0\}\right)P_{3\mid 2}\left(\{1\}\mid\{0\}\right)P_{4\mid 3}\left(\{1\}\mid\{1\}\right)=\frac{1}{2}\times\frac{2}{3}\times\frac{1}{3}\times\frac{5}{6}=\frac{5}{54}$$</p>
+<h3 id="Balls-in-cells">Balls in cells<a class="anchor-link" href="#Balls-in-cells">&#182;</a></h3><ul>
+<li>Suppose that $12$ balls are placed at random into $12$ cells, where more than 1 ball is allowed to occupy a cell. What is the probability that all cells are occupied?<blockquote><p>All cells can be occupied only if each cell receives exactly one ball. The balls to be placed are indistinguishable. Since the elementary events of the combined experiment are not equiprobable, we must use the probability measure of the associated experiment in which the balls are viewed as distinguishable. Assuming a uniform base probability distribution, the required probability is then
+$$\dfrac{1}{12^{12}}\binom{12}{1,1,\cdots,1}=\dfrac{12!}{12^{12}}$$</p>
 </blockquote>
 </li>
 </ul>
-<h3 id="Repeated-Bernoulli-trials-until-the-first-success">Repeated Bernoulli trials until the first success<a class="anchor-link" href="#Repeated-Bernoulli-trials-until-the-first-success">&#182;</a></h3><ul>
-<li>A coin is tossed repeatedly until the first heads shows up. Find a probability law for this experiment. <blockquote><p>The base sample space is $\mathsf{\Omega}=\{\mathrm{H},\mathrm{T}\}$. Assume a base probability distribution
-$$P\left(\{\mathrm{H}\}\right)=p,\quad P\left(\{\mathrm{T}\}\right)=1-p$$
-However, no finite number of tosses can guarrantee the first head. The sequential experiment of ordered selection with replacement has sequences of ever increasing length as outcomes.
-$$\mathsf{\Omega}_{\mathrm{geo}}=\{\mathrm{H},\mathrm{TH},\mathrm{TTH},\ldots\}=\Bigl\{\left(x_{i}\right)_{i\in\left\{ 1,2,\ldots,n\right\} }\mid x_{n}=\mathrm{H},x_{i\ne n}=\mathrm{T},n\in\mathbb{N}\Bigr\}$$
-It can be seen that this does not fit in our classification of four cases of counting as the size $n$ of sequences gets larger and larger without bound, or in mathematical parlance, gets infinitely large. That is not an issue as far as probability calculation is concerned because the product rule of probability is still applicable.<br/>
-Events of our interest are of the form
-$$\mathsf{A}_{k}=\left\{ \mathrm{T}\right\} ^{k-1}\times\left\{ \mathrm{H}\right\}\leftrightarrow\text{‘}k\text{ tosses are required until the first head occurs’}$$
-Application of the product rule of probability yields what is called a <em>geometric distribution</em>.
-$$P_{\mathrm{geo}}\left(\mathsf{A}_{k}\right)=P_{\mathrm{geo}}\left(\left\{ \mathrm{T}\right\} ^{k-1}\times\left\{ \mathrm{H}\right\} \right)=\left[P\left(\left\{ \mathrm{T}\right\} \right)\right]^{k-1}P\left(\left\{ \mathrm{H}\right\} \right)=\left(1-p\right)^{k-1}p$$</p>
-</blockquote>
-</li>
-</ul>
-<h3 id="Repeated-Bernoulli-trials-until-the-$r$th-success">Repeated Bernoulli trials until the $r$th success<a class="anchor-link" href="#Repeated-Bernoulli-trials-until-the-$r$th-success">&#182;</a></h3><ul>
-<li>A coin is tossed repeatedly until the $r$th head shows up. Find a probability law for this experiment.<blockquote><p>The base sample space and the base probability distribution are the same as above. As before, the sequential experiment has as outcomes sequences of ever increasing length.
-$$\mathsf{\Omega}_{\mathrm{nb}}=\Bigl\{\left(x_{i}\right)_{i\in\left\{ 1,2,\ldots,n\right\} }\mid x_{i}\in\left\{ \mathrm{H},\mathrm{T}\right\} ,x_{n}=\mathrm{H},\left|\left\{ i\mid x_{i}=\mathrm{H}\right\} \right|=r,n\in\mathbb{N}\Bigr\}$$
-Define events of the form
-$$\mathsf{A}_{j/ n}\leftrightarrow\text{‘}j\text{ heads occur in }n\text{ tosses’}$$
-that arise in binomial distribution.<br/>
-Events of our interest take the form
-$$\mathsf{A}_{k\backslash r}=\mathsf{A}_{(r-1)/(k-1)}\times\left\{ \mathrm{H}\right\}\leftrightarrow\text{‘}k\text{ tosses are required until the }r\text{th head occurs’}$$
-Application of the product rule of probability yields what is called a <em>negative-binomial distribution</em>.
-$$P_{\mathrm{nb}}\left(\mathsf{A}_{k\backslash r}\right)=P_{\mathrm{bin}}\left(\mathsf{A}_{(r-1)/(k-1)}\right)P\left(\left\{ \mathrm{H}\right\} \right)=\binom{k-1}{r-1}p^{r}\left(1-p\right)^{k-r}$$</p>
+<h3 id="Airplace-crashes-in-a-year">Airplace crashes in a year<a class="anchor-link" href="#Airplace-crashes-in-a-year">&#182;</a></h3><ul>
+<li>Given that 12 airplane crashes occur at random in a year, what is the probability that there is exactly 1 crash each month?<blockquote><p>Assuming a uniform base probability distribution, the required probability is the same as above
+$$\dfrac{12!}{12^{12}}$$
+However, assuming that the same probability of a plane crash every month does not seem to be realistic as evident from the extremely small probability obained above.</p>
 </blockquote>
 </li>
 </ul>
@@ -13169,61 +13234,63 @@ $$P_{\mathrm{nb}}\left(\mathsf{A}_{k\backslash r}\right)=P_{\mathrm{bin}}\left(\
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Axiomatic-Probability-Revisited">Axiomatic Probability Revisited<a class="anchor-link" href="#Axiomatic-Probability-Revisited">&#182;</a></h3><h4 id="Why-axiomatic-approach-is-more-practical">Why axiomatic approach is more practical<a class="anchor-link" href="#Why-axiomatic-approach-is-more-practical">&#182;</a></h4><p>Recall the two key concepts of Calculus. Both the derivative and integral are, in fact, limits of some sequence. Derivative at a point is the limit of a sequence of slopes of secant lines. The Riemann integral is the limit of a sequence of Riemann sums. An event in probability theory can turn out to be the limit of a sequence of events.</p>
-<div class="container">
-    <div style="float:left;width:65%">
-        <img src="images/tangent_via_secants.svg">        
-    </div>
-    <div style="float:right;width:35%">
-        <img src="images/riemann_sum.png">
-    </div>
-</div>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Probability-measures-are-continuous-from-below.">Probability measures are continuous from below.<a class="anchor-link" href="#Probability-measures-are-continuous-from-below.">&#182;</a></h4><p>Suppose you are given a increasing sequence $\mathsf{A}_{1}\subseteq\mathsf{A}_{2}\subseteq\cdots$ of events with limit $\mathsf{A}=\bigcup_{n=1}^{\infty}\mathsf{A}_{n}$. How is the probability $P\left(\mathsf{A}\right)$ of the limit event related to the probabilities $P\left(\mathsf{A}_{n}\right)$ of events in the sequence. Since $\mathsf{A}_{n}=\bigcup_{i=1}^{n}\mathsf{A}_{i}$, your intuition should lead you to guess that $P\left(\mathsf{A}\right)$ is the limit of the sequence $P\left(\mathsf{A}_{1}\right)\le P\left(\mathsf{A}_{2}\right)\le\cdots$.
-That, indeed, is the case.</p>
-<p>The union $\bigcup_{n=1}^{\infty}\mathsf{A}_{n}$ in the limit can be expressed as a disjoint union $\bigcup_{n=1}^{\infty}\mathsf{A}_{n}\setminus\mathsf{A}_{n-1}$ if we set $\mathsf{A}_{0}=\emptyset$. It follows that
+<h3 id="Birthday-problem">Birthday problem<a class="anchor-link" href="#Birthday-problem">&#182;</a></h3><ul>
+<li><p>What is the minimum number of people who need to be in a room so that it is more likely than not that at least two of them have the same birthday?</p>
+<blockquote><p>We need to solve a simpler problem first.</p>
+<p><em>Determine the probability that, in a set of $n$ randomly chosen people in a room, there is at least one
+pair of people who have the same birthday.</em></p>
+<p>Assume the following for convenience.</p>
+
+<pre><code>- It is not a leap year
+- Each day of the year is equally probable for a birthday
+- Birthdays of the people in the room are independent
+- There are no twins, triplets, and so on.
+</code></pre>
+<p>The base sample space has $365$ elements representing the possible birthdays for an individual under the stated assumptions. The essential point to note in the problem statement is the element of surprise or coincidence. It will not surprise you to know that two twins have the same birthday. Two persons, different otherwise, with the same birthday will surpise you. Under the stated assumptions, asking and noting the birthdays of $n$ randomly chosen people in a room is equivalent to the following experiments.</p>
+<ul>
+<li>Ordered selection of $n$ objects from a base sample space of $365$ elements with replacement</li>
+<li>Placement of $n$ distinguishable objects in $365$ different cells without exclusion</li>
+</ul>
+<p>Let us define the event of our interest
+$$\mathsf{A}\leftrightarrow\text{‘At least two people have the same birthday’}$$
+It is much easier, however, to work out the probabiliy of an event that is exactly the opposite of our interest. 
+$$\mathsf{A}^\mathsf{c}\leftrightarrow\text{‘No two people have the same birthday’}$$
+The assumed uniform base probability distribution allows to write
+$$P\left(\mathsf{A}^\mathsf{c}\right)=\dfrac{\left(365\right)_{n}}{365^{n}}$$
+The required probability (that at least two people have the same birthday) is then
+$$P\left(\mathsf{A}\right)=1-\dfrac{\left(365\right)_n}{365^{n}}$$
+Getting back to the original problem, we need to find the smallest $n$ that satisfies $P\left(\mathsf{A}\right)&gt;P\left(\mathsf{A}^\mathsf{c}\right)$, or, equivalently, $P\left(\mathsf{A}^\mathsf{c}\right)&lt;1/2$. That casts our problem to finding the smallest $n$ satisfying $\left(365\right)_{n}/365^{n}&lt;1/2$. Let us write $m=365$ for convenience and work out the math as follows.
+$$\frac{1}{2}&gt;\frac{\left(m\right)_{n}}{m^{n}}=\frac{m}{m}\frac{\left(m-1\right)}{m}\cdots\frac{\left(m-n+1\right)}{m}=\left(1-\frac{1}{m}\right)\left(1-\frac{2}{m}\right)\cdots\left(1-\frac{n-1}{m}\right)$$
+It would be hopeless to try a solution to this inequality directly.
+Let us turn the product to a sum by taking natural logarithm.
+$$\ln\frac{1}{2}&gt;\ln\left(1-\frac{1}{m}\right)+\ln\left(1-\frac{2}{m}\right)+\cdots+\ln\left(1-\frac{n-1}{m}\right)$$
+Recall a nice property of the exponential function, $\mathrm{e}^{x}\approx1+x$,
+that holds for small $x$. Taking the natural logarithm on both sides
+gives $x\approx\ln\left(1+x\right)$. This property of natural logarithm has a deeper meaning in the context of plots using logarithm scales: a small increment on a linear scale corresponds to almost the same increment on the corresponding logarithmic scale if the natural logarithm has been used. This should give you enough reason to see why it is called the natural logarithm. We can use this property to
+our advantage here if $m\gg n$.
 \begin{align*}
-P\left(\mathsf{A}\right) &amp; =P\left(\bigcup_{n=1}^{\infty}\mathsf{A}_{n}\right)=P\left(\bigcup_{n=1}^{\infty}\mathsf{A}_{n}\setminus\mathsf{A}_{n-1}\right)=\sum_{n=1}^{\infty}P\left(\mathsf{A}_{n}\setminus\mathsf{A}_{n-1}\right)\\
- &amp; =\lim_{n\rightarrow\infty}\sum_{k=1}^{n}P\left(\mathsf{A}_{k}\setminus\mathsf{A}_{k-1}\right)=\lim_{n\rightarrow\infty}\sum_{k=1}^{n}\left[P\left(\mathsf{A}_{k}\right)-P\left(\mathsf{A}_{k-1}\right)\right]\\
- &amp; =\lim_{n\rightarrow\infty}\left[P\left(\mathsf{A}_{n}\right)-P\left(\mathsf{A}_{0}\right)\right]=\lim_{n\rightarrow\infty}P\left(\mathsf{A}_{n}\right)
+\ln\frac{1}{2} &amp; &gt;\ln\left(1-\frac{1}{m}\right)+\ln\left(1-\frac{2}{m}\right)+\cdots+\ln\left(1-\frac{n-1}{m}\right)\\
+&amp; \approx-\frac{1}{m}-\frac{2}{m}-\cdots-\frac{n-1}{m}\\
+&amp; =-\frac{\left(n-1\right)n}{2m}
 \end{align*}
-Continuity from below is expressed more succintly by 
-$$P\left(\mathsf{A}_{n}\right)\rightarrow P\left(\mathsf{A}\right)\ \text{as}\ \mathsf{A}_{n}\uparrow\mathsf{A}$$</p>
-<h4 id="Probability-measures-are-continuous-from-above.">Probability measures are continuous from above.<a class="anchor-link" href="#Probability-measures-are-continuous-from-above.">&#182;</a></h4><p>Suppose you are given a decreasing sequence $\mathsf{A}_{1}\supseteq\mathsf{A}_{2}\supseteq\cdots$
-of events with limit $\mathsf{A}=\bigcap_{n=1}^{\infty}\mathsf{A}_{n}$. The increasing sequence $\mathsf{A}_{1}^{\mathsf{c}}\subseteq\mathsf{A}_{2}^{\mathsf{c}}\subseteq\cdots$ approaches the limit $\mathsf{A^{c}}=\bigcup_{n=1}^{\infty}\mathsf{A}_{n}^{\mathsf{c}}$ which, owing to continuity from below, has probability
-$$P\left(\mathsf{A^{c}}\right)=\lim_{n\rightarrow\infty}P\left(\mathsf{A}_{n}^{\mathsf{c}}\right)=\lim_{n\rightarrow\infty}\left[1-P\left(\mathsf{A}_{n}\right)\right]=1-\lim_{n\rightarrow\infty}P\left(\mathsf{A}_{n}\right)$$
-Probability of the original limit (of the decreasing sequence) then follows
-$$P\left(\mathsf{A}\right)=1-P\left(\mathsf{A^{c}}\right)=\lim_{n\rightarrow\infty}P\left(\mathsf{A}_{n}\right)$$
-Continuity from above is expressed more succintly by 
-$$P\left(\mathsf{A}_{n}\right)\rightarrow P\left(\mathsf{A}\right)\ \text{as}\ \mathsf{A}_{n}\downarrow\mathsf{A}$$</p>
-<p>Having established continuity from below as well as from above, it is safe to conclude that each probability measure satisfies continuity, that is, for any monotic sequence $\left(\mathsf{A}_{n}\right)_{n\in\mathbb{N}}$, we have
-$$P\left(\lim_{n\rightarrow\infty}\mathsf{A}_{n}\right)=\lim_{n\rightarrow\infty}P\left(\mathsf{A}_{n}\right)$$
-This has been celebrated as the most signifact triumph of the axiomatic approach developed by Kolmogorov as it allows to develop probability theory just like calculus.</p>
-<h4 id="Setting-the-stage-for-a-calculus-of-probabilty">Setting the stage for a calculus of probabilty<a class="anchor-link" href="#Setting-the-stage-for-a-calculus-of-probabilty">&#182;</a></h4><p>Remember that calculus was made possible only after the real line was developed as a set with no holes. Equipped with the continuity of probability measures, all we need is a clever way of representing all the events in a problem as (sub)sets of the real line. Since we are more comfortable working with numbers than with sets, we shall
-look for special subsets each determined entirely by a single real number.</p>
-<h3 id="Uncountable-Sets-Revisited">Uncountable Sets Revisited<a class="anchor-link" href="#Uncountable-Sets-Revisited">&#182;</a></h3><h4 id="How-to-generate-an-event-space-for-the-real-line?"><em>How to generate an event space for the real line?</em><a class="anchor-link" href="#How-to-generate-an-event-space-for-the-real-line?">&#182;</a></h4><p>Recall the implications of the fact that the set $\mathbb{R}$ of real numbers is uncountable: we cannot assign probabilities in a consistent way to all sets included in the power set $\mathcal{P}\left(\mathbb{R}\right)$. The good news, however, is that all subsets of $\mathbb{R}$ we encounter in practice are included in a smaller $\sigma$-field called a Borel field over the real line, denoted $\mathfrak{B}\left(\mathbb{R}\right)$, and which can be generated by events of the form $\mathsf{B}_{x}=\left(-\infty,x\right]$. Mathematically we write
-$$\mathfrak{B}\left(\mathbb{R}\right)=\sigma\left(\left\{ \mathsf{B}_{x}:x\in\mathbb{R}\right\} \right) \subset \mathcal{P}\left(\mathbb{R}\right)=\sigma\left(\left\{ \{x\}:x\in\mathbb{R}\right\} \right)$$
-Subsets included in Borel field are called Borel sets. Therefore, only Borel sets can be assigned probability in a consistent way (so as to satisfy the Kolmogorov axioms).</p>
-<p>We need a convenient notation for the limit of a monotonic sequence of events.
-\begin{align*}
-\mathsf{B}_{a^{-}} &amp; =\lim_{x\uparrow a}\mathsf{B}_{x}=\bigcup_{n=1}^{\infty}\mathsf{B}_{a-1/n}\subset\mathsf{B}_{a}\\
-\mathsf{B}_{a^{+}} &amp; =\lim_{x\downarrow a}\mathsf{B}_{x}=\bigcap_{n=1}^{\infty}\mathsf{B}_{a+1/n}=\mathsf{B}_{a}
-\end{align*}
-Following are a few examples of events thus generated.
-\begin{align*}
-\left(a,\infty\right) &amp; =\left(-\infty,a\right]^{\mathsf{c}}=\mathsf{B}_{a}^{\mathsf{c}}\\
-\left(a,b\right] &amp; =\left(-\infty,b\right]\cap\left(a,\infty\right)=\mathsf{B}_{b}\cap\mathsf{B}_{a}^{\mathsf{c}}\\
-\left(-\infty,b\right) &amp; =\bigcup_{n=1}^{\infty}\left(-\infty,b-1/n\right]=\bigcup_{n=1}^{\infty}\mathsf{B}_{b-1/n}=\mathsf{B}_{b^{-}}\\
-\left[a,\infty\right) &amp; =\left(-\infty,a\right)^{\mathsf{c}}=\mathsf{B}_{a^{-}}^{\mathsf{c}}\\
-\left(a,b\right) &amp; =\left(-\infty,b\right)\cap\left(a,\infty\right)=\mathsf{B}_{b^{-}}\cap\mathsf{B}_{a}^{\mathsf{c}}\\
-\left[a,b\right) &amp; =\left(-\infty,b\right)\cap\left[a,\infty\right)=\mathsf{B}_{b^{-}}\cap\mathsf{B}_{a^{-}}^{\mathsf{c}}\\
-\left[a,b\right] &amp; =\left(-\infty,b\right]\cap\left[a,\infty\right)=\mathsf{B}_{b}\cap\mathsf{B}_{a^{-}}^{\mathsf{c}}\\
-\left\{ a\right\}  &amp; =\left(-\infty,a\right]\cap\left[a,\infty\right)=\mathsf{B}_{a}\cap\mathsf{B}_{a^{-}}^{\mathsf{c}}
-\end{align*}</p>
+That simplifies to
+$$\left(n-1\right)n&gt;-2m\ln\frac{1}{2}=2m\ln2$$
+Add $1/4$ to both sides to complete the square on the left side
+$$\left(n-\frac{1}{2}\right)^{2}&gt;2m\ln2+\frac{1}{4}$$
+Further simplification followed by substitution $m=365$ yields
+$$n&gt;\frac{1}{2}+\sqrt{2\times365\times\ln2+\frac{1}{4}}\approx22.99$$
+The smallest integer value of $n$ satisfying the last inequality is $23$. Thus, at least 23 people are needed to make at least one coincidence of birthdays more likely than no coincidence at all.</p>
+<p>If you find this number surprisingly small, you need to realize that the number of distinct pairs of people, $\binom{23}{2}=253$, is large enough for a birthday match to be more likely than not.</p>
+</blockquote>
+</li>
+<li><p>Questions that arise from the birthday-match problem</p>
+<ul>
+<li>Try to spot the number $253$ of distinct pairs in the detailed proof above.</li>
+<li>What is the minimum number of people needed to guarrantee at least one birthday match</li>
+<li>How can you use the results of birthday-match problem for secure communications</li>
+</ul>
+</li>
+</ul>
 
 </div>
 </div>

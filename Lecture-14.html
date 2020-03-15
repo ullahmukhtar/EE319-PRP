@@ -13229,21 +13229,24 @@ $$F\left(x\right)=\frac{1}{n}\sum_{k=1}^{n}\left[x\ge k\right]=\frac{\min\left\{
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Discrete-Distribution">Discrete Distribution<a class="anchor-link" href="#Discrete-Distribution">&#182;</a></h3><p>Generalizing the above example, imagine an increasing sequence $x_{1}&lt;x_{2}&lt;\cdots$ of points in some subset $\mathcal{X}^{\#}$ of the real line and a discrete probability measure $P$ that assigns probabilities $p_{i}$ to singletons $\left\{ x_{i}\right\} $. The associated CDF takes the general form
+<h3 id="Discrete-Distribution">Discrete Distribution<a class="anchor-link" href="#Discrete-Distribution">&#182;</a></h3><p>Generalizing this example, imagine an increasing sequence $\left(x_{i}\right)_{i\in\mathsf{I}}$ of points in a countable subset $\mathcal{X}^{\#}=\left\{ x_{i}\mid i\in\mathsf{I}\right\} $ of the real line and a discrete probability distribution $P$ that assigns probabilities $p_{i}$ to singletons $\left\{ x_{i}\right\}$. The index set $\mathsf{I}$ is a (possibly infinite) set of consecutive natural numbers starting from unity. The associated CDF takes the general form
 $$
-F\left(x\right)=P\left(\left(-\infty,x\right]\right)=\sum_{i}p_{i}\left[x_{i}\le x\right]
+F\left(x\right)=P\left(\left(-\infty,x\right]\right)=\sum_{i\in\mathsf{I}}p_{i}\left[x_{i}\le x\right]=\sum_{j=1}^{i^{-}\left(x\right)}p_{j}\left[x\ge x_{1}\right]
 $$
-Recalling $P\left(\left\{ x\right\} \right)=F\left(x\right)-F\left(x^{-}\right)$
-and noting that $\left[x\ge x_{i}\right]-\left[x&gt;x_{i}\right]=\left[x=x_{i}\right]$
-allows to recover the discrete PDF,
+where 
 $$
-f\left(x\right)=P\left(\left\{ x\right\} \right)=\sum_{i}p_{i}\left[x_{i}=x\right]
+i^{-}\left(x\right)=\max\left\{ i\mid i\in\mathsf{I},x_{i}\le x\right\}
+$$
+is the index of the largest $x_{i}$ not exceeding $x$.</p>
+<p>Recalling $P\left(\left\{ x\right\} \right)=F\left(x\right)-F\left(x^{-}\right)$ and noting that $\left[x\ge x_{i}\right]-\left[x&gt;x_{i}\right]=\left[x=x_{i}\right]$ allows to recover the discrete PDF, or PMF, 
+$$
+f\left(x\right)=P\left(\left\{ x\right\} \right)=\sum_{i\in\mathsf{I}}p_{i}\left[x_{i}=x\right]=p_{i^{-}\left(x\right)}\left[x\in\mathcal{X}^{\#}\right]
+$$
+We can express probability of any Borel set $\mathsf{B}$ of the real line by simple summing the PMF over $\mathsf{B}$, that is, 
+$$
+P\left(\mathsf{B}\right)=P\left(\mathsf{B}\cap\mathcal{X}^{\#}\right)=\sum_{x\in\mathsf{B}}f\left(x\right)=\sum_{i\in\mathsf{I}}p_{i}\left[x_{i}\in\mathsf{B}\right]
 $$</p>
-<p>We can then express the probability of any Borel set $\mathsf{B}$ by 
-$$
-P\left(\mathsf{B}\right)=P\left(\mathsf{B}\cap\mathcal{X}^{\#}\right)=\sum_{x\in\mathsf{B}}f\left(x\right)=\sum_{i}p_{i}\left[x_{i}\in\mathsf{B}\right]
-$$
-Thus, a complete characterization of any discrete probability measure $P$ defined on Borel sets is achieved by only two sets:</p>
+<p>Thus, a complete characterization of any discrete probability measure $P$ defined on Borel sets is achieved by only two sets:</p>
 <ul>
 <li>A countable set $\mathcal{X}^{\#}$ of real numbers $x_{1}&lt;x_{2}&lt;\cdots$</li>
 <li>A set of probabilities $p_i$ associated with $x_{i}$, in order, that sum to unity</li>

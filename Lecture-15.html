@@ -13116,15 +13116,14 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Support-of-a-Discrete-Distribution">Support of a Discrete Distribution<a class="anchor-link" href="#Support-of-a-Discrete-Distribution">&#182;</a></h3><p>A slight inconvenience about the two point functions, the discrete PDF and CDF, can be noticed. Despite being nondecreasing over the entire real line, the CDF $F$ is strictly increasing only over $\mathcal{X}^{\#}$. Consequently,
-despite being nonnegative on the entire real line, the discrete PDF $f$ is strictly positive only at points in $\mathcal{X}^{\#}$. That is why $\mathcal{X}^{\#}$ is said to be the support of $f$. This motivates the introduction of two more functions defined strictly on the support
+<h3 id="Support-of-a-Discrete-Distribution">Support of a Discrete Distribution<a class="anchor-link" href="#Support-of-a-Discrete-Distribution">&#182;</a></h3><p>A slight inconvenience about the two point functions, the discrete PDF and CDF, can be noticed. Despite being nondecreasing over the entire real line, the CDF $F$ is strictly increasing only over $\mathcal{X}^{\#}$. Consequently, despite being nonnegative on the entire real line, the discrete PDF $f$ is strictly positive only at points in $\mathcal{X}^{\#}$. That is why $\mathcal{X}^{\#}$ is said to be the support of $f$. This motivates the introduction of two more functions defined strictly on the support
 $\mathcal{X}^{\#}$. The <em>strictly positive</em> discrete density function
 $$
-f^{\#}\colon\mathcal{X}^{\#}\rightarrow\left(0,1\right]\quad\text{defined by}\quad f^{\#}\left(x_{k}\right)=p_{k}
+f^{\#}\colon\mathcal{X}^{\#}\rightarrow\left(0,1\right]\quad\text{defined by}\quad f^{\#}\left(x_{i}\right)=p_{i}
 $$
  and the <em>strictly increasing</em> distribution function
 $$
-F^{\#}\colon\mathcal{X}^{\#}\rightarrow\left(0,1\right]\quad\text{defined by}\quad F^{\#}\left(x_{k}\right)=\sum_{i=1}^{k}p_{i}
+F^{\#}\colon\mathcal{X}^{\#}\rightarrow\left(0,1\right]\quad\text{defined by}\quad F^{\#}\left(x_{i}\right)=\sum_{j=1}^{i}p_{j}
 $$
 Equipped with these two new (strictly defined) functions, the (original)
 discrete PDF can be expressed as
@@ -13133,7 +13132,7 @@ f\left(x\right)=f^{\#}\left(x\right)\left[x\in\mathcal{X}^{\#}\right]
 $$
 and the (original) CDF as
 $$
-F\left(x\right)=F^{\#}\left(\max\left(\mathcal{X}^{\#}\cap\left(-\infty,x\right]\right)\right)
+F\left(x\right)=F^{\#}\left(\max\left(\mathcal{X}^{\#}\cap\left(-\infty,x\right]\right)\right)=F^{\#}\left(x_{i^{-}\left(x\right)}\right)\left[x\ge x_{1}\right]
 $$
 In terms of the strictly positive density, the probability of a Borel
 set $\mathsf{B}$ takes the form 

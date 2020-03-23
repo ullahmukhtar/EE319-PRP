@@ -13118,16 +13118,14 @@ $$</p>
 <li>Determine probabilities of events of interest by application of Kolmogorov axioms and its corollaries.</li>
 </ol>
 <p>We need to focus on the second point: a way to represent events of interest (in the original event space) to Borel sets (in the event space over the real line). Towards that end, we will employ the concept of a function, or a mapping. Before we get on that road, let us refresh a few concepts of functions.</p>
-<h4 id="The-image-of-a-set">The image of a set<a class="anchor-link" href="#The-image-of-a-set">&#182;</a></h4><p>Given a function $g\colon\mathsf{A}\rightarrow\mathsf{B}$, the value
-$g\left(a\right)\in \mathsf{B}$ assigned to an element $a\in\mathsf{A}$ is
-called the image of $a$ under $g$. The set $\left\{ g\left(a\right)\mid a\in\mathsf{A}_{1}\right\} $
-of values assigned to elements of a set $\mathsf{A}_{1}\subseteq\mathsf{A}$
-is called the image of a set and denoted by $g\left[\mathsf{A}_{1}\right]$.
-If the inverse of $g$ exists, that is, if $g$ is one-to-one, then
-we write $g^{-1}\left(b\right)$ for the pre-image of $b$. When $g$
-is not one-to-one, the point-wise inverse does not exist. The inverse
-can still be defined for sets though. For example, $g^{-1}\left[\mathsf{B}_{1}\right]$
-is the pre-image of a set $\mathsf{B}_{1}\subseteq\mathsf{B}$.</p>
+<h4 id="The-image-of-a-set">The image of a set<a class="anchor-link" href="#The-image-of-a-set">&#182;</a></h4><p>Given a function $g\colon\mathsf{A}\rightarrow\mathsf{B}$, the value $g\left(a\right)\in \mathsf{B}$ assigned to an element $a\in\mathsf{A}$ is called the image of $a$ under $g$. The set of values assigned to elements of a set $\mathsf{A}_{1}\subseteq\mathsf{A}$ is called the image of a set under $g$ and is written as
+$$
+g\left[\mathsf{A}_{1}\right]=\left\{ g\left(a\right)\mid a\in\mathsf{A}_{1}\right\} 
+$$
+If the inverse of $g$ exists, that is, if $g$ is one-to-one, then we write $g^{-1}\left(b\right)$ for the pre-image of $b$. When $g$ is not one-to-one, the point-wise inverse does not exist. The inverse can still be defined for sets though. For example, the pre-image of a set $\mathsf{B}_{1}\subseteq\mathsf{B}$ would be
+$$
+g^{-1}\left[\mathsf{B}_{1}\right]=\left\{ a\mid a\in\mathsf{A}_{1},g\left(a\right)\in\mathsf{B}_{1}\right\} 
+$$</p>
 <p>Given a probability space $\left(\Omega,\mathcal{F},P\right)$ as a model of an experiment, we need a function $X\colon\mathsf{\Omega}\rightarrow\mathbb{R}$ that assigns a real number  $X(\omega)$ to every point $\omega$ of the outcome space in a way that preserves the event structure of the event space $\mathcal{F}$ so that a new probability space $\left(\mathbb{R},\mathfrak{B}\left(\mathbb{R}\right),P_{X}\right)$ can be conveniently used to assign probabilities. The event structure of $\mathcal{F}$ can be preserved only if the inverse $X^{-1}\left[\mathsf{B}\right]$ of every Borel set $B\in\mathfrak{B}\left(\mathbb{R}\right)$ is contained in $\mathcal{F}$. Checking all Borel sets in this way is not practical. Fortunately, we only need to check the right-bounded right-closed intervals of the form $\mathsf{B}_{x}$. All this reasoning leads to the following definition of a random variable.</p>
 <p>A <em>random variable (RV)</em> with respect to an event space $\mathcal{F}$ is a function  $X\colon\mathsf{\Omega}\rightarrow\mathbb{R}$ that satisfies $X^{-1}\left[\mathsf{B}_{x}\right]\in\mathcal{F}$ for each real $x$. Note that the validity of a function as a RV is determined entirely by the event space $\mathcal{F}$. Neither the values assigned by the RV nor the probability measure $P$ has any role to play as far as the validity of a function to qualify as a RV is concerned. However, a RV is useful only if it assigns values that reflect our quantity of interest. The image set $X\left[\mathsf{\Omega}\right]$ of all the values assigned by $X$ will be referred to as the range of $X$ and denoted by $\mathcal{X}$.</p>
 <p>To distinguish distributions from one another, we will use the subscript

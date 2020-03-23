@@ -16,7 +16,7 @@ https://ullahmukhtar.github.com/EE319-PRP/Lecture-16.html
 
 
 https://nbviewer.jupyter.org/
-https://nbviewer.jupyter.org/github/ullahmukhtar/EE319-PRP/blob/master/Lecture-02.ipynb
+https://nbviewer.jupyter.org/github/ullahmukhtar/EE319-PRP/blob/master/Lecture-16.ipynb
 
 clear workspace
 http://localhost:8888/lab/workspaces/lab?reset

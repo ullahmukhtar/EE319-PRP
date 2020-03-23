@@ -2,8 +2,12 @@
 <html>
 <head><meta charset="utf-8" />
 
-
 <title>Lecture-16</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
 
 <style type="text/css">
     /*!
@@ -13029,17 +13033,20 @@ div#notebook {
   div.cell {
     display: block;
     page-break-inside: avoid;
-  }
-  div.output_wrapper {
+  } 
+  div.output_wrapper { 
     display: block;
-    page-break-inside: avoid;
+    page-break-inside: avoid; 
   }
-  div.output {
+  div.output { 
     display: block;
-    page-break-inside: avoid;
+    page-break-inside: avoid; 
   }
 }
 </style>
+
+<!-- Custom stylesheet, it must be in the same directory as the html file -->
+<link rel="stylesheet" href="custom.css">
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
@@ -13062,51 +13069,13 @@ div#notebook {
         }
     });
     </script>
-    <!-- End of mathjax configuration -->
-
-<style>
-        .cell.nbinteract-left {
-            width: 50%;
-            float: left;
-        }
-
-        .cell.nbinteract-right {
-            width: 50%;
-            float: right;
-        }
-
-        .cell.nbinteract-hide_in > .input {
-            display: none;
-        }
-
-        .cell.nbinteract-hide_out > .output_wrapper {
-            display: none;
-        }
-
-        .cell:after {
-          content: "";
-          display: table;
-          clear: both;
-        }
-
-        div.output_subarea {
-            max-width: initial;
-        }
-
-        .jp-OutputPrompt {
-            display: none;
-        }
-    </style></head>
+    <!-- End of mathjax configuration --></head>
 <body>
   <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container">
-      
+    <div class="container" id="notebook-container">
 
-
-
-
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="EE319---Probability-&amp;-Random-Processes">EE319 - Probability &amp; Random Processes<a class="anchor-link" href="#EE319---Probability-&amp;-Random-Processes">&#182;</a></h1><h2 id="Dr.-Ing.-Mukhtar-Ullah,-FAST-NUCES,-Spring-2020"><em>Dr.-Ing. Mukhtar Ullah</em>, FAST NUCES, Spring 2020<a class="anchor-link" href="#Dr.-Ing.-Mukhtar-Ullah,-FAST-NUCES,-Spring-2020">&#182;</a></h2><hr>
 
@@ -13114,7 +13083,8 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Measures-of-size-for-(un)countable-sets">Measures of size for (un)countable sets<a class="anchor-link" href="#Measures-of-size-for-(un)countable-sets">&#182;</a></h3><p>The Lebesgue measure, denoted $\mu^{\wedge}$, generalizes the concept of length of an interval in 1-D, area of a rectangle in 2-D, volume of a cuboid in 3-D, and so on to a measure of any set. The Lebesgue measure is useful for uncountable sets but not so for countable sets as it assigns zero value to singletons. To deal with countable sets, the so-called counting measure, denoted $\mu^{\#}$, that generalizes the concept of cardinality for countable sets. 
 In the context of probability distributions, the counting measure $\mu^{\#}\left(\mathsf{A}\right)$ of a finite set $\mathsf{A}$ is given by $\left|\mathsf{A}\cap\mathcal{X}^{\#}\right|$. The two measures of the infinitesimal interval
@@ -13137,7 +13107,8 @@ $$</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="The-Random-Variable">The Random Variable<a class="anchor-link" href="#The-Random-Variable">&#182;</a></h3><p>Recall our proposed strategy for solving any probability problem.</p>
 <ol>
@@ -13233,20 +13204,55 @@ Do you need to test any other events?</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Dirac-Measure">Dirac Measure<a class="anchor-link" href="#Dirac-Measure">&#182;</a></h4><p>What could be the simplest RV?  Consider the simplest probability space $\left(\mathsf{\Omega},\mathcal{F},P\right)$ with the smallest event space $\mathcal{F}=\left\{ \emptyset,\mathsf{\Omega}\right\}$ and the trivial probability measure $P$. Any RV $X$ definable on $\mathsf{\Omega}$ with respect to $\mathcal{F}$ must assign a constant value to all the outcomes of $\mathsf{\Omega}$. Assuming the constant value $a$, a straightforward definition of $X$ could read
+<h4 id="An-Iversion-like-Bracket">An Iversion-like Bracket<a class="anchor-link" href="#An-Iversion-like-Bracket">&#182;</a></h4><p>Recall the alternative practical notation $X\in\mathsf{B}$ for the more accurate notation $X^{-1}\left[\mathsf{B}\right]$ of the pre-image of a set. Also recall our discussion of not confusing this with the Iversion bracket $\left[x\in\mathsf{B}\right]$. We can combine these two concepts to give a new meaning to logical statements like $x\in\mathsf{B}$. Translating from logic to set theory, true maps to the sure event and false maps to the null event. This motivates to introduce an Iversion-like bracket that parses a logical statement $S\left(x\right)$ according to
+$$
+\left\{ S\left(x\right)\right\} =\begin{cases}
+\mathsf{\Omega} &amp; S\left(x\right)\ \text{true}\\
+\emptyset &amp; S\left(x\right)\ \text{false}
+\end{cases}
+$$
+This will simplify writing set unions in which a set can be filtered out by intersection with the Iversion-like bracket. Here is an example
+$$
+\mathsf{A}\cap\left\{ S\left(x\right)\right\} =\begin{cases}
+\mathsf{A} &amp; S\left(x\right)\ \text{true}\\
+\emptyset &amp; S\left(x\right)\ \text{false}
+\end{cases}
+$$
+in the which the Iversion-like bracket $\left\{ S\left(x\right)\right\} $ is used to filter the set $\mathsf{A}$.</p>
+<p>The two types of brackets can are connected by probability measure through 
+$$
+P\left(\left\{ S\left(x\right)\right\} \right)=\left[S\left(x\right)\right]
+$$
+that is, the probability of the Iversion-like bracket equals the Iversion bracket. Recall that the null event is independent of any other event. Similarly, the sure event is independent of any other event. That allows to write another useful identity:
+$$
+P\left(\mathsf{A}\cap\left\{ S\left(x\right)\right\} \right)=P\left(\mathsf{A}\right)\left[S\left(x\right)\right]
+$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Dirac-Measure">Dirac Measure<a class="anchor-link" href="#Dirac-Measure">&#182;</a></h4><p>What could be the simplest RV?  Consider the simplest probability space $\left(\mathsf{\Omega},\mathcal{F},P\right)$ with the smallest event space $\mathcal{F}=\left\{ \emptyset,\mathsf{\Omega}\right\}$ and the trivial probability measure $P$. Any RV $X$ definable on $\mathsf{\Omega}$ with respect to $\mathcal{F}$ must assign a constant value to all the outcomes of $\mathsf{\Omega}$. In other words, $X$ must be deterministic. Assuming the constant value $a$, a straightforward definition of $X$ could read
 $$
 X\left[\mathsf{\Omega}\right]=\left\{ a\right\} 
 $$
-The pre-image of any Borel set $\mathsf{B}$ is 
+Any Borel set $\mathsf{B}$ can be expressed as a disjoint union
 $$
-X^{-1}\left[\mathsf{B}\right]=X^{-1}\left[\mathsf{B}\setminus\left\{ a\right\} \right]\cup X^{-1}\left[\mathsf{B}\cap\left\{ a\right\} \right]=X^{-1}\left[\mathsf{B}\cap\left\{ a\right\} \right]=\begin{cases}
-\emptyset &amp; a\notin\mathsf{B}\\
-\mathsf{\Omega} &amp; a\in\mathsf{B}
+\mathsf{B}=\left(\mathsf{B}\cap\left\{ a\right\} \right)\cup\left(\mathsf{B}\setminus\left\{ a\right\} \right)
+$$
+with pre-image 
+$$
+X^{-1}\left[\mathsf{B}\right]=\left\{ a\in\mathsf{B}\right\} =\begin{cases}
+\mathsf{\Omega} &amp; a\in\mathsf{B}\\
+\emptyset &amp; a\notin\mathsf{B}
 \end{cases}
 $$
-The probability of any Borel set $\mathsf{B}$ is then
+and probability
 $$
 P_{X}\left(\mathsf{B}\right)=P\left(X^{-1}\left[\mathsf{B}\right]\right)=\left[a\in\mathsf{B}\right]
 $$
@@ -13254,26 +13260,33 @@ This is an example of what is called a Dirac measure. A Dirac measure centered a
 $$
 \delta_{a}\left(\mathsf{B}\right)=\left[a\in\mathsf{B}\right]
 $$
-The associated probability distribution is called the Dirac distribution. That $X$ is Dirac distributed at $a$ is written as $X\sim\delta_{a}$ with the following characterization (by range, strictly positive density, and strictly increasing distribution):
+The associated probability distribution is called the Dirac distribution. That a deterministic RV $X$ is Dirac distributed at $a$ is written as $X\sim\delta_{a}$ with the following characterization (by range, strictly positive density, and strictly increasing distribution):
 $$
 \mathcal{X}=\left\{ a\right\} ,\ f_{X}^{\#}\left(a\right)=1,\ F_{X}^{\#}\left(a\right)=1
 $$
 The PDF and CDF can then be recovered.
 $$
 f_{X}\left(x\right)=\left[x=a\right],\ F_{X}\left(x\right)=\left[x\ge a\right]
-$$</p>
+$$
+The above formulation assumes a particular constant value $a$ at which the Dirac distribution is located. Since any real value can be chosen, it is more precise to see $a$ as a location parameter and speak of a family of distributions, the Dirac family.</p>
+<h4 id="The-Dirac-family-of-distributions">The Dirac family of distributions<a class="anchor-link" href="#The-Dirac-family-of-distributions">&#182;</a></h4><p>The set of all possible Dirac measures,
+$$
+\left\{ \delta_{a}\mid a\in\mathbb{R}\right\}, 
+$$
+gives the Dirac family of distributions.</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Bernoulli-Measure">Bernoulli Measure<a class="anchor-link" href="#Bernoulli-Measure">&#182;</a></h4><p>The Dirac RV is too simple to represent uncertainty because concentrating all the probability at a single point makes it deterministic. What could the simplest RV representing uncertainty? That turns out to be Bernoulli distributed. Consider a probability space $\left(\mathsf{\Omega},\mathcal{F},P\right)$
 with the event space generated by a partition $\left\{ \mathsf{A}_{0},\mathsf{A}_{1}\right\} $ of the outcome space $\mathsf{\Omega}$, namely
 $$
 \mathcal{F}=\sigma\left(\left\{ \mathsf{A}\right\} \right)=\left\{ \emptyset,\mathsf{\Omega},\mathsf{A}_{0},\mathsf{A}_{1}\right\} 
 $$
-and a probability measure $P$ defined by $P\left(\mathsf{A}_{1}\right)=p$. Any RV $X$ definable on $\mathsf{\Omega}$ with respect to $\mathcal{F}$ must assign two different values so that the value $x_{i}$ is assigned to all points in $\mathsf{A}_{i}$. Choosing $x_{i}=i$ from the set $\mathcal{X}=\left\{ 0,1\right\} $ for convenience, a straightforward definition of $X$ could read
+and a probability measure $P$ defined by $P\left(\mathsf{A}_{1}\right)=p$. Any RV $X$ definable on $\mathsf{\Omega}$ with respect to $\mathcal{F}$ must assign a single value, say $x_{0}$, to all points in $\mathsf{A}_{0}$ and a different value, say $x_{1}$, to all points in $\mathsf{A}_{1}$. Choosing $x_{i}=i$ for convenience, a straightforward definition of $X$ could read
 $$
 X\left(\omega\right)=\delta_{\omega}\left(\mathsf{A}_{1}\right)=\left[\omega\in\mathsf{A}_{1}\right]
 $$
@@ -13281,14 +13294,20 @@ or, equivalently,
 $$
 X\left[\mathsf{A}_{1}\right]=\left\{ 1\right\} ,\ X\left[\mathsf{A}_{0}\right]=\left\{ 0\right\} 
 $$
-The pre-image of any Borel set $\mathsf{B}$ can be expressed as a disjoint union
+Any Borel set $\mathsf{B}$ can be expressed as a disjoint union
 $$
-X^{-1}\left[\mathsf{B}\right]=X^{-1}\left[\mathsf{B}\setminus\left\{ \mathcal{X}\right\} \right]\cup X^{-1}\left[\mathsf{B}\cap\left\{ 0\right\} \right]\cup X^{-1}\left[\mathsf{B}\cap\left\{ 1\right\} \right]=X^{-1}\left[\mathsf{B}\cap\left\{ 0\right\} \right]\cup X^{-1}\left[\mathsf{B}\cap\left\{ 1\right\} \right]=\bigcup_{i\in\mathsf{B}}\mathsf{A}_{i}
+\mathsf{B}=\left(\mathsf{B}\cap\left\{ 0\right\} \right)\cup\left(\mathsf{B}\cap\left\{ 1\right\} \right)\cup\left(\mathsf{B}\setminus\left\{ 0,1\right\} \right)
 $$
-The probability of any Borel set $\mathsf{B}$ is then
+with pre-image
 $$
-P_{X}\left(\mathsf{B}\right)=P\left(X^{-1}\left[\mathsf{B}\right]\right)=\sum_{i=1}^{2}P\left(\mathsf{A}_{i}\right)\left[i\in\mathsf{B}\right]=\left(1-p\right)\delta_{0}\left(\mathsf{B}\right)+p\delta_{1}\left(\mathsf{B}\right)
+X^{-1}\left[\mathsf{B}\right]=\left(\mathsf{A}_{0}\cap\left\{ 0\in\mathsf{B}\right\} \right)\cup\left(\mathsf{A}_{1}\cap\left\{ 1\in\mathsf{B}\right\} \right)
 $$
+and probability
+\begin{align*}
+P_{X}\left(\mathsf{B}\right)=P\left(X^{-1}\left[\mathsf{B}\right]\right) &amp; =P\left(\mathsf{A}_{0}\cap\left\{ 0\in\mathsf{B}\right\} \right)+P\left(\mathsf{A}_{1}\cap\left\{ 1\in\mathsf{B}\right\} \right)\\
+ &amp; =P\left(\mathsf{A}_{0}\right)\left[0\in\mathsf{B}\right]+P\left(\mathsf{A}_{1}\right)\left[1\in\mathsf{B}\right]\\
+ &amp; =\left(1-p\right)\delta_{0}\left(\mathsf{B}\right)+p\delta_{1}\left(\mathsf{B}\right)
+\end{align*}
 This is an example what is called a Bernoulli measure where $\mathsf{A}_{1}$ is viewed as success and $\mathsf{A}_{0}$ as failure,. A Bernoulli measure with probability $p$ of success, denoted by $\mathrm{Ber}_{p}$, assigns probabilities to Borel sets $\mathsf{B}$ according to
 $$
 \mathrm{Ber}_{p}\left(\mathsf{B}\right)=\left(1-p\right)\delta_{0}\left(\mathsf{B}\right)+p\delta_{1}\left(\mathsf{B}\right)
@@ -13299,40 +13318,29 @@ $$
 $$
 The associated probability distribution is called the Bernoulli distribution. That $X$ is Bernoulli distributed with probability $p$ of success is written as $X\sim\mathrm{Ber}_{p}$ with the following characterization:
 $$
-\mathcal{X}=\left\{ 0,1\right\} ,\ f_{X}^{\#}\left(x\right)=\mathrm{Ber}\left(x\mid p\right)=p^{x}\left(1-p\right)^{1-x},\ F_{X}^{\#}\left(x\right)=\left(1-p\right)^{1-x}
+\mathcal{X}=\left\{ 0,1\right\} ,\ f_{X}^{\#}\left(k\right)=\mathrm{Ber}\left(k\mid p\right)=p^{k}\left(1-p\right)^{1-k},\ F_{X}^{\#}\left(k\right)=\left(1-p\right)^{1-k}
 $$
+Note the new name-based notation $\mathrm{Ber}\left(k;p\right)$ for the strictly positive density $\mathrm{Ber}_{p}\left(\left\{ k\right\} \right)$ of the Bernoulli RV.
 The PDF and CDF can then be recovered.
 $$
 f_{X}\left(x\right)=f_{X}^{\#}\left(x\right)\left[x\in\left\{ 0,1\right\} \right],\ F_{X}\left(x\right)=F_{X}^{\#}\left(\left[x\ge1\right]\right)\left[x\ge0\right]
+$$ 
+The above formulation assumes a particular probability $p$ of success (at each Bernoulli trial). Since any value $\left[0,1\right]$ can be chosen, it is more precise to view $p$ as a parameter and speak of a family of distributions, the Bernoulli family.</p>
+<h4 id="The-Bernoulli-family-of-distributions">The Bernoulli family of distributions<a class="anchor-link" href="#The-Bernoulli-family-of-distributions">&#182;</a></h4><p>The set of all possible Bernoulli measures,
 $$
-The Bernoulli distribution reduces to a uniform distribution for $p=1/2$.</p>
+\left\{ \mathrm{Ber}_{p}\mid p\in\left[0,1\right]\right\} ,
+$$
+gives the Bernoulli family of distributions.</p>
+<p>You can see that the member $\mathrm{Ber}_{1/2}$ of this family is a uniform distribution.</p>
 
 </div>
 </div>
 </div>
-
-
-
-<!-- Loads nbinteract package -->
-<script src="https://unpkg.com/nbinteract-core" async></script>
-<script>
-  (function setupNbinteract() {
-    // If NbInteract hasn't loaded, wait one second and try again
-    if (window.NbInteract === undefined) {
-      setTimeout(setupNbinteract, 1000)
-      return
-    }
-
-    var interact = new window.NbInteract({
-      spec: 'ullahmukhtar/EE319-PRP/master',
-      baseUrl: 'https://mybinder.org',
-      provider: 'gh',
-    })
-    interact.prepare()
-
-    window.interact = interact
-  })()
-</script>
     </div>
   </div>
 </body>
+
+ 
+
+
+</html>

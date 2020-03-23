@@ -14,8 +14,15 @@ https://ullahmukhtar.github.com/EE319-PRP/Lecture-14.html
 https://ullahmukhtar.github.com/EE319-PRP/Lecture-15.html
 https://ullahmukhtar.github.com/EE319-PRP/Lecture-16.html
 
+
+https://nbviewer.jupyter.org/
+https://nbviewer.jupyter.org/github/ullahmukhtar/EE319-PRP/blob/master/Lecture-02.ipynb
+
 clear workspace
 http://localhost:8888/lab/workspaces/lab?reset
+
+https://www.audiolabs-erlangen.de/resources/MIR/FMP/B/B_Multimedia.html
+https://www.dev2qa.com/how-to-display-rich-output-media-audio-video-image-etc-in-ipython-jupyter-notebook/
 
 # Clone the repo
 git clone https://github.com/ullahmukhtar/EE319-PRP
@@ -34,5 +41,30 @@ git add -A
 git commit -m "Publish nb"
 git push origin master
 
+mybinder.org
+
+<audio src="https://example.org/audio.ogg" controls>alternative text</audio>
+
+<video src="https://example.org/video.ogv" controls>alternative text</video>
 
 There are three main things to notice. First, since my overview slide was labeled as a sub-slide, I hit the down arrow to get to it. Next, my Notes cell did not appear. Lastly, in order to see all my slides at the end I pressed the esc key.
+
+#########################################
+# using cell magic
+#########################################
+%%HTML
+<div align="middle">
+<video width="80%" controls>
+      <source src="path/to/my.mp4" type="video/mp4">
+</video></div>
+
+#########################################
+# explicitly calling the HTML renderer:
+#########################################
+from IPython.display import HTML
+
+HTML("""
+<div align="middle">
+<video width="80%" controls>
+      <source src="path/to/my.mp4" type="video/mp4">
+</video></div>""")

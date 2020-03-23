@@ -1,0 +1,21 @@
+print("... Some LaTeX definitions")
+
+LaTeXdefs=r"""
+$$\def\egalpardef{\mathop{=}\limits^\triangle}
+\def\xb{\mathbf{x}}
+\def\RR{\mathbb{R}} 
+\def\CC{\mathbb{C}} 
+\def\mystar{{*}}
+\def\deriv#1#2{\frac{\mathrm{d}#1}{\mathrm{d}#2}}
+\def\Lambdab{\mathbf{\Lambda}}
+\def\Ab{\mathbf{A}}
+\def\sinc#1{\mathrm{sinc\left(#1\right)}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathscr{D}}
+\newcommand{\F}{\mathscr{F}}
+$$
+"""
+display(HTML(LaTeXdefs))

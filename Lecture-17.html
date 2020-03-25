@@ -13074,7 +13074,7 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing code_cell rendered celltag_to_remove">
+<div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
@@ -13137,24 +13137,29 @@ $$
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Bernoulli-Measure-(continued)">Bernoulli Measure (continued)<a class="anchor-link" href="#Bernoulli-Measure-(continued)">&#182;</a></h4><h4 id="Indicator-function">Indicator function<a class="anchor-link" href="#Indicator-function">&#182;</a></h4><p>The definition of Bernoulli RV
-\begin{equation}
-X\left(\omega\right)=\delta_{\omega}\left(\mathsf{A}\right)=\left[\omega\in\mathsf{A}\right]
-\end{equation}
-highlights two ways of viewing the Boolean expression $\left[\omega\in\mathsf{A}\right]$.</p>
-<ul>
-<li>Viewed as a set function of $\mathsf{A}$, it is a Dirac measure.</li>
-<li>Viewed as a point function of $\omega$, it is a Bernoulli RV.</li>
-</ul>
-<p>The point-function view leads to the definition of what is called an indicator function
+<h4 id="Bernoulli-Measure-(continued)">Bernoulli Measure (continued)<a class="anchor-link" href="#Bernoulli-Measure-(continued)">&#182;</a></h4><h4 id="Indicator-function">Indicator function<a class="anchor-link" href="#Indicator-function">&#182;</a></h4><p>The Iversion bracket has been so far employed in two different contexts.
+Let us compare these two definitions
 $$
-\mathbf{1}_{\mathsf{A}}\left(\omega\right)=\delta_{\omega}\left(\mathsf{A}\right)=\left[\omega\in\mathsf{A}\right]
+X\left(\omega\right)=\left[\omega\in\mathsf{A}\right],\quad\text{vs}\quad\delta_{a}\left(\mathsf{B}\right)=\left[a\in\mathsf{B}\right]
 $$
-Thus, every Bernoulli RV is an indicator function. Had we known this before, our definitions of Bernoulli and deterministic RVs would have been very compact.</p>
-<ul>
-<li>Bernoulli RV $X\sim\mathrm{Ber}_{p}$ would have been defined as $X=\mathbf{1}_{\mathsf{A}}$</li>
-<li>Deterministic RV $X\sim\delta_{a}$ would have been defined as $X=a\mathbf{1}_{\mathsf{\Omega}}$</li>
-</ul>
+On the left you see Bernoulli RV that indicates the occurence of $\mathsf{A}$.
+On the right you see the Dirac measure concentraring all the probability
+at $a$. It is important to see the difference in meaning despite
+the usage of the same Iversion bracket. One (on the left) is a point
+function and the other (on the right) is a set function. The symbol
+$\delta_{a}$ identifies uniquiely the Dirac measure and we promise
+not to use it for any other purpose. On the other hand, we cannot
+restrict the usage of $X$ to a particular point function. We need
+a dedicated notation for viewing $\left[\omega\in\mathsf{A}\right]$
+as a point function. This motivates the following definition. The
+indicator function of a set $\mathsf{A}$ is a point function defined
+by
+$$
+\mathbf{1}_{\mathsf{A}}\left(\omega\right)=\left[\omega\in\mathsf{A}\right]
+$$
+Thus, every Bernoulli RV is an indicator function. Had we known this
+before, a compact definition of Bernoulli RV $X\sim\mathrm{Ber}_{p}$
+would read $X=\mathbf{1}_{\mathsf{A}}$.</p>
 <h4 id="From-the-Bernoulli-family-to-the-two-point-family">From the Bernoulli family to the two-point family<a class="anchor-link" href="#From-the-Bernoulli-family-to-the-two-point-family">&#182;</a></h4><p>The Bernoulli RV $X\sim\mathrm{Ber}_{p}$ assigns the value $1$ to (the success) $\mathsf{A}$ and $0$ to (the failure) $\mathsf{A^{c}}$. In a more general setting, the set $\left\{ 0,1\right\} $ could be replaced with $\left\{ a,b\right\} $. For convenience we will assume $b&gt;a$. The resulting RV $Y$ can be defined with respect to the same event space $\mathcal{F}$ by
 $$
 Y\left(\omega\right)=a\delta_{\omega}\left(\mathsf{A^{c}}\right)+b\delta_{\omega}\left(\mathsf{A}\right)=a\mathbf{1}_{\mathsf{A^{c}}}\left(\omega\right)+b\mathbf{1}_{\mathsf{A}}\left(\omega\right)
@@ -13251,24 +13256,11 @@ frequency $g\left(x\right)$.</p>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Let us work out the mean for the two RVs discussed above.</p>
 <blockquote><p><strong>Mean of the Dirac distribution</strong>
-The mean of the deterministic RV $a\mathbf{1}_{\mathsf{\Omega}}\sim\delta_{a}$ is
+The mean of the deterministic RV $a\sim\delta_{a}$ is
 $$
-\mathop{\mathrm{E}}a\mathbf{1}_{\mathsf{\Omega}}=\sum_{k\in\left\{ a\right\} }k\delta_{a}\left(\left\{ k\right\} \right)=a
+\mathop{\mathrm{E}}a=\sum_{k\in\left\{ a\right\} }k\delta_{a}\left(\left\{ k\right\} \right)=a
 $$
-In other words, the expected value of a (deterministic) constant is the constant itself. Though the expectation operator is defined only for RVs, we will write $\mathop{\mathrm{E}}a$ as a short form of $\mathop{\mathrm{E}}a\mathbf{1}_{\mathsf{\Omega}}$. Such an abuse of notation is allowed as long as you know the subtlety involved. In
-particular, the short form $\mathop{\mathrm{E}}a$ should not be used
-as a justification for the following wrong statements:</p>
-<ul>
-<li>$a$ is a deterministic RV<ul>
-<li>This is wrong because $a$ is only the constant value of the deterministic RV $a\mathbf{1}_{\mathsf{\Omega}}$.</li>
-</ul>
-</li>
-<li>The $\mathop{\mathrm{E}}$ operator is defined for constants.<ul>
-<li>The is wrong because the expectation is defined only for RVs.</li>
-</ul>
-</li>
-</ul>
-<p>You will see such pieces of misunderstanding in the wild and I hope you can sift through that.</p>
+In other words, the expected value of a (deterministic) constant is the constant itself.</p>
 </blockquote>
 <h4 id="Linearity-of-the-expectation">Linearity of the expectation<a class="anchor-link" href="#Linearity-of-the-expectation">&#182;</a></h4><p>Recall from math and circuit courses that integration and summation are linear operations. You can verify from the above definition that the expectation inherits linearity from integration and summation in the following sense:
 $$

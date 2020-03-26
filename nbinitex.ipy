@@ -6,8 +6,10 @@ $$\newcommand{\diff}{\mathop{}\!\textnormal{d}}
 \DeclareMathOperator{\PP}{P}
 \DeclareMathOperator{\EE}{E}
 \DeclareMathOperator{\Var}{Var}
-\DeclareMathOperator{\ind}{\mathbf{1}}
 \DeclareMathOperator{\Ber}{Ber}
+\DeclareMathOperator{\Ud}{Ud}
+\DeclareMathOperator{\U}{U}
+\DeclareMathOperator{\ind}{\mathbf{1}}
 $$
 """
 display(HTML(LaTeXdefs))

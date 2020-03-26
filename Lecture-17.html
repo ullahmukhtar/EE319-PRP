@@ -13074,58 +13074,6 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> nbinitex.ipy
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>... Some LaTeX definitions
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_html rendered_html output_subarea ">
-
-$$\newcommand{\diff}{\mathop{}\!\textnormal{d}}
-\newcommand{\euler}{\mathrm{e}}
-\DeclareMathOperator{\PP}{P}
-\DeclareMathOperator{\EE}{E}
-\DeclareMathOperator{\Var}{Var}
-\DeclareMathOperator{\ind}{\mathbf{1}}
-\DeclareMathOperator{\Ber}{Ber}
-$$
-
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13143,23 +13091,13 @@ Let us compare these two definitions
 $$
 X\left(\omega\right)=\left[\omega\in\mathsf{A}\right],\quad\text{vs}\quad\delta_{a}\left(\mathsf{B}\right)=\left[a\in\mathsf{B}\right]
 $$
-On the left you see Bernoulli RV that indicates the occurence of $\mathsf{A}$.
-On the right you see the Dirac measure concentraring all the probability
-at $a$. It is important to see the difference in meaning despite
-the usage of the same Iversion bracket. One (on the left) is a point
-function and the other (on the right) is a set function. The symbol
-$\delta_{a}$ identifies uniquiely the Dirac measure and we promise
-not to use it for any other purpose. On the other hand, we cannot
-restrict the usage of $X$ to a particular point function. We need
-a dedicated notation for viewing $\left[\omega\in\mathsf{A}\right]$
-as a point function. This motivates the following definition. The
-indicator function of a set $\mathsf{A}$ is a point function defined
-by
+On the left you see Bernoulli RV that indicates the occurrence of $\mathsf{A}$. On the right you see the Dirac measure concentrating all the probability at $a$. It is important to see the difference in meaning despite
+the usage of the same Iversion bracket. One (on the left) is a point function and the other (on the right) is a set function. The symbol $\delta_{a}$ identifies uniquely the Dirac measure and we promise not to use it for any other purpose. On the other hand, we cannot restrict the usage of $X$ to a particular point function. We need a dedicated notation for viewing $\left[\omega\in\mathsf{A}\right]$ as a point function. This motivates the following definition. The indicator function of a set $\mathsf{A}$ is a point function defined by
 $$
 \ind_{\mathsf{A}}\left(\omega\right)=\left[\omega\in\mathsf{A}\right]
 $$
 Thus, every Bernoulli RV is an indicator function.</p>
-<blockquote><p>Had we known this before, a compact definition of Bernoulli RV $X\sim\mathrm{Ber}_{p}$
+<blockquote><p>Had we known this before, a compact definition of Bernoulli RV $X\sim\Ber_{p}$
 would read $X=\ind_{\mathsf{A}}$.</p>
 </blockquote>
 
@@ -13169,7 +13107,7 @@ would read $X=\ind_{\mathsf{A}}$.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="From-the-Bernoulli-family-to-the-two-point-family">From the Bernoulli family to the two-point family<a class="anchor-link" href="#From-the-Bernoulli-family-to-the-two-point-family">&#182;</a></h4><p>The Bernoulli RV $X\sim\mathrm{Ber}_{p}$ assigns the value $1$ to (the success) $\mathsf{A}$ and $0$ to (the failure) $\mathsf{A^{c}}$. In a more general setting, the set $\left\{ 0,1\right\} $ could be replaced with $\left\{ a,b\right\} $. For convenience we will assume $b&gt;a$. The resulting RV $Y$ can be defined with respect to the same event space $\mathcal{F}$ by
+<h4 id="From-the-Bernoulli-family-to-the-two-point-family">From the Bernoulli family to the two-point family<a class="anchor-link" href="#From-the-Bernoulli-family-to-the-two-point-family">&#182;</a></h4><p>The Bernoulli RV $X\sim\Ber_{p}$ assigns the value $1$ to (the success) $\mathsf{A}$ and $0$ to (the failure) $\mathsf{A^{c}}$. In a more general setting, the set $\left\{ 0,1\right\} $ could be replaced with $\left\{ a,b\right\} $. For convenience we will assume $b&gt;a$. The resulting RV $Y$ can be defined with respect to the same event space $\mathcal{F}$ by
 $$
 Y\left(\omega\right)=a\ind_{\mathsf{A^{c}}}\left(\omega\right)+b\ind_{\mathsf{A}}\left(\omega\right)
 $$
@@ -13199,7 +13137,7 @@ Y=a+\left(b-a\right)X=a+\left(b-a\right)\ind_{\mathsf{A}}
 $$
 The probability measure
 $$
-P_{X}=\mathrm{Ber}_{p}=\left(1-p\right)\delta_{0}+p\delta_{1}
+P_{X}=\Ber_{p}=\left(1-p\right)\delta_{0}+p\delta_{1}
 $$
 transforms to
 $$
@@ -13277,9 +13215,9 @@ F_{X}\left(x\right) &amp; =F_{X}^{\#}\left(\min\left\{ n,\left\lfloor x\right\rf
 <blockquote><p><strong>Discrete uniform distribution</strong>
 A special case of the $n$-point distribution arises if $p_{k}=1/n$ for all $k$, that is, the probability is uniformly distributed among the $n$ points. A discrete uniform measure over the (first) $n$ natural numbers is defined by
 $$
-\mathrm{Ud}_{n}=\frac{1}{n}\sum_{k=1}^{n}\delta_{k}
+\Ud_{n}=\frac{1}{n}\sum_{k=1}^{n}\delta_{k}
 $$
-The associated probability distribution is called the discrete uniform distribution. That $X$ follows the discrete uniform distribution in the integer interval $\left[1\cdot\cdot n\right]$ is written as $X\sim\mathrm{Ud}_{n}$ with the following characterization:
+The associated probability distribution is called the discrete uniform distribution. That $X$ follows the discrete uniform distribution in the integer interval $\left[1\cdot\cdot n\right]$ is written as $X\sim\Ud_{n}$ with the following characterization:
 $$
 \mathcal{X}=\left[1\cdot\cdot n\right],\ f_{X}^{\#}\left(k\right)=\mathrm{Ud}\left(k\mid n\right)=\frac{1}{n},\ F_{X}^{\#}\left(k\right)=\frac{k}{n}
 $$
@@ -13290,9 +13228,9 @@ $$</p>
 <p><img src="images/uniform_pdf.png" width="50%" />
 <img src="images/uniform_cdf.png" width="50%" /></p>
 <p><strong>Transformation of a discrete uniform RV</strong>
-The discrete uniform RV $X\sim\mathrm{Ud}_{n}$, defined with respect
+The discrete uniform RV $X\sim\Ud_{n}$, defined with respect
 to the event space $\mathcal{F}$, takes values in $\left[1\cdot\cdot n\right]$.
-In a general setting, we could imagine a discrete uniform RV $Y\sim\mathrm{Ud}_{a,b}$,
+In a general setting, we could imagine a discrete uniform RV $Y\sim\Ud_{a,b}$,
 defined with respect to the same $\mathcal{F}$ and taking values
 in $\left[a\cdot\cdot b\right]$ with $b=a-1+n$ so that the number
 of points remains the same. We can view the new RV $Y$ as the transformed
@@ -13302,7 +13240,7 @@ Y=a-1+X
 $$
 The probability measure
 $$
-P_{X}=\mathrm{Ud}_{n}=\frac{1}{n}\sum_{k=1}^{n}\delta_{k}
+P_{X}=\Ud_{n}=\frac{1}{n}\sum_{k=1}^{n}\delta_{k}
 $$
 transforms to
 $$
@@ -13318,7 +13256,7 @@ leads to the following characterization of $Y$,
 $$
 \mathcal{Y}=\left[a\cdot\cdot b\right],\ f_{Y}^{\#}\left(k\right)=f_{X}^{\#}\left(k-a+1\right)=\frac{1}{b-a+1},\ F_{Y}^{\#}\left(k\right)=F_{X}^{\#}\left(k-a+1\right)=\frac{k-a+1}{b-a+1}
 $$
-The PDF and CDF can then be recovered.
+The PDF and CDF can then be recovered from the strictly defined functions.
 $$
 f_{Y}\left(y\right)=f_{Y}^{\#}\left(y\right)\left[y\in\left[a\cdot\cdot b\right]\right],\ F_{Y}\left(y\right)=F_{Y}^{\#}\left(\min\left\{ b,\left\lfloor y\right\rfloor \right\} \right)\left[y\ge a\right]
 $$</p>
@@ -13385,7 +13323,7 @@ $$
 $$
 as expected.</p>
 <blockquote><p><strong>Mean of the Bernoulli distribution</strong>
-The mean of the Bernoulli RV $X\sim\mathrm{Ber}_{p}$ is
+The mean of the Bernoulli RV $X\sim\Ber_{p}$ is
 $$
 \mathop{\mathrm{E}}X=\sum_{k=0}^{1}k\mathrm{Ber}\left(k;p\right)=\sum_{k=0}^{1}kp^{k}\left(1-p\right)^{1-k}=p
 $$

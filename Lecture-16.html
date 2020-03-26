@@ -13316,16 +13316,29 @@ Dirac measures, namely,
 $$
 \mathrm{Ber}_{p}=\left(1-p\right)\delta_{0}+p\delta_{1}
 $$
-The associated probability distribution is called the Bernoulli distribution. That $X$ is Bernoulli distributed with probability $p$ of success is written as $X\sim\mathrm{Ber}_{p}$ with the following characterization:
+The associated probability distribution is called the Bernoulli distribution. That $X$ is Bernoulli distributed with probability $p$ of success is written as $X\sim\mathrm{Ber}_{p}$ with the following characterization.</p>
+<blockquote><p>Support:
 $$
-\mathcal{X}=\left\{ 0,1\right\} ,\ f_{X}^{\#}\left(k\right)=\mathrm{Ber}\left(k;p\right)=p^{k}\left(1-p\right)^{1-k},\ F_{X}^{\#}\left(k\right)=\left(1-p\right)^{1-k}
+\mathcal{X}=\left\{ 0,1\right\} 
 $$
-Note the new name-based notation $\mathrm{Ber}\left(k;p\right)$ for
-the strictly positive density $\mathrm{Ber}_{p}\left(\left\{ k\right\} \right)$
-of the Bernoulli RV. The PDF and CDF can now be recovered.
+Strictly positive density:
 $$
-f_{X}\left(x\right)=f_{X}^{\#}\left(x\right)\left[x\in\left\{ 0,1\right\} \right],\ F_{X}\left(x\right)=F_{X}^{\#}\left(\left[x\ge1\right]\right)\left[x\ge0\right]
+f_{Y}^{\#}\left(k\right)=\mathrm{Ber}_{p}\left(\left\{ k\right\} \right)=\left(1-p\right)\delta_{0}\left(\left\{ k\right\} \right)+p\delta_{1}\left(\left\{ k\right\} \right)=\left(1-p\right)\left[k=0\right]+p\left[k=1\right]=p^{k}\left(1-p\right)^{1-k}
+$$
+Strictly increasing distribution:
+$$
+F_{Y}^{\#}\left(k\right)=\sum_{i=0}^{k}f_{Y}^{\#}\left(i\right)=\sum_{i=0}^{k}p^{i}\left(1-p\right)^{1-i}=\left(1-p\right)^{1-k}
 $$</p>
+</blockquote>
+<p>A dedicated notation for the strictly positive Bernoulli density is useful to remember, namely
+$$
+\mathrm{Ber}\left(k;p\right)=\mathrm{Ber}_{p}\left(\left\{ k\right\} \right)=p^{k}\left(1-p\right)^{1-k}
+$$
+The PDF and CDF can now be recovered from the strictly defined point functions above.
+\begin{align*}
+f_{X}\left(x\right) &amp; =f_{X}^{\#}\left(x\right)\left[x\in\left\{ 0,1\right\} \right]=\left(1-p\right)^{1-x}\left[x\in\left\{ 0,1\right\} \right]\\
+F_{X}\left(x\right) &amp; =F_{X}^{\#}\left(\min\left\{ 1,\left\lfloor x\right\rfloor \right\} \right)\left[x\ge0\right]=\left(1-p\right)^{\left[x&lt;1\right]}\left[x\ge0\right]
+\end{align*}</p>
 <p>The above formulation assumes a particular probability $p$ of success (at each Bernoulli trial). Since any value $\left[0,1\right]$ can be chosen, it is more precise to view $p$ as a parameter and speak of a family of distributions, the Bernoulli family.</p>
 <h4 id="The-Bernoulli-family-of-distributions">The Bernoulli family of distributions<a class="anchor-link" href="#The-Bernoulli-family-of-distributions">&#182;</a></h4><p>The set of all possible Bernoulli measures,
 $$
@@ -13333,6 +13346,8 @@ $$
 $$
 gives the Bernoulli family of distributions.</p>
 <p>You can see that the member $\mathrm{Ber}_{1/2}$ of this family is a uniform distribution.</p>
+<h3 id="Bernoulli-distribution-plots">Bernoulli distribution plots<a class="anchor-link" href="#Bernoulli-distribution-plots">&#182;</a></h3><p><img src="images/bernoulli_pdf.png" width="50%" />
+<img src="images/bernoulli_cdf.png" width="50%" /></p>
 
 </div>
 </div>

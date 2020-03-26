@@ -2,8 +2,12 @@
 <html>
 <head><meta charset="utf-8" />
 
-
 <title>Lecture-15</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
 
 <style type="text/css">
     /*!
@@ -13029,17 +13033,20 @@ div#notebook {
   div.cell {
     display: block;
     page-break-inside: avoid;
-  }
-  div.output_wrapper {
+  } 
+  div.output_wrapper { 
     display: block;
-    page-break-inside: avoid;
+    page-break-inside: avoid; 
   }
-  div.output {
+  div.output { 
     display: block;
-    page-break-inside: avoid;
+    page-break-inside: avoid; 
   }
 }
 </style>
+
+<!-- Custom stylesheet, it must be in the same directory as the html file -->
+<link rel="stylesheet" href="custom.css">
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
@@ -13062,51 +13069,13 @@ div#notebook {
         }
     });
     </script>
-    <!-- End of mathjax configuration -->
-
-<style>
-        .cell.nbinteract-left {
-            width: 50%;
-            float: left;
-        }
-
-        .cell.nbinteract-right {
-            width: 50%;
-            float: right;
-        }
-
-        .cell.nbinteract-hide_in > .input {
-            display: none;
-        }
-
-        .cell.nbinteract-hide_out > .output_wrapper {
-            display: none;
-        }
-
-        .cell:after {
-          content: "";
-          display: table;
-          clear: both;
-        }
-
-        div.output_subarea {
-            max-width: initial;
-        }
-
-        .jp-OutputPrompt {
-            display: none;
-        }
-    </style></head>
+    <!-- End of mathjax configuration --></head>
 <body>
   <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container">
-      
+    <div class="container" id="notebook-container">
 
-
-
-
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="EE319---Probability-&amp;-Random-Processes">EE319 - Probability &amp; Random Processes<a class="anchor-link" href="#EE319---Probability-&amp;-Random-Processes">&#182;</a></h1><h2 id="Dr.-Ing.-Mukhtar-Ullah,-FAST-NUCES,-Spring-2020"><em>Dr.-Ing. Mukhtar Ullah</em>, FAST NUCES, Spring 2020<a class="anchor-link" href="#Dr.-Ing.-Mukhtar-Ullah,-FAST-NUCES,-Spring-2020">&#182;</a></h2><hr>
 
@@ -13114,16 +13083,17 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Support-of-a-Discrete-Distribution">Support of a Discrete Distribution<a class="anchor-link" href="#Support-of-a-Discrete-Distribution">&#182;</a></h3><p>A slight inconvenience about the two point functions, the discrete PDF and CDF, can be noticed. Despite being nondecreasing over the entire real line, the CDF $F$ is strictly increasing only over $\mathcal{X}^{\#}$. Consequently, despite being nonnegative on the entire real line, the discrete PDF $f$ is strictly positive only at points in $\mathcal{X}^{\#}$. That is why $\mathcal{X}^{\#}$ is said to be the support of $f$. This motivates the introduction of two more functions defined strictly on the support
 $\mathcal{X}^{\#}$. The <em>strictly positive</em> discrete density function
 $$
-f^{\#}\colon\mathcal{X}^{\#}\rightarrow\left(0,1\right]\quad\text{defined by}\quad f^{\#}\left(x_{i}\right)=p_{i}
+f^{\#}\colon\mathcal{X}^{\#}\rightarrow\left(0,1\right]\quad\text{defined by}\quad f^{\#}\left(k\right)=p_{k}
 $$
- and the <em>strictly increasing</em> distribution function
+and the <em>strictly increasing</em> distribution function
 $$
-F^{\#}\colon\mathcal{X}^{\#}\rightarrow\left(0,1\right]\quad\text{defined by}\quad F^{\#}\left(x_{i}\right)=\sum_{j=1}^{i}p_{j}
+F^{\#}\colon\mathcal{X}^{\#}\rightarrow\left(0,1\right]\quad\text{defined by}\quad F^{\#}\left(k\right)=\sum_{i\in\mathcal{X}^{\#}}p_{k}\left[i\le k\right]
 $$
 Equipped with these two new (strictly defined) functions, the (original)
 discrete PDF can be expressed as
@@ -13132,7 +13102,7 @@ f\left(x\right)=f^{\#}\left(x\right)\left[x\in\mathcal{X}^{\#}\right]
 $$
 and the (original) CDF as
 $$
-F\left(x\right)=F^{\#}\left(\max\left(\mathcal{X}^{\#}\cap\left(-\infty,x\right]\right)\right)=F^{\#}\left(x_{i^{-}\left(x\right)}\right)\left[x\ge x_{1}\right]
+F\left(x\right)=F^{\#}\left(\max\mathcal{X}^{\#}\cap\left(-\infty,x\right]\right)\left[\mathcal{X}\cap\left(-\infty,x\right]\ne\emptyset\right]
 $$
 In terms of the strictly positive density, the probability of a Borel
 set $\mathsf{B}$ takes the form 
@@ -13143,7 +13113,8 @@ $$</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Most-likely-outcome">Most likely outcome<a class="anchor-link" href="#Most-likely-outcome">&#182;</a></h3><p>Let us work out the most likely outcome in two discrete distributions encountered earlier.</p>
 <blockquote><p><strong>Bernoulli distribution</strong></p>
@@ -13199,7 +13170,8 @@ This relates the long-run relative frequency of successes to the probability of 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Continuous-Distribution">Continuous Distribution<a class="anchor-link" href="#Continuous-Distribution">&#182;</a></h3><p>How a continuous distribution arises in practice will be illustrated by the following two examples. First, we revisit the spinning arrow in a wheel for a finer treatment.</p>
 <blockquote><p><strong>Spinning arrow in a wheel (continued)</strong>
@@ -13258,7 +13230,8 @@ Thus, a complete characterization of any continuous probability measure $P$ defi
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Support-of-a-Continuous-Distribution">Support of a Continuous Distribution<a class="anchor-link" href="#Support-of-a-Continuous-Distribution">&#182;</a></h3><p>As was observed in discrete distributions, a slight inconvenience about the two point functions, the continuous PDF and CDF, can be noticed again. 
 Despite being nondecreasing over the entire real line, the CDF $F$
@@ -13282,7 +13255,7 @@ f\left(x\right)=f^{\wedge}\left(x\right)\left[x\in\mathcal{X}\right]
 $$
 and the (original) CDF as
 $$
-F\left(x\right)=F^{\wedge}\left(\max\left(\mathcal{X}\cap\left(-\infty,x\right]\right)\right)
+F\left(x\right)=F^{\wedge}\left(\max\mathcal{X}\cap\left(-\infty,x\right]\right)\left[\mathcal{X}\cap\left(-\infty,x\right]\ne\emptyset\right]
 $$
 In terms of the strictly positive density, the expression for the probability of a Borel set $\mathsf{B}$ takes
 the form 
@@ -13296,7 +13269,7 @@ f\left(x\right)=f^{\#}\left(x\right)\left[x\in\mathcal{X}^{\#}\right]+f^{\wedge}
 $$
 and CDF
 $$
-F\left(x\right)=F^{\#}\left(\max\left(\left(-\infty,x\right]\cap\mathcal{X}^{\#}\right)\right)+F^{\wedge}\left(\max\left(\left(-\infty,x\right]\cap\mathcal{X}\setminus\mathcal{X}^{\#}\right)\right)
+F\left(x\right)=F^{\#}\left(\max\mathcal{X}^{\#}\cap\left(-\infty,x\right]\right)\left[\mathcal{X}^{\#}\cap\left(-\infty,x\right]\ne\emptyset\right]+F^{\wedge}\left(\max\mathcal{X}\cap\left(-\infty,x\right]\setminus\mathcal{X}^{\#}\right)\left[\mathcal{X}\cap\left(-\infty,x\right]\ne\emptyset\right]
 $$
 Equipped with a single PDF for a mixed distribution, we can express
 probability of any Borel set $\mathsf{B}$ by
@@ -13307,29 +13280,11 @@ $$</p>
 </div>
 </div>
 </div>
-
-
-
-<!-- Loads nbinteract package -->
-<script src="https://unpkg.com/nbinteract-core" async></script>
-<script>
-  (function setupNbinteract() {
-    // If NbInteract hasn't loaded, wait one second and try again
-    if (window.NbInteract === undefined) {
-      setTimeout(setupNbinteract, 1000)
-      return
-    }
-
-    var interact = new window.NbInteract({
-      spec: 'ullahmukhtar/EE319-PRP/master',
-      baseUrl: 'https://mybinder.org',
-      provider: 'gh',
-    })
-    interact.prepare()
-
-    window.interact = interact
-  })()
-</script>
     </div>
   </div>
 </body>
+
+ 
+
+
+</html>

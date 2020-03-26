@@ -13076,7 +13076,7 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> nbinitex.ipy
@@ -13115,6 +13115,7 @@ $$\newcommand{\diff}{\mathop{}\!\textnormal{d}}
 \DeclareMathOperator{\EE}{E}
 \DeclareMathOperator{\Var}{Var}
 \DeclareMathOperator{\ind}{\mathbf{1}}
+\DeclareMathOperator{\Ber}{Ber}
 $$
 
 </div>
@@ -13155,14 +13156,22 @@ as a point function. This motivates the following definition. The
 indicator function of a set $\mathsf{A}$ is a point function defined
 by
 $$
-\mathbf{1}_{\mathsf{A}}\left(\omega\right)=\left[\omega\in\mathsf{A}\right]
+\ind_{\mathsf{A}}\left(\omega\right)=\left[\omega\in\mathsf{A}\right]
 $$
-Thus, every Bernoulli RV is an indicator function. Had we known this
-before, a compact definition of Bernoulli RV $X\sim\mathrm{Ber}_{p}$
-would read $X=\mathbf{1}_{\mathsf{A}}$.</p>
+Thus, every Bernoulli RV is an indicator function.</p>
+<blockquote><p>Had we known this before, a compact definition of Bernoulli RV $X\sim\mathrm{Ber}_{p}$
+would read $X=\ind_{\mathsf{A}}$.</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="From-the-Bernoulli-family-to-the-two-point-family">From the Bernoulli family to the two-point family<a class="anchor-link" href="#From-the-Bernoulli-family-to-the-two-point-family">&#182;</a></h4><p>The Bernoulli RV $X\sim\mathrm{Ber}_{p}$ assigns the value $1$ to (the success) $\mathsf{A}$ and $0$ to (the failure) $\mathsf{A^{c}}$. In a more general setting, the set $\left\{ 0,1\right\} $ could be replaced with $\left\{ a,b\right\} $. For convenience we will assume $b&gt;a$. The resulting RV $Y$ can be defined with respect to the same event space $\mathcal{F}$ by
 $$
-Y\left(\omega\right)=a\mathbf{1}_{\mathsf{A^{c}}}\left(\omega\right)+b\mathbf{1}_{\mathsf{A}}\left(\omega\right)
+Y\left(\omega\right)=a\ind_{\mathsf{A^{c}}}\left(\omega\right)+b\ind_{\mathsf{A}}\left(\omega\right)
 $$
 or, equivalently,
 $$
@@ -13170,11 +13179,11 @@ Y\left[\mathsf{A^{c}}\right]=\left\{ a\right\} ,\ X\left[\mathsf{A}\right]=\left
 $$
 It must be possible to derive $Y$ from $X$. How? You need not look further than the above definition. Note that the indicator function must obey
 $$
-\mathbf{1}_{\mathsf{A}}\left(\omega\right)+\mathbf{1}_{\mathsf{A^{c}}}\left(\omega\right)=1,\quad\omega\in\mathsf{A}\cup\mathsf{A^{c}}
+\ind_{\mathsf{A}}\left(\omega\right)+\ind_{\mathsf{A^{c}}}\left(\omega\right)=1,\quad\omega\in\mathsf{A}\cup\mathsf{A^{c}}
 $$
 since $\omega$ cannot belong to both $\mathsf{A}$ and $\mathsf{A^{c}}$. That simplifies the definition of $Y$ to
 $$
-Y\left(\omega\right)=a+\left(b-a\right)\mathbf{1}_{\mathsf{A}}\left(\omega\right)=a+\left(b-a\right)X\left(\omega\right)
+Y\left(\omega\right)=a+\left(b-a\right)\ind_{\mathsf{A}}\left(\omega\right)=a+\left(b-a\right)X\left(\omega\right)
 $$
 Consequently a pair $\left(x,y\right)$ of values assigned by the pair $\left(X,Y\right)$ of RVs to any outcome $\omega$ cannot be arbitrary and must a point in the line represented by the equation
 $$
@@ -13186,7 +13195,7 @@ Y\left(\omega\right)=g\circ X\left(\omega\right)=g\left(X\left(\omega\right)\rig
 $$
 It is customary to speak of $Y$ as a transformation of $X$ under $g$ and write $Y=g\left(X\right)$. It is important to remember that $g$ takes values of $X$ and, hence should not be viewed as something that takes functions and returns functions, a much more complicated concept that will be encountered later in this course. In this particular example, the transformation takes the form
 $$
-Y=a+\left(b-a\right)X=a+\left(b-a\right)\mathbf{1}_{\mathsf{A}}
+Y=a+\left(b-a\right)X=a+\left(b-a\right)\ind_{\mathsf{A}}
 $$
 The probability measure
 $$
@@ -13201,14 +13210,25 @@ This is an example of a two-point distribution. Since we assumed $b&gt;a$, the c
 \left(Y=k\right) &amp; =\left(a+\left(b-a\right)X=k\right)=\left(X=\frac{k-a}{b-a}\right)\\
 \left(Y\le k\right) &amp; =\left(a+\left(b-a\right)X\le k\right)=\left(X\le\frac{k-a}{b-a}\right)
 \end{align*}
-That leads to the following characterization of $Y$:
+That leads to the following characterization of $Y$.</p>
+<blockquote><p>Support:
 $$
-\mathcal{Y}=\left\{ a,b\right\} ,\ f_{Y}^{\#}\left(k\right)=f_{X}^{\#}\left(\frac{k-a}{b-a}\right),\ F_{Y}^{\#}\left(k\right)=F_{X}^{\#}\left(\frac{k-a}{b-a}\right)
+\mathcal{Y}=\left\{ a,b\right\} 
 $$
-The PDF and CDF can then be recovered.
+Strictly positive density:
 $$
-f_{Y}\left(y\right)=f_{Y}^{\#}\left(y\right)\left[y\in\left\{ a,b\right\} \right],\ F_{Y}\left(y\right)=F_{X}^{\#}\left(\left[y\ge b\right]\right)\left[y\ge a\right]
+f_{Y}^{\#}\left(k\right)=f_{X}^{\#}\left(\frac{k-a}{b-a}\right)=\left[p^{k}\left(1-p\right)^{1-k}\right]_{k=\left(k-a\right)/\left(b-a\right)}=p^{\left(k-a\right)/\left(b-a\right)}\left(1-p\right)^{\left(b-k\right)/\left(b-a\right)}
+$$
+Strictly increasing distribution:
+$$
+F_{Y}^{\#}\left(k\right)=F_{X}^{\#}\left(\frac{k-a}{b-a}\right)=\left[\left(1-p\right)^{1-k}\right]_{k=\left(k-a\right)/\left(b-a\right)}=\left(1-p\right)^{\left(b-k\right)/\left(b-a\right)}
 $$</p>
+</blockquote>
+<p>The PDF and CDF can then be recovered from the strictly defined point functions above.
+\begin{align*}
+f_{Y}\left(y\right) &amp; =f_{Y}^{\#}\left(y\right)\left[y\in\left\{ a,b\right\} \right]=p^{\left(y-a\right)/\left(b-a\right)}\left(1-p\right)^{\left(b-y\right)/\left(b-a\right)}\left[y\in\left\{ a,b\right\} \right]\\
+F_{Y}\left(y\right) &amp; =F_{Y}^{\#}\left(\max\mathcal{Y}\cap\left(-\infty,y\right]\right)\left[\mathcal{Y}\cap\left(-\infty,y\right]\ne\emptyset\right]=\left(1-p\right)^{\left[y&lt;b\right]}\left[y\ge a\right]
+\end{align*}</p>
 
 </div>
 </div>
@@ -13216,8 +13236,99 @@ $$</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Typical-value-of-a-distribution">Typical value of a distribution<a class="anchor-link" href="#Typical-value-of-a-distribution">&#182;</a></h4><p>Consider a discrete distribution of probabilities $p_{k}=P\left(\left\{ k\right\} \right)$
-and support $\mathcal{X}^{\#}$. If the distribution is symmetrical about a single peak, then the most likely value, called the mode, can be considered a typical value. For distributions of other shapes, the mode may not be appropriate. Other alternatives include the median and the mean. The median $m$ of a distribution generalizes the notion of middle value and is defined as the value at which the CDF equals $1/2$. The mean $\mu$ of a distribution is the value that best fits long-run observations in a least squared sense. We can get an estimate $\hat{\mu}_{n}$ of the mean based on the sum of its squared Euclidean distances from observations in $n$ trials of the underlying experiment, treated as a function of $\hat{\mu}_{n}$,
+<h4 id="From-two-point-to-several-point-distribution">From two-point to several-point distribution<a class="anchor-link" href="#From-two-point-to-several-point-distribution">&#182;</a></h4><p>Consider a probability space $\left(\mathsf{\Omega},\mathcal{F},P\right)$ with the event space $\mathcal{F}=\sigma\left(\mathcal{C}\right)$ generated by a partition $\mathcal{C}=\left\{ \mathsf{A}_{k}\mid k\in\left[1\cdot\cdot n\right]\right\} $ of the outcome space $\mathsf{\Omega}$, and a discrete probability measure $P$ defined by $P\left(\mathsf{A}_{k}\right)=p_{k}$ for all $k$. Any RV $X$ definable on $\mathsf{\Omega}$ with respect to $\mathcal{F}$ must assign $n$ different values so that the same value, say $k$, is assigned to all points in $\mathsf{A}_{k}$. This RV $X$ turns out to be a weighted sum of $n$ indicator functions,
+namely 
+$$
+X\left(\omega\right)=\sum_{k=1}^{n}k\ind_{\mathsf{A}_{k}}\left(\omega\right),
+$$
+resulting in the image sets
+$$
+X\left[\mathsf{A}_{k}\right]=\left\{ k\right\} ,\quad k\in\left[1\cdot\cdot n\right]
+$$
+The indicator functions are all Bernoulli distributed, $\ind_{\mathsf{A}_{k}}\sim\Ber_{p_{k}}$, and must satisfy
+$$
+\sum_{k=1}^{n}\ind_{\mathsf{A}_{k}}\left(\omega\right)=1,\quad\omega\in\mathsf{\Omega}
+$$
+ Any Borel set $\mathsf{B}$ can be expressed as a disjoint union
+$$
+\mathsf{B}=\bigcup_{k=1}^{n}\left(\mathsf{B}\cap\left\{ k\right\} \right)\cup\left(\mathsf{B}\setminus\left[1\cdot\cdot n\right]\right)
+$$
+with pre-image
+$$
+X^{-1}\left[\mathsf{B}\right]=\bigcup_{k=1}^{n}\left(\mathsf{A}_{k}\cap\left\{ k\in\mathsf{B}\right\} \right)=\bigcup_{k\in\mathsf{B}}\mathsf{A}_{k}
+$$
+and probability
+$$
+P_{X}\left(\mathsf{B}\right)=P\left(X^{-1}\left[\mathsf{B}\right]\right)=\sum_{k=1}^{n}P\left(\mathsf{A}_{k}\right)\left[k\in\mathsf{B}\right]=\sum_{k=1}^{n}p_{k}\delta_{k}\left(\mathsf{B}\right)
+$$
+This gives us an $n$-point discrete measure, a weighted sum of $n$ Dirac measures, namely,
+$$
+P_{X}=\sum_{k=1}^{n}p_{k}\delta_{k}
+$$
+The associated probability distribution is an $n$-point discrete distribution with the following characterization:
+$$
+\mathcal{X}=\left[1\cdot\cdot n\right],\ f_{X}^{\#}\left(k\right)=p_{k},\ F_{X}^{\#}\left(k\right)=\sum_{i=1}^{k}p_{i}
+$$
+The PDF and CDF can then be recovered from the strictly defined point functions.
+\begin{align*}
+f_{X}\left(x\right) &amp; =f_{X}^{\#}\left(x\right)\left[x\in\left[1\cdot\cdot n\right]\right]\\
+F_{X}\left(x\right) &amp; =F_{X}^{\#}\left(\min\left\{ n,\left\lfloor x\right\rfloor \right\} \right)\left[x\ge1\right]
+\end{align*}</p>
+<blockquote><p><strong>Discrete uniform distribution</strong>
+A special case of the $n$-point distribution arises if $p_{k}=1/n$ for all $k$, that is, the probability is uniformly distributed among the $n$ points. A discrete uniform measure over the (first) $n$ natural numbers is defined by
+$$
+\mathrm{Ud}_{n}=\frac{1}{n}\sum_{k=1}^{n}\delta_{k}
+$$
+The associated probability distribution is called the discrete uniform distribution. That $X$ follows the discrete uniform distribution in the integer interval $\left[1\cdot\cdot n\right]$ is written as $X\sim\mathrm{Ud}_{n}$ with the following characterization:
+$$
+\mathcal{X}=\left[1\cdot\cdot n\right],\ f_{X}^{\#}\left(k\right)=\mathrm{Ud}\left(k\mid n\right)=\frac{1}{n},\ F_{X}^{\#}\left(k\right)=\frac{k}{n}
+$$
+The PDF and CDF can then be recovered.
+$$
+f_{X}\left(x\right)=f_{X}^{\#}\left(x\right)\left[x\in\left[1\cdot\cdot n\right]\right],\ F_{X}\left(x\right)=F_{X}^{\#}\left(\min\left\{ n,\left\lfloor x\right\rfloor \right\} \right)\left[x\ge1\right]
+$$</p>
+<p><strong>Transformation of a discrete uniform RV</strong>
+The discrete uniform RV $X\sim\mathrm{Ud}_{n}$, defined with respect
+to the event space $\mathcal{F}$, takes values in $\left[1\cdot\cdot n\right]$.
+In a general setting, we could imagine a discrete uniform RV $Y\sim\mathrm{Ud}_{a,b}$,
+defined with respect to the same $\mathcal{F}$ and taking values
+in $\left[a\cdot\cdot b\right]$ with $b=a-1+n$ so that the number
+of points remains the same. We can view the new RV $Y$ as the transformed
+RV 
+$$
+Y=a-1+X
+$$
+The probability measure
+$$
+P_{X}=\mathrm{Ud}_{n}=\frac{1}{n}\sum_{k=1}^{n}\delta_{k}
+$$
+transforms to
+$$
+P_{Y}=\frac{1}{n}\sum_{k=a}^{b}\delta_{k}
+$$
+This gives the generic discrete distribution. The correspondence of
+the events 
+\begin{align*}
+\left(Y=k\right) &amp; =\left(a-1+X=k\right)=\left(X=k-a+1\right)\\
+\left(Y\le k\right) &amp; =\left(a-1+X\le k\right)=\left(X\le k-a+1\right)
+\end{align*}
+leads to the following characterization of $Y$,
+$$
+\mathcal{Y}=\left[a\cdot\cdot b\right],\ f_{Y}^{\#}\left(k\right)=f_{X}^{\#}\left(k-a+1\right)=\frac{1}{b-a+1},\ F_{Y}^{\#}\left(k\right)=F_{X}^{\#}\left(k-a+1\right)=\frac{k-a+1}{b-a+1}
+$$
+The PDF and CDF can then be recovered.
+$$
+f_{Y}\left(y\right)=f_{Y}^{\#}\left(y\right)\left[y\in\left[a\cdot\cdot b\right]\right],\ F_{Y}\left(y\right)=F_{Y}^{\#}\left(\min\left\{ b,\left\lfloor y\right\rfloor \right\} \right)\left[y\ge a\right]
+$$</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Typical-value-of-a-distribution">Typical value of a distribution<a class="anchor-link" href="#Typical-value-of-a-distribution">&#182;</a></h4><p>Consider a discrete distribution with values $k\in\mathcal{X}^{\#}$ and probabilities $p_{k}$. If the distribution is symmetrical about a single peak, then the most likely value, called the mode, can be considered a typical value. For distributions of other shapes, the mode may not be appropriate. Other alternatives include the median and the mean. The median $m$ of a distribution generalizes the notion of middle value and is defined as the value at which the CDF equals $1/2$. The mean $\mu$ of a distribution is the value that best fits long-run observations in a least squared sense. We can get an estimate $\hat{\mu}_{n}$ of the mean based on the sum of its squared Euclidean distances from observations in $n$ trials of the underlying experiment, treated as a function of $\hat{\mu}_{n}$,
 $$
 S\left(\hat{\mu}_{n}\right)=\sum_{k\in\mathcal{X}^{\#}}\left(k-\hat{\mu}_{n}\right)^{2}a_{n}\left(k\right)
 $$

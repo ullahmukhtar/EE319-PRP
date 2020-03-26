@@ -17,6 +17,7 @@ https://ullahmukhtar.github.com/EE319-PRP/Lecture-17.html
 
 
 https://nbviewer.jupyter.org/
+https://nbviewer.jupyter.org/github/ullahmukhtar/EE319-PRP/blob/master/Lecture-15.ipynb
 https://nbviewer.jupyter.org/github/ullahmukhtar/EE319-PRP/blob/master/Lecture-16.ipynb
 https://nbviewer.jupyter.org/github/ullahmukhtar/EE319-PRP/blob/master/Lecture-17.ipynb
 

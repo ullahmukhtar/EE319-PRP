@@ -3,7 +3,6 @@ print("... Some LaTeX definitions")
 LaTeXdefs=r"""
 $$\newcommand{\diff}{\mathop{}\!\textnormal{d}}
 \newcommand{\euler}{\mathrm{e}}
-\DeclareMathOperator{\PP}{P}
 \DeclareMathOperator{\EE}{E}
 \DeclareMathOperator{\Var}{Var}
 \DeclareMathOperator{\Ber}{Ber}

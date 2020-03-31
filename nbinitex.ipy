@@ -5,6 +5,7 @@ $$\newcommand{\diff}{\mathop{}\!\textnormal{d}}
 \newcommand{\euler}{\mathrm{e}}
 \DeclareMathOperator{\EE}{E}
 \DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Cov}{Cov}
 \DeclareMathOperator{\Ber}{Ber}
 \DeclareMathOperator{\Ud}{Ud}
 \DeclareMathOperator{\U}{U}

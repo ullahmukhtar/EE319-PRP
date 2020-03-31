@@ -13156,7 +13156,7 @@ whereas the event $X\in\mathsf{B}$ occurs with some probability.</p>
 in our newly acquired language.
 \begin{align*}
 F_{X}\left(x\right) &amp; =P_{X}\left(\left(-\infty,x\right]\right)=P\left(X\le x\right)\\
-f_{X}\left(x\right) &amp; =P_{X}\left(\left\{ x\right\} \right)\left[F_{X}\left(x\right)\ne F_{X}\left(x^{-}\right)\right]+\frac{\mathrm{d}F_{X}}{\mathrm{d}x^{-}}\left[F_{X}\left(x\right)=F_{X}\left(x^{-}\right)\right]
+f_{X}\left(x\right) &amp; ==P_{X}\left(\left\{ x\right\} \right)+\frac{\mathrm{d}F_{X}\left(x\right)}{\mathrm{d}x^{-}}
 \end{align*}</p>
 <blockquote><p><strong>Example</strong>: Is it a RV?</p>
 <p>Consider the sample space
@@ -13337,7 +13337,7 @@ $$
 The PDF and CDF can now be recovered from the strictly defined point functions above.
 \begin{align*}
 f_{X}\left(x\right) &amp; =f_{X}^{\#}\left(x\right)\left[x\in\left\{ 0,1\right\} \right]=p^{x}\left(1-p\right)^{1-x}\left[x\in\left\{ 0,1\right\} \right]\\
-F_{X}\left(x\right) &amp; =F_{X}^{\#}\left(\min\left\{ 1,\left\lfloor x\right\rfloor \right\} \right)\left[x\ge0\right]=\left(1-p\right)^{\left[x&lt;1\right]}\left[x\ge0\right]
+F_{X}\left(x\right) &amp; ==F_{X}^{\#}\left(\max\mathcal{X}_{\le x}\right)\left[\mathcal{X}_{\le x}\ne\emptyset\right]=\left(1-p\right)^{\left[x&lt;1\right]}\left[x\ge0\right]
 \end{align*}</p>
 <p>The above formulation assumes a particular probability $p$ of success (at each Bernoulli trial). Since any value $\left[0,1\right]$ can be chosen, it is more precise to view $p$ as a parameter and speak of a family of distributions, the Bernoulli family.</p>
 <h4 id="The-Bernoulli-family-of-distributions">The Bernoulli family of distributions<a class="anchor-link" href="#The-Bernoulli-family-of-distributions">&#182;</a></h4><p>The set of all possible Bernoulli measures,

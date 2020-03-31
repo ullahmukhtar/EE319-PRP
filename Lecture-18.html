@@ -13113,6 +13113,7 @@ $$\newcommand{\diff}{\mathop{}\!\textnormal{d}}
 \newcommand{\euler}{\mathrm{e}}
 \DeclareMathOperator{\EE}{E}
 \DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Cov}{Cov}
 \DeclareMathOperator{\Ber}{Ber}
 \DeclareMathOperator{\Ud}{Ud}
 \DeclareMathOperator{\U}{U}
@@ -13139,11 +13140,20 @@ $$
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Expectation-of-a-transformed-RV">Expectation of a transformed RV<a class="anchor-link" href="#Expectation-of-a-transformed-RV">&#182;</a></h4><p>Consider a transformation $Y=g\left(X\right)$ where $g$ is a point function making any value $x$ of $X$ to the value $g\left(x\right)$ of $Y$. How are the two expectations $\EE X$ and $\EE Y$ related? Let us work that out by using the above definition of expectation and noting that the differential regions $\mathrm{d}\mathsf{B}_{x}$ and $\mathrm{d}\mathsf{B}_{y}$ in the Borel field correspond to the same event in the original event space. Putting it together, we get
+<h4 id="Expectation-of-a-transformed-RV">Expectation of a transformed RV<a class="anchor-link" href="#Expectation-of-a-transformed-RV">&#182;</a></h4><p>Consider a transformation $Y=g\left(X\right)$ where $g$ is a point function making any value $x$ of $X$ to the value $g\left(x\right)$ of $Y$. How are the two expectations $\EE X$ and $\EE Y$ related? Let us work that out by using the above definition of expectation and noting that the differential regions $\mathrm{d}\mathsf{B}_{x}$ and $\mathrm{d}\mathsf{B}_{y}$ in the Borel field correspond to the same event in the original event space. Any value $x$ of $X$ determines
+the value $y$ of $Y$ according to $y=g\left(x\right)$. Since both
+the RVs are defined on the same probabiliy space, the pre-image of
+any Borel set $\mathsf{B}$ can be expressed as a disjoint union
 $$
-\EE Y=\intop_{\mathbb{R}}yP_{Y}\left(\mathrm{d}\mathsf{B}_{y}\right)=\intop_{\mathbb{R}}g\left(x\right)P_{X}\left(\mathrm{d}\mathsf{B}_{x}\right)=\sum_{k\in\mathcal{X}^{\#}}g\left(k\right)f^{\#}_{X}\left(k\right)+\intop_{\mathcal{X}}g\left(x\right)f^{\wedge}_{X}\left(x\right)\mathrm{d}x
+Y^{-1}\left[\mathrm{d}\mathsf{B}_{y}\right]=\bigcup_{g\left(x\right)=y}X^{-1}\left[\mathrm{d}\mathsf{B}_{x}\right]
 $$
-In other words, we do not need the distribution of $Y$ to compute the expectation. This makes sense in terms of long-run relative frequencies. The observed long-run relative frequency of a value $x$ is also the
+The expectation of $Z$ then follows from the law of total probability:
+$$
+\EE Y=\intop_{\mathbb{R}}yP_{Y}\left(\mathrm{d}\mathsf{B}_{y}\right)=\intop_{\mathbb{R}}y\sum_{g\left(x\right)=y}P_{X}\left(\mathrm{d}\mathsf{B}_{x}\right)=\intop_{\mathbb{R}}g\left(x\right)P_{X}\left(\mathrm{d}\mathsf{B}_{x}\right)
+$$
+In other words, we do not need the distribution of $Y$ to compute
+the expectation. This makes sense in terms of long-run relative frequencies.
+The observed long-run relative frequency of a value $x$ is also the
 frequency $g\left(x\right)$.</p>
 
 </div>
@@ -13160,7 +13170,7 @@ $$
 $$
 In other words, the expected value of a (deterministic) constant is the constant itself.</p>
 </blockquote>
-<h4 id="Linearity-of-the-expectation">Linearity of the expectation<a class="anchor-link" href="#Linearity-of-the-expectation">&#182;</a></h4><p>Recall from math and circuit courses that integration and summation are linear operations. You can verify from the above definition that the expectation inherits linearity from integration and summation in the following sense:
+<h4 id="Linearity-of-the-expectation-(simpler)">Linearity of the expectation (simpler)<a class="anchor-link" href="#Linearity-of-the-expectation-(simpler)">&#182;</a></h4><p>Recall from math and circuit courses that integration and summation are linear operations. You can verify from the above definition that the expectation inherits linearity from integration and summation in the following sense:
 $$
 \EE \left(aX+b\right)=a\EE X+\EE b=a\EE X+b
 $$
@@ -13187,6 +13197,50 @@ $$</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Linearity-of-the-expectation-(detailed)">Linearity of the expectation (detailed)<a class="anchor-link" href="#Linearity-of-the-expectation-(detailed)">&#182;</a></h3><p>A natural question arises in a curious mind here: why did we not try
+to define linearity of the expectation by this equation
+$$
+\EE\left(aX+bY\right)=a\EE X+b\EE Y
+$$
+which is very reasonable to expect. To see the complication in this
+seemingly innocent equation, assume $X$ and $Y$ to be discrete,
+for convenience, and define a new RV $Z=aX+bY$ as a linear transformation.
+Any pair $\left(x,y\right)$ of values of $\left(X,Y\right)$ determines
+the value $z$ of $Z$ according to $z=ax+by$. Since all the three
+RVs are defined on the same probabiliy space, the following correspondence
+between events is evident 
+$$
+\left(Z=k\right)=\left(aX+bY=k\right)=\bigcup_{ai+bj=k}\left(X=i\cap Y=j\right)
+$$
+The expectation of $Z$ then follows from the law of total probability:
+\begin{align*}
+\EE Z=\sum_{k\in\mathcal{Z}}kP\left(Z=k\right) &amp; =\sum_{k\in\mathcal{Z}}k\sum_{ai+bj=k}P\left(X=i\cap Y=j\right)\\
+ &amp; =\sum_{i\in\mathcal{X}}\sum_{j\in\mathcal{Y}}\left(ai+bj\right)P_{X,Y}\left(\left\{ i\right\} \times\left\{ j\right\} \right)\\
+ &amp; =a\sum_{i\in\mathcal{X}}i\sum_{j\in\mathcal{Y}}P_{X,Y}\left(\left\{ i\right\} \times\left\{ j\right\} \right)+b\sum_{j\in\mathcal{Y}}j\sum_{i\in\mathcal{X}}P_{X,Y}\left(\left\{ i\right\} \times\left\{ j\right\} \right)\\
+ &amp; =a\sum_{i\in\mathcal{X}}iP_{X}\left(\left\{ i\right\} \right)+b\sum_{j\in\mathcal{Y}}jP_{Y}\left(\left\{ j\right\} \right)\\
+ &amp; =a\EE X+b\EE Y
+\end{align*}
+This result can be extended to general RVs. The pre-image of any Borel
+set $\mathsf{B}$ of the $z$-axis can be expressed as a disjoint
+union
+$$
+Z^{-1}\left[\mathrm{d}\mathsf{B}_{z}\right]=\bigcup_{ax+by=z}X^{-1}\left[\mathrm{d}\mathsf{B}_{x}\right]\cap Y^{-1}\left[\mathrm{d}\mathsf{B}_{y}\right]
+$$
+The expectation of $Z$ then follows from the law of total probability:
+\begin{align*}
+\EE Z=\intop_{\mathbb{R}}zP_{Z}\left(\mathrm{d}\mathsf{B}_{z}\right) &amp; =\intop_{\mathbb{R}}z\intop_{ax+by=z}P_{X,Y}\left(\mathrm{d}\mathsf{B}_{x}\times\mathrm{d}\mathsf{B}_{y}\right)\\
+ &amp; =\intop_{\mathbb{R}}\intop_{\mathbb{R}}\left(ax+by\right)P_{X,Y}\left(\mathrm{d}\mathsf{B}_{x}\times\mathrm{d}\mathsf{B}_{y}\right)\\
+ &amp; =a\intop_{\mathbb{R}}x\intop_{\mathbb{R}}P_{X,Y}\left(\mathrm{d}\mathsf{B}_{x}\times\mathrm{d}\mathsf{B}_{y}\right)+b\intop_{\mathbb{R}}y\intop_{\mathbb{R}}P_{X,Y}\left(\mathrm{d}\mathsf{B}_{x}\times\mathrm{d}\mathsf{B}_{y}\right)\\
+ &amp; =a\intop_{\mathbb{R}}xP_{X}\left(\mathrm{d}\mathsf{B}_{x}\right)+b\intop_{\mathbb{R}}yP_{Y}\left(\mathrm{d}\mathsf{B}_{y}\right)\\
+ &amp; =a\EE X+b\EE Y
+\end{align*}</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Spread-of-a-distribution">Spread of a distribution<a class="anchor-link" href="#Spread-of-a-distribution">&#182;</a></h4><p>A measure of spread of a distribution is the so-called standard deviation, denoted $\sigma$, which can be viewed as the Euclidean distance between a typical pair of values in a distribution. The mean was introduced as a typical value in the sense of minimizing the sum of its squared Euclidean distances from long-run observations. That gives us a hint of an estimate $\hat{\sigma}_{n}^{2}$ of the squared standard deviation--the average squared distance per trial, 
 $$
 \hat{\sigma}_{n}^{2}=\frac{1}{n}S\left(\hat{\mu}_{n}\right)=\frac{1}{n}\sum_{k\in\mathcal{X}^{\#}}\left(k-\hat{\mu}_{n}\right)^{2}a_{n}\left(k\right)=\sum_{k\in\mathcal{X}^{\#}}\left(k-\hat{\mu}_{n}\right)^{2}r_{n}\left(k\right)
@@ -13206,6 +13260,44 @@ The variance of a general RV $X$, denoted $\Var X$,
 is defined by
 $$
 \sigma_{X}^{2}=\Var X=\EE \left(X-\mu_{X}\right)^{2}
+$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Nonlinearity-of-variance-(simpler)">Nonlinearity of variance (simpler)<a class="anchor-link" href="#Nonlinearity-of-variance-(simpler)">&#182;</a></h3><p>The squared deviation in the above formula prevents the variance operator
+to inherit linearity from integration and summation. We can study
+the nature of nonlinearity of variance by considering a linear transformation
+$Y=aX+b$ of a RV $X$ whose variance is known. Correspondence between
+values and means take the form
+$$
+y=ax+b,\quad\mu_{Y}=a\mu_{X}+b
+$$
+This all leads to 
+$$
+\Var Y=\EE\left(Y-\mu_{Y}\right)^{2}=\EE\left(aX+b-a\mu_{X}-b\right)^{2}=\EE a^{2}\left(X-\mu_{X}\right)^{2}=a^{2}\Var X
+$$
+As we expected, $\Var\left(aX+b\right)\ne a\Var X+b$ thanks to the
+nonlinearity of variance.</p>
+<h3 id="Nonlinearity-of-variance-(detailed)">Nonlinearity of variance (detailed)<a class="anchor-link" href="#Nonlinearity-of-variance-(detailed)">&#182;</a></h3><p>Consider a linear transformation $Z=aX+bY$ of two RVs with known
+variances. Correspondence between values and means take the form
+$$
+z=ax+by,\quad\mu_{Z}=a\mu_{X}+b\mu_{Y}
+$$
+This all leads to 
+\begin{align*}
+\Var Z=\EE\left(Z-\mu_{Z}\right)^{2} &amp; =\EE\left(aX+bY-a\mu_{X}-b\mu_{Y}\right)^{2}\\
+ &amp; =a^{2}\EE\left(X-\mu_{X}\right)^{2}+b^{2}\EE\left(Y-\mu_{Y}\right)^{2}+ab\EE\left(X-\mu_{X}\right)\left(Y-\mu_{Y}\right)\\
+ &amp; =a^{2}\Var X+b^{2}\Var Y+ab\EE\left(X-\mu_{X}\right)\left(Y-\mu_{Y}\right)
+\end{align*}
+As we expected, $\Var\left(aX+bY\right)\ne a\Var X+b\Var Y$ thanks
+to the nonlinearity of variance. The last term in the above equation
+involves what is called the covariance between two RVs:
+$$
+\Cov\left(X,Y\right)=\EE\left(X-\mu_{X}\right)\left(Y-\mu_{Y}\right)
 $$</p>
 
 </div>

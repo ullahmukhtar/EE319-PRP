@@ -13109,13 +13109,14 @@ div#notebook {
 
   
 
-  <div class="
+  <div class="nbinteract-hide_in
       cell border-box-sizing code_cell rendered">
     <div class="input">
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> nbinitex.ipy
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#HIDDEN</span>
+<span class="o">%</span><span class="k">run</span> nbinitex.ipy
 </pre></div>
 
     </div>
@@ -13150,6 +13151,11 @@ $$\newcommand{\diff}{\mathop{}\!\mathrm{d}}
 \DeclareMathOperator{\Var}{Var}
 \DeclareMathOperator{\Cov}{Cov}
 \DeclareMathOperator{\Ber}{Ber}
+\DeclareMathOperator{\Bin}{Bin}
+\DeclareMathOperator{\NB}{NB}
+\DeclareMathOperator{\Geo}{Geo}
+\DeclareMathOperator{\HG}{HG}
+\DeclareMathOperator{\Poi}{Poi}
 \DeclareMathOperator{\Ud}{Ud}
 \DeclareMathOperator{\U}{U}
 \DeclareMathOperator{\ind}{\mathbf{1}}
@@ -13167,13 +13173,57 @@ $$
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="EE319---Probability-&amp;-Random-Processes">EE319 - Probability &amp; Random Processes<a class="anchor-link" href="#EE319---Probability-&amp;-Random-Processes">&#182;</a></h1><h2 id="Dr.-Ing.-Mukhtar-Ullah,-FAST-NUCES,-Spring-2020"><em>Dr.-Ing. Mukhtar Ullah</em>, FAST NUCES, Spring 2020<a class="anchor-link" href="#Dr.-Ing.-Mukhtar-Ullah,-FAST-NUCES,-Spring-2020">&#182;</a></h2><hr>
 
-<h2 id="Lecture-18-(2020-04-xx)"><strong>Lecture 18</strong> (2020-04-xx)<a class="anchor-link" href="#Lecture-18-(2020-04-xx)">&#182;</a></h2><h2 id="Expectation">Expectation<a class="anchor-link" href="#Expectation">&#182;</a></h2>
+<h2 id="Lecture-18-(2020-04-xx)"><strong>Lecture 18</strong> (2020-04-xx)<a class="anchor-link" href="#Lecture-18-(2020-04-xx)">&#182;</a></h2><h2 id="Several-point-distribution-(continued)">Several-point distribution (continued)<a class="anchor-link" href="#Several-point-distribution-(continued)">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Typical-value-of-a-distribution">Typical value of a distribution<a class="anchor-link" href="#Typical-value-of-a-distribution">&#182;</a></h4><p>Consider a discrete distribution with values $k\in\mathcal{X}^{\#}$ and probabilities $p_{k}$. If the distribution is symmetrical about a single peak, then the most likely value, called the mode, can be considered a typical value. For distributions of other shapes, the mode may not be appropriate. Other alternatives include the median and the mean. The median $m$ of a distribution generalizes the notion of middle value and is defined as the value at which the CDF equals $1/2$. The mean $\mu$ of a distribution is the value that best fits long-run observations in a least squared sense. We can get an estimate $\hat{\mu}_{n}$ of the mean based on the sum of its squared Euclidean distances from observations in $n$ trials of the underlying experiment, treated as a function of $\hat{\mu}_{n}$,
+<h4 id="Throw-of-two-dice">Throw of two dice<a class="anchor-link" href="#Throw-of-two-dice">&#182;</a></h4><p>Recall the two-dice throw experiment with sample space
+$$
+\mathsf{\Omega}=\left[1\cdot\cdot6\right]^{2}=\left[1\cdot\cdot6\right]\times\left[1\cdot\cdot6\right]
+$$
+and two partitions as illustrated below.</p>
+<center><img src="images/two_dice_partition_wrt_sum.png" width="70%"></center><p>The partition on the left is a detailed one. Say our interest lies in the total number of dots facing up on both dice.</p>
+<p>Events of interest
+$$
+\mathsf{A}_{k}=\left\{ \left(i,k-i\right)\mid i\in\left[1\cdot\cdot6\right]\right\} ,\quad k\in\left[2\cdot\cdot12\right]
+$$
+Probabilities
+$$
+p_{k}=P\left(\mathsf{A}_{k}\right)=\frac{\left|\mathsf{A}_{k}\right|}{\left|\mathsf{\Omega}\right|}=\begin{cases}
+\dfrac{k-1}{36} &amp; k\in\left[2\cdot\cdot7\right]\\
+\dfrac{13-k}{36} &amp; k\in\left[8\cdot\cdot12\right]
+\end{cases}
+$$
+Define the appropriate RV
+$$
+X=\sum_{k=2}^{12}k\ind_{\mathsf{A}_{k}},\quad X\left[\mathsf{A}_{k}\right]=\left\{ k\right\} ,\quad k\in\left[2\cdot\cdot12\right]
+$$
+Induced probability measure
+$$
+P_{X}=\sum_{k=1}^{n}p_{k}\delta_{k}
+$$
+Induced probability distribution
+$$
+\mathcal{X}=\left[2\cdot\cdot12\right],\quad f_{X}^{\#}\left(k\right)=p_{k},\quad F_{X}^{\#}\left(k\right)=\sum_{i=2}^{k}p_{i}
+$$
+PDF and CDF
+\begin{align*}
+f_{X}\left(x\right) &amp; =f_{X}^{\#}\left(x\right)\left[x\in\left[2\cdot\cdot12\right]\right]\\
+F_{X}\left(x\right) &amp; =F_{X}^{\#}\left(\min\left\{ 12,\left\lfloor x\right\rfloor \right\} \right)\left[x\ge2\right]
+\end{align*}</p>
+<p>This was the distribution included in the very first lecture.</p>
+<center><img src="images/chance_regularity_histogram.png" width="50%"></center><p>Explain in your own words the pattern in this histogram in light of the PDF above.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Typical-value-of-a-distribution">Typical value of a distribution<a class="anchor-link" href="#Typical-value-of-a-distribution">&#182;</a></h4><p>Consider a discrete distribution with values $k\in\mathcal{X}^{\#}$ and probabilities $p_{k}$. If the distribution is symmetrical about a single peak, then the most likely value, called the mode, can be considered a typical value. For distributions of other shapes, the mode may not be appropriate. Other alternatives include the median and the mean. The median $m$ of a distribution generalizes the notion of middle value and is defined as the value at which the CDF equals $1/2$. The mean $\mu$ of a distribution is the value that best fits long-run observations in a least squared sense.</p>
+<p><img src="images/chance_regularity_t-plot.png" width="50%" /></p>
+<p>We can get an estimate $\hat{\mu}_{n}$ of the mean based on the sum of its squared Euclidean distances from observations in $n$ trials of the underlying experiment, treated as a function of $\hat{\mu}_{n}$,
 $$
 S\left(\hat{\mu}_{n}\right)=\sum_{k\in\mathcal{X}^{\#}}\left(k-\hat{\mu}_{n}\right)^{2}a_{n}\left(k\right)
 $$
@@ -13196,35 +13246,120 @@ Note that the expectation is not a point function like a transformation. Instead
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Expectation-of-a-transformed-RV">Expectation of a transformed RV<a class="anchor-link" href="#Expectation-of-a-transformed-RV">&#182;</a></h4><p>Consider a transformation $Y=g\left(X\right)$ where $g$ is a point function making any value $x$ of $X$ to the value $g\left(x\right)$ of $Y$. How are the two expectations $\EE X$ and $\EE Y$ related? Let us work that out by using the above definition of expectation and noting that the differential regions $\diff \mathsf{B}_{x}$ and $\diff \mathsf{B}_{y}$ in the Borel field correspond to the same event in the original event space. Any value $x$ of $X$ determines
-the value $y$ of $Y$ according to $y=g\left(x\right)$. Since both
-the RVs are defined on the same probabiliy space, the pre-image of
-any Borel set $\mathsf{B}$ can be expressed as a disjoint union
+<p>Let us work out the mean for the two RVs discussed above.</p>
+<blockquote><p><strong>Dirac distribution</strong>
+The mean of the deterministic RV $a\sim\delta_{a}$ is
 $$
-Y^{-1}\left[\diff \mathsf{B}_{y}\right]=\bigcup_{g\left(x\right)=y}X^{-1}\left[\diff \mathsf{B}_{x}\right]
+\EE a=\sum_{k\in\left\{ a\right\} }k\delta_{a}\left(\left\{ k\right\} \right)=a
 $$
-The expectation of $Z$ then follows from the law of total probability:
+In other words, the expected value of a (deterministic) constant is the constant itself.</p>
+<p><strong>Bernoulli distribution</strong>
+The mean of the Bernoulli RV $X\sim\Ber_{p}$ is
 $$
-\EE Y=\intop_{\mathbb{R}}yP_{Y}\left(\diff \mathsf{B}_{y}\right)=\intop_{\mathbb{R}}y\sum_{g\left(x\right)=y}P_{X}\left(\diff \mathsf{B}_{x}\right)=\intop_{\mathbb{R}}g\left(x\right)P_{X}\left(\diff \mathsf{B}_{x}\right)
+\EE X=\sum_{k=0}^{1}k\mathrm{Ber}\left(k;p\right)=\sum_{k=0}^{1}kp^{k}\left(1-p\right)^{1-k}=p
+$$</p>
+<p><strong>Discrete uniform distribution (standard)</strong>
+The mean of the discrete uniform RV $X\sim\Ud_{n}$ is
 $$
-In other words, we do not need the distribution of $Y$ to compute
-the expectation. This makes sense in terms of long-run relative frequencies.
-The observed long-run relative frequency of a value $x$ is also the
-frequency $g\left(x\right)$.</p>
+\mu_{X}=\EE X=\sum_{k=1}^{n}k\Ud\left(k;n\right)=\frac{1}{n}\sum_{k=1}^{n}k=\frac{n+1}{2}
+$$
+<strong>Mean number of dots facing up on two dice</strong>
+Recall the throw of two dice and the RV $X$ representing the number
+of dots facing up on both the dice. 
+\begin{align*}
+\mu_{X}=\EE X &amp; =\sum_{k=2}^{12}kp_{k}\\
+ &amp; =\sum_{k=2}^{7}k\left(\frac{k-1}{36}\right)+\sum_{k=8}^{12}k\left(\frac{13-k}{36}\right)\\
+ &amp; =\frac{1}{36}\left[\sum_{k=2}^{7}k\left(k-1\right)+12\sum_{k=8}^{12}k-\sum_{k=8}^{12}k\left(k-1\right)\right]\\
+ &amp; =\frac{1}{36}\left[2\sum_{k=2}^{7}k\left(k-1\right)+12\left(\sum_{k=1}^{12}k-\sum_{k=1}^{7}k\right)-\sum_{k=2}^{12}k\left(k-1\right)\right]
+\end{align*}
+These seemingly intractable sums can be reduced by employing what is called the forward difference operator.</p>
+</blockquote>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Let us work out the mean for the two RVs discussed above.</p>
-<blockquote><p><strong>Mean of the Dirac distribution</strong>
-The mean of the deterministic RV $a\sim\delta_{a}$ is
+<h3 id="Forward-difference-operator">Forward difference operator<a class="anchor-link" href="#Forward-difference-operator">&#182;</a></h3><p>The forward difference operator, denoted $\Delta$, is defined by
+its action on a sequence, namely
 $$
-\EE a=\sum_{k\in\left\{ a\right\} }k\delta_{a}\left(\left\{ k\right\} \right)=a
+\Delta s_{k}=s_{k+1}-s_{k}
 $$
-In other words, the expected value of a (deterministic) constant is the constant itself.</p>
+Essentially, it is a shift operator. We will now investigate the behavior
+of the relevant polynomials under $\Delta$.</p>
+<ol>
+<li>Quadratic falling factorial
+$$
+\Delta\left(k\right)_{2}=\Delta\left[k\left(k-1\right)\right]=\left(k+1\right)k-k\left(k-1\right)=2k
+$$
+which can be exploited to get a formula for the integer sum 
+$$
+\sum_{k=1}^{n}k=\frac{1}{2}\sum_{k=1}^{n}\Delta\left(k\right)_{2}=\frac{\left(n+1\right)_{2}-\left(1\right)_{2}}{2}=\frac{\left(n+1\right)n}{2}
+$$</li>
+<li>Cubic falling factorial
+$$
+\Delta\left(k\right)_{3}=\Delta\left[k\left(k-1\right)\left(k-2\right)\right]=\left(k+1\right)k\left(k-1\right)-k\left(k-1\right)\left(k-2\right)=3k\left(k-1\right)
+$$
+which can be exploited to get another useful sum 
+$$
+\sum_{k=2}^{n}k\left(k-1\right)=\frac{1}{3}\sum_{k=2}^{n}\Delta\left(k\right)_{3}=\frac{\left(n+1\right)_{3}-\left(2\right)_{3}}{3}=\frac{n\left(n^{2}-1\right)}{3}
+$$
+We will use these identities to evaluate the sums in the foregoing expectation. <blockquote><p><strong>Mean number of dots facing up on two dice (continued)</strong>
+The integer sums:
+\begin{align*}
+\sum_{k=1}^{12}k &amp; =\frac{13\times 12}{2}=78\\
+\sum_{k=1}^{7}k &amp; =\frac{8\times 7}{2}=28\\
+\sum_{k=8}^{12}k &amp; =78-28=50
+\end{align*}
+The quadratic falling factorial sums
+\begin{align*}
+\sum_{k=2}^{12}k\left(k-1\right) &amp; =\frac{12\left(12^{2}-1\right)}{3}=572\\
+\sum_{k=2}^{7}k\left(k-1\right) &amp; =\frac{7\left(7^{2}-1\right)}{3}=112\\
+\sum_{k=8}^{12}k\left(k-1\right) &amp; =572-112=460
+\end{align*}
+Putting it all together yields the required expectation in the twice
+dice-throw problem,
+$$
+\mu_{X}=\EE X=\frac{1}{36}\left[112+12\times 50-460\right]=7
+$$</p>
 </blockquote>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Expectation-of-a-transformed-RV">Expectation of a transformed RV<a class="anchor-link" href="#Expectation-of-a-transformed-RV">&#182;</a></h4><p>Consider a transformation $Y=g\left(X\right)$ where $g$ is a point function making any value $x$ of $X$ to the value $g\left(x\right)$ of $Y$. How are the two expectations $\EE X$ and $\EE Y$ related? Let us work that out for the easier case of discrete distribution first. Any value $x$ of $X$ determines the value $y$ of $Y$ according
+to $y=g\left(x\right)$. Since both the RVs are defined on the same probability space, the following correspondence between events is evident
+$$
+\left(Y=k\right)=\left(g\left(X\right)=k\right)=\bigcup_{g\left(i\right)=k}\left(X=i\right)
+$$
+The expectation of $Y$ then follows from the law of total probability:
+$$
+\EE Y=\sum_{k\in\mathcal{Y}}kf_{Y}\left(k\right)=\sum_{k\in\mathcal{Y}}kP\left(Y=k\right)=\sum_{k\in\mathcal{Y}}k\sum_{g\left(i\right)=k}P\left(X=i\right)=\sum_{i\in\mathcal{X}}g\left(i\right)f_{X}\left(k\right)
+$$
+In other words, we do not need the distribution of $Y$ to compute the expectation. This makes sense in terms of long-run relative frequencies: the observed long-run frequency of a value $x$ is also the frequency of $g\left(x\right)$.</p>
+<p>This result can be extended to general RVs. The pre-image of any Borel
+set $\mathsf{B}$ can be expressed as a disjoint union
+$$
+Y^{-1}\left[\diff\mathsf{B}_{y}\right]=\bigcup_{g\left(x\right)=y}X^{-1}\left[\diff\mathsf{B}_{x}\right]
+$$
+The expectation of $Y$ then follows from the law of total probability:
+$$
+\EE Y=\intop_{\mathbb{R}}yP_{Y}\left(\diff\mathsf{B}_{y}\right)=\intop_{\mathbb{R}}y\sum_{g\left(x\right)=y}P_{X}\left(\diff\mathsf{B}_{x}\right)=\intop_{\mathbb{R}}g\left(x\right)P_{X}\left(\diff\mathsf{B}_{x}\right)
+$$
+This leads to a more general definition of the expectation:
+$$
+\EE g\left(X\right)=\intop_{\mathbb{R}}g\left(x\right)P_{X}\left(\diff\mathsf{B}_{x}\right)
+$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Linearity-of-the-expectation-(simpler)">Linearity of the expectation (simpler)<a class="anchor-link" href="#Linearity-of-the-expectation-(simpler)">&#182;</a></h4><p>Recall from math and circuit courses that integration and summation are linear operations. You can verify from the above definition that the expectation inherits linearity from integration and summation in the following sense:
 $$
 \EE \left(aX+b\right)=a\EE X+\EE b=a\EE X+b
@@ -13234,15 +13369,16 @@ $$
 \EE \left(X-\mu_{X}\right)=\EE X-\mu_{X}=0
 $$
 as expected.</p>
-<blockquote><p><strong>Mean of the Bernoulli distribution</strong>
-The mean of the Bernoulli RV $X\sim\Ber_{p}$ is
+<p>Two examples can be worked out here.</p>
+<blockquote><p><strong>The two-point distribution</strong>
+Since we know the mean of the Bernoulli RV $X\sim\Ber_{p}$ is $p$, the mean of the transformed (two-point) RV $Y=a+\left(b-a\right)X$ follows from linearity
 $$
-\EE X=\sum_{k=0}^{1}k\mathrm{Ber}\left(k;p\right)=\sum_{k=0}^{1}kp^{k}\left(1-p\right)^{1-k}=p
+\EE Y=a+\left(b-a\right)\EE X=a+\left(b-a\right)p=\left(1-p\right)a+pb
 $$
-The mean of the transformed (two-point) RV $Y=a+\left(b-a\right)X$
-follows from linearity
+<strong>The discrete uniform distribution (transformed)</strong>
+Since we know the mean of the standard discrete uniform RV $X\sim\Ud_{n}$, the mean of the transformed RV $Y=a-1+X$ follows from linearity
 $$
-\EE Y=a+\left(b-a\right)\mathrm{E}X=a+\left(b-a\right)p=\left(1-p\right)a+pb
+\EE Y=a-1+\EE X=a-1+\left.\frac{n+1}{2}\right|_{n=b-a+1}=a-1+\frac{b-a+2}{2}=\frac{a+b}{2}
 $$</p>
 </blockquote>
 
@@ -13251,18 +13387,11 @@ $$</p>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Linearity-of-the-expectation-(detailed)">Linearity of the expectation (detailed)<a class="anchor-link" href="#Linearity-of-the-expectation-(detailed)">&#182;</a></h3><p>A natural question arises in a curious mind here: why did we not try
-to define linearity of the expectation by this equation
+<h3 id="Linearity-of-the-expectation-(detailed)">Linearity of the expectation (detailed)<a class="anchor-link" href="#Linearity-of-the-expectation-(detailed)">&#182;</a></h3><p>A natural question arises in a curious mind here: why did we not try to define linearity of the expectation by this equation
 $$
 \EE\left(aX+bY\right)=a\EE X+b\EE Y
 $$
-which is very reasonable to expect. To see the complication in this
-seemingly innocent equation, assume $X$ and $Y$ to be discrete,
-for convenience, and define a new RV $Z=aX+bY$ as a linear transformation.
-Any pair $\left(x,y\right)$ of values of $\left(X,Y\right)$ determines
-the value $z$ of $Z$ according to $z=ax+by$. Since all the three
-RVs are defined on the same probabiliy space, the following correspondence
-between events is evident 
+which is very reasonable to expect. To see the complication in this seemingly innocent equation, assume $X$ and $Y$ to be discrete, for convenience, and define a new RV $Z=aX+bY$ as a linear transformation. Any pair $\left(x,y\right)$ of values of $\left(X,Y\right)$ determines the value $z$ of $Z$ according to $z=ax+by$. Since all the three RVs are defined on the same probability space, the following correspondence between events is evident: 
 $$
 \left(Z=k\right)=\left(aX+bY=k\right)=\bigcup_{ai+bj=k}\left(X=i\cap Y=j\right)
 $$
@@ -13274,8 +13403,7 @@ The expectation of $Z$ then follows from the law of total probability:
  &amp; =a\sum_{i\in\mathcal{X}}iP_{X}\left(\left\{ i\right\} \right)+b\sum_{j\in\mathcal{Y}}jP_{Y}\left(\left\{ j\right\} \right)\\
  &amp; =a\EE X+b\EE Y
 \end{align*}
-This result can be extended to general RVs. The pre-image of any Borel
-set $\mathsf{B}$ of the $z$-axis can be expressed as a disjoint
+This result can be extended to general RVs. The pre-image of any Borel set $\mathsf{B}$ of the $z$-axis can be expressed as a disjoint
 union
 $$
 Z^{-1}\left[\diff \mathsf{B}_{z}\right]=\bigcup_{ax+by=z}X^{-1}\left[\diff \mathsf{B}_{x}\right]\cap Y^{-1}\left[\diff \mathsf{B}_{y}\right]
@@ -13350,7 +13478,8 @@ to the nonlinearity of variance. The last term in the above equation
 involves what is called the covariance between two RVs:
 $$
 \Cov\left(X,Y\right)=\EE\left(X-\mu_{X}\right)\left(Y-\mu_{Y}\right)
-$$</p>
+$$
+Let us work out the variance for the two RVs discussed above.</p>
 
 </div>
 </div>

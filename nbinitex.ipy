@@ -1,12 +1,18 @@
 from IPython.display import clear_output, display, HTML, Image, Javascript
 print("... Some LaTeX definitions")
 LaTeXdefs=r"""
-$$\newcommand{\diff}{\mathop{}\!\textnormal{d}}
+$$\newcommand{\diff}{\mathop{}\!\mathrm{d}}
+\DeclareMathOperator{\Diff}{D}
 \newcommand{\euler}{\mathrm{e}}
 \DeclareMathOperator{\EE}{E}
 \DeclareMathOperator{\Var}{Var}
 \DeclareMathOperator{\Cov}{Cov}
 \DeclareMathOperator{\Ber}{Ber}
+\DeclareMathOperator{\Bin}{Bin}
+\DeclareMathOperator{\NB}{NB}
+\DeclareMathOperator{\Geo}{Geo}
+\DeclareMathOperator{\HG}{HG}
+\DeclareMathOperator{\Poi}{Poi}
 \DeclareMathOperator{\Ud}{Ud}
 \DeclareMathOperator{\U}{U}
 \DeclareMathOperator{\ind}{\mathbf{1}}

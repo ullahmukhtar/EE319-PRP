@@ -2,12 +2,8 @@
 <html>
 <head><meta charset="utf-8" />
 
+
 <title>Lecture-16</title>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
 
 <style type="text/css">
     /*!
@@ -13033,20 +13029,17 @@ div#notebook {
   div.cell {
     display: block;
     page-break-inside: avoid;
-  } 
-  div.output_wrapper { 
-    display: block;
-    page-break-inside: avoid; 
   }
-  div.output { 
+  div.output_wrapper {
     display: block;
-    page-break-inside: avoid; 
+    page-break-inside: avoid;
+  }
+  div.output {
+    display: block;
+    page-break-inside: avoid;
   }
 }
 </style>
-
-<!-- Custom stylesheet, it must be in the same directory as the html file -->
-<link rel="stylesheet" href="custom.css">
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
@@ -13069,13 +13062,109 @@ div#notebook {
         }
     });
     </script>
-    <!-- End of mathjax configuration --></head>
+    <!-- End of mathjax configuration -->
+
+<style>
+        .cell.nbinteract-left {
+            width: 50%;
+            float: left;
+        }
+
+        .cell.nbinteract-right {
+            width: 50%;
+            float: right;
+        }
+
+        .cell.nbinteract-hide_in > .input {
+            display: none;
+        }
+
+        .cell.nbinteract-hide_out > .output_wrapper {
+            display: none;
+        }
+
+        .cell:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+
+        div.output_subarea {
+            max-width: initial;
+        }
+
+        .jp-OutputPrompt {
+            display: none;
+        }
+    </style></head>
 <body>
   <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container" id="notebook-container">
+    <div class="container">
+      
 
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+
+
+
+
+
+  
+
+  <div class="nbinteract-hide_in
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#HIDDEN</span>
+<span class="o">%</span><span class="k">run</span> nbinitex.ipy
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>... Some LaTeX definitions
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    
+
+
+<div class="output_html rendered_html output_subarea ">
+
+$$\newcommand{\diff}{\mathop{}\!\mathrm{d}}
+\DeclareMathOperator{\Diff}{D}
+\newcommand{\euler}{\mathrm{e}}
+\DeclareMathOperator{\EE}{E}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\Ber}{Ber}
+\DeclareMathOperator{\Ud}{Ud}
+\DeclareMathOperator{\U}{U}
+\DeclareMathOperator{\ind}{\mathbf{1}}
+$$
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="EE319---Probability-&amp;-Random-Processes">EE319 - Probability &amp; Random Processes<a class="anchor-link" href="#EE319---Probability-&amp;-Random-Processes">&#182;</a></h1><h2 id="Dr.-Ing.-Mukhtar-Ullah,-FAST-NUCES,-Spring-2020"><em>Dr.-Ing. Mukhtar Ullah</em>, FAST NUCES, Spring 2020<a class="anchor-link" href="#Dr.-Ing.-Mukhtar-Ullah,-FAST-NUCES,-Spring-2020">&#182;</a></h2><hr>
 
@@ -13083,32 +13172,30 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Measures-of-size-for-(un)countable-sets">Measures of size for (un)countable sets<a class="anchor-link" href="#Measures-of-size-for-(un)countable-sets">&#182;</a></h3><p>The Lebesgue measure, denoted $\mu^{\wedge}$, generalizes the concept of length of an interval in 1-D, area of a rectangle in 2-D, volume of a cuboid in 3-D, and so on to a measure of any set. The Lebesgue measure is useful for uncountable sets but not so for countable sets as it assigns zero value to singletons. To deal with countable sets, the so-called counting measure, denoted $\mu^{\#}$, that generalizes the concept of cardinality for countable sets. 
 In the context of probability distributions, the counting measure $\mu^{\#}\left(\mathsf{A}\right)$ of a finite set $\mathsf{A}$ is given by $\left|\mathsf{A}\cap\mathcal{X}^{\#}\right|$. The two measures of the infinitesimal interval
 $$
-\mathrm{d}\mathsf{B}_{x}=\left(x-\mathrm{d}x,x\right]=\left[x,x+\mathrm{d}x\right)
+\diff\mathsf{B}_{x}=\left(x-\diff x,x\right]=\left[x,x+\diff x\right)
 $$
 are then
 $$
-\mu^{\#}\left(\mathrm{d}\mathsf{B}_{x}\right)=\left[x\in\mathcal{X}^{\#}\right],\quad\mu^{\wedge}\left(\mathrm{d}\mathsf{B}_{x}\right)=\mathrm{d}x
+\mu^{\#}\left(\diff \mathsf{B}_{x}\right)=\left[x\in\mathcal{X}^{\#}\right],\quad\mu^{\wedge}\left(\diff \mathsf{B}_{x}\right)=\diff x
 $$
 In terms of these two measures, the probability of a Borel set $B$ takes the form of a so-called Lebesgue-Stieltjes integral
 $$
-P\left(\mathsf{B}\right)=\intop_{\mathsf{B}}f^{\#}\left(x\right)\mu^{\#}\left(\mathrm{d}\mathsf{B}_{x}\right)+\intop_{\mathsf{B}}f^{\wedge}\left(x\right)\left[x\in\mathcal{X}\right]\mu^{\wedge}\left(\mathrm{d}\mathsf{B}_{x}\right)
+P\left(\mathsf{B}\right)=\intop_{\mathsf{B}}f^{\#}\left(x\right)\mu^{\#}\left(\diff \mathsf{B}_{x}\right)+\intop_{\mathsf{B}}f^{\wedge}\left(x\right)\left[x\in\mathcal{X}\right]\mu^{\wedge}\left(\diff \mathsf{B}_{x}\right)
 $$
 This justifies the usage of the names discrete probability density (derivative of the probability measure with respect to the counting measure) and continuous probability density (derivative of the probability measure with respect to the Lebesgue measure):
 $$
-f^{\#}=\frac{\mathrm{d}P}{\mathrm{d}\mu^{\#}},\quad f^{\wedge}=\frac{\mathrm{d}P}{\mathrm{d}\mu^{\wedge}}
+f^{\#}=\frac{\diff P}{\diff \mu^{\#}},\quad f^{\wedge}=\frac{\diff P}{\diff \mu^{\wedge}}
 $$</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="The-Random-Variable">The Random Variable<a class="anchor-link" href="#The-Random-Variable">&#182;</a></h3><p>Recall our proposed strategy for solving any probability problem.</p>
 <ol>
@@ -13128,6 +13215,7 @@ g^{-1}\left[\mathsf{B}_{1}\right]=\left\{ a\mid a\in\mathsf{A}_{1},g\left(a\righ
 $$</p>
 <p>Given a probability space $\left(\Omega,\mathcal{F},P\right)$ as a model of an experiment, we need a function $X\colon\mathsf{\Omega}\rightarrow\mathbb{R}$ that assigns a real number  $X(\omega)$ to every point $\omega$ of the outcome space in a way that preserves the event structure of the event space $\mathcal{F}$ so that a new probability space $\left(\mathbb{R},\mathfrak{B}\left(\mathbb{R}\right),P_{X}\right)$ can be conveniently used to assign probabilities. The event structure of $\mathcal{F}$ can be preserved only if the inverse $X^{-1}\left[\mathsf{B}\right]$ of every Borel set $B\in\mathfrak{B}\left(\mathbb{R}\right)$ is contained in $\mathcal{F}$. Checking all Borel sets in this way is not practical. Fortunately, we only need to check the right-bounded right-closed intervals of the form $\mathsf{B}_{x}$. All this reasoning leads to the following definition of a random variable.</p>
 <p>A <em>random variable (RV)</em> with respect to an event space $\mathcal{F}$ is a function  $X\colon\mathsf{\Omega}\rightarrow\mathbb{R}$ that satisfies $X^{-1}\left[\mathsf{B}_{x}\right]\in\mathcal{F}$ for each real $x$. Note that the validity of a function as a RV is determined entirely by the event space $\mathcal{F}$. Neither the values assigned by the RV nor the probability measure $P$ has any role to play as far as the validity of a function to qualify as a RV is concerned. However, a RV is useful only if it assigns values that reflect our quantity of interest. The image set $X\left[\mathsf{\Omega}\right]$ of all the values assigned by $X$ will be referred to as the range of $X$ and denoted by $\mathcal{X}$.</p>
+<p><img src="images/rv_mapping.png" width="70%" /></p>
 <p>To distinguish distributions from one another, we will use the subscript
 $X$ when writing functions such as PDF and CDF. Thus we write $f_{X}$
 for the density of $P_{X}$ and refer to it as the PDF of $X$ for
@@ -13156,7 +13244,7 @@ whereas the event $X\in\mathsf{B}$ occurs with some probability.</p>
 in our newly acquired language.
 \begin{align*}
 F_{X}\left(x\right) &amp; =P_{X}\left(\left(-\infty,x\right]\right)=P\left(X\le x\right)\\
-f_{X}\left(x\right) &amp; ==P_{X}\left(\left\{ x\right\} \right)+\frac{\mathrm{d}F_{X}\left(x\right)}{\mathrm{d}x^{-}}
+f_{X}\left(x\right) &amp; ==P_{X}\left(\left\{ x\right\} \right)+\frac{\diff F_{X}\left(x\right)}{\diff x^{-}}
 \end{align*}</p>
 <blockquote><p><strong>Example</strong>: Is it a RV?</p>
 <p>Consider the sample space
@@ -13202,8 +13290,7 @@ Do you need to test any other events?</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="An-Iversion-like-Bracket">An Iversion-like Bracket<a class="anchor-link" href="#An-Iversion-like-Bracket">&#182;</a></h4><p>Recall the alternative practical notation $X\in\mathsf{B}$ for the more accurate notation $X^{-1}\left[\mathsf{B}\right]$ of the pre-image of a set. Also recall our discussion of not confusing this with the Iversion bracket $\left[x\in\mathsf{B}\right]$. We can combine these two concepts to give a new meaning to logical statements like $x\in\mathsf{B}$. Translating from logic to set theory, true maps to the sure event and false maps to the null event. This motivates to introduce an Iversion-like bracket that parses a logical statement $S\left(x\right)$ according to
 $$
@@ -13232,8 +13319,7 @@ $$</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Dirac-Distribution">Dirac Distribution<a class="anchor-link" href="#Dirac-Distribution">&#182;</a></h4><p>What could be the simplest RV?  Consider the simplest probability space $\left(\mathsf{\Omega},\mathcal{F},P\right)$ with the smallest event space $\mathcal{F}=\left\{ \emptyset,\mathsf{\Omega}\right\}$ and the trivial probability measure $P$. Any RV $X$ definable on $\mathsf{\Omega}$ with respect to $\mathcal{F}$ must assign a constant value to all the outcomes of $\mathsf{\Omega}$. In other words, $X$ must be deterministic. Assuming the constant value $a$, a straightforward definition of $X$ could read
 $$
@@ -13276,8 +13362,7 @@ gives the Dirac family of distributions. Morever, we will write $x\sim\delta_{x}
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Bernoulli-Distribution">Bernoulli Distribution<a class="anchor-link" href="#Bernoulli-Distribution">&#182;</a></h4><p>The Dirac RV is too simple to represent uncertainty because concentrating all the probability at a single point makes it deterministic. What could the simplest RV representing uncertainty? That turns out to be Bernoulli distributed.</p>
 <p>Consider a probability space $\left(\mathsf{\Omega},\mathcal{F},P\right)$ with the event space
@@ -13352,11 +13437,29 @@ gives the Bernoulli family of distributions.</p>
 </div>
 </div>
 </div>
+
+
+
+<!-- Loads nbinteract package -->
+<script src="https://unpkg.com/nbinteract-core" async></script>
+<script>
+  (function setupNbinteract() {
+    // If NbInteract hasn't loaded, wait one second and try again
+    if (window.NbInteract === undefined) {
+      setTimeout(setupNbinteract, 1000)
+      return
+    }
+
+    var interact = new window.NbInteract({
+      spec: 'ullahmukhtar/EE319-PRP/master',
+      baseUrl: 'https://mybinder.org',
+      provider: 'gh',
+    })
+    interact.prepare()
+
+    window.interact = interact
+  })()
+</script>
     </div>
   </div>
 </body>
-
- 
-
-
-</html>

@@ -2,12 +2,8 @@
 <html>
 <head><meta charset="utf-8" />
 
+
 <title>Lecture-18</title>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
 
 <style type="text/css">
     /*!
@@ -13033,20 +13029,17 @@ div#notebook {
   div.cell {
     display: block;
     page-break-inside: avoid;
-  } 
-  div.output_wrapper { 
-    display: block;
-    page-break-inside: avoid; 
   }
-  div.output { 
+  div.output_wrapper {
     display: block;
-    page-break-inside: avoid; 
+    page-break-inside: avoid;
+  }
+  div.output {
+    display: block;
+    page-break-inside: avoid;
   }
 }
 </style>
-
-<!-- Custom stylesheet, it must be in the same directory as the html file -->
-<link rel="stylesheet" href="custom.css">
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
@@ -13069,14 +13062,57 @@ div#notebook {
         }
     });
     </script>
-    <!-- End of mathjax configuration --></head>
+    <!-- End of mathjax configuration -->
+
+<style>
+        .cell.nbinteract-left {
+            width: 50%;
+            float: left;
+        }
+
+        .cell.nbinteract-right {
+            width: 50%;
+            float: right;
+        }
+
+        .cell.nbinteract-hide_in > .input {
+            display: none;
+        }
+
+        .cell.nbinteract-hide_out > .output_wrapper {
+            display: none;
+        }
+
+        .cell:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+
+        div.output_subarea {
+            max-width: initial;
+        }
+
+        .jp-OutputPrompt {
+            display: none;
+        }
+    </style></head>
 <body>
   <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container" id="notebook-container">
+    <div class="container">
+      
 
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+
+
+
+
+
+  
+
+  <div class="
+      cell border-box-sizing code_cell rendered">
+    <div class="input">
+
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> nbinitex.ipy
@@ -13092,8 +13128,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt"></div>
-
+    
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>... Some LaTeX definitions
@@ -13103,13 +13138,13 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt"></div>
-
+    
 
 
 <div class="output_html rendered_html output_subarea ">
 
-$$\newcommand{\diff}{\mathop{}\!\textnormal{d}}
+$$\newcommand{\diff}{\mathop{}\!\mathrm{d}}
+\DeclareMathOperator{\Diff}{D}
 \newcommand{\euler}{\mathrm{e}}
 \DeclareMathOperator{\EE}{E}
 \DeclareMathOperator{\Var}{Var}
@@ -13127,29 +13162,50 @@ $$
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+  </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="EE319---Probability-&amp;-Random-Processes">EE319 - Probability &amp; Random Processes<a class="anchor-link" href="#EE319---Probability-&amp;-Random-Processes">&#182;</a></h1><h2 id="Dr.-Ing.-Mukhtar-Ullah,-FAST-NUCES,-Spring-2020"><em>Dr.-Ing. Mukhtar Ullah</em>, FAST NUCES, Spring 2020<a class="anchor-link" href="#Dr.-Ing.-Mukhtar-Ullah,-FAST-NUCES,-Spring-2020">&#182;</a></h2><hr>
 
-<h2 id="Lecture-18-(2020-04-xx)"><strong>Lecture 18</strong> (2020-04-xx)<a class="anchor-link" href="#Lecture-18-(2020-04-xx)">&#182;</a></h2><h2 id="Expectation-(continued)">Expectation (continued)<a class="anchor-link" href="#Expectation-(continued)">&#182;</a></h2>
+<h2 id="Lecture-18-(2020-04-xx)"><strong>Lecture 18</strong> (2020-04-xx)<a class="anchor-link" href="#Lecture-18-(2020-04-xx)">&#182;</a></h2><h2 id="Expectation">Expectation<a class="anchor-link" href="#Expectation">&#182;</a></h2>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Expectation-of-a-transformed-RV">Expectation of a transformed RV<a class="anchor-link" href="#Expectation-of-a-transformed-RV">&#182;</a></h4><p>Consider a transformation $Y=g\left(X\right)$ where $g$ is a point function making any value $x$ of $X$ to the value $g\left(x\right)$ of $Y$. How are the two expectations $\EE X$ and $\EE Y$ related? Let us work that out by using the above definition of expectation and noting that the differential regions $\mathrm{d}\mathsf{B}_{x}$ and $\mathrm{d}\mathsf{B}_{y}$ in the Borel field correspond to the same event in the original event space. Any value $x$ of $X$ determines
+<h4 id="Typical-value-of-a-distribution">Typical value of a distribution<a class="anchor-link" href="#Typical-value-of-a-distribution">&#182;</a></h4><p>Consider a discrete distribution with values $k\in\mathcal{X}^{\#}$ and probabilities $p_{k}$. If the distribution is symmetrical about a single peak, then the most likely value, called the mode, can be considered a typical value. For distributions of other shapes, the mode may not be appropriate. Other alternatives include the median and the mean. The median $m$ of a distribution generalizes the notion of middle value and is defined as the value at which the CDF equals $1/2$. The mean $\mu$ of a distribution is the value that best fits long-run observations in a least squared sense. We can get an estimate $\hat{\mu}_{n}$ of the mean based on the sum of its squared Euclidean distances from observations in $n$ trials of the underlying experiment, treated as a function of $\hat{\mu}_{n}$,
+$$
+S\left(\hat{\mu}_{n}\right)=\sum_{k\in\mathcal{X}^{\#}}\left(k-\hat{\mu}_{n}\right)^{2}a_{n}\left(k\right)
+$$
+where $a_{n}\left(k\right)$ is the observed frequency of $k$ in $n$ trials. Note that absolute frequencies must add up to $n$. Since $\hat{\mu}_{n}$ minimizes $S\left(\hat{\mu}_{n}\right)$ by definition, we require $S^{\prime}\left(\hat{\mu}_{n}\right)=0$ which leads to
+$$
+-2\sum_{k\in\mathcal{X}^{\#}}\left(k-\hat{\mu}_{n}\right)a_{n}\left(k\right)=0\implies n\hat{\mu}_{n}=\sum_{k\in\mathcal{X}^{\#}}ka_{n}\left(k\right)\implies\hat{\mu}_{n}=\frac{1}{n}\sum_{k\in\mathcal{X}^{\#}}ka_{n}\left(k\right)=\sum_{k\in\mathcal{X}^{\#}}kr_{n}\left(k\right)
+$$
+where $r_{k}\left(n\right)$ is the relative frequency of $k$ in $n$ trials. Since the long-run relative frequencies $r_{n}\left(k\right)$ approach probabilities $p_{k}$, we have the following formula for the mean of a discrete distribution
+$$
+\mu=\sum_{k\in\mathcal{X}^{\#}}kp_{k}
+$$
+This makes sense as each value $x_{i}$ of the RV $X$ is weighted by the associated probability $p_{i}$. Owing to this probability weighting, the mean is also called the expected value, or expectation, of the RV. The expectation of a RV $X$, denoted by $\EE X$, is defined by
+$$
+\mu_{X}=\EE X=\intop_{\mathbb{R}}xP_{X}\left(\diff \mathsf{B}_{x}\right)=\sum_{k\in\mathcal{X}^{\#}}kf^{\#}_{X}\left(k\right)+\intop_{\mathcal{X}}xf^{\wedge}_{X}\left(x\right)\diff x
+$$
+Note that the expectation is not a point function like a transformation. Instead, the expectation is an example of what is called an operator. An operator takes a function and returns another function. A special kind of an operator, called a functional, collapses a function to a number. You can now see that the expectation operator acts on a RV, a function, and returns the mean, a number. Thus, the expectation operator is a functional. The notation $\EE X$ without using any brackets not only reminds of the operator involved but also helps to distinguish it from a transformation $g\left(X\right)$.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Expectation-of-a-transformed-RV">Expectation of a transformed RV<a class="anchor-link" href="#Expectation-of-a-transformed-RV">&#182;</a></h4><p>Consider a transformation $Y=g\left(X\right)$ where $g$ is a point function making any value $x$ of $X$ to the value $g\left(x\right)$ of $Y$. How are the two expectations $\EE X$ and $\EE Y$ related? Let us work that out by using the above definition of expectation and noting that the differential regions $\diff \mathsf{B}_{x}$ and $\diff \mathsf{B}_{y}$ in the Borel field correspond to the same event in the original event space. Any value $x$ of $X$ determines
 the value $y$ of $Y$ according to $y=g\left(x\right)$. Since both
 the RVs are defined on the same probabiliy space, the pre-image of
 any Borel set $\mathsf{B}$ can be expressed as a disjoint union
 $$
-Y^{-1}\left[\mathrm{d}\mathsf{B}_{y}\right]=\bigcup_{g\left(x\right)=y}X^{-1}\left[\mathrm{d}\mathsf{B}_{x}\right]
+Y^{-1}\left[\diff \mathsf{B}_{y}\right]=\bigcup_{g\left(x\right)=y}X^{-1}\left[\diff \mathsf{B}_{x}\right]
 $$
 The expectation of $Z$ then follows from the law of total probability:
 $$
-\EE Y=\intop_{\mathbb{R}}yP_{Y}\left(\mathrm{d}\mathsf{B}_{y}\right)=\intop_{\mathbb{R}}y\sum_{g\left(x\right)=y}P_{X}\left(\mathrm{d}\mathsf{B}_{x}\right)=\intop_{\mathbb{R}}g\left(x\right)P_{X}\left(\mathrm{d}\mathsf{B}_{x}\right)
+\EE Y=\intop_{\mathbb{R}}yP_{Y}\left(\diff \mathsf{B}_{y}\right)=\intop_{\mathbb{R}}y\sum_{g\left(x\right)=y}P_{X}\left(\diff \mathsf{B}_{x}\right)=\intop_{\mathbb{R}}g\left(x\right)P_{X}\left(\diff \mathsf{B}_{x}\right)
 $$
 In other words, we do not need the distribution of $Y$ to compute
 the expectation. This makes sense in terms of long-run relative frequencies.
@@ -13159,8 +13215,7 @@ frequency $g\left(x\right)$.</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Let us work out the mean for the two RVs discussed above.</p>
 <blockquote><p><strong>Mean of the Dirac distribution</strong>
@@ -13194,8 +13249,7 @@ $$</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Linearity-of-the-expectation-(detailed)">Linearity of the expectation (detailed)<a class="anchor-link" href="#Linearity-of-the-expectation-(detailed)">&#182;</a></h3><p>A natural question arises in a curious mind here: why did we not try
 to define linearity of the expectation by this equation
@@ -13224,22 +13278,21 @@ This result can be extended to general RVs. The pre-image of any Borel
 set $\mathsf{B}$ of the $z$-axis can be expressed as a disjoint
 union
 $$
-Z^{-1}\left[\mathrm{d}\mathsf{B}_{z}\right]=\bigcup_{ax+by=z}X^{-1}\left[\mathrm{d}\mathsf{B}_{x}\right]\cap Y^{-1}\left[\mathrm{d}\mathsf{B}_{y}\right]
+Z^{-1}\left[\diff \mathsf{B}_{z}\right]=\bigcup_{ax+by=z}X^{-1}\left[\diff \mathsf{B}_{x}\right]\cap Y^{-1}\left[\diff \mathsf{B}_{y}\right]
 $$
 The expectation of $Z$ then follows from the law of total probability:
 \begin{align*}
-\EE Z=\intop_{\mathbb{R}}zP_{Z}\left(\mathrm{d}\mathsf{B}_{z}\right) &amp; =\intop_{\mathbb{R}}z\intop_{ax+by=z}P_{X,Y}\left(\mathrm{d}\mathsf{B}_{x}\times\mathrm{d}\mathsf{B}_{y}\right)\\
- &amp; =\intop_{\mathbb{R}}\intop_{\mathbb{R}}\left(ax+by\right)P_{X,Y}\left(\mathrm{d}\mathsf{B}_{x}\times\mathrm{d}\mathsf{B}_{y}\right)\\
- &amp; =a\intop_{\mathbb{R}}x\intop_{\mathbb{R}}P_{X,Y}\left(\mathrm{d}\mathsf{B}_{x}\times\mathrm{d}\mathsf{B}_{y}\right)+b\intop_{\mathbb{R}}y\intop_{\mathbb{R}}P_{X,Y}\left(\mathrm{d}\mathsf{B}_{x}\times\mathrm{d}\mathsf{B}_{y}\right)\\
- &amp; =a\intop_{\mathbb{R}}xP_{X}\left(\mathrm{d}\mathsf{B}_{x}\right)+b\intop_{\mathbb{R}}yP_{Y}\left(\mathrm{d}\mathsf{B}_{y}\right)\\
+\EE Z=\intop_{\mathbb{R}}zP_{Z}\left(\diff \mathsf{B}_{z}\right) &amp; =\intop_{\mathbb{R}}z\intop_{ax+by=z}P_{X,Y}\left(\diff \mathsf{B}_{x}\times\diff \mathsf{B}_{y}\right)\\
+ &amp; =\intop_{\mathbb{R}}\intop_{\mathbb{R}}\left(ax+by\right)P_{X,Y}\left(\diff \mathsf{B}_{x}\times\diff \mathsf{B}_{y}\right)\\
+ &amp; =a\intop_{\mathbb{R}}x\intop_{\mathbb{R}}P_{X,Y}\left(\diff \mathsf{B}_{x}\times\diff \mathsf{B}_{y}\right)+b\intop_{\mathbb{R}}y\intop_{\mathbb{R}}P_{X,Y}\left(\diff \mathsf{B}_{x}\times\diff \mathsf{B}_{y}\right)\\
+ &amp; =a\intop_{\mathbb{R}}xP_{X}\left(\diff \mathsf{B}_{x}\right)+b\intop_{\mathbb{R}}yP_{Y}\left(\diff \mathsf{B}_{y}\right)\\
  &amp; =a\EE X+b\EE Y
 \end{align*}</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Spread-of-a-distribution">Spread of a distribution<a class="anchor-link" href="#Spread-of-a-distribution">&#182;</a></h4><p>A measure of spread of a distribution is the so-called standard deviation, denoted $\sigma$, which can be viewed as the Euclidean distance between a typical pair of values in a distribution. The mean was introduced as a typical value in the sense of minimizing the sum of its squared Euclidean distances from long-run observations. That gives us a hint of an estimate $\hat{\sigma}_{n}^{2}$ of the squared standard deviation--the average squared distance per trial, 
 $$
@@ -13265,8 +13318,7 @@ $$</p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Nonlinearity-of-variance-(simpler)">Nonlinearity of variance (simpler)<a class="anchor-link" href="#Nonlinearity-of-variance-(simpler)">&#182;</a></h3><p>The squared deviation in the above formula prevents the variance operator
 to inherit linearity from integration and summation. We can study
@@ -13303,11 +13355,29 @@ $$</p>
 </div>
 </div>
 </div>
+
+
+
+<!-- Loads nbinteract package -->
+<script src="https://unpkg.com/nbinteract-core" async></script>
+<script>
+  (function setupNbinteract() {
+    // If NbInteract hasn't loaded, wait one second and try again
+    if (window.NbInteract === undefined) {
+      setTimeout(setupNbinteract, 1000)
+      return
+    }
+
+    var interact = new window.NbInteract({
+      spec: 'ullahmukhtar/EE319-PRP/master',
+      baseUrl: 'https://mybinder.org',
+      provider: 'gh',
+    })
+    interact.prepare()
+
+    window.interact = interact
+  })()
+</script>
     </div>
   </div>
 </body>
-
- 
-
-
-</html>

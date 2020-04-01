@@ -14,9 +14,11 @@ https://ullahmukhtar.github.com/EE319-PRP/Lecture-14.html
 https://ullahmukhtar.github.com/EE319-PRP/Lecture-15.html
 https://ullahmukhtar.github.com/EE319-PRP/Lecture-16.html
 https://ullahmukhtar.github.com/EE319-PRP/Lecture-17.html
+https://ullahmukhtar.github.com/EE319-PRP/Lecture-18.html
 
 
 https://nbviewer.jupyter.org/
+https://nbviewer.jupyter.org/github/ullahmukhtar/EE319-PRP/blob/master/Lecture-14.ipynb
 https://nbviewer.jupyter.org/github/ullahmukhtar/EE319-PRP/blob/master/Lecture-15.ipynb
 https://nbviewer.jupyter.org/github/ullahmukhtar/EE319-PRP/blob/master/Lecture-16.ipynb
 https://nbviewer.jupyter.org/github/ullahmukhtar/EE319-PRP/blob/master/Lecture-17.ipynb
@@ -35,7 +37,7 @@ cd EE319-PRP
 jupyter notebook
 
 
-nbinteract Lecture-02.ipynb   (#HIDDEN as the first line of cells to be hidden)
+nbinteract -B Lecture-02.ipynb   (#HIDDEN as the first line of cells to be hidden)
 #jupyter nbconvert Lecture-02.ipynb --no-input
 
 git add -A

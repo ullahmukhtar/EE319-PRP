@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 
 
-<title>Lecture-18</title>
+<title>Lecture-19</title>
 
 <style type="text/css">
     /*!
@@ -13173,111 +13173,122 @@ $$
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="EE319---Probability-&amp;-Random-Processes">EE319 - Probability &amp; Random Processes<a class="anchor-link" href="#EE319---Probability-&amp;-Random-Processes">&#182;</a></h1><h2 id="Dr.-Ing.-Mukhtar-Ullah,-FAST-NUCES,-Spring-2020"><em>Dr.-Ing. Mukhtar Ullah</em>, FAST NUCES, Spring 2020<a class="anchor-link" href="#Dr.-Ing.-Mukhtar-Ullah,-FAST-NUCES,-Spring-2020">&#182;</a></h2><hr>
 
-<h2 id="Lecture-18-(2020-04-xx)"><strong>Lecture 18</strong> (2020-04-xx)<a class="anchor-link" href="#Lecture-18-(2020-04-xx)">&#182;</a></h2><h2 id="Several-point-distribution-(continued)">Several-point distribution (continued)<a class="anchor-link" href="#Several-point-distribution-(continued)">&#182;</a></h2>
+<h2 id="Lecture-19-(2020-04-xx)"><strong>Lecture 19</strong> (2020-04-xx)<a class="anchor-link" href="#Lecture-19-(2020-04-xx)">&#182;</a></h2><h2 id="Expectation-(continued)">Expectation (continued)<a class="anchor-link" href="#Expectation-(continued)">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Throw-of-two-dice">Throw of two dice<a class="anchor-link" href="#Throw-of-two-dice">&#182;</a></h4><p>Recall the two-dice throw experiment with sample space
+<h4 id="Expectation-of-a-transformed-RV">Expectation of a transformed RV<a class="anchor-link" href="#Expectation-of-a-transformed-RV">&#182;</a></h4><p>Consider a transformation $Y=g\left(X\right)$ where $g$ is a point function making any value $x$ of $X$ to the value $g\left(x\right)$ of $Y$. How are the two expectations $\EE X$ and $\EE Y$ related? Let us work that out for the easier case of discrete distribution first. Any value $x$ of $X$ determines the value $y$ of $Y$ according
+to $y=g\left(x\right)$. Since both the RVs are defined on the same probability space, the following correspondence between events is evident
 $$
-\mathsf{\Omega}=\left[1\cdot\cdot6\right]^{2}=\left[1\cdot\cdot6\right]\times\left[1\cdot\cdot6\right]
+\left(Y=k\right)=\left(g\left(X\right)=k\right)=\bigcup_{g\left(i\right)=k}\left(X=i\right)
 $$
-and two partitions as illustrated below.</p>
-<center><img src="images/two_dice_partition_wrt_sum.png" width="70%"></center><p>The partition on the left is a detailed one. Say our interest lies in the total number of dots facing up on both dice.</p>
-<p>Events of interest
+The expectation of $Y$ then follows from the law of total probability:
 $$
-\mathsf{A}_{k}=\left\{ \left(i,k-i\right)\mid i,,k-i\in\left[1\cdot\cdot6\right]\right\} ,\quad k\in\left[2\cdot\cdot12\right]
+\EE Y=\sum_{k\in\mathcal{Y}}kf_{Y}\left(k\right)=\sum_{k\in\mathcal{Y}}kP\left(Y=k\right)=\sum_{k\in\mathcal{Y}}k\sum_{g\left(i\right)=k}P\left(X=i\right)=\sum_{i\in\mathcal{X}}g\left(i\right)f_{X}\left(k\right)
 $$
-Probabilities
+In other words, we do not need the distribution of $Y$ to compute the expectation. This makes sense in terms of long-run relative frequencies: the observed long-run frequency of a value $x$ is also the frequency of $g\left(x\right)$.</p>
+<p>This result can be extended to general RVs. The pre-image of any Borel
+set $\mathsf{B}$ can be expressed as a disjoint union
 $$
-p_{k}=P\left(\mathsf{A}_{k}\right)=\frac{\left|\mathsf{A}_{k}\right|}{\left|\mathsf{\Omega}\right|}=\begin{cases}
-\dfrac{k-1}{36} &amp; k\in\left[2\cdot\cdot7\right]\\
-\dfrac{13-k}{36} &amp; k\in\left[8\cdot\cdot12\right]
-\end{cases}
+Y^{-1}\left[\diff\mathsf{B}_{y}\right]=\bigcup_{g\left(x\right)=y}X^{-1}\left[\diff\mathsf{B}_{x}\right]
 $$
-Define the appropriate RV
+The expectation of $Y$ then follows from the law of total probability:
 $$
-X=\sum_{k=2}^{12}k\ind_{\mathsf{A}_{k}},\quad X\left[\mathsf{A}_{k}\right]=\left\{ k\right\} ,\quad k\in\left[2\cdot\cdot12\right]
+\EE Y=\intop_{\mathbb{R}}yP_{Y}\left(\diff\mathsf{B}_{y}\right)=\intop_{\mathbb{R}}y\sum_{g\left(x\right)=y}P_{X}\left(\diff\mathsf{B}_{x}\right)=\intop_{\mathbb{R}}g\left(x\right)P_{X}\left(\diff\mathsf{B}_{x}\right)
 $$
-Induced probability measure
+This leads to a more general definition of the expectation:
 $$
-P_{X}=\sum_{k=1}^{n}p_{k}\delta_{k}
+\EE g\left(X\right)=\intop_{\mathbb{R}}g\left(x\right)P_{X}\left(\diff\mathsf{B}_{x}\right)
+$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Linearity-of-the-expectation-(simpler)">Linearity of the expectation (simpler)<a class="anchor-link" href="#Linearity-of-the-expectation-(simpler)">&#182;</a></h4><p>Recall from math and circuit courses that integration and summation are linear operations. You can verify from the above definition that the expectation inherits linearity from integration and summation in the following sense:
 $$
-Induced probability distribution
+\EE \left(aX+b\right)=a\EE X+\EE b=a\EE X+b
 $$
-\mathcal{X}=\left[2\cdot\cdot12\right],\quad f_{X}^{\#}\left(k\right)=p_{k},\quad F_{X}^{\#}\left(k\right)=\sum_{i=2}^{k}p_{i}
+Setting $a=1$ and $b=-\mu_{X}$ gives 
 $$
-PDF and CDF
+\EE \left(X-\mu_{X}\right)=\EE X-\mu_{X}=0
+$$
+as expected.</p>
+<p>Two examples can be worked out here.</p>
+<blockquote><p><strong>The two-point distribution</strong>
+Since we know the mean of the Bernoulli RV $X\sim\Ber_{p}$ is $p$, the mean of the transformed (two-point) RV $Y=a+\left(b-a\right)X$ follows from linearity
+$$
+\EE Y=a+\left(b-a\right)\EE X=a+\left(b-a\right)p=\left(1-p\right)a+pb
+$$
+<strong>The discrete uniform distribution (transformed)</strong>
+Since we know the mean of the standard discrete uniform RV $X\sim\Ud_{n}$, the mean of the transformed RV $Y=a-1+X$ follows from linearity
+$$
+\EE Y=a-1+\EE X=a-1+\left.\frac{n+1}{2}\right|_{n=b-a+1}=a-1+\frac{b-a+2}{2}=\frac{a+b}{2}
+$$</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Linearity-of-the-expectation-(detailed)">Linearity of the expectation (detailed)<a class="anchor-link" href="#Linearity-of-the-expectation-(detailed)">&#182;</a></h3><p>A natural question arises in a curious mind here: why did we not try to define linearity of the expectation by this equation
+$$
+\EE\left(aX+bY\right)=a\EE X+b\EE Y
+$$
+which is very reasonable to expect. To see the complication in this seemingly innocent equation, assume $X$ and $Y$ to be discrete, for convenience, and define a new RV $Z=aX+bY$ as a linear transformation. Any pair $\left(x,y\right)$ of values of $\left(X,Y\right)$ determines the value $z$ of $Z$ according to $z=ax+by$. Since all the three RVs are defined on the same probability space, the following correspondence between events is evident: 
+$$
+\left(Z=k\right)=\left(aX+bY=k\right)=\bigcup_{ai+bj=k}\left(X=i\cap Y=j\right)
+$$
+The expectation of $Z$ then follows from the law of total probability:
 \begin{align*}
-f_{X}\left(x\right) &amp; =f_{X}^{\#}\left(x\right)\left[x\in\left[2\cdot\cdot12\right]\right]\\
-F_{X}\left(x\right) &amp; =F_{X}^{\#}\left(\min\left\{ 12,\left\lfloor x\right\rfloor \right\} \right)\left[x\ge2\right]
+\EE Z=\sum_{k\in\mathcal{Z}}kP\left(Z=k\right) &amp; =\sum_{k\in\mathcal{Z}}k\sum_{ai+bj=k}P\left(X=i\cap Y=j\right)\\
+ &amp; =\sum_{i\in\mathcal{X}}\sum_{j\in\mathcal{Y}}\left(ai+bj\right)P_{X,Y}\left(\left\{ i\right\} \times\left\{ j\right\} \right)\\
+ &amp; =a\sum_{i\in\mathcal{X}}i\sum_{j\in\mathcal{Y}}P_{X,Y}\left(\left\{ i\right\} \times\left\{ j\right\} \right)+b\sum_{j\in\mathcal{Y}}j\sum_{i\in\mathcal{X}}P_{X,Y}\left(\left\{ i\right\} \times\left\{ j\right\} \right)\\
+ &amp; =a\sum_{i\in\mathcal{X}}iP_{X}\left(\left\{ i\right\} \right)+b\sum_{j\in\mathcal{Y}}jP_{Y}\left(\left\{ j\right\} \right)\\
+ &amp; =a\EE X+b\EE Y
+\end{align*}
+This result can be extended to general RVs. The pre-image of any Borel set $\mathsf{B}$ of the $z$-axis can be expressed as a disjoint
+union
+$$
+Z^{-1}\left[\diff \mathsf{B}_{z}\right]=\bigcup_{ax+by=z}X^{-1}\left[\diff \mathsf{B}_{x}\right]\cap Y^{-1}\left[\diff \mathsf{B}_{y}\right]
+$$
+The expectation of $Z$ then follows from the law of total probability:
+\begin{align*}
+\EE Z=\intop_{\mathbb{R}}zP_{Z}\left(\diff \mathsf{B}_{z}\right) &amp; =\intop_{\mathbb{R}}z\intop_{ax+by=z}P_{X,Y}\left(\diff \mathsf{B}_{x}\times\diff \mathsf{B}_{y}\right)\\
+ &amp; =\intop_{\mathbb{R}}\intop_{\mathbb{R}}\left(ax+by\right)P_{X,Y}\left(\diff \mathsf{B}_{x}\times\diff \mathsf{B}_{y}\right)\\
+ &amp; =a\intop_{\mathbb{R}}x\intop_{\mathbb{R}}P_{X,Y}\left(\diff \mathsf{B}_{x}\times\diff \mathsf{B}_{y}\right)+b\intop_{\mathbb{R}}y\intop_{\mathbb{R}}P_{X,Y}\left(\diff \mathsf{B}_{x}\times\diff \mathsf{B}_{y}\right)\\
+ &amp; =a\intop_{\mathbb{R}}xP_{X}\left(\diff \mathsf{B}_{x}\right)+b\intop_{\mathbb{R}}yP_{Y}\left(\diff \mathsf{B}_{y}\right)\\
+ &amp; =a\EE X+b\EE Y
 \end{align*}</p>
-<p>This was the distribution included in the very first lecture.</p>
-<center><img src="images/chance_regularity_histogram.png" width="50%"></center><p>Explain in your own words the pattern in this histogram in light of the PDF above.</p>
-<p>This example motivates a general formulation of a discrete distribution.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Generic-discrete-distribution">Generic discrete distribution<a class="anchor-link" href="#Generic-discrete-distribution">&#182;</a></h3><p>Consider a probability space $\left(\mathsf{\Omega},\mathcal{F},P\right)$
-with the event space $\mathcal{F}=\sigma\left(\mathcal{C}\right)$
-generated by a partition $\mathcal{C}=\left\{ \mathsf{A}_{k}\mid k\in\mathcal{K}\right\} $
-of the outcome space $\mathsf{\Omega}$, and a discrete probability
-measure $P$ defined by $P\left(\mathsf{A}_{k}\right)=p_{k}$ for
-all indices $k\in\mathcal{K}$. Any RV $X$ definable on $\mathsf{\Omega}$
-with respect to $\mathcal{F}$ must assign same value, say $k$, to
-all points in $\mathsf{A}_{k}$ but different from other values $j$.
-Mathematically, the definition of $X$ reads
+<h4 id="Spread-of-a-distribution">Spread of a distribution<a class="anchor-link" href="#Spread-of-a-distribution">&#182;</a></h4><p>A measure of spread of a distribution is the so-called standard deviation, denoted $\sigma$, which can be viewed as the Euclidean distance between a typical pair of values in a distribution. The mean was introduced as a typical value in the sense of minimizing the sum of its squared Euclidean distances from long-run observations. That gives us a hint of an estimate $\hat{\sigma}_{n}^{2}$ of the squared standard deviation--the average squared distance per trial, 
 $$
-X=\sum_{k\in\mathcal{K}}k\mathbf{1}_{\mathsf{A}_{k}},\quad X\left[\mathsf{A}_{k}\right]=\left\{ k\right\} ,\quad k\in\mathcal{K}
+\hat{\sigma}_{n}^{2}=\frac{1}{n}S\left(\hat{\mu}_{n}\right)=\frac{1}{n}\sum_{k\in\mathcal{X}^{\#}}\left(k-\hat{\mu}_{n}\right)^{2}a_{n}\left(k\right)=\sum_{k\in\mathcal{X}^{\#}}\left(k-\hat{\mu}_{n}\right)^{2}r_{n}\left(k\right)
 $$
-Following a procedure similar to that for other cases above, the generic
-discrete measure can be shown to take the form
+To see why $\hat{\sigma}_{n}$ is the Euclidean distance between a
+typical pair of values, note that both $\left(\hat{\mu}_{n},\hat{\mu}_{n}+\hat{\sigma}_{n}\right)$
+and $\left(\hat{\mu}_{n},\hat{\mu}_{n}-\hat{\sigma}_{n}\right)$ can
+be viewed as typical pairs because
 $$
-P_{X}=\sum_{k\in\mathcal{K}}p_{k}\delta_{k}
+\left(\hat{\mu}_{n}\pm\hat{\sigma}_{n}-\hat{\mu}_{n}\right)^{2}=\hat{\sigma}_{n}^{2}
 $$
-That $X$ follows a discrete distribution is written as $X\sim\sum_{k\in\mathcal{K}}p_{k}\delta_{k}$
-with the following characterization:
+That leads us to define the standard deviation $\sigma$ of a discrete distribution as the positive square root of what is called the variance of the distribution,
 $$
-\mathcal{X}=\mathcal{K},\ f_{X}^{\#}\left(k\right)=p_{k},\ F_{X}^{\#}\left(k\right)=\sum_{i\in\mathcal{X}}p_{k}\left[i\le k\right]
+\sigma^{2}=\sum_{k\in\mathcal{X}^{\#}}\left(k-\hat{\mu}\right)^{2}p_{k}
 $$
-The PDF and CDF can then be recovered.
+The variance of a general RV $X$, denoted $\Var X$,
+is defined by
 $$
-f_{X}\left(x\right)=f_{X}^{\#}\left(x\right)\left[x\in\mathcal{X}\right],\ F_{X}\left(x\right)=F_{X}^{\#}\left(\max\mathcal{X}_{\le x}\right)\left[\mathcal{X}_{\le x}\ne\emptyset\right]
-$$</p>
-<p>An illustration of the generic discrete RV will help.</p>
-<center><img src="images/discrete_rv_mapping.png" width="80%"></center>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Bit-transmission">Bit transmission<a class="anchor-link" href="#Bit-transmission">&#182;</a></h3><p>Recall the bit transmission problem illustrated here.</p>
-<center><img src="images/bit_transmission.png" width="50%"></center><p>The input bit is modeled by a Bernoulli RV $X\sim\Ber_{1-p}$. The output bit is also a Bernoulli RV but with a parameter that we need to find. The diagram encodes the following conditional probabilities.
-\begin{align*}
-P\left(Y=1\mid X=0\right) &amp; =P\left(Y=0\mid X=1\right)=\epsilon\\
-P\left(Y=1\mid X=1\right) &amp; =P\left(Y=0\mid X=0\right)=1-\epsilon
-\end{align*}
-The law of total probability allows to write 
-\begin{align*}
-P\left(Y=1\right) &amp; =P\left(X=0\right)P\left(Y=1\mid X=0\right)+P\left(X=1\right)P\left(Y=1\mid X=1\right)=p\epsilon+\left(1-p\right)\left(1-\epsilon\right)\\
-P\left(Y=0\right) &amp; =P\left(X=0\right)P\left(Y=0\mid X=0\right)+P\left(X=1\right)P\left(Y=0\mid X=1\right)=p\left(1-\epsilon\right)+\left(1-p\right)\epsilon
-\end{align*}
-Therefore, $Y\sim\Ber_{\theta}$ where $\theta=p\epsilon+\left(1-p\right)\left(1-\epsilon\right)$.</p>
-<p>The bit error is represented by the Borel set (in the 2-D plane)
-$$
-\mathsf{B}=\left\{ \left(0,1\right),\left(1,0\right)\right\} 
-$$
-with pre-image
-$$
-\mathsf{A}=\left(Y=1,X=0\right)\cup\left(Y=0,X=1\right)
-$$
-and the resulting bit-error probability 
-$$
-P\left(\mathsf{A}\right)=P\left(Y=1,X=0\right)+P\left(Y=0,X=1\right)=p\epsilon+\left(1-p\right)\epsilon=\epsilon
+\sigma_{X}^{2}=\Var X=\EE \left(X-\mu_{X}\right)^{2}
 $$</p>
 
 </div>
@@ -13285,109 +13296,38 @@ $$</p>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Typical-value-of-a-distribution">Typical value of a distribution<a class="anchor-link" href="#Typical-value-of-a-distribution">&#182;</a></h4><p>Consider a discrete distribution with values $k\in\mathcal{X}^{\#}$ and probabilities $p_{k}$. If the distribution is symmetrical about a single peak, then the most likely value, called the mode, can be considered a typical value. For distributions of other shapes, the mode may not be appropriate. Other alternatives include the median and the mean. The median $m$ of a distribution generalizes the notion of middle value and is defined as the value at which the CDF equals $1/2$. The mean $\mu$ of a distribution is the value that best fits long-run observations in a least squared sense.</p>
-<p><img src="images/chance_regularity_t-plot.png" width="50%" /></p>
-<p>We can get an estimate $\hat{\mu}_{n}$ of the mean based on the sum of its squared Euclidean distances from observations in $n$ trials of the underlying experiment, treated as a function of $\hat{\mu}_{n}$,
+<h3 id="Nonlinearity-of-variance-(simpler)">Nonlinearity of variance (simpler)<a class="anchor-link" href="#Nonlinearity-of-variance-(simpler)">&#182;</a></h3><p>The squared deviation in the above formula prevents the variance operator
+to inherit linearity from integration and summation. We can study
+the nature of nonlinearity of variance by considering a linear transformation
+$Y=aX+b$ of a RV $X$ whose variance is known. Correspondence between
+values and means take the form
 $$
-S\left(\hat{\mu}_{n}\right)=\sum_{k\in\mathcal{X}^{\#}}\left(k-\hat{\mu}_{n}\right)^{2}a_{n}\left(k\right)
+y=ax+b,\quad\mu_{Y}=a\mu_{X}+b
 $$
-where $a_{n}\left(k\right)$ is the observed frequency of $k$ in $n$ trials. Note that absolute frequencies must add up to $n$. Since $\hat{\mu}_{n}$ minimizes $S\left(\hat{\mu}_{n}\right)$ by definition, we require $S^{\prime}\left(\hat{\mu}_{n}\right)=0$ which leads to
+This all leads to 
 $$
--2\sum_{k\in\mathcal{X}^{\#}}\left(k-\hat{\mu}_{n}\right)a_{n}\left(k\right)=0\implies n\hat{\mu}_{n}=\sum_{k\in\mathcal{X}^{\#}}ka_{n}\left(k\right)\implies\hat{\mu}_{n}=\frac{1}{n}\sum_{k\in\mathcal{X}^{\#}}ka_{n}\left(k\right)=\sum_{k\in\mathcal{X}^{\#}}kr_{n}\left(k\right)
+\Var Y=\EE\left(Y-\mu_{Y}\right)^{2}=\EE\left(aX+b-a\mu_{X}-b\right)^{2}=\EE a^{2}\left(X-\mu_{X}\right)^{2}=a^{2}\Var X
 $$
-where $r_{k}\left(n\right)$ is the relative frequency of $k$ in $n$ trials. Since the long-run relative frequencies $r_{n}\left(k\right)$ approach probabilities $p_{k}$, we have the following formula for the mean of a discrete distribution
+As we expected, $\Var\left(aX+b\right)\ne a\Var X+b$ thanks to the
+nonlinearity of variance.</p>
+<h3 id="Nonlinearity-of-variance-(detailed)">Nonlinearity of variance (detailed)<a class="anchor-link" href="#Nonlinearity-of-variance-(detailed)">&#182;</a></h3><p>Consider a linear transformation $Z=aX+bY$ of two RVs with known
+variances. Correspondence between values and means take the form
 $$
-\mu=\sum_{k\in\mathcal{X}^{\#}}kp_{k}
+z=ax+by,\quad\mu_{Z}=a\mu_{X}+b\mu_{Y}
 $$
-This makes sense as each value $x_{i}$ of the RV $X$ is weighted by the associated probability $p_{i}$. Owing to this probability weighting, the mean is also called the expected value, or expectation, of the RV. The expectation of a RV $X$, denoted by $\EE X$, is defined by
-$$
-\mu_{X}=\EE X=\intop_{\mathbb{R}}xP_{X}\left(\diff \mathsf{B}_{x}\right)=\sum_{k\in\mathcal{X}^{\#}}kf^{\#}_{X}\left(k\right)+\intop_{\mathcal{X}}xf^{\wedge}_{X}\left(x\right)\diff x
-$$
-Note that the expectation is not a point function like a transformation. Instead, the expectation is an example of what is called an operator. An operator takes a function and returns another function. A special kind of an operator, called a functional, collapses a function to a number. You can now see that the expectation operator acts on a RV, a function, and returns the mean, a number. Thus, the expectation operator is a functional. The notation $\EE X$ without using any brackets not only reminds of the operator involved but also helps to distinguish it from a transformation $g\left(X\right)$.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Let us work out the mean for the two RVs discussed above.</p>
-<blockquote><p><strong>Dirac distribution</strong>
-The mean of the deterministic RV $a\sim\delta_{a}$ is
-$$
-\EE a=\sum_{k\in\left\{ a\right\} }k\delta_{a}\left(\left\{ k\right\} \right)=a
-$$
-In other words, the expected value of a (deterministic) constant is the constant itself.</p>
-<p><strong>Bernoulli distribution</strong>
-The mean of the Bernoulli RV $X\sim\Ber_{p}$ is
-$$
-\EE X=\sum_{k=0}^{1}k\mathrm{Ber}\left(k;p\right)=\sum_{k=0}^{1}kp^{k}\left(1-p\right)^{1-k}=p
-$$</p>
-<p><strong>Discrete uniform distribution (standard)</strong>
-The mean of the discrete uniform RV $X\sim\Ud_{n}$ is
-$$
-\mu_{X}=\EE X=\sum_{k=1}^{n}k\Ud\left(k;n\right)=\frac{1}{n}\sum_{k=1}^{n}k=\frac{n+1}{2}
-$$
-<strong>Mean number of dots facing up on two dice</strong>
-Recall the throw of two dice and the RV $X$ representing the number
-of dots facing up on both the dice. 
+This all leads to 
 \begin{align*}
-\mu_{X}=\EE X &amp; =\sum_{k=2}^{12}kp_{k}\\
- &amp; =\sum_{k=2}^{7}k\left(\frac{k-1}{36}\right)+\sum_{k=8}^{12}k\left(\frac{13-k}{36}\right)\\
- &amp; =\frac{1}{36}\left[\sum_{k=2}^{7}k\left(k-1\right)+12\sum_{k=8}^{12}k-\sum_{k=8}^{12}k\left(k-1\right)\right]
+\Var Z=\EE\left(Z-\mu_{Z}\right)^{2} &amp; =\EE\left(aX+bY-a\mu_{X}-b\mu_{Y}\right)^{2}\\
+ &amp; =a^{2}\EE\left(X-\mu_{X}\right)^{2}+b^{2}\EE\left(Y-\mu_{Y}\right)^{2}+ab\EE\left(X-\mu_{X}\right)\left(Y-\mu_{Y}\right)\\
+ &amp; =a^{2}\Var X+b^{2}\Var Y+ab\EE\left(X-\mu_{X}\right)\left(Y-\mu_{Y}\right)
 \end{align*}
-These seemingly intractable sums can be reduced by employing what is called the forward difference operator.</p>
-</blockquote>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Forward-difference-operator">Forward difference operator<a class="anchor-link" href="#Forward-difference-operator">&#182;</a></h3><p>The forward difference operator, denoted $\Delta$, is defined by
-its action on a sequence, namely
+As we expected, $\Var\left(aX+bY\right)\ne a\Var X+b\Var Y$ thanks
+to the nonlinearity of variance. The last term in the above equation
+involves what is called the covariance between two RVs:
 $$
-\Delta s_{k}=s_{k+1}-s_{k}
+\Cov\left(X,Y\right)=\EE\left(X-\mu_{X}\right)\left(Y-\mu_{Y}\right)
 $$
-Essentially, it is a shift operator. We will now investigate the behavior
-of the relevant polynomials under $\Delta$.</p>
-<ol>
-<li>Quadratic falling factorial
-$$
-\Delta\left(k\right)_{2}=\Delta\left[k\left(k-1\right)\right]=\left(k+1\right)k-k\left(k-1\right)=2k
-$$
-which can be exploited to get a formula for the integer sum 
-$$
-\sum_{k=1}^{n}k=\frac{1}{2}\sum_{k=1}^{n}\Delta\left(k\right)_{2}=\frac{\left(n+1\right)_{2}-\left(1\right)_{2}}{2}=\frac{\left(n+1\right)n}{2}
-$$</li>
-<li>Cubic falling factorial
-$$
-\Delta\left(k\right)_{3}=\Delta\left[k\left(k-1\right)\left(k-2\right)\right]=\left(k+1\right)k\left(k-1\right)-k\left(k-1\right)\left(k-2\right)=3k\left(k-1\right)
-$$
-which can be exploited to get another useful sum 
-$$
-\sum_{k=2}^{n}k\left(k-1\right)=\frac{1}{3}\sum_{k=2}^{n}\Delta\left(k\right)_{3}=\frac{\left(n+1\right)_{3}-\left(2\right)_{3}}{3}=\frac{n\left(n^{2}-1\right)}{3}
-$$
-We will use these identities to evaluate the sums in the foregoing expectation. <blockquote><p><strong>Mean number of dots facing up on two dice (continued)</strong>
-The integer sums:
-\begin{align*}
-\sum_{k=1}^{12}k &amp; =\frac{13\times 12}{2}=78\\
-\sum_{k=1}^{7}k &amp; =\frac{8\times 7}{2}=28\\
-\sum_{k=8}^{12}k &amp; =78-28=50
-\end{align*}
-The quadratic falling factorial sums
-\begin{align*}
-\sum_{k=2}^{12}k\left(k-1\right) &amp; =\frac{12\left(12^{2}-1\right)}{3}=572\\
-\sum_{k=2}^{7}k\left(k-1\right) &amp; =\frac{7\left(7^{2}-1\right)}{3}=112\\
-\sum_{k=8}^{12}k\left(k-1\right) &amp; =572-112=460
-\end{align*}
-Putting it all together yields the required expectation in the twice
-dice-throw problem,
-$$
-\mu_{X}=\EE X=\frac{1}{36}\left[112+12\times 50-460\right]=7
-$$</p>
-</blockquote>
-</li>
-</ol>
+Let us work out the variance for the two RVs discussed above.</p>
 
 </div>
 </div>

@@ -2,8 +2,12 @@
 <html>
 <head><meta charset="utf-8" />
 
-
 <title>Lecture-02</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
 
 <style type="text/css">
     /*!
@@ -13029,17 +13033,20 @@ div#notebook {
   div.cell {
     display: block;
     page-break-inside: avoid;
-  }
-  div.output_wrapper {
+  } 
+  div.output_wrapper { 
     display: block;
-    page-break-inside: avoid;
+    page-break-inside: avoid; 
   }
-  div.output {
+  div.output { 
     display: block;
-    page-break-inside: avoid;
+    page-break-inside: avoid; 
   }
 }
 </style>
+
+<!-- Custom stylesheet, it must be in the same directory as the html file -->
+<link rel="stylesheet" href="custom.css">
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
@@ -13062,51 +13069,13 @@ div#notebook {
         }
     });
     </script>
-    <!-- End of mathjax configuration -->
-
-<style>
-        .cell.nbinteract-left {
-            width: 50%;
-            float: left;
-        }
-
-        .cell.nbinteract-right {
-            width: 50%;
-            float: right;
-        }
-
-        .cell.nbinteract-hide_in > .input {
-            display: none;
-        }
-
-        .cell.nbinteract-hide_out > .output_wrapper {
-            display: none;
-        }
-
-        .cell:after {
-          content: "";
-          display: table;
-          clear: both;
-        }
-
-        div.output_subarea {
-            max-width: initial;
-        }
-
-        .jp-OutputPrompt {
-            display: none;
-        }
-    </style></head>
+    <!-- End of mathjax configuration --></head>
 <body>
   <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container">
-      
+    <div class="container" id="notebook-container">
 
-
-
-
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="EE319---Probability-&amp;-Random-Processes">EE319 - Probability &amp; Random Processes<a class="anchor-link" href="#EE319---Probability-&amp;-Random-Processes">&#182;</a></h1><h2 id="Dr.-Ing.-Mukhtar-Ullah,-FAST-NUCES,-Spring-2020"><em>Dr.-Ing. Mukhtar Ullah</em>, FAST NUCES, Spring 2020<a class="anchor-link" href="#Dr.-Ing.-Mukhtar-Ullah,-FAST-NUCES,-Spring-2020">&#182;</a></h2><h2 id="Lecture-02-(2020-01-24)"><strong>Lecture 02</strong> (2020-01-24)<a class="anchor-link" href="#Lecture-02-(2020-01-24)">&#182;</a></h2><h2 id="How-to-Mathematize-Uncertainty">How to Mathematize Uncertainty<a class="anchor-link" href="#How-to-Mathematize-Uncertainty">&#182;</a></h2><p>Recall your previous exposure to theories</p>
 <h2 id="Examples-of-Deterministic-Theories">Examples of Deterministic Theories<a class="anchor-link" href="#Examples-of-Deterministic-Theories">&#182;</a></h2><ul>
@@ -13136,7 +13105,8 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Theories-of-Uncertainty">Theories of Uncertainty<a class="anchor-link" href="#Theories-of-Uncertainty">&#182;</a></h2><ul>
 <li>Probability theory<ul>
@@ -13233,14 +13203,16 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="From-Concepts-to-Math">From Concepts to Math<a class="anchor-link" href="#From-Concepts-to-Math">&#182;</a></h2><p><img src="images/concepts_to_math_pe.png" width="70%" /></p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Examples-(Make-appropriate-assumptions-in-each-case)">Examples (Make appropriate assumptions in each case)<a class="anchor-link" href="#Examples-(Make-appropriate-assumptions-in-each-case)">&#182;</a></h3><ol>
 <li>Toss a coin and note the outcome. What are the possible outcomes?<blockquote><p>$\mathsf{\Omega} = \left\{\text{T},\text{H}\right\}$</p>
@@ -13305,7 +13277,8 @@ This is a simpler set than the one with the largest element that cannot be deter
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="The-Meaning-of-&quot;Random&quot;">The Meaning of "Random"<a class="anchor-link" href="#The-Meaning-of-&quot;Random&quot;">&#182;</a></h2><ul>
 <li>The uncontrollable and unpredictable influences make it impossible to predict the outcome of a single trial<ul>
@@ -13333,7 +13306,8 @@ This is a simpler set than the one with the largest element that cannot be deter
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Properties-of-Relative-Frequency-of-an-Event">Properties of Relative Frequency of an Event<a class="anchor-link" href="#Properties-of-Relative-Frequency-of-an-Event">&#182;</a></h2><p>A random experiment is repeated $n$ times. The occurrence pattern of an event $\mathsf{A}$ can be described with the help of quantities defined in the following.</p>
 <ul>
@@ -13402,7 +13376,8 @@ This is a simpler set than the one with the largest element that cannot be deter
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Long-run-Relative-Frequency">Long-run Relative Frequency<a class="anchor-link" href="#Long-run-Relative-Frequency">&#182;</a></h2><div class="container">
     <div style="float:left;width:45%">
@@ -13415,7 +13390,8 @@ This is a simpler set than the one with the largest element that cannot be deter
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div class="alert alert-block alert-info">
 <b>Statistical Regularity</b>
@@ -13426,29 +13402,11 @@ $$\displaystyle P\left(\mathsf{A}\right)=\lim_{n\rightarrow\infty}r_{n}\left(\ma
 </div>
 </div>
 </div>
-
-
-
-<!-- Loads nbinteract package -->
-<script src="https://unpkg.com/nbinteract-core" async></script>
-<script>
-  (function setupNbinteract() {
-    // If NbInteract hasn't loaded, wait one second and try again
-    if (window.NbInteract === undefined) {
-      setTimeout(setupNbinteract, 1000)
-      return
-    }
-
-    var interact = new window.NbInteract({
-      spec: 'ullahmukhtar/EE319-PRP/master',
-      baseUrl: 'https://mybinder.org',
-      provider: 'gh',
-    })
-    interact.prepare()
-
-    window.interact = interact
-  })()
-</script>
     </div>
   </div>
 </body>
+
+ 
+
+
+</html>

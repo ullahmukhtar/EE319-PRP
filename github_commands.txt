@@ -38,7 +38,7 @@ jupyter notebook
 
 
 nbinteract -B Lecture-02.ipynb   (#HIDDEN as the first line of cells to be hidden)
-#jupyter nbconvert Lecture-02.ipynb --no-input
+jupyter nbconvert Untitled-2.ipynb --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags="['remove_cell', 'other_tag_to_remove']" --to pdf
 
 git add -A
 git commit -m "Publish nb"
